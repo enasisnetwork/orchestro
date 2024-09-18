@@ -11,6 +11,8 @@ from typing import Annotated
 from typing import Literal
 from typing import Optional
 
+from encommon.types import BaseModel
+
 from pydantic import Field
 
 from .child import OrcheChildParams
@@ -20,6 +22,13 @@ from .child import OrcheChildParams
 OrcheSystemRealms = Literal[
     'ansible',
     'psuedo']
+
+
+
+class OrcheSystemAnsibleParams(BaseModel, extra='allow'):
+    """
+    Process and validate the Orche configuration parameters.
+    """
 
 
 
@@ -38,3 +47,8 @@ class OrcheSystemParams(OrcheChildParams, extra='forbid'):
         Field(None,
               description='Domain to which child belongs',
               min_length=1)]
+
+    ansible: Annotated[
+        Optional[OrcheSystemAnsibleParams],
+        Field(None,
+              description='Variables provided to Ansible')]

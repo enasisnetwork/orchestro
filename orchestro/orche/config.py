@@ -235,7 +235,10 @@ def inheritance(
             merge_dicts(
                 dict1=source,
                 dict2=inhrt,
-                force=False)
+                force=None)
+
+        dedup_list(
+            source['inherits'])
 
 
     kinds = get_args(OrcheKinds)

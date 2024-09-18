@@ -165,6 +165,25 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 host=system.name,
                 group='orche')
 
+
+            ansible = (
+                system.params
+                .ansible)
+
+            if ansible is not None:
+
+                vars = (
+                    ansible.endumped
+                    .items())
+
+                for key, value in vars:
+
+                    set_value(
+                        system.name,
+                        varname=key,
+                        value=value)
+
+
             mmbrof = system.groups
 
             for _group in mmbrof:
