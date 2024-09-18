@@ -1,0 +1,27 @@
+---
+
+
+
+persons:
+
+
+  ###################
+  ## Robert Domain ##
+  ###################
+  robert_domain:
+    enable: true
+    realm: domain
+    domain: enasis.net
+    first: Robert
+    last: Harris
+
+
+  ##################
+  ## Robert Local ##
+  ##################
+  robert_local:
+    enable: true
+    realm: local
+    domain: local
+    first: '{{ orche.persons.robert_domain.first }}'
+    last: '{{ orche.persons.robert_domain.last }}'

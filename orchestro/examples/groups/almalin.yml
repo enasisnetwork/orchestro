@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #######################
+  ## AlmaLinux Systems ##
+  #######################
+  systems_almalin:
+    enable: true
+    memberof: systems
+    display: AlmaLinux

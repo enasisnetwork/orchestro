@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## OpenBSD Template ##
+  ######################
+  template_openbsd:
+    enable: false
+    inherits: template_default
+    memberof: systems_openbsd
+    display: OpenBSD Template

@@ -1,0 +1,25 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+- name: Information about the inventory hosts
+
+  ansible.builtin.debug:
+    msg:
+
+      ansible_host: '{{ ansible_host | default }}'
+      ansible_user: '{{ ansible_user | default }}'
+      group_names: '{{ group_names }}'
+
+  when:
+
+    - >-  # target is not localhost
+      inventory_hostname != "localhost"
+
+  tags: always

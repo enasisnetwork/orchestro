@@ -1,0 +1,13 @@
+---
+
+
+
+groups:
+
+
+  #######################
+  ## Default Inventory ##
+  #######################
+  default:
+    enable: false
+    display: Default Inventory

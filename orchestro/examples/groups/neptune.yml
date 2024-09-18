@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #######################
+  ## Neptune Inventory ##
+  #######################
+  neptune:
+    enable: true
+    memberof: default
+    display: Neptune Inventory

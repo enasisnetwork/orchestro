@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf1g2p:
+    enable: true
+    inherits: template_openbsd
+    memberof: jupiter
+    display: Jupiter Gateway Secondary

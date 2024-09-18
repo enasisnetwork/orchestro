@@ -1,0 +1,50 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+- name: Assert conditions for downstream tasks
+
+  ansible.builtin.assert:
+    that:
+
+      - >-  # localhost is present
+        "localhost" in ansible_play_hosts
+
+      - >-  # localhost or in scope
+        inventory_hostname == "localhost"
+        or pbgroups is true
+
+  vars:
+
+    pbgroups: >-  # related groups
+      {%- set supported = [
+            'systems_almalin',
+            'systems_openbsd',
+            'systems_windows'] -%}
+      {{- group_names
+          | fuzzy_list(supported)
+          | length >= 1 -}}
+
+  tags: always
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/overview.yml
+
+  when:
+
+    - >-  # target is not localhost
+      inventory_hostname != "localhost"
+
+  tags: overview

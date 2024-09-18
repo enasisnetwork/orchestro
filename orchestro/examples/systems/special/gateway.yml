@@ -1,0 +1,13 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Gateway Template ##
+  ######################
+  template_gateway:
+    enable: false
+    display: Gateway Template

@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ############
+  ## Server ##
+  ############
+  ensrv1p:
+    enable: true
+    inherits: template_almalin
+    memberof: jupiter
+    display: Jupiter Server

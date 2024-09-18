@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #####################
+  ## OpenBSD Systems ##
+  #####################
+  systems_openbsd:
+    enable: true
+    memberof: systems
+    display: OpenBSD Systems

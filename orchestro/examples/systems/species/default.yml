@@ -1,0 +1,13 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Default Template ##
+  ######################
+  template_default:
+    enable: false
+    display: Default Template

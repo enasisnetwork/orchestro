@@ -1,0 +1,13 @@
+{
+  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "enconfig": {
+    "paths": [
+      "_/encommon_sample/PROJECT/_/examples",
+      "_/encommon_sample/TMPPATH/_/orche"
+    ]
+  },
+  "enlogger": {
+    "stdo_level": "debug"
+  },
+  "dryrun": false
+}

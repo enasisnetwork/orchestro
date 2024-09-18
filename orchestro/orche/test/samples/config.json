@@ -1,0 +1,281 @@
+{
+  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "dryrun": false,
+  "enconfig": {
+    "paths": [
+      "_/encommon_sample/PROJECT/_/examples",
+      "_/encommon_sample/TMPPATH/_/orche"
+    ]
+  },
+  "encrypts": null,
+  "enlogger": {
+    "stdo_level": "debug",
+    "file_level": null,
+    "file_path": null
+  },
+  "groups": {
+    "systems_almalin": {
+      "enable": true,
+      "inherits": null,
+      "display": "AlmaLinux",
+      "memberof": [
+        "systems"
+      ],
+      "realm": "ansible"
+    },
+    "default": {
+      "enable": false,
+      "inherits": null,
+      "display": "Default Inventory",
+      "memberof": null,
+      "realm": "ansible"
+    },
+    "jupiter": {
+      "enable": true,
+      "inherits": null,
+      "display": "Jupiter Inventory",
+      "memberof": [
+        "default"
+      ],
+      "realm": "ansible"
+    },
+    "neptune": {
+      "enable": true,
+      "inherits": null,
+      "display": "Neptune Inventory",
+      "memberof": [
+        "default"
+      ],
+      "realm": "ansible"
+    },
+    "systems_openbsd": {
+      "enable": true,
+      "inherits": null,
+      "display": "OpenBSD Systems",
+      "memberof": [
+        "systems"
+      ],
+      "realm": "ansible"
+    },
+    "systems": {
+      "enable": true,
+      "inherits": null,
+      "display": "Managed Systems",
+      "memberof": null,
+      "realm": "ansible"
+    },
+    "systems_windows": {
+      "enable": true,
+      "inherits": null,
+      "display": "Windows",
+      "memberof": [
+        "systems"
+      ],
+      "realm": "ansible"
+    }
+  },
+  "persons": {
+    "robert_domain": {
+      "enable": true,
+      "inherits": null,
+      "display": null,
+      "memberof": null,
+      "realm": "domain",
+      "domain": "enasis.net",
+      "first": "Robert",
+      "last": "Harris"
+    },
+    "robert_local": {
+      "enable": true,
+      "inherits": null,
+      "display": null,
+      "memberof": null,
+      "realm": "local",
+      "domain": "local",
+      "first": "{{ orche.persons.robert_domain.first }}",
+      "last": "{{ orche.persons.robert_domain.last }}"
+    }
+  },
+  "subnets": {
+    "jupiter_internal": {
+      "enable": true,
+      "inherits": null,
+      "display": "Jupiter Internal",
+      "memberof": [
+        "jupiter"
+      ],
+      "subnet": "192.168.11.0/24"
+    },
+    "jupiter_domesnet": {
+      "enable": true,
+      "inherits": null,
+      "display": "Jupiter Domesnet",
+      "memberof": [
+        "jupiter"
+      ],
+      "subnet": "192.168.51.0/24"
+    },
+    "jupiter_external": {
+      "enable": true,
+      "inherits": null,
+      "display": "Jupiter External",
+      "memberof": [
+        "jupiter"
+      ],
+      "subnet": "192.168.91.0/24"
+    },
+    "neptune_internal": {
+      "enable": true,
+      "inherits": null,
+      "display": "Neptune Internal",
+      "memberof": [
+        "neptune"
+      ],
+      "subnet": "192.168.12.0/24"
+    },
+    "neptune_domesnet": {
+      "enable": true,
+      "inherits": null,
+      "display": "Neptune Domesnet",
+      "memberof": [
+        "neptune"
+      ],
+      "subnet": "192.168.52.0/24"
+    },
+    "neptune_external": {
+      "enable": true,
+      "inherits": null,
+      "display": "Neptune External",
+      "memberof": [
+        "neptune"
+      ],
+      "subnet": "192.168.92.0/24"
+    }
+  },
+  "systems": {
+    "engwf1g1p": {
+      "enable": true,
+      "inherits": [
+        "template_openbsd",
+        "template_default"
+      ],
+      "display": "Jupiter Gateway Primary",
+      "memberof": [
+        "jupiter",
+        "systems_openbsd"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "engwf1g2p": {
+      "enable": true,
+      "inherits": [
+        "template_openbsd",
+        "template_default"
+      ],
+      "display": "Jupiter Gateway Secondary",
+      "memberof": [
+        "jupiter",
+        "systems_openbsd"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "engwf2g1p": {
+      "enable": true,
+      "inherits": [
+        "template_openbsd",
+        "template_default"
+      ],
+      "display": "Neptune Gateway Primary",
+      "memberof": [
+        "neptune",
+        "systems_openbsd"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "engwf2g2p": {
+      "enable": true,
+      "inherits": [
+        "template_openbsd",
+        "template_default"
+      ],
+      "display": "Neptune Gateway Secondary",
+      "memberof": [
+        "neptune",
+        "systems_openbsd"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "ensrv1p": {
+      "enable": true,
+      "inherits": [
+        "template_almalin",
+        "template_default"
+      ],
+      "display": "Jupiter Server",
+      "memberof": [
+        "jupiter",
+        "systems_almalin"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "ensrv2p": {
+      "enable": true,
+      "inherits": [
+        "template_almalin",
+        "template_default"
+      ],
+      "display": "Neptune Server",
+      "memberof": [
+        "neptune",
+        "systems_almalin"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "template_gateway": {
+      "enable": false,
+      "inherits": null,
+      "display": "Gateway Template",
+      "memberof": null,
+      "realm": "ansible",
+      "domain": null
+    },
+    "template_almalin": {
+      "enable": false,
+      "inherits": [
+        "template_default"
+      ],
+      "display": "AlmaLinux Template",
+      "memberof": [
+        "systems_almalin"
+      ],
+      "realm": "ansible",
+      "domain": null
+    },
+    "template_default": {
+      "enable": false,
+      "inherits": null,
+      "display": "Default Template",
+      "memberof": null,
+      "realm": "ansible",
+      "domain": null
+    },
+    "template_openbsd": {
+      "enable": false,
+      "inherits": [
+        "template_default"
+      ],
+      "display": "OpenBSD Template",
+      "memberof": [
+        "systems_openbsd"
+      ],
+      "realm": "ansible",
+      "domain": null
+    }
+  }
+}

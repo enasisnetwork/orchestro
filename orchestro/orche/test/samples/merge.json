@@ -1,0 +1,160 @@
+{
+  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "enconfig": {
+    "paths": [
+      "_/encommon_sample/PROJECT/_/examples",
+      "_/encommon_sample/TMPPATH/_/orche"
+    ]
+  },
+  "enlogger": {
+    "stdo_level": "debug"
+  },
+  "dryrun": false,
+  "groups": {
+    "systems_almalin": {
+      "enable": true,
+      "memberof": "systems",
+      "display": "AlmaLinux"
+    },
+    "default": {
+      "enable": false,
+      "display": "Default Inventory"
+    },
+    "jupiter": {
+      "enable": true,
+      "memberof": "default",
+      "display": "Jupiter Inventory"
+    },
+    "neptune": {
+      "enable": true,
+      "memberof": "default",
+      "display": "Neptune Inventory"
+    },
+    "systems_openbsd": {
+      "enable": true,
+      "memberof": "systems",
+      "display": "OpenBSD Systems"
+    },
+    "systems": {
+      "enable": true,
+      "display": "Managed Systems"
+    },
+    "systems_windows": {
+      "enable": true,
+      "memberof": "systems",
+      "display": "Windows"
+    }
+  },
+  "persons": {
+    "robert_domain": {
+      "enable": true,
+      "realm": "domain",
+      "domain": "enasis.net",
+      "first": "Robert",
+      "last": "Harris"
+    },
+    "robert_local": {
+      "enable": true,
+      "realm": "local",
+      "domain": "local",
+      "first": "{{ orche.persons.robert_domain.first }}",
+      "last": "{{ orche.persons.robert_domain.last }}"
+    }
+  },
+  "subnets": {
+    "jupiter_internal": {
+      "enable": true,
+      "subnet": "192.168.11.0/24",
+      "memberof": "jupiter",
+      "display": "Jupiter Internal"
+    },
+    "jupiter_domesnet": {
+      "enable": true,
+      "subnet": "192.168.51.0/24",
+      "memberof": "jupiter",
+      "display": "Jupiter Domesnet"
+    },
+    "jupiter_external": {
+      "enable": true,
+      "subnet": "192.168.91.0/24",
+      "memberof": "jupiter",
+      "display": "Jupiter External"
+    },
+    "neptune_internal": {
+      "enable": true,
+      "subnet": "192.168.12.0/24",
+      "memberof": "neptune",
+      "display": "Neptune Internal"
+    },
+    "neptune_domesnet": {
+      "enable": true,
+      "subnet": "192.168.52.0/24",
+      "memberof": "neptune",
+      "display": "Neptune Domesnet"
+    },
+    "neptune_external": {
+      "enable": true,
+      "subnet": "192.168.92.0/24",
+      "memberof": "neptune",
+      "display": "Neptune External"
+    }
+  },
+  "systems": {
+    "engwf1g1p": {
+      "enable": true,
+      "inherits": "template_openbsd",
+      "memberof": "jupiter",
+      "display": "Jupiter Gateway Primary"
+    },
+    "engwf1g2p": {
+      "enable": true,
+      "inherits": "template_openbsd",
+      "memberof": "jupiter",
+      "display": "Jupiter Gateway Secondary"
+    },
+    "engwf2g1p": {
+      "enable": true,
+      "inherits": "template_openbsd",
+      "memberof": "neptune",
+      "display": "Neptune Gateway Primary"
+    },
+    "engwf2g2p": {
+      "enable": true,
+      "inherits": "template_openbsd",
+      "memberof": "neptune",
+      "display": "Neptune Gateway Secondary"
+    },
+    "ensrv1p": {
+      "enable": true,
+      "inherits": "template_almalin",
+      "memberof": "jupiter",
+      "display": "Jupiter Server"
+    },
+    "ensrv2p": {
+      "enable": true,
+      "inherits": "template_almalin",
+      "memberof": "neptune",
+      "display": "Neptune Server"
+    },
+    "template_gateway": {
+      "enable": false,
+      "display": "Gateway Template"
+    },
+    "template_almalin": {
+      "enable": false,
+      "inherits": "template_default",
+      "memberof": "systems_almalin",
+      "display": "AlmaLinux Template"
+    },
+    "template_default": {
+      "enable": false,
+      "display": "Default Template"
+    },
+    "template_openbsd": {
+      "enable": false,
+      "inherits": "template_default",
+      "memberof": "systems_openbsd",
+      "display": "OpenBSD Template"
+    }
+  }
+}

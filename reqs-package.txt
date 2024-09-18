@@ -1,0 +1,9 @@
+-r reqs-install.txt
+
+pytest
+pytest-clarity
+pytest-cov
+pytest-mypy
+pytest-randomly
+pytest-sphinx
+pytest-xdist

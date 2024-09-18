@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ########################
+  ## AlmaLinux Template ##
+  ########################
+  template_almalin:
+    enable: false
+    inherits: template_default
+    memberof: systems_almalin
+    display: AlmaLinux Template

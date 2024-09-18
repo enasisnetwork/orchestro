@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #####################
+  ## Windows Systems ##
+  #####################
+  systems_windows:
+    enable: true
+    memberof: systems
+    display: Windows

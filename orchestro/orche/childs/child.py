@@ -1,0 +1,218 @@
+"""
+Functions and routines associated with Enasis Network Orchestrations.
+
+This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.
+"""
+
+
+
+from typing import TYPE_CHECKING
+
+from encommon.types import DictStrAny
+
+if TYPE_CHECKING:
+    from .group import OrcheGroup
+    from ..common import OrcheKinds
+    from ..params import OrcheChildParams
+    from ..orche import Orche
+
+
+
+class OrcheChild:
+    """
+    Normalize the desired parameters with multiple products.
+
+    :param orche: Primary class instance for Orchestrations.
+    :param name: Name of the object within the Orche config.
+    :param params: Parameters used to instantiate the class.
+    """
+
+    __orche: 'Orche'
+
+    __name: str
+    __params: 'OrcheChildParams'
+
+
+    def __init__(
+        self,
+        orche: 'Orche',
+        name: str,
+        params: 'OrcheChildParams',
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        orche.logger.log_d(
+            base=self,
+            name=name,
+            status='initial')
+
+        self.__orche = orche
+        self.__name = name
+        self.__params = params
+
+        self.__post__()
+
+        orche.logger.log_d(
+            base=self,
+            name=name,
+            status='created')
+
+
+    def __post__(
+        self,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+
+    def validate(
+        self,
+    ) -> None:
+        """
+        Perform advanced validation on the parameters provided.
+        """
+
+        raise NotImplementedError
+
+
+    def __lt__(
+        self,
+        other: 'OrcheChild',
+    ) -> bool:
+        """
+        Built-in method for comparing this instance with another.
+
+        .. note::
+           Useful with sorting to influence consistent output.
+
+        :param other: Other value being compared with instance.
+        :returns: Boolean indicating outcome from the operation.
+        """
+
+        name = self.name
+        _name = other.name
+
+        return name < _name
+
+
+    @property
+    def orche(
+        self,
+    ) -> 'Orche':
+        """
+        Return the Orche instance to which this instance belongs.
+
+        :returns: Orche instance to which this instance belongs.
+        """
+
+        return self.__orche
+
+
+    @property
+    def enable(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.enable
+
+
+    @property
+    def name(
+        self,
+    ) -> str:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__name
+
+
+    @property
+    def kind(
+        self,
+    ) -> 'OrcheKinds':
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        raise NotImplementedError
+
+
+    @property
+    def params(
+        self,
+    ) -> 'OrcheChildParams':
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        return self.__params
+
+
+    @property
+    def groups(
+        self,
+    ) -> list['OrcheGroup']:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        names = params.memberof
+
+        groups = (
+            self.orche.childs
+            .groups)
+
+        childs: set['OrcheGroup'] = set()
+
+        if names is None:
+            return list(childs)
+
+        for name in names:
+
+            child = groups[name]
+
+            if not child.enable:
+                continue
+
+            childs.add(child)
+
+        return list(childs)
+
+
+
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        params = self.__params
+        dumped = params.endumped
+
+        return {
+            'name': self.name,
+            'kind': self.kind,
+            'params': dumped}

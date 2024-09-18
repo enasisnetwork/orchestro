@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #######################
+  ## Jupiter Inventory ##
+  #######################
+  jupiter:
+    enable: true
+    memberof: default
+    display: Jupiter Inventory

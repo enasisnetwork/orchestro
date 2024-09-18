@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf2g1p:
+    enable: true
+    inherits: template_openbsd
+    memberof: neptune
+    display: Neptune Gateway Primary
