@@ -9,7 +9,6 @@ is permitted, for more information consult the project license file.
 
 from encommon.parse.jinja2 import DEFAULT
 from encommon.parse.jinja2 import FILTER
-from encommon.types import sort_dict
 
 
 
@@ -29,5 +28,4 @@ class FilterModule:
         :returns: Filter plugin functions available to Ansible routines.
         """
 
-        return DEFAULT | {
-            'sort_dict': sort_dict}
+        return DEFAULT
