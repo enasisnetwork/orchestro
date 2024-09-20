@@ -158,7 +158,6 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             return False
 
 
-
         for group in groups:
 
             if _invalid(group):
