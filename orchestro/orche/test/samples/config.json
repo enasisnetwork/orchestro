@@ -92,8 +92,8 @@
       "memberof": null,
       "realm": "local",
       "domain": "local",
-      "first": "{{ orche.persons.robert_domain.first }}",
-      "last": "{{ orche.persons.robert_domain.last }}"
+      "first": "Robert",
+      "last": "Harris"
     }
   },
   "subnets": {
@@ -165,7 +165,11 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "engwf1g2p": {
       "enable": true,
@@ -179,7 +183,11 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "engwf2g1p": {
       "enable": true,
@@ -193,7 +201,11 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "engwf2g2p": {
       "enable": true,
@@ -207,7 +219,11 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "ensrv1p": {
       "enable": true,
@@ -221,7 +237,11 @@
         "systems_almalin"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "ensrv2p": {
       "enable": true,
@@ -235,7 +255,11 @@
         "systems_almalin"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "template_gateway": {
       "enable": false,
@@ -243,7 +267,8 @@
       "display": "Gateway Template",
       "memberof": null,
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": null
     },
     "template_almalin": {
       "enable": false,
@@ -255,7 +280,11 @@
         "systems_almalin"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "template_default": {
       "enable": false,
@@ -263,7 +292,11 @@
       "display": "Default Template",
       "memberof": null,
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     },
     "template_openbsd": {
       "enable": false,
@@ -275,7 +308,11 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null
+      "domain": null,
+      "ansible": {
+        "ansible_host": "{{ inventory_hostname }}",
+        "ansible_user": "root"
+      }
     }
   }
 }

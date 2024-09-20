@@ -487,7 +487,7 @@ ansblint: \
 		set -e; \
 		. $(VENVD)/bin/activate; \
 		ansible-lint \
-			--strict \
+			-q --strict \
 			--show-relpath \
 			-c .ansible-lint \
 			orchestro/playbooks; \
@@ -501,10 +501,24 @@ ansblint: \
 		set -e; \
 		. $(VENVD)/bin/activate; \
 		ansible-lint \
-			--strict \
+			-q --strict \
 			--show-relpath \
 			-c .ansible-lint \
 			orchestro/roles; \
+		deactivate)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ansible-lint<c37> \
+		on <c90>inventory<c37>..<c0>)
+	@( \
+		set -e; \
+		. $(VENVD)/bin/activate; \
+		ansible-lint \
+			-q --strict \
+			--show-relpath \
+			-c .ansible-lint \
+			orchestro/inventory; \
 		deactivate)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 

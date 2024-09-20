@@ -11,3 +11,7 @@ systems:
   template_default:
     enable: false
     display: Default Template
+
+    ansible:
+      ansible_host: '{{ inventory_hostname }}'
+      ansible_user: root

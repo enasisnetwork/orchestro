@@ -8,6 +8,8 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
+from typing import Callable
 from typing import Optional
 
 from encommon.config import Params
@@ -60,3 +62,37 @@ class OrcheParams(Params, extra='forbid'):
         Field(None,
               description='Parameters for Orche groups',
               min_length=1)]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        parse: Optional[Callable[..., Any]] = None,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        if parse is not None:
+
+            parsable = [
+                'systems',
+                'persons',
+                'subnets',
+                'groups']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                values = value.values()
+
+                for value in values:
+                    value['_parse'] = parse
+
+        super().__init__(**data)

@@ -16,6 +16,7 @@ from .group import OrcheGroup
 from .person import OrchePerson
 from .subnet import OrcheSubnet
 from .system import OrcheSystem
+from ...utils import InvalidChild
 
 if TYPE_CHECKING:
     from ..orche import Orche
@@ -240,6 +241,46 @@ class OrcheChilds:
             system.validate()
 
 
+        groups = (
+            self.__groups
+            .values())
+
+        for group in groups:
+            group.validate()
+
+
+        gnames = [
+            x.name
+            for x in groups]
+
+        for system in systems:
+
+            name = system.name
+
+            if name not in gnames:
+                continue
+
+            raise InvalidChild(
+                name, 'initial',
+                'duplicate name')
+
+
+        snames = [
+            x.name
+            for x in systems]
+
+        for group in groups:
+
+            name = group.name
+
+            if name not in snames:
+                continue
+
+            raise InvalidChild(
+                name, 'initial',
+                'duplicate name')
+
+
         persons = (
             self.__persons
             .values())
@@ -254,14 +295,6 @@ class OrcheChilds:
 
         for subnet in subnets:
             subnet.validate()
-
-
-        groups = (
-            self.__groups
-            .values())
-
-        for group in groups:
-            group.validate()
 
 
     @property

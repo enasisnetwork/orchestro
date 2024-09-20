@@ -56,6 +56,26 @@ class OrcheChildParams(BaseModel, extra='forbid'):
         Initialize instance for class using provided parameters.
         """
 
+        parse = data.get('_parse')
+
+
+        if parse is not None:
+
+            parsable = [
+                'inherits',
+                'memberof']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                data[key] = (
+                    parse(value))
+
+
         inherits = data.get('inherits')
         memberof = data.get('memberof')
 
@@ -64,5 +84,9 @@ class OrcheChildParams(BaseModel, extra='forbid'):
 
         if isinstance(memberof, str):
             data['memberof'] = [memberof]
+
+
+        if '_parse' in data:
+            del data['_parse']
 
         super().__init__(**data)

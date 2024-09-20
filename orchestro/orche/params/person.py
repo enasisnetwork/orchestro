@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
 from typing import Literal
 from typing import Optional
 
@@ -51,3 +52,38 @@ class OrchePersonParams(OrcheChildParams, extra='forbid'):
         Field(None,
               description='Last name for person account',
               min_length=1)]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        parse = data.get('_parse')
+
+
+        if parse is not None:
+
+            parsable = [
+                'realm',
+                'domain',
+                'first',
+                'last']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                data[key] = (
+                    parse(value))
+
+
+        super().__init__(**data)
