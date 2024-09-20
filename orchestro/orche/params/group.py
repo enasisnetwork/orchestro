@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
 from typing import Literal
 
 from pydantic import Field
@@ -35,3 +36,34 @@ class OrcheGroupParams(OrcheChildParams, extra='forbid'):
         OrcheGroupRealms,
         Field('ansible',
               description='Logical realm for the object')]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        parse = data.get('_parse')
+
+
+        if parse is not None:
+
+            parsable = ['realm']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                data[key] = (
+                    parse(value))
+
+
+        super().__init__(**data)

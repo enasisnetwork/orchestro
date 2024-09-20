@@ -14,6 +14,7 @@ from typing import get_args
 
 from encommon.config import Config
 from encommon.config import Params
+from encommon.parse import Jinja2
 from encommon.types import DictStrAny
 from encommon.types import dedup_list
 from encommon.types import delate
@@ -119,8 +120,14 @@ class OrcheConfig(Config):
             update = True
 
 
-        params = (
-            self.model(**basic))
+        jinja2 = Jinja2({
+            'source': basic,
+            'config': self})
+
+        parse = jinja2.parse
+
+        params = self.model(
+            parse, **basic)
 
         assert isinstance(
             params, OrcheParams)

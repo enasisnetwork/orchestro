@@ -17,12 +17,19 @@ from ansible.parsing.dataloader import DataLoader  # type: ignore
 from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
 
 from encommon.types import DictStrAny
+from encommon.types import NCTrue
 from encommon.types import sort_dict
 
 sys_path.insert(0, os_path.abspath('.'))
 
-from orchestro.orche import Orche  # noqa: E402
-from orchestro.orche import OrcheConfig  # noqa: E402
+from orchestro.orche import Orche
+from orchestro.orche import OrcheConfig
+from orchestro.orche.childs import OrcheGroup
+from orchestro.orche.childs import OrcheSystem
+
+
+
+_ISVALID = OrcheSystem | OrcheGroup
 
 
 
@@ -134,9 +141,27 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             .values())
 
 
-        for group in groups:
+        def _invalid(
+            group: _ISVALID,
+        ) -> bool:
 
             if not group.enable:
+                return True
+
+            realm = (
+                group.params
+                .realm)
+
+            if realm != 'ansible':
+                return NCTrue
+
+            return False
+
+
+
+        for group in groups:
+
+            if _invalid(group):
                 continue
 
             add_group(group.name)
@@ -144,12 +169,15 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         for group in groups:
 
-            if not group.enable:
+            if _invalid(group):
                 continue
 
             mmbrof = group.groups
 
             for _group in mmbrof:
+
+                if _invalid(_group):
+                    continue  # NOCVR
 
                 add_child(
                     group.name,
@@ -158,7 +186,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         for system in systems:
 
-            if not system.enable:
+            if _invalid(system):
                 continue
 
             add_host(
@@ -186,7 +214,10 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
             mmbrof = system.groups
 
-            for _group in mmbrof:
+            for group in mmbrof:
+
+                if _invalid(group):
+                    continue  # NOCVR
 
                 add_host(
                     system.name,
