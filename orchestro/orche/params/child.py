@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import Annotated
 from typing import Any
+from typing import Callable
 from typing import Optional
 
 from encommon.types import BaseModel
@@ -50,19 +51,20 @@ class OrcheChildParams(BaseModel, extra='forbid'):
         # NOCVR
         self,
         /,
+        _parse: Optional[Callable[..., Any]] = None,
         **data: Any,
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
 
-        parse = data.get('_parse')
 
-
-        if parse is not None:
+        if _parse is not None:
 
             parsable = [
+                'enable',
                 'inherits',
+                'display',
                 'memberof']
 
             for key in parsable:
@@ -72,21 +74,26 @@ class OrcheChildParams(BaseModel, extra='forbid'):
                 if value is None:
                     continue
 
-                data[key] = (
-                    parse(value))
+                value = _parse(value)
+
+                data[key] = value
 
 
-        inherits = data.get('inherits')
-        memberof = data.get('memberof')
+        listable = [
+            'inherits',
+            'memberof']
 
-        if isinstance(inherits, str):
-            data['inherits'] = [inherits]
+        for key in listable:
 
-        if isinstance(memberof, str):
-            data['memberof'] = [memberof]
+            value = data.get(key)
 
+            if value is None:
+                continue
 
-        if '_parse' in data:
-            del data['_parse']
+            if isinstance(value, list):
+                continue
+
+            data[key] = [value]
+
 
         super().__init__(**data)

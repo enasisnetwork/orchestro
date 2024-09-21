@@ -68,14 +68,15 @@ class OrcheParams(Params, extra='forbid'):
         # NOCVR
         self,
         /,
-        parse: Optional[Callable[..., Any]] = None,
+        _parse: Optional[Callable[..., Any]] = None,
         **data: Any,
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
 
-        if parse is not None:
+
+        if _parse is not None:
 
             parsable = [
                 'systems',
@@ -85,14 +86,31 @@ class OrcheParams(Params, extra='forbid'):
 
             for key in parsable:
 
+                if not data.get(key):
+                    continue
+
+                values = (
+                    data[key]
+                    .values())
+
+                for item in values:
+                    item['_parse'] = _parse
+
+
+            parsable = [
+                'database',
+                'dryrun']
+
+            for key in parsable:
+
                 value = data.get(key)
 
                 if value is None:
                     continue
 
-                values = value.values()
+                value = _parse(value)
 
-                for value in values:
-                    value['_parse'] = parse
+                data[key] = value
+
 
         super().__init__(**data)
