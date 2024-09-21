@@ -9,7 +9,9 @@ is permitted, for more information consult the project license file.
 
 from typing import Annotated
 from typing import Any
+from typing import Callable
 from typing import Literal
+from typing import Optional
 
 from pydantic import Field
 
@@ -42,16 +44,15 @@ class OrcheGroupParams(OrcheChildParams, extra='forbid'):
         # NOCVR
         self,
         /,
+        _parse: Optional[Callable[..., Any]] = None,
         **data: Any,
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
 
-        parse = data.get('_parse')
 
-
-        if parse is not None:
+        if _parse is not None:
 
             parsable = ['realm']
 
@@ -62,8 +63,9 @@ class OrcheGroupParams(OrcheChildParams, extra='forbid'):
                 if value is None:
                     continue
 
-                data[key] = (
-                    parse(value))
+                value = _parse(value)
+
+                data[key] = value
 
 
         super().__init__(**data)
