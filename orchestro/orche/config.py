@@ -7,7 +7,6 @@ is permitted, for more information consult the project license file.
 
 
 
-from contextlib import suppress
 from copy import deepcopy
 from typing import Optional
 from typing import get_args
@@ -86,6 +85,8 @@ class OrcheConfig(Config):
             sargs=sargs,
             model=OrcheParams)
 
+        self.merge_params()
+
 
     @property
     def params(
@@ -113,21 +114,51 @@ class OrcheConfig(Config):
 
 
         basic = self.basic
-        update = False
 
-        with suppress(AttributeError):
-            basic = self.merge
-            update = True
+        enconfig = (
+            basic.get('enconfig'))
+
+        enlogger = (
+            basic.get('enlogger'))
+
+        encrypts = (
+            basic.get('encrypts'))
+
+        basic = {
+            'enconfig': enconfig,
+            'enlogger': enlogger,
+            'encrypts': encrypts}
+
+        params = (
+            self.model(**basic))
+
+        assert isinstance(
+            params, OrcheParams)
+
+
+        self.__params = params
+
+        return self.__params
+
+
+    def merge_params(
+        self,
+    ) -> None:
+        """
+        Update the Pydantic model containing the configuration.
+        """
+
+        merge = self.merge
 
 
         jinja2 = Jinja2({
-            'source': basic,
+            'source': merge,
             'config': self})
 
         parse = jinja2.parse
 
         params = self.model(
-            parse, **basic)
+            parse, **merge)
 
         assert isinstance(
             params, OrcheParams)
@@ -146,10 +177,7 @@ class OrcheConfig(Config):
             params, OrcheParams)
 
 
-        if update is True:
-            self.__params = params
-
-        return params
+        self.__params = params
 
 
     @property
