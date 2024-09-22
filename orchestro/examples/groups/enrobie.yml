@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #####################
+  ## Robie Inventory ##
+  #####################
+  roles_enrobie:
+    enable: true
+    memberof: default
+    display: Chatting Robie

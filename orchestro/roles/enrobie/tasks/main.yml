@@ -1,0 +1,61 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Assert conditions for downstream tasks
+
+  ansible.builtin.assert:
+    that:
+
+      - >-  # only specific hosts
+        'roles_enrobie' in groups
+
+  tags: always
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.legacy.set_fact:
+
+    enrobie_vars: >-
+      {%- set values = {} -%}
+      {%- for key, value in vars.items() -%}
+      {%-   if key.startswith('enrobie_') -%}
+      {%-     do values.update({key: value}) -%}
+      {%-   endif -%}
+      {%- endfor -%}
+      {{- values | sort_dict -}}
+
+  tags: always
+
+
+
+- name: Validate role variables using Pydantic
+
+  enrobie_validate:
+    params: '{{ enrobie_vars }}'
+
+  tags: always
+
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/overview.yml
+
+  tags: overview

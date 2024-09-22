@@ -56,6 +56,8 @@ def test_InventoryModule(
         'jupiter',
         'neptune',
         'orche',
+        'roles_enhomie',
+        'roles_enrobie',
         'systems',
         'systems_almalin',
         'systems_openbsd',
@@ -67,4 +69,4 @@ def test_InventoryModule(
 
     assert len(dumped['hosts']) == 7
 
-    assert len(dumped['groups']) == 9
+    assert len(dumped['groups']) == 11
