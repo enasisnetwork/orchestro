@@ -28,6 +28,7 @@
         host: '{{ ansible_host | default }}'
         user: '{{ ansible_user | default }}'
         sshkey: '{{ ansible_private_key_file | default }}'
+        groups: '{{ group_names }}'
 
   when:
 

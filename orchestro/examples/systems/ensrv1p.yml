@@ -11,5 +11,15 @@ systems:
   ensrv1p:
     enable: true
     inherits: template_almalin
-    memberof: jupiter
+    memberof:
+      - jupiter
+      - roles_enhomie
     display: Jupiter Server
+    ansible:
+
+      enhomie_unique: default
+      enhomie_directory: /opt/enhomie
+      enhomie_repository: >-
+        https://github.com/enasisnetwork/enhomie-conf
+      enhomie_logging: true
+      enhomie_console: false

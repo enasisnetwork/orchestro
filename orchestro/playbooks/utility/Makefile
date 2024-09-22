@@ -59,8 +59,22 @@ utility-decrypt:
 	@( \
 		set -e; \
 		. $(VENVP)/bin/activate; \
-		ansible-vault \
-			decrypt; \
+		ansible-vault decrypt; \
+		deactivate)
+
+
+
+.PHONY: utility-inventory
+utility-inventory:
+	@## Dump the Ansible inventory information
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>utility-inventory<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible-inventory --graph; \
 		deactivate)
 
 

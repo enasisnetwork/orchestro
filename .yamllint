@@ -15,7 +15,7 @@ rules:
   comments-indentation: false
 
   empty-lines:
-    max: 5  # Different than other projects
+    max: 6  # Different than other projects
 
   truthy:
     allowed-values:

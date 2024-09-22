@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  #####################
+  ## Homie Inventory ##
+  #####################
+  roles_enhomie:
+    enable: true
+    memberof: default
+    display: Homie Automate

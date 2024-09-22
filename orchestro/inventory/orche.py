@@ -10,12 +10,15 @@ is permitted, for more information consult the project license file.
 from copy import deepcopy
 from os import environ
 from os import path as os_path
+from pathlib import Path
 from sys import path as sys_path
+from typing import Any
 
 from ansible.inventory.data import InventoryData  # type: ignore
 from ansible.parsing.dataloader import DataLoader  # type: ignore
 from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
 
+from encommon.config import config_load
 from encommon.types import DictStrAny
 from encommon.types import NCTrue
 from encommon.types import sort_dict
@@ -54,7 +57,67 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         return True
 
 
-    def parse(  # noqa: CFQ001
+    def add_child(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
+        """
+        Perform the operations related to the Ansible inventory.
+
+        :param args: Positional arguments passed for downstream.
+        :param kwargs: Keyword arguments passed for downstream.
+        """
+
+        self.inventory.add_child(*args, **kwargs)
+
+
+    def add_group(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
+        """
+        Perform the operations related to the Ansible inventory.
+
+        :param args: Positional arguments passed for downstream.
+        :param kwargs: Keyword arguments passed for downstream.
+        """
+
+        self.inventory.add_group(*args, **kwargs)
+
+
+    def add_host(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
+        """
+        Perform the operations related to the Ansible inventory.
+
+        :param args: Positional arguments passed for downstream.
+        :param kwargs: Keyword arguments passed for downstream.
+        """
+
+        self.inventory.add_host(*args, **kwargs)
+
+
+    def set_value(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
+        """
+        Perform the operations related to the Ansible inventory.
+
+        :param args: Positional arguments passed for downstream.
+        :param kwargs: Keyword arguments passed for downstream.
+        """
+
+        self.inventory.set_variable(*args, **kwargs)
+
+
+    def parse(
         self,
         inventory: InventoryData,
         loader: DataLoader,
@@ -76,23 +139,16 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             path=path,
             cache=cache)
 
+        self.parse_orche()
+        self.parse_paths()
 
-        add_group = (
-            self.inventory
-            .add_group)
 
-        set_value = (
-            self.inventory
-            .set_variable)
-
-        add_child = (
-            self.inventory
-            .add_child)
-
-        add_host = (
-            self.inventory
-            .add_host)
-
+    def build_orche(
+        self,
+    ) -> Orche:
+        """
+        Construct instances using the configuration parameters.
+        """
 
         files = environ.get(
             'orche_files')
@@ -104,29 +160,40 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             self.display
             .verbosity)
 
+        console = verbose >= 1
+        debug = verbose >= 2
+
         sargs = {
-            'console': (
-                verbose >= 1),
-            'debug': (
-                verbose >= 2)}
+            'console': console,
+            'debug': debug}
 
         config = OrcheConfig(
             sargs, files, paths)
 
         config.logger.start()
 
-        orche = Orche(config)
+        return Orche(config)
+
+
+    def parse_orche(  # noqa: CFQ001
+        self,
+    ) -> None:
+        """
+        Process and update Ansible inventory from Orche objects.
+        """
+
+        orche = self.build_orche()
 
         childs = orche.childs
 
 
-        add_host(
+        self.add_host(
             host='localhost',
             group='all')
 
-        add_group('orche')
+        self.add_group('orche')
 
-        set_value(
+        self.set_value(
             entity='orche',
             varname='orche',
             value=orche)
@@ -145,12 +212,12 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             group: _ISVALID,
         ) -> bool:
 
+            params = group.params
+
             if not group.enable:
                 return True
 
-            realm = (
-                group.params
-                .realm)
+            realm = params.realm
 
             if realm != 'ansible':
                 return NCTrue
@@ -163,7 +230,8 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             if _invalid(group):
                 continue
 
-            add_group(group.name)
+            self.add_group(
+                group.name)
 
 
         for group in groups:
@@ -178,9 +246,9 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 if _invalid(_group):
                     continue  # NOCVR
 
-                add_child(
-                    group.name,
-                    _group.name)
+                self.add_child(
+                    _group.name,
+                    group.name)
 
 
         for system in systems:
@@ -188,7 +256,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             if _invalid(system):
                 continue
 
-            add_host(
+            self.add_host(
                 host=system.name,
                 group='orche')
 
@@ -205,10 +273,9 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
                 for key, value in vars:
 
-                    set_value(
+                    self.set_value(
                         system.name,
-                        varname=key,
-                        value=value)
+                        key, value)
 
 
             mmbrof = system.groups
@@ -218,9 +285,86 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 if _invalid(group):
                     continue  # NOCVR
 
-                add_host(
-                    system.name,
-                    _group.name)
+                self.add_child(
+                    group.name,
+                    system.name)
+
+
+    def parse_paths(
+        self,
+    ) -> None:
+        """
+        Process and update Ansible inventory from Orche objects.
+        """
+
+        gvars = (
+            Path(__file__).parent
+            / 'group_vars')
+
+        hvars = (
+            Path(__file__).parent
+            / 'host_vars')
+
+        files = (
+            list(gvars.glob('*'))
+            + list(hvars.glob('*')))
+
+
+        def _add_group() -> None:
+
+            self.add_group(  # NOCVR
+                file.stem)
+
+
+        def _add_host() -> None:
+
+            self.add_host(
+                host=file.stem,
+                group='all')
+
+            content = (
+                config_load(file))
+
+            _names = (
+                self.inventory
+                .groups)
+
+            names = content.get(
+                'orchestro_groups')
+
+            if names is None:
+                return None
+
+            for name in names:  # NOCVR
+
+                if name not in _names:
+                    continue
+
+                self.add_child(
+                    name, file.stem)
+
+
+        for file in files:
+
+            name = file.name
+
+            if name.startswith('.'):
+                continue  # NOCVR
+
+            parent = file.parent.name
+
+
+            kind = (
+                'host'
+                if parent == 'host_vars'
+                else 'group')
+
+            if kind == 'group':
+                _add_group()  # NOCVR
+
+            elif kind == 'host':
+                _add_host()
+
 
 
     @property

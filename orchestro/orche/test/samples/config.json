@@ -30,6 +30,24 @@
       "memberof": null,
       "realm": "ansible"
     },
+    "roles_enhomie": {
+      "enable": true,
+      "inherits": null,
+      "display": "Homie Automate",
+      "memberof": [
+        "default"
+      ],
+      "realm": "ansible"
+    },
+    "roles_enrobie": {
+      "enable": true,
+      "inherits": null,
+      "display": "Chatting Robie",
+      "memberof": [
+        "default"
+      ],
+      "realm": "ansible"
+    },
     "jupiter": {
       "enable": true,
       "inherits": null,
@@ -234,11 +252,17 @@
       "display": "Jupiter Server",
       "memberof": [
         "jupiter",
+        "roles_enhomie",
         "systems_almalin"
       ],
       "realm": "ansible",
       "domain": null,
       "ansible": {
+        "enhomie_unique": "default",
+        "enhomie_directory": "/opt/enhomie",
+        "enhomie_repository": "https://github.com/enasisnetwork/enhomie-conf",
+        "enhomie_logging": true,
+        "enhomie_console": false,
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
       }
@@ -252,11 +276,17 @@
       "display": "Neptune Server",
       "memberof": [
         "neptune",
+        "roles_enrobie",
         "systems_almalin"
       ],
       "realm": "ansible",
       "domain": null,
       "ansible": {
+        "enrobie_unique": "default",
+        "enrobie_directory": "/opt/enrobie",
+        "enrobie_repository": "https://github.com/enasisnetwork/enrobie-conf",
+        "enrobie_logging": true,
+        "enrobie_console": false,
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
       }
