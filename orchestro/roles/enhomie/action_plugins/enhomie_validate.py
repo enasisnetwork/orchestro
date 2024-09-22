@@ -14,6 +14,7 @@ from ansible.plugins.action import ActionBase  # type: ignore
 
 from encommon.types import BaseModel
 from encommon.types import DictStrAny
+from encommon.types import sort_dict
 
 from pydantic import Field
 
@@ -87,6 +88,7 @@ class ActionModule(ActionBase):  # type: ignore
         """
 
         result: DictStrAny = {
+            'params': None,
             'changed': False}
 
         params = (
@@ -95,7 +97,9 @@ class ActionModule(ActionBase):  # type: ignore
 
 
         try:
-            RoleParams(**params)
+            result['params'] = (
+                RoleParams(**params)
+                .endumped)
 
         except Exception as reason:
             result |= {
@@ -103,4 +107,4 @@ class ActionModule(ActionBase):  # type: ignore
                 'exception': reason}
 
 
-        return result
+        return sort_dict(result)

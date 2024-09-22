@@ -8,10 +8,16 @@
 
 
 
+
 - name: Information about the inventory hosts
 
   ansible.builtin.debug:
     msg:
+
+      ansible:
+        host: '{{ ansible_host | default }}'
+        user: '{{ ansible_user | default }}'
+        groups: '{{ group_names }}'
 
       orche: >-
         {%- if orche | default -%}
@@ -23,12 +29,6 @@
         {%- else -%}
         'Not an OrcheSystem'
         {%- endif -%}
-
-      ansible:
-        host: '{{ ansible_host | default }}'
-        user: '{{ ansible_user | default }}'
-        sshkey: '{{ ansible_private_key_file | default }}'
-        groups: '{{ group_names }}'
 
   when:
 

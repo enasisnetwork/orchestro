@@ -5,9 +5,9 @@
 systems:
 
 
-  ############
-  ## Server ##
-  ############
+  ####################
+  ## Neptune Server ##
+  ####################
   ensrv2p:
     enable: true
     inherits: template_almalin
@@ -17,6 +17,10 @@ systems:
     display: Neptune Server
     ansible:
 
+
+      ####################
+      ## Chatting Robie ##
+      ####################
       enrobie_unique: default
       enrobie_directory: /opt/enrobie
       enrobie_repository: >-

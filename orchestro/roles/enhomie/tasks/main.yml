@@ -46,6 +46,27 @@
   enhomie_validate:
     params: '{{ enhomie_vars }}'
 
+  register: enhomie_params
+
+  tags: always
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.legacy.set_fact:
+
+    enhomie_params: >-
+      {%- set params = (
+            enhomie_params.params
+            .items()) -%}
+      {%- set parsed = {} -%}
+      {%- for key, value in params -%}
+      {%-   do parsed.update({
+              key[8:]: value}) -%}
+      {%- endfor -%}
+      {{- parsed | sort_dict -}}
+
   tags: always
 
 
