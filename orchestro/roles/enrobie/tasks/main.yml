@@ -46,6 +46,27 @@
   enrobie_validate:
     params: '{{ enrobie_vars }}'
 
+  register: enrobie_params
+
+  tags: always
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.legacy.set_fact:
+
+    enrobie_params: >-
+      {%- set params = (
+            enrobie_params.params
+            .items()) -%}
+      {%- set parsed = {} -%}
+      {%- for key, value in params -%}
+      {%-   do parsed.update({
+              key[8:]: value}) -%}
+      {%- endfor -%}
+      {{- parsed | sort_dict -}}
+
   tags: always
 
 

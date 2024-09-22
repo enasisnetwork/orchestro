@@ -21,7 +21,7 @@ endif
 		. $(VENVP)/bin/activate; \
 		ansible-playbook \
 			$(ansible_args) \
-			--limit="localhost,$(limit)" \
+			--limit="$(limit)" \
 			--tags=overview \
 			orchestro/playbooks/enhomie/default.yml; \
 		deactivate)

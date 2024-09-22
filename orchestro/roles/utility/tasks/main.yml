@@ -8,6 +8,7 @@
 
 
 
+
 - name: Assert conditions for downstream tasks
 
   ansible.builtin.assert:
@@ -16,22 +17,8 @@
       - >-  # localhost is present
         "localhost" in ansible_play_hosts
 
-      - >-  # localhost or in scope
-        inventory_hostname == "localhost"
-        or pbgroups is true
-
-  vars:
-
-    pbgroups: >-  # related groups
-      {%- set supported = [
-            'systems_almalin',
-            'systems_openbsd',
-            'systems_windows'] -%}
-      {{- group_names
-          | fuzzy_list(supported)
-          | length >= 1 -}}
-
   tags: always
+
 
 
 
@@ -48,3 +35,20 @@
       inventory_hostname != "localhost"
 
   tags: overview
+
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/ping.yml
+
+  when:
+
+    - >-  # target is not localhost
+      inventory_hostname != "localhost"
+
+  tags: ping

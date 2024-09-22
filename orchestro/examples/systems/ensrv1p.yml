@@ -5,9 +5,9 @@
 systems:
 
 
-  ############
-  ## Server ##
-  ############
+  ####################
+  ## Jupiter Server ##
+  ####################
   ensrv1p:
     enable: true
     inherits: template_almalin
@@ -17,6 +17,10 @@ systems:
     display: Jupiter Server
     ansible:
 
+
+      ####################
+      ## Homie Automate ##
+      ####################
       enhomie_unique: default
       enhomie_directory: /opt/enhomie
       enhomie_repository: >-

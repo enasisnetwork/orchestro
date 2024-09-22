@@ -28,6 +28,29 @@ endif
 
 
 
+.PHONY: utility-ping
+utility-ping:
+	@## Dump relevant information about hosts
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>utility-ping<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="localhost,$(limit)" \
+			--tags=ping \
+			orchestro/playbooks/utility/default.yml; \
+		deactivate)
+
+
+
 .PHONY: utility-encrypt
 utility-encrypt:
 	@## Encrypt information with Ansible Vault
@@ -108,7 +131,7 @@ endif
 		. $(VENVP)/bin/activate; \
 		ANSIBLE_CONFIG=ansible.cfg \
 		ansible \
-			"$(limit)" $(ansible_args) \
+			"!localhost,$(limit)" $(ansible_args) \
 			-m "$(ansible_module_name)" \
 			-a "$(ansible_module_args)"; \
 		deactivate)
