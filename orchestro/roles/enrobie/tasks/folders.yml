@@ -15,7 +15,7 @@
     path: '{{ item.path }}'
     owner: '{{ enrobie.user }}'
     group: '{{ enrobie.group }}'
-    mode: 0700
+    mode: '0700'
     state: directory
 
   loop:
