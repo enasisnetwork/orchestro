@@ -9,14 +9,14 @@
 
 
 
-- name: Information about the inventory hosts
+- name: Install the package in the virtual env
 
-  ansible.builtin.debug:
-    msg: '{{ enhomie }}'
-
-  when:
-
-    - >-  # target is not localhost
-      inventory_hostname != "localhost"
+  ansible.builtin.pip:
+    name: '{{ enhomie.package }}'
+    virtualenv: >-
+      {{ enhomie.directory }}/venv
+    virtualenv_command: >-
+      {{ enhomie.python }} -m venv
+    state: latest
 
   tags: always

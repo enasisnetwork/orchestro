@@ -35,6 +35,21 @@ class RoleParams(BaseModel, extra='ignore'):
         Field('/opt/enrobie',
               description='Base directory for the package')]
 
+    enrobie_user: Annotated[
+        str,
+        Field('enrobie',
+              description='Local system user for deployment')]
+
+    enrobie_group: Annotated[
+        str,
+        Field('enrobie',
+              description='Local system group for deployment')]
+
+    enrobie_python: Annotated[
+        str,
+        Field('python3',
+              description='Python for creating virtual env')]
+
     enrobie_package: Annotated[
         str,
         Field('enrobie',
@@ -91,15 +106,24 @@ class ActionModule(ActionBase):  # type: ignore
             'params': None,
             'changed': False}
 
-        params = (
+        source = (
             self._task.args
             ['params'])
 
 
         try:
-            result['params'] = (
-                RoleParams(**params)
+
+            params = (
+                RoleParams(**source)
                 .endumped)
+
+            params = {
+                k[8:]: v for k, v
+                in params.items()}
+
+            result['params'] = (
+                sort_dict(params))
+
 
         except Exception as reason:
             result |= {

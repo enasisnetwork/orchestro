@@ -12,7 +12,7 @@
 - name: Information about the inventory hosts
 
   ansible.builtin.debug:
-    msg: '{{ enrobie_params }}'
+    msg: '{{ enrobie }}'
 
   when:
 

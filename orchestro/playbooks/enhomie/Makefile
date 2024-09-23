@@ -25,3 +25,51 @@ endif
 			--tags=overview \
 			orchestro/playbooks/enhomie/default.yml; \
 		deactivate)
+
+
+
+.PHONY: enhomie-install
+enhomie-install:
+	@## Install and configure related package
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enhomie-install<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=install \
+			orchestro/playbooks/enhomie/default.yml; \
+		deactivate)
+
+
+
+.PHONY: enhomie-configure
+enhomie-configure:
+	@## Bypass install and configure package
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enhomie-configure<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=configure \
+			orchestro/playbooks/enhomie/default.yml; \
+		deactivate)

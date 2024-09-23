@@ -43,10 +43,10 @@
 
 - name: Validate role variables using Pydantic
 
-  enrobie_validate:
+  enrobie_params:
     params: '{{ enrobie_vars }}'
 
-  register: enrobie_params
+  register: enrobie
 
   tags: always
 
@@ -55,17 +55,7 @@
 - name: Declare relevant playbook variables
 
   ansible.legacy.set_fact:
-
-    enrobie_params: >-
-      {%- set params = (
-            enrobie_params.params
-            .items()) -%}
-      {%- set parsed = {} -%}
-      {%- for key, value in params -%}
-      {%-   do parsed.update({
-              key[8:]: value}) -%}
-      {%- endfor -%}
-      {{- parsed | sort_dict -}}
+    enrobie: '{{ enrobie.params }}'
 
   tags: always
 
@@ -80,3 +70,21 @@
     tasks/overview.yml
 
   tags: overview
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/folders.yml
+
+  tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/package.yml
+
+  tags: install
