@@ -73,3 +73,30 @@ endif
 			--tags=configure \
 			orchestro/playbooks/enrobie/default.yml; \
 		deactivate)
+
+
+
+.PHONY: enrobie-state
+enrobie-state:
+	@## Control the state of package service
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+ifndef state
+	$(error state not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enrobie-state<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags="state-$(state)" \
+			orchestro/playbooks/enrobie/default.yml; \
+		deactivate)

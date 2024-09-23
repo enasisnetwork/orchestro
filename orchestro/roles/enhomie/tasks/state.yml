@@ -9,27 +9,19 @@
 
 
 
-- name: Template the systemd configuration file
-
-  template:
-    src: systemd.j2
-    dest: >-
-      /etc/systemd/system/enhomie-service@.service
-    owner: root
-    group: root
-    mode: '0644'
-
-  become: true
-
-  tags: always
-
-
-
-- name: Enable the configured systemd service
+- name: Control the state of package service
 
   systemd:
     name: '{{ enhomie_service }}'
-    enabled: true
+    state: >-
+      {%- set tags = ansible_run_tags -%}
+      {%- if 'state-restarted' in tags -%}
+      restarted
+      {%- elif 'state-started' in tags -%}
+      started
+      {%- elif 'state-stopped' in tags -%}
+      stopped
+      {%- endif -%}
 
   become: true
 

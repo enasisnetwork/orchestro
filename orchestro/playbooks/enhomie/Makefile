@@ -73,3 +73,30 @@ endif
 			--tags=configure \
 			orchestro/playbooks/enhomie/default.yml; \
 		deactivate)
+
+
+
+.PHONY: enhomie-state
+enhomie-state:
+	@## Control the state of package service
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+ifndef state
+	$(error state not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enhomie-state<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags="state-$(state)" \
+			orchestro/playbooks/enhomie/default.yml; \
+		deactivate)

@@ -9,10 +9,11 @@
 
 
 
-- name: reload systemd
+- name: restart enrobie
 
   systemd:
-    daemon_reload: true
+    name: '{{ enrobie_service }}'
+    state: restarted
 
   become: true
 

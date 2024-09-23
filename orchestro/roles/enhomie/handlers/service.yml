@@ -9,10 +9,11 @@
 
 
 
-- name: reload systemd
+- name: restart enhomie
 
   systemd:
-    daemon_reload: true
+    name: '{{ enhomie_service }}'
+    state: restarted
 
   become: true
 

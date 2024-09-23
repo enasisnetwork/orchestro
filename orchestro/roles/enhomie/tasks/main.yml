@@ -33,6 +33,16 @@
 
 
 
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+    enhomie_service: >-
+      enhomie-service@{{ enhomie_unique }}
+
+  tags: always
+
+
+
 
 
 
@@ -80,3 +90,15 @@
     tasks/systemd.yml
 
   tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/state.yml
+
+  tags:
+    - state-restarted
+    - state-stopped
+    - state-started
