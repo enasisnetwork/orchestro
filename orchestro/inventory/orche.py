@@ -234,14 +234,14 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 group.name)
 
 
-            ansible = (
+            ansbgrp = (
                 group.params
                 .ansible)
 
-            if ansible is not None:
+            if ansbgrp is not None:
 
                 vars = (
-                    ansible.endumped
+                    ansbgrp.endumped
                     .items())
 
                 for key, value in vars:
@@ -278,14 +278,14 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 group='orche')
 
 
-            ansible = (
+            ansbsys = (
                 system.params
                 .ansible)
 
-            if ansible is not None:
+            if ansbsys is not None:
 
                 vars = (
-                    ansible.endumped
+                    ansbsys.endumped
                     .items())
 
                 for key, value in vars:
