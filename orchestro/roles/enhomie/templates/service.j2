@@ -1,0 +1,28 @@
+---
+
+
+
+{% if enhomie_repo_path %}
+enconfig:
+  paths: {{ enhomie_directory }}/repos/{{ enhomie_unique }}
+{% endif %}
+
+
+
+{% if enhomie_console
+    or enhomie_logging %}
+{%   if enhomie_logging %}
+enlogger:
+  file_level: {{ "info" if enhomie_logging else none }}
+  file_path: {{ enhomie_directory }}/logs/{{ enhomie_unique }}.log
+{%   endif %}
+{%   if enhomie_console %}
+  stdo_level: info
+{%   endif %}
+{% endif %}
+
+
+
+{% if enhomie_config %}
+{{ enhomie_config | to_yaml(indent=2) }}
+{% endif %}

@@ -12,11 +12,11 @@
 - name: Install the package in the virtual env
 
   ansible.builtin.pip:
-    name: '{{ enhomie.package }}'
+    name: '{{ enhomie_package }}'
     virtualenv: >-
-      {{ enhomie.directory }}/venv
+      {{ enhomie_directory }}/venv
     virtualenv_command: >-
-      {{ enhomie.python }} -m venv
+      {{ enhomie_python }} -m venv
     state: latest
 
   tags: always

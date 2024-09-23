@@ -26,7 +26,40 @@
 
 - name: Declare relevant playbook variables
 
-  ansible.legacy.set_fact:
+  ansible.builtin.set_fact:
+
+    enrobie_unique: >-
+      {{ enrobie_unique | default(none) }}
+    enrobie_directory: >-
+      {{ enrobie_directory | default(none) }}
+    enrobie_user: >-
+      {{ enrobie_user | default(none) }}
+    enrobie_group: >-
+      {{ enrobie_group | default(none) }}
+    enrobie_python: >-
+      {{ enrobie_python | default(none) }}
+    enrobie_package: >-
+      {{ enrobie_package | default(none) }}
+    enrobie_version: >-
+      {{ enrobie_version | default(none) }}
+    enrobie_repo_path: >-
+      {{ enrobie_repo_path | default(none) }}
+    enrobie_repo_version: >-
+      {{ enrobie_repo_version | default(none) }}
+    enrobie_config: >-
+      {{ enrobie_config | default(none) }}
+    enrobie_logging: >-
+      {{ enrobie_logging | default(none) }}
+    enrobie_console: >-
+      {{ enrobie_console | default(none) }}
+
+  tags: always
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
 
     enrobie_vars: >-
       {%- set values = {} -%}
@@ -45,17 +78,6 @@
 
   enrobie_params:
     params: '{{ enrobie_vars }}'
-
-  register: enrobie
-
-  tags: always
-
-
-
-- name: Declare relevant playbook variables
-
-  ansible.legacy.set_fact:
-    enrobie: '{{ enrobie.params }}'
 
   tags: always
 
@@ -88,3 +110,14 @@
     tasks/package.yml
 
   tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/config.yml
+
+  tags:
+    - install
+    - configure

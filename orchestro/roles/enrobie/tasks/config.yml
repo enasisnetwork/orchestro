@@ -1,0 +1,45 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Clone the configuration from repository
+
+  git:
+    repo: '{{ enrobie_repo_path }}'
+    dest: >-
+      {{ enrobie_directory -}}
+      /repos/{{ enrobie_unique }}
+    depth: 1
+    version: '{{ enrobie_repo_version }}'
+
+  when:
+
+    - >-  # when repository defined
+      enrobie_repo_path is not none
+
+  tags: always
+
+
+
+
+
+
+- name: Template the service configuration file
+
+  template:
+    src: service.j2
+    dest: >-
+      {{ enrobie_directory -}}
+      /config/{{ enrobie_unique }}.yml
+    owner: '{{ enrobie_user }}'
+    group: '{{ enrobie_group }}'
+    mode: '0600'
+
+  tags: always

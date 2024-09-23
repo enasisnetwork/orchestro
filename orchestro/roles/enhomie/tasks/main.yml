@@ -26,7 +26,40 @@
 
 - name: Declare relevant playbook variables
 
-  ansible.legacy.set_fact:
+  ansible.builtin.set_fact:
+
+    enhomie_unique: >-
+      {{ enhomie_unique | default(none) }}
+    enhomie_directory: >-
+      {{ enhomie_directory | default(none) }}
+    enhomie_user: >-
+      {{ enhomie_user | default(none) }}
+    enhomie_group: >-
+      {{ enhomie_group | default(none) }}
+    enhomie_python: >-
+      {{ enhomie_python | default(none) }}
+    enhomie_package: >-
+      {{ enhomie_package | default(none) }}
+    enhomie_version: >-
+      {{ enhomie_version | default(none) }}
+    enhomie_repo_path: >-
+      {{ enhomie_repo_path | default(none) }}
+    enhomie_repo_version: >-
+      {{ enhomie_repo_version | default(none) }}
+    enhomie_config: >-
+      {{ enhomie_config | default(none) }}
+    enhomie_logging: >-
+      {{ enhomie_logging | default(none) }}
+    enhomie_console: >-
+      {{ enhomie_console | default(none) }}
+
+  tags: always
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
 
     enhomie_vars: >-
       {%- set values = {} -%}
@@ -45,17 +78,6 @@
 
   enhomie_params:
     params: '{{ enhomie_vars }}'
-
-  register: enhomie
-
-  tags: always
-
-
-
-- name: Declare relevant playbook variables
-
-  ansible.legacy.set_fact:
-    enhomie: '{{ enhomie.params }}'
 
   tags: always
 
@@ -88,3 +110,14 @@
     tasks/package.yml
 
   tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/config.yml
+
+  tags:
+    - install
+    - configure

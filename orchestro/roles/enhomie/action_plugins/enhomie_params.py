@@ -60,7 +60,12 @@ class RoleParams(BaseModel, extra='ignore'):
         Field(None,
               description='Which version instead of latest')]
 
-    enhomie_repository: Annotated[
+    enhomie_repo_path: Annotated[
+        Optional[str],
+        Field(None,
+              description='Clone configuration repository')]
+
+    enhomie_repo_version: Annotated[
         Optional[str],
         Field(None,
               description='Clone configuration repository')]

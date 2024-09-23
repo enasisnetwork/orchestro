@@ -12,11 +12,11 @@
 - name: Install the package in the virtual env
 
   ansible.builtin.pip:
-    name: '{{ enrobie.package }}'
+    name: '{{ enrobie_package }}'
     virtualenv: >-
-      {{ enrobie.directory }}/venv
+      {{ enrobie_directory }}/venv
     virtualenv_command: >-
-      {{ enrobie.python }} -m venv
+      {{ enrobie_python }} -m venv
     state: latest
 
   tags: always
