@@ -31,4 +31,6 @@
   vars:
     basedir: '{{ enhomie_directory }}'
 
+  become: true
+
   tags: always

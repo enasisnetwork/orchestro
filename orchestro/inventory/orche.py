@@ -234,6 +234,23 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 group.name)
 
 
+            ansible = (
+                group.params
+                .ansible)
+
+            if ansible is not None:
+
+                vars = (
+                    ansible.endumped
+                    .items())
+
+                for key, value in vars:
+
+                    self.set_value(
+                        group.name,
+                        key, value)
+
+
         for group in groups:
 
             if _invalid(group):

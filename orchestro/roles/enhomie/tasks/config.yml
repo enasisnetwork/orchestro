@@ -34,12 +34,14 @@
 - name: Template the service configuration file
 
   template:
-    src: service.j2
+    src: config.j2
     dest: >-
       {{ enhomie_directory -}}
       /config/{{ enhomie_unique }}.yml
     owner: '{{ enhomie_user }}'
     group: '{{ enhomie_group }}'
     mode: '0600'
+
+  become: true
 
   tags: always

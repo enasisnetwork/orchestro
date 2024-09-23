@@ -12,6 +12,10 @@ systems:
     enable: false
     display: Default Template
 
+
+    #######################
+    ## Ansible Variables ##
+    #######################
     ansible:
       ansible_host: '{{ inventory_hostname }}'
       ansible_user: root

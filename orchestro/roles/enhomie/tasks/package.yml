@@ -18,5 +18,7 @@
     virtualenv_command: >-
       {{ enhomie_python }} -m venv
     state: latest
+    version: >-
+      {{ enhomie_version | default(omit) }}
 
   tags: always

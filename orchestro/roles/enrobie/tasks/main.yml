@@ -24,60 +24,10 @@
 
 
 
-- name: Declare relevant playbook variables
+- name: Include downstream tasks within roles
 
-  ansible.builtin.set_fact:
-
-    enrobie_unique: >-
-      {{ enrobie_unique | default(none) }}
-    enrobie_directory: >-
-      {{ enrobie_directory | default(none) }}
-    enrobie_user: >-
-      {{ enrobie_user | default(none) }}
-    enrobie_group: >-
-      {{ enrobie_group | default(none) }}
-    enrobie_python: >-
-      {{ enrobie_python | default(none) }}
-    enrobie_package: >-
-      {{ enrobie_package | default(none) }}
-    enrobie_version: >-
-      {{ enrobie_version | default(none) }}
-    enrobie_repo_path: >-
-      {{ enrobie_repo_path | default(none) }}
-    enrobie_repo_version: >-
-      {{ enrobie_repo_version | default(none) }}
-    enrobie_config: >-
-      {{ enrobie_config | default(none) }}
-    enrobie_logging: >-
-      {{ enrobie_logging | default(none) }}
-    enrobie_console: >-
-      {{ enrobie_console | default(none) }}
-
-  tags: always
-
-
-
-- name: Declare relevant playbook variables
-
-  ansible.builtin.set_fact:
-
-    enrobie_vars: >-
-      {%- set values = {} -%}
-      {%- for key, value in vars.items() -%}
-      {%-   if key.startswith('enrobie_') -%}
-      {%-     do values.update({key: value}) -%}
-      {%-   endif -%}
-      {%- endfor -%}
-      {{- values | sort_dict -}}
-
-  tags: always
-
-
-
-- name: Validate role variables using Pydantic
-
-  enrobie_params:
-    params: '{{ enrobie_vars }}'
+  ansible.builtin.include_tasks: >-
+    tasks/params.yml
 
   tags: always
 
@@ -121,3 +71,12 @@
   tags:
     - install
     - configure
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/systemd.yml
+
+  tags: install

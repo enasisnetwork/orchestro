@@ -15,15 +15,15 @@ systems:
       - jupiter
       - roles_enhomie
     display: Jupiter Server
+
+
+    #######################
+    ## Ansible Variables ##
+    #######################
     ansible:
 
 
       ####################
       ## Homie Automate ##
       ####################
-      enhomie_unique: default
       enhomie_directory: /opt/enhomie
-      enhomie_repository: >-
-        https://github.com/enasisnetwork/enhomie-conf
-      enhomie_logging: true
-      enhomie_console: false

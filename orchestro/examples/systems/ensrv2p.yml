@@ -15,15 +15,15 @@ systems:
       - neptune
       - roles_enrobie
     display: Neptune Server
+
+
+    #######################
+    ## Ansible Variables ##
+    #######################
     ansible:
 
 
       ####################
       ## Chatting Robie ##
       ####################
-      enrobie_unique: default
       enrobie_directory: /opt/enrobie
-      enrobie_repository: >-
-        https://github.com/enasisnetwork/enrobie-conf
-      enrobie_logging: true
-      enrobie_console: false

@@ -1,0 +1,116 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+  # Important to force parsing with Jinja2
+
+  ansible.builtin.set_fact:
+
+    enrobie_unique: >-
+      {{ enrobie_unique | default(omit) }}
+    enrobie_directory: >-
+      {{ enrobie_directory | default(omit) }}
+    enrobie_user: >-
+      {{ enrobie_user | default(omit) }}
+    enrobie_group: >-
+      {{ enrobie_group | default(omit) }}
+    enrobie_python: >-
+      {{ enrobie_python | default(omit) }}
+    enrobie_package: >-
+      {{ enrobie_package | default(omit) }}
+    enrobie_version: >-
+      {{ enrobie_version | default(omit) }}
+    enrobie_repo_path: >-
+      {{ enrobie_repo_path | default(omit) }}
+    enrobie_repo_version: >-
+      {{ enrobie_repo_version | default(omit) }}
+    enrobie_config: >-
+      {{ enrobie_config | default(omit) }}
+    enrobie_logging: >-
+      {{ enrobie_logging | default(omit) }}
+    enrobie_console: >-
+      {{ enrobie_console | default(omit) }}
+
+  tags: always
+
+
+
+
+
+
+- name: Validate role variables using Pydantic
+
+  enrobie_params:
+
+    unique: >-
+      {{ enrobie_unique | default(omit) }}
+    directory: >-
+      {{ enrobie_directory | default(omit) }}
+    user: >-
+      {{ enrobie_user | default(omit) }}
+    group: >-
+      {{ enrobie_group | default(omit) }}
+    python: >-
+      {{ enrobie_python | default(omit) }}
+    package: >-
+      {{ enrobie_package | default(omit) }}
+    version: >-
+      {{ enrobie_version | default(omit) }}
+    repo_path: >-
+      {{ enrobie_repo_path | default(omit) }}
+    repo_version: >-
+      {{ enrobie_repo_version | default(omit) }}
+    config: >-
+      {{ enrobie_config | default(omit) }}
+    logging: >-
+      {{ enrobie_logging | default(omit) }}
+    console: >-
+      {{ enrobie_console | default(omit) }}
+
+  register: pbvalidate
+
+  tags: always
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    enrobie_unique: >-
+      {{ pbvalidate.params.unique or omit }}
+    enrobie_directory: >-
+      {{ pbvalidate.params.directory or omit }}
+    enrobie_user: >-
+      {{ pbvalidate.params.user or omit }}
+    enrobie_group: >-
+      {{ pbvalidate.params.group or omit }}
+    enrobie_python: >-
+      {{ pbvalidate.params.python or omit }}
+    enrobie_package: >-
+      {{ pbvalidate.params.package or omit }}
+    enrobie_version: >-
+      {{ pbvalidate.params.version or omit }}
+    enrobie_repo_path: >-
+      {{ pbvalidate.params.repo_path or omit }}
+    enrobie_repo_version: >-
+      {{ pbvalidate.params.repo_version or omit }}
+    enrobie_config: >-
+      {{ pbvalidate.params.config or omit }}
+    enrobie_logging: >-
+      {{ pbvalidate.params.logging or omit }}
+    enrobie_console: >-
+      {{ pbvalidate.params.console or omit }}
+
+  tags: always

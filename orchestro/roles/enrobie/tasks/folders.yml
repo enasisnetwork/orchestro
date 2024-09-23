@@ -31,4 +31,6 @@
   vars:
     basedir: '{{ enrobie_directory }}'
 
+  become: true
+
   tags: always

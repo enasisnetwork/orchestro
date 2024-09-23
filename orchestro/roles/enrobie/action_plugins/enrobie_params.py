@@ -25,62 +25,62 @@ class RoleParams(BaseModel, extra='ignore'):
     Process and validate the Orche configuration parameters.
     """
 
-    enrobie_unique: Annotated[
+    unique: Annotated[
         str,
         Field(...,
               description='Unique name for the deployment')]
 
-    enrobie_directory: Annotated[
+    directory: Annotated[
         str,
         Field('/opt/enrobie',
               description='Base directory for the package')]
 
-    enrobie_user: Annotated[
+    user: Annotated[
         str,
         Field('enrobie',
               description='Local system user for deployment')]
 
-    enrobie_group: Annotated[
+    group: Annotated[
         str,
         Field('enrobie',
               description='Local system group for deployment')]
 
-    enrobie_python: Annotated[
+    python: Annotated[
         str,
         Field('python3',
               description='Python for creating virtual env')]
 
-    enrobie_package: Annotated[
+    package: Annotated[
         str,
         Field('enrobie',
               description='Installation package or path')]
 
-    enrobie_version: Annotated[
+    version: Annotated[
         Optional[str],
         Field(None,
               description='Which version instead of latest')]
 
-    enrobie_repo_path: Annotated[
+    repo_path: Annotated[
         Optional[str],
         Field(None,
               description='Clone configuration repository')]
 
-    enrobie_repo_version: Annotated[
+    repo_version: Annotated[
         Optional[str],
         Field(None,
               description='Clone configuration repository')]
 
-    enrobie_config: Annotated[
+    config: Annotated[
         Optional[DictStrAny],
         Field(None,
               description='Clone configuration repository')]
 
-    enrobie_logging: Annotated[
+    logging: Annotated[
         Optional[bool],
         Field(False,
               description='Enable logging to the log file')]
 
-    enrobie_console: Annotated[
+    console: Annotated[
         Optional[bool],
         Field(False,
               description='Enable logging to the console')]
@@ -111,9 +111,7 @@ class ActionModule(ActionBase):  # type: ignore
             'params': None,
             'changed': False}
 
-        source = (
-            self._task.args
-            ['params'])
+        source = self._task.args
 
 
         try:
@@ -121,10 +119,6 @@ class ActionModule(ActionBase):  # type: ignore
             params = (
                 RoleParams(**source)
                 .endumped)
-
-            params = {
-                k[8:]: v for k, v
-                in params.items()}
 
             result['params'] = (
                 sort_dict(params))

@@ -23,12 +23,24 @@
     "roles_enhomie": {
       "enable": true,
       "memberof": "default",
-      "display": "Homie Automate"
+      "display": "Homie Automate",
+      "ansible": {
+        "enhomie_unique": "default",
+        "enhomie_repository": "https://github.com/enasisnetwork/enhomie-conf",
+        "enhomie_logging": true,
+        "enhomie_console": false
+      }
     },
     "roles_enrobie": {
       "enable": true,
       "memberof": "default",
-      "display": "Chatting Robie"
+      "display": "Chatting Robie",
+      "ansible": {
+        "enrobie_unique": "default",
+        "enrobie_repository": "https://github.com/enasisnetwork/enrobie-conf",
+        "enrobie_logging": true,
+        "enrobie_console": false
+      }
     },
     "jupiter": {
       "enable": true,
@@ -143,11 +155,7 @@
       ],
       "display": "Jupiter Server",
       "ansible": {
-        "enhomie_unique": "default",
-        "enhomie_directory": "/opt/enhomie",
-        "enhomie_repository": "https://github.com/enasisnetwork/enhomie-conf",
-        "enhomie_logging": true,
-        "enhomie_console": false
+        "enhomie_directory": "/opt/enhomie"
       }
     },
     "ensrv2p": {
@@ -159,11 +167,7 @@
       ],
       "display": "Neptune Server",
       "ansible": {
-        "enrobie_unique": "default",
-        "enrobie_directory": "/opt/enrobie",
-        "enrobie_repository": "https://github.com/enasisnetwork/enrobie-conf",
-        "enrobie_logging": true,
-        "enrobie_console": false
+        "enrobie_directory": "/opt/enrobie"
       }
     },
     "template_gateway": {

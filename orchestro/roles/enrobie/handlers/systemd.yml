@@ -1,0 +1,19 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: reload systemd
+
+  systemd:
+    daemon_reload: true
+
+  become: true
+
+  tags: always

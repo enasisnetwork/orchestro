@@ -1,0 +1,116 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+  # Important to force parsing with Jinja2
+
+  ansible.builtin.set_fact:
+
+    enhomie_unique: >-
+      {{ enhomie_unique | default(omit) }}
+    enhomie_directory: >-
+      {{ enhomie_directory | default(omit) }}
+    enhomie_user: >-
+      {{ enhomie_user | default(omit) }}
+    enhomie_group: >-
+      {{ enhomie_group | default(omit) }}
+    enhomie_python: >-
+      {{ enhomie_python | default(omit) }}
+    enhomie_package: >-
+      {{ enhomie_package | default(omit) }}
+    enhomie_version: >-
+      {{ enhomie_version | default(omit) }}
+    enhomie_repo_path: >-
+      {{ enhomie_repo_path | default(omit) }}
+    enhomie_repo_version: >-
+      {{ enhomie_repo_version | default(omit) }}
+    enhomie_config: >-
+      {{ enhomie_config | default(omit) }}
+    enhomie_logging: >-
+      {{ enhomie_logging | default(omit) }}
+    enhomie_console: >-
+      {{ enhomie_console | default(omit) }}
+
+  tags: always
+
+
+
+
+
+
+- name: Validate role variables using Pydantic
+
+  enhomie_params:
+
+    unique: >-
+      {{ enhomie_unique | default(omit) }}
+    directory: >-
+      {{ enhomie_directory | default(omit) }}
+    user: >-
+      {{ enhomie_user | default(omit) }}
+    group: >-
+      {{ enhomie_group | default(omit) }}
+    python: >-
+      {{ enhomie_python | default(omit) }}
+    package: >-
+      {{ enhomie_package | default(omit) }}
+    version: >-
+      {{ enhomie_version | default(omit) }}
+    repo_path: >-
+      {{ enhomie_repo_path | default(omit) }}
+    repo_version: >-
+      {{ enhomie_repo_version | default(omit) }}
+    config: >-
+      {{ enhomie_config | default(omit) }}
+    logging: >-
+      {{ enhomie_logging | default(omit) }}
+    console: >-
+      {{ enhomie_console | default(omit) }}
+
+  register: pbvalidate
+
+  tags: always
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    enhomie_unique: >-
+      {{ pbvalidate.params.unique or omit }}
+    enhomie_directory: >-
+      {{ pbvalidate.params.directory or omit }}
+    enhomie_user: >-
+      {{ pbvalidate.params.user or omit }}
+    enhomie_group: >-
+      {{ pbvalidate.params.group or omit }}
+    enhomie_python: >-
+      {{ pbvalidate.params.python or omit }}
+    enhomie_package: >-
+      {{ pbvalidate.params.package or omit }}
+    enhomie_version: >-
+      {{ pbvalidate.params.version or omit }}
+    enhomie_repo_path: >-
+      {{ pbvalidate.params.repo_path or omit }}
+    enhomie_repo_version: >-
+      {{ pbvalidate.params.repo_version or omit }}
+    enhomie_config: >-
+      {{ pbvalidate.params.config or omit }}
+    enhomie_logging: >-
+      {{ pbvalidate.params.logging or omit }}
+    enhomie_console: >-
+      {{ pbvalidate.params.console or omit }}
+
+  tags: always
