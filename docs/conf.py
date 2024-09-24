@@ -37,6 +37,9 @@ always_document_param_types = True
 intersphinx_mapping = {
     'encommon': ('https://encommon.readthedocs.io/en/latest', None),
     'enconnect': ('https://enconnect.readthedocs.io/en/latest', None),
+    'jinja2': ('https://jinja.palletsprojects.com/en/latest', None),
+    'netaddr': ('https://netaddr.readthedocs.io/en/latest', None),
     'pydantic': ('https://docs.pydantic.dev/latest', None),
     'pytest': ('https://docs.pytest.org/latest', None),
-    'python': ('https://docs.python.org/3', None)}
+    'python': ('https://docs.python.org/3', None),
+    'sqlalchemy': ('https://docs.sqlalchemy.org/en/20', None)}
