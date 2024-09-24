@@ -10,9 +10,8 @@ database: >-
 
 {% if enhomie_repo_path %}
 enconfig:
-  paths: >-
-    {{ enhomie_directory -}}
-    /repos/{{ enhomie_unique }}
+  paths:
+    - {{ enhomie_directory }}/repos/{{ enhomie_unique }}
 {% endif %}
 
 

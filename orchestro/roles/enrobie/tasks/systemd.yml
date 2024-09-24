@@ -29,7 +29,7 @@
 
   systemd:
     name: '{{ enrobie_service }}'
-    enabled: true
+    enabled: '{{ enrobie_autostart }}'
 
   become: true
 

@@ -24,8 +24,6 @@
     - >-  # when repository defined
       enhomie_repo_path is not none
 
-  notify: restart enhomie
-
   tags: always
 
 
@@ -45,7 +43,5 @@
     mode: '0600'
 
   become: true
-
-  notify: restart enhomie
 
   tags: always

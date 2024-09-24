@@ -10,9 +10,8 @@ database: >-
 
 {% if enrobie_repo_path %}
 enconfig:
-  paths: >-
-    {{ enrobie_directory -}}
-    /repos/{{ enrobie_unique }}
+  paths:
+    - {{ enrobie_directory }}/repos/{{ enrobie_unique }}
 {% endif %}
 
 

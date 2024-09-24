@@ -85,6 +85,11 @@ class RoleParams(BaseModel, extra='ignore'):
         Field(False,
               description='Enable logging to the console')]
 
+    autostart: Annotated[
+        Optional[bool],
+        Field(False,
+              description='Automatic startup with system')]
+
 
 
 class ActionModule(ActionBase):  # type: ignore

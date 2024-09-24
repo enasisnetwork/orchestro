@@ -29,7 +29,7 @@
 
   systemd:
     name: '{{ enhomie_service }}'
-    enabled: true
+    enabled: '{{ enhomie_autostart }}'
 
   become: true
 

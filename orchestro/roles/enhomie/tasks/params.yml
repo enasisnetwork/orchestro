@@ -38,6 +38,8 @@
       {{ enhomie_logging | default(omit) }}
     enhomie_console: >-
       {{ enhomie_console | default(omit) }}
+    enhomie_autostart: >-
+      {{ enhomie_autostart | default(omit) }}
 
   tags: always
 
@@ -74,6 +76,8 @@
       {{ enhomie_logging | default(omit) }}
     console: >-
       {{ enhomie_console | default(omit) }}
+    autostart: >-
+      {{ enhomie_autostart | default(omit) }}
 
   register: pbvalidate
 
@@ -89,28 +93,43 @@
   ansible.builtin.set_fact:
 
     enhomie_unique: >-
-      {{ pbvalidate.params.unique or omit }}
+      {%- set value = pbvalidate.params.unique -%}
+      {{- value if value is not none else omit -}}
     enhomie_directory: >-
-      {{ pbvalidate.params.directory or omit }}
+      {%- set value = pbvalidate.params.directory -%}
+      {{- value if value is not none else omit -}}
     enhomie_user: >-
-      {{ pbvalidate.params.user or omit }}
+      {%- set value = pbvalidate.params.user -%}
+      {{- value if value is not none else omit -}}
     enhomie_group: >-
-      {{ pbvalidate.params.group or omit }}
+      {%- set value = pbvalidate.params.group -%}
+      {{- value if value is not none else omit -}}
     enhomie_python: >-
-      {{ pbvalidate.params.python or omit }}
+      {%- set value = pbvalidate.params.python -%}
+      {{- value if value is not none else omit -}}
     enhomie_package: >-
-      {{ pbvalidate.params.package or omit }}
+      {%- set value = pbvalidate.params.package -%}
+      {{- value if value is not none else omit -}}
     enhomie_version: >-
-      {{ pbvalidate.params.version or omit }}
+      {%- set value = pbvalidate.params.version -%}
+      {{- value if value is not none else omit -}}
     enhomie_repo_path: >-
-      {{ pbvalidate.params.repo_path or omit }}
+      {%- set value = pbvalidate.params.repo_path -%}
+      {{- value if value is not none else omit -}}
     enhomie_repo_version: >-
-      {{ pbvalidate.params.repo_version or omit }}
+      {%- set value = pbvalidate.params.repo_version -%}
+      {{- value if value is not none else omit -}}
     enhomie_config: >-
-      {{ pbvalidate.params.config or omit }}
+      {%- set value = pbvalidate.params.config -%}
+      {{- value if value is not none else omit -}}
     enhomie_logging: >-
-      {{ pbvalidate.params.logging or omit }}
+      {%- set value = pbvalidate.params.logging -%}
+      {{- value if value is not none else omit -}}
     enhomie_console: >-
-      {{ pbvalidate.params.console or omit }}
+      {%- set value = pbvalidate.params.console -%}
+      {{- value if value is not none else omit -}}
+    enhomie_autostart: >-
+      {%- set value = pbvalidate.params.autostart -%}
+      {{- value if value is not none else omit -}}
 
   tags: always

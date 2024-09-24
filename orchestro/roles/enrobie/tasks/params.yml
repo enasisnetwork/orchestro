@@ -38,6 +38,8 @@
       {{ enrobie_logging | default(omit) }}
     enrobie_console: >-
       {{ enrobie_console | default(omit) }}
+    enrobie_autostart: >-
+      {{ enrobie_autostart | default(omit) }}
 
   tags: always
 
@@ -74,6 +76,8 @@
       {{ enrobie_logging | default(omit) }}
     console: >-
       {{ enrobie_console | default(omit) }}
+    autostart: >-
+      {{ enrobie_autostart | default(omit) }}
 
   register: pbvalidate
 
@@ -89,28 +93,43 @@
   ansible.builtin.set_fact:
 
     enrobie_unique: >-
-      {{ pbvalidate.params.unique or omit }}
+      {%- set value = pbvalidate.params.unique -%}
+      {{- value if value is not none else omit -}}
     enrobie_directory: >-
-      {{ pbvalidate.params.directory or omit }}
+      {%- set value = pbvalidate.params.directory -%}
+      {{- value if value is not none else omit -}}
     enrobie_user: >-
-      {{ pbvalidate.params.user or omit }}
+      {%- set value = pbvalidate.params.user -%}
+      {{- value if value is not none else omit -}}
     enrobie_group: >-
-      {{ pbvalidate.params.group or omit }}
+      {%- set value = pbvalidate.params.group -%}
+      {{- value if value is not none else omit -}}
     enrobie_python: >-
-      {{ pbvalidate.params.python or omit }}
+      {%- set value = pbvalidate.params.python -%}
+      {{- value if value is not none else omit -}}
     enrobie_package: >-
-      {{ pbvalidate.params.package or omit }}
+      {%- set value = pbvalidate.params.package -%}
+      {{- value if value is not none else omit -}}
     enrobie_version: >-
-      {{ pbvalidate.params.version or omit }}
+      {%- set value = pbvalidate.params.version -%}
+      {{- value if value is not none else omit -}}
     enrobie_repo_path: >-
-      {{ pbvalidate.params.repo_path or omit }}
+      {%- set value = pbvalidate.params.repo_path -%}
+      {{- value if value is not none else omit -}}
     enrobie_repo_version: >-
-      {{ pbvalidate.params.repo_version or omit }}
+      {%- set value = pbvalidate.params.repo_version -%}
+      {{- value if value is not none else omit -}}
     enrobie_config: >-
-      {{ pbvalidate.params.config or omit }}
+      {%- set value = pbvalidate.params.config -%}
+      {{- value if value is not none else omit -}}
     enrobie_logging: >-
-      {{ pbvalidate.params.logging or omit }}
+      {%- set value = pbvalidate.params.logging -%}
+      {{- value if value is not none else omit -}}
     enrobie_console: >-
-      {{ pbvalidate.params.console or omit }}
+      {%- set value = pbvalidate.params.console -%}
+      {{- value if value is not none else omit -}}
+    enrobie_autostart: >-
+      {%- set value = pbvalidate.params.autostart -%}
+      {{- value if value is not none else omit -}}
 
   tags: always
