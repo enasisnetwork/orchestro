@@ -12,7 +12,14 @@
 - name: Information about the inventory hosts
 
   ansible.builtin.debug:
-    msg: '{{ enhomie_params }}'
+    msg: >-
+      {%- set values = {} -%}
+      {%- for key, value in vars.items() -%}
+      {%-   if key.startswith('enhomie_') -%}
+      {%-     do values.update({key: value}) -%}
+      {%-   endif -%}
+      {%- endfor -%}
+      {{- values | sort_dict -}}
 
   when:
 

@@ -12,3 +12,20 @@ groups:
     enable: true
     memberof: default
     display: Chatting Robie
+
+
+    #######################
+    ## Ansible Variables ##
+    #######################
+    ansible:
+
+
+      ####################
+      ## Chatting Robie ##
+      ####################
+      enrobie_unique: default
+      #enrobie_directory
+      enrobie_repository: >-
+        https://github.com/enasisnetwork/enrobie-conf
+      enrobie_logging: true
+      enrobie_console: false

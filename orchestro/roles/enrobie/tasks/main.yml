@@ -24,29 +24,10 @@
 
 
 
-- name: Declare relevant playbook variables
+- name: Include downstream tasks within roles
 
-  ansible.legacy.set_fact:
-
-    enrobie_vars: >-
-      {%- set values = {} -%}
-      {%- for key, value in vars.items() -%}
-      {%-   if key.startswith('enrobie_') -%}
-      {%-     do values.update({key: value}) -%}
-      {%-   endif -%}
-      {%- endfor -%}
-      {{- values | sort_dict -}}
-
-  tags: always
-
-
-
-- name: Validate role variables using Pydantic
-
-  enrobie_validate:
-    params: '{{ enrobie_vars }}'
-
-  register: enrobie_params
+  ansible.builtin.include_tasks: >-
+    tasks/params.yml
 
   tags: always
 
@@ -54,18 +35,9 @@
 
 - name: Declare relevant playbook variables
 
-  ansible.legacy.set_fact:
-
-    enrobie_params: >-
-      {%- set params = (
-            enrobie_params.params
-            .items()) -%}
-      {%- set parsed = {} -%}
-      {%- for key, value in params -%}
-      {%-   do parsed.update({
-              key[8:]: value}) -%}
-      {%- endfor -%}
-      {{- parsed | sort_dict -}}
+  ansible.builtin.set_fact:
+    enrobie_service: >-
+      enrobie-service@{{ enrobie_unique }}
 
   tags: always
 
@@ -80,3 +52,53 @@
     tasks/overview.yml
 
   tags: overview
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/folders.yml
+
+  tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/package.yml
+
+  tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/config.yml
+
+  tags:
+    - install
+    - configure
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/systemd.yml
+
+  tags: install
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/state.yml
+
+  tags:
+    - state-restarted
+    - state-stopped
+    - state-started

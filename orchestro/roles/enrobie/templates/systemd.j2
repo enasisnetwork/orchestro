@@ -1,0 +1,36 @@
+
+
+
+[Unit]
+
+Description = Chatting Robie
+
+Wants = network-online.target
+After = network-online.target
+Conflicts = shutdown.target
+
+
+
+[Service]
+
+User = {{ enrobie_user }}
+Group = {{ enrobie_group }}
+
+WorkingDirectory = {{ enrobie_directory }}
+
+ExecStart = \
+  {{ enrobie_directory }}/venv/bin/python \
+  -m enrobie.execution.service \
+  --config {{ enrobie_directory }}/config/%i.yml
+
+Restart = on-failure
+RestartSec = 300
+
+StandardOutput = journal
+StandardError = journal
+
+
+
+[Install]
+
+WantedBy = multi-user.target

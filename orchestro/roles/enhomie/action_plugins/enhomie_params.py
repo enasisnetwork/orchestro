@@ -25,45 +25,70 @@ class RoleParams(BaseModel, extra='ignore'):
     Process and validate the Orche configuration parameters.
     """
 
-    enhomie_unique: Annotated[
+    unique: Annotated[
         str,
         Field(...,
               description='Unique name for the deployment')]
 
-    enhomie_directory: Annotated[
+    directory: Annotated[
         str,
         Field('/opt/enhomie',
               description='Base directory for the package')]
 
-    enhomie_package: Annotated[
+    user: Annotated[
+        str,
+        Field('enhomie',
+              description='Local system user for deployment')]
+
+    group: Annotated[
+        str,
+        Field('enhomie',
+              description='Local system group for deployment')]
+
+    python: Annotated[
+        str,
+        Field('python3',
+              description='Python for creating virtual env')]
+
+    package: Annotated[
         str,
         Field('enhomie',
               description='Installation package or path')]
 
-    enhomie_version: Annotated[
+    version: Annotated[
         Optional[str],
         Field(None,
               description='Which version instead of latest')]
 
-    enhomie_repository: Annotated[
+    repo_path: Annotated[
         Optional[str],
         Field(None,
               description='Clone configuration repository')]
 
-    enhomie_config: Annotated[
+    repo_version: Annotated[
+        Optional[str],
+        Field(None,
+              description='Clone configuration repository')]
+
+    config: Annotated[
         Optional[DictStrAny],
         Field(None,
               description='Clone configuration repository')]
 
-    enhomie_logging: Annotated[
+    logging: Annotated[
         Optional[bool],
         Field(False,
               description='Enable logging to the log file')]
 
-    enhomie_console: Annotated[
+    console: Annotated[
         Optional[bool],
         Field(False,
               description='Enable logging to the console')]
+
+    autostart: Annotated[
+        Optional[bool],
+        Field(False,
+              description='Automatic startup with system')]
 
 
 
@@ -91,15 +116,18 @@ class ActionModule(ActionBase):  # type: ignore
             'params': None,
             'changed': False}
 
-        params = (
-            self._task.args
-            ['params'])
+        source = self._task.args
 
 
         try:
-            result['params'] = (
-                RoleParams(**params)
+
+            params = (
+                RoleParams(**source)
                 .endumped)
+
+            result['params'] = (
+                sort_dict(params))
+
 
         except Exception as reason:
             result |= {

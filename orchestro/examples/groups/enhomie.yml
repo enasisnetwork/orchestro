@@ -12,3 +12,20 @@ groups:
     enable: true
     memberof: default
     display: Homie Automate
+
+
+    #######################
+    ## Ansible Variables ##
+    #######################
+    ansible:
+
+
+      ####################
+      ## Homie Automate ##
+      ####################
+      enhomie_unique: default
+      #enhomie_directory
+      enhomie_repository: >-
+        https://github.com/enasisnetwork/enhomie-conf
+      enhomie_logging: true
+      enhomie_console: false

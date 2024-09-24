@@ -25,3 +25,78 @@ endif
 			--tags=overview \
 			orchestro/playbooks/enrobie/default.yml; \
 		deactivate)
+
+
+
+.PHONY: enrobie-install
+enrobie-install:
+	@## Install and configure related package
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enrobie-install<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=install \
+			orchestro/playbooks/enrobie/default.yml; \
+		deactivate)
+
+
+
+.PHONY: enrobie-configure
+enrobie-configure:
+	@## Bypass install and configure package
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enrobie-configure<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=configure \
+			orchestro/playbooks/enrobie/default.yml; \
+		deactivate)
+
+
+
+.PHONY: enrobie-state
+enrobie-state:
+	@## Control the state of package service
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+ifndef state
+	$(error state not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enrobie-state<c0>)
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags="state-$(state)" \
+			orchestro/playbooks/enrobie/default.yml; \
+		deactivate)

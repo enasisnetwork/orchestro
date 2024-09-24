@@ -1,0 +1,135 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+  # Important to force parsing with Jinja2
+
+  ansible.builtin.set_fact:
+
+    enrobie_unique: >-
+      {{ enrobie_unique | default(omit) }}
+    enrobie_directory: >-
+      {{ enrobie_directory | default(omit) }}
+    enrobie_user: >-
+      {{ enrobie_user | default(omit) }}
+    enrobie_group: >-
+      {{ enrobie_group | default(omit) }}
+    enrobie_python: >-
+      {{ enrobie_python | default(omit) }}
+    enrobie_package: >-
+      {{ enrobie_package | default(omit) }}
+    enrobie_version: >-
+      {{ enrobie_version | default(omit) }}
+    enrobie_repo_path: >-
+      {{ enrobie_repo_path | default(omit) }}
+    enrobie_repo_version: >-
+      {{ enrobie_repo_version | default(omit) }}
+    enrobie_config: >-
+      {{ enrobie_config | default(omit) }}
+    enrobie_logging: >-
+      {{ enrobie_logging | default(omit) }}
+    enrobie_console: >-
+      {{ enrobie_console | default(omit) }}
+    enrobie_autostart: >-
+      {{ enrobie_autostart | default(omit) }}
+
+  tags: always
+
+
+
+
+
+
+- name: Validate role variables using Pydantic
+
+  enrobie_params:
+
+    unique: >-
+      {{ enrobie_unique | default(omit) }}
+    directory: >-
+      {{ enrobie_directory | default(omit) }}
+    user: >-
+      {{ enrobie_user | default(omit) }}
+    group: >-
+      {{ enrobie_group | default(omit) }}
+    python: >-
+      {{ enrobie_python | default(omit) }}
+    package: >-
+      {{ enrobie_package | default(omit) }}
+    version: >-
+      {{ enrobie_version | default(omit) }}
+    repo_path: >-
+      {{ enrobie_repo_path | default(omit) }}
+    repo_version: >-
+      {{ enrobie_repo_version | default(omit) }}
+    config: >-
+      {{ enrobie_config | default(omit) }}
+    logging: >-
+      {{ enrobie_logging | default(omit) }}
+    console: >-
+      {{ enrobie_console | default(omit) }}
+    autostart: >-
+      {{ enrobie_autostart | default(omit) }}
+
+  register: pbvalidate
+
+  tags: always
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    enrobie_unique: >-
+      {%- set value = pbvalidate.params.unique -%}
+      {{- value if value is not none else omit -}}
+    enrobie_directory: >-
+      {%- set value = pbvalidate.params.directory -%}
+      {{- value if value is not none else omit -}}
+    enrobie_user: >-
+      {%- set value = pbvalidate.params.user -%}
+      {{- value if value is not none else omit -}}
+    enrobie_group: >-
+      {%- set value = pbvalidate.params.group -%}
+      {{- value if value is not none else omit -}}
+    enrobie_python: >-
+      {%- set value = pbvalidate.params.python -%}
+      {{- value if value is not none else omit -}}
+    enrobie_package: >-
+      {%- set value = pbvalidate.params.package -%}
+      {{- value if value is not none else omit -}}
+    enrobie_version: >-
+      {%- set value = pbvalidate.params.version -%}
+      {{- value if value is not none else omit -}}
+    enrobie_repo_path: >-
+      {%- set value = pbvalidate.params.repo_path -%}
+      {{- value if value is not none else omit -}}
+    enrobie_repo_version: >-
+      {%- set value = pbvalidate.params.repo_version -%}
+      {{- value if value is not none else omit -}}
+    enrobie_config: >-
+      {%- set value = pbvalidate.params.config -%}
+      {{- value if value is not none else omit -}}
+    enrobie_logging: >-
+      {%- set value = pbvalidate.params.logging -%}
+      {{- value if value is not none else omit -}}
+    enrobie_console: >-
+      {%- set value = pbvalidate.params.console -%}
+      {{- value if value is not none else omit -}}
+    enrobie_autostart: >-
+      {%- set value = pbvalidate.params.autostart -%}
+      {{- value if value is not none else omit -}}
+
+  tags: always

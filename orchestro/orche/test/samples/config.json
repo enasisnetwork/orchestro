@@ -21,14 +21,16 @@
       "memberof": [
         "systems"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "default": {
       "enable": false,
       "inherits": null,
       "display": "Default Inventory",
       "memberof": null,
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "roles_enhomie": {
       "enable": true,
@@ -37,7 +39,13 @@
       "memberof": [
         "default"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": {
+        "enhomie_unique": "default",
+        "enhomie_repository": "https://github.com/enasisnetwork/enhomie-conf",
+        "enhomie_logging": true,
+        "enhomie_console": false
+      }
     },
     "roles_enrobie": {
       "enable": true,
@@ -46,7 +54,13 @@
       "memberof": [
         "default"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": {
+        "enrobie_unique": "default",
+        "enrobie_repository": "https://github.com/enasisnetwork/enrobie-conf",
+        "enrobie_logging": true,
+        "enrobie_console": false
+      }
     },
     "jupiter": {
       "enable": true,
@@ -55,7 +69,8 @@
       "memberof": [
         "default"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "neptune": {
       "enable": true,
@@ -64,7 +79,8 @@
       "memberof": [
         "default"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "systems_openbsd": {
       "enable": true,
@@ -73,14 +89,16 @@
       "memberof": [
         "systems"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "systems": {
       "enable": true,
       "inherits": null,
       "display": "Managed Systems",
       "memberof": null,
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     },
     "systems_windows": {
       "enable": true,
@@ -89,7 +107,8 @@
       "memberof": [
         "systems"
       ],
-      "realm": "ansible"
+      "realm": "ansible",
+      "ansible": null
     }
   },
   "persons": {
@@ -258,11 +277,7 @@
       "realm": "ansible",
       "domain": null,
       "ansible": {
-        "enhomie_unique": "default",
         "enhomie_directory": "/opt/enhomie",
-        "enhomie_repository": "https://github.com/enasisnetwork/enhomie-conf",
-        "enhomie_logging": true,
-        "enhomie_console": false,
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
       }
@@ -282,11 +297,7 @@
       "realm": "ansible",
       "domain": null,
       "ansible": {
-        "enrobie_unique": "default",
         "enrobie_directory": "/opt/enrobie",
-        "enrobie_repository": "https://github.com/enasisnetwork/enrobie-conf",
-        "enrobie_logging": true,
-        "enrobie_console": false,
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
       }

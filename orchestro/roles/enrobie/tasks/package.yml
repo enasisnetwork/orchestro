@@ -1,0 +1,24 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Install the package in the virtual env
+
+  ansible.builtin.pip:
+    name: '{{ enrobie_package }}'
+    virtualenv: >-
+      {{ enrobie_directory }}/venv
+    virtualenv_command: >-
+      {{ enrobie_python }} -m venv
+    state: latest
+    version: >-
+      {{ enrobie_version | default(omit) }}
+
+  tags: always

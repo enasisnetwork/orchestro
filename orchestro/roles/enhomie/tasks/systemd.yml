@@ -1,0 +1,36 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Template the systemd configuration file
+
+  template:
+    src: systemd.j2
+    dest: >-
+      /etc/systemd/system/enhomie-service@.service
+    owner: root
+    group: root
+    mode: '0644'
+
+  become: true
+
+  tags: always
+
+
+
+- name: Enable the configured systemd service
+
+  systemd:
+    name: '{{ enhomie_service }}'
+    enabled: '{{ enhomie_autostart }}'
+
+  become: true
+
+  tags: always

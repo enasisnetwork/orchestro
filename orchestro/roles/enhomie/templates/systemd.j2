@@ -1,0 +1,36 @@
+
+
+
+[Unit]
+
+Description = Homie Automate
+
+Wants = network-online.target
+After = network-online.target
+Conflicts = shutdown.target
+
+
+
+[Service]
+
+User = {{ enhomie_user }}
+Group = {{ enhomie_group }}
+
+WorkingDirectory = {{ enhomie_directory }}
+
+ExecStart = \
+  {{ enhomie_directory }}/venv/bin/python \
+  -m enhomie.execution.service \
+  --config {{ enhomie_directory }}/config/%i.yml
+
+Restart = on-failure
+RestartSec = 300
+
+StandardOutput = journal
+StandardError = journal
+
+
+
+[Install]
+
+WantedBy = multi-user.target
