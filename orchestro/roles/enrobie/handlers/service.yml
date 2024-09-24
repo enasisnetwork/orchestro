@@ -18,6 +18,6 @@
   become: true
 
   when:
-    - enhomie_autostart is true
+    - enrobie_autostart is true
 
   tags: always
