@@ -17,4 +17,7 @@
 
   become: true
 
+  when:
+    - enhomie_autostart is true
+
   tags: always
