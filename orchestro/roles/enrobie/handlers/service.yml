@@ -17,4 +17,7 @@
 
   become: true
 
+  when:
+    - enrobie_autostart is true
+
   tags: always

@@ -24,6 +24,8 @@
     - >-  # when repository defined
       enrobie_repo_path is not none
 
+  notify: restart enrobie
+
   tags: always
 
 
@@ -43,5 +45,7 @@
     mode: '0600'
 
   become: true
+
+  notify: restart enrobie
 
   tags: always
