@@ -12,15 +12,16 @@ from typing import Optional
 
 from ansible.plugins.action import ActionBase  # type: ignore
 
-from encommon.types import BaseModel
 from encommon.types import DictStrAny
 from encommon.types import sort_dict
 
 from pydantic import Field
 
+from ....orche.params.common import OrcheParamsModel
 
 
-class RoleParams(BaseModel, extra='ignore'):
+
+class RoleParams(OrcheParamsModel, extra='ignore'):
     """
     Process and validate the Orche configuration parameters.
     """
