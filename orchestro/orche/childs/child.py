@@ -11,6 +11,8 @@ from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
 
+from ...utils import InvalidParam
+
 if TYPE_CHECKING:
     from .group import OrcheGroup
     from ..common import OrcheKinds
@@ -74,9 +76,37 @@ class OrcheChild:
     ) -> None:
         """
         Perform advanced validation on the parameters provided.
+
+        .. note::
+           Works differently than other projects because these
+           children all have one common attribute between them.
         """
 
-        raise NotImplementedError
+        orche = self.orche
+        params = self.params
+        mmbrof = params.memberof
+        groups = (
+            orche.params
+            .groups or {})
+
+
+        def _memberof() -> None:
+
+            assert mmbrof is not None
+
+            for name in mmbrof:
+
+                if name in groups:
+                    continue
+
+                raise InvalidParam(
+                    param='memberof',
+                    value=name,
+                    error='noexist')
+
+
+        if mmbrof is not None:
+            _memberof()
 
 
     def __lt__(

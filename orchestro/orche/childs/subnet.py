@@ -10,8 +10,11 @@ is permitted, for more information consult the project license file.
 from typing import Literal
 from typing import TYPE_CHECKING
 
+from encommon.parse import isvalid_ip
+
 from .child import OrcheChild
 from ..models import OrcheModels
+from ...utils import InvalidParam
 
 if TYPE_CHECKING:
     from ..params import OrcheSubnetParams
@@ -29,7 +32,23 @@ class OrcheSubnet(OrcheChild):
     ) -> None:
         """
         Perform advanced validation on the parameters provided.
+
+        .. note::
+           Works differently than other projects because these
+           children all have one common attribute between them.
         """
+
+        super().validate()
+
+        params = self.params
+        subnet = params.subnet
+
+        if not isvalid_ip(subnet):
+
+            raise InvalidParam(
+                param='subnet',
+                value=subnet,
+                error='invalid')
 
 
     @property
