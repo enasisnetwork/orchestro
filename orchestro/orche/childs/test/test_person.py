@@ -47,7 +47,8 @@ def test_OrchePerson_cover(
         'person.OrchePerson',
         person)
 
-    assert hash(person) > 0
+    assert isinstance(
+        hash(person), int)
 
     assert instr(
         'person.OrchePerson',

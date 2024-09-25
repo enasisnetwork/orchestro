@@ -12,13 +12,13 @@ from typing import Any
 from typing import Callable
 from typing import Optional
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
+from .common import OrcheParamsModel
 
 
-class OrcheChildParams(BaseModel, extra='forbid'):
+
+class OrcheChildParams(OrcheParamsModel, extra='forbid'):
     """
     Process and validate the Orche configuration parameters.
     """

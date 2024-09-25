@@ -13,11 +13,10 @@ from typing import Callable
 from typing import Literal
 from typing import Optional
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
 from .child import OrcheChildParams
+from .common import OrcheParamsModel
 
 
 
@@ -27,7 +26,7 @@ OrcheSystemRealms = Literal[
 
 
 
-class OrcheSystemAnsibleParams(BaseModel, extra='allow'):
+class OrcheSystemAnsibleParams(OrcheParamsModel, extra='allow'):
     """
     Process and validate the Orche configuration parameters.
     """

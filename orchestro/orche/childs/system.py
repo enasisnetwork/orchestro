@@ -29,7 +29,13 @@ class OrcheSystem(OrcheChild):
     ) -> None:
         """
         Perform advanced validation on the parameters provided.
+
+        .. note::
+           Works differently than other projects because these
+           children all have one common attribute between them.
         """
+
+        super().validate()
 
 
     @property
