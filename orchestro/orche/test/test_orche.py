@@ -45,7 +45,8 @@ def test_Orche(
         'orche.Orche',
         orche)
 
-    assert hash(orche) > 0
+    assert isinstance(
+        hash(orche), int)
 
     assert instr(
         'orche.Orche',

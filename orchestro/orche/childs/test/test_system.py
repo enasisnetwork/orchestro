@@ -46,7 +46,8 @@ def test_OrcheSystem_cover(
         'system.OrcheSystem',
         system)
 
-    assert hash(system) > 0
+    assert isinstance(
+        hash(system), int)
 
     assert instr(
         'system.OrcheSystem',

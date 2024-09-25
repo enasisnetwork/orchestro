@@ -46,7 +46,8 @@ def test_OrcheGroup_cover(
         'group.OrcheGroup',
         group)
 
-    assert hash(group) > 0
+    assert isinstance(
+        hash(group), int)
 
     assert instr(
         'group.OrcheGroup',

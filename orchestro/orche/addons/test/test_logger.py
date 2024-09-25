@@ -42,7 +42,8 @@ def test_OrcheLogger(
         'logger.OrcheLogger',
         logger)
 
-    assert hash(logger) > 0
+    assert isinstance(
+        hash(logger), int)
 
     assert instr(
         'logger.OrcheLogger',

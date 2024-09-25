@@ -47,7 +47,8 @@ def test_OrcheSubnet_cover(
         'subnet.OrcheSubnet',
         subnet)
 
-    assert hash(subnet) > 0
+    assert isinstance(
+        hash(subnet), int)
 
     assert instr(
         'subnet.OrcheSubnet',
