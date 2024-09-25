@@ -5,7 +5,7 @@
 Project for executing the Ansible playbooks for system automation.
 
 [![](https://img.shields.io/github/actions/workflow/status/enasisnetwork/orchestro/build.yml?style=flat-square&label=GitHub%20actions)](https://github.com/enasisnetwork/orchestro/actions)<br>
-[![codecov](https://img.shields.io/codecov/c/github/enasisnetwork/encommon?token=7PGOXKJU0E&style=flat-square&logoColor=FFFFFF&label=Coverage)](https://codecov.io/gh/enasisnetwork/encommon)<br>
+[![codecov](https://img.shields.io/codecov/c/github/enasisnetwork/orchestro?token=7PGOXKJU0E&style=flat-square&logoColor=FFFFFF&label=Coverage)](https://codecov.io/gh/enasisnetwork/orchestro)<br>
 [![](https://img.shields.io/readthedocs/orchestro?style=flat-square&label=Read%20the%20Docs)](https://orchestro.readthedocs.io)<br>
 
 ## Documentation
