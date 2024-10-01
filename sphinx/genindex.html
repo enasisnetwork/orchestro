@@ -1,106 +1,150 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html lang="en"
+      data-content_root="./"
+      x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+      class="scroll-smooth"
+      :class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+>
 <head>
-  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; orchestro  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+  <meta charset="utf-8" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  
+    <title>Index | orchestro  documentation</title>
+    <meta property="og:title" content="Index | orchestro  documentation" />
+    <meta name="twitter:title" content="Index | orchestro  documentation" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="_static/theme.css?v=ecdfb4fc" />
       <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="index" title="Index" href="#" />
 
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
 </head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="index.html" class="icon icon-home">
-            orchestro
-          </a>
-              <div class="version">
-                0.4.3
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"></div>
-        </div>
+<body x-data="{ showSidebar: false }" class="min-h-screen font-sans antialiased bg-background text-foreground" :class="{ 'overflow-hidden': showSidebar }">
+    <div x-cloak x-show="showSidebar" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" @click.self="showSidebar = false"></div><div id="page" class="relative flex flex-col min-h-screen"><a href="#content" class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100">
+      Skip to content
+    </a><header
+  class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+    <div class="hidden mr-4 md:flex">
+      <a href="index.html" class="flex items-center mr-6"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">orchestro  documentation</span>
+      </a></div><button
+      class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden"
+      type="button" @click="showSidebar = true">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" aria-hidden="true"
+        fill="currentColor">
+        <path
+          d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z" />
+      </svg>
+      <span class="sr-only">Toggle navigation menu</span>
+    </button>
+    <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+      <div class="flex-1 w-full md:w-auto md:flex-none"><form id="searchbox"
+      action="search.html"
+      method="get"
+      class="relative flex items-center group"
+      @keydown.k.window.meta="$refs.search.focus()">
+  <input x-ref="search"
+          name="q"
+          id="search-input"
+          type="search"
+          aria-label="Search the docs"
+          placeholder="Search ..."
+          class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" />
+  <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+    <span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">orchestro</a>
+      <nav class="flex items-center space-x-1">
+        <button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'"
+          class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9"
+          type="button"
+          aria-label="Color theme switcher">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0">
+            <path
+              d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100">
+            <path
+              d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z" />
+          </svg>
+        </button>
       </nav>
+    </div>
+  </div>
+</header>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+    <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside id="left-sidebar"
+  class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky"
+  :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }">
 
-<h1 id="index">Index</h1>
+    <a href="index.html" class="!justify-start text-sm md:!hidden bg-background"><span class="font-bold text-clip whitespace-nowrap">orchestro  documentation</span>
+    </a>
 
-<div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#B"><strong>B</strong></a>
- | <a href="#C"><strong>C</strong></a>
- | <a href="#D"><strong>D</strong></a>
- | <a href="#E"><strong>E</strong></a>
- | <a href="#F"><strong>F</strong></a>
- | <a href="#G"><strong>G</strong></a>
- | <a href="#I"><strong>I</strong></a>
- | <a href="#K"><strong>K</strong></a>
- | <a href="#L"><strong>L</strong></a>
- | <a href="#M"><strong>M</strong></a>
- | <a href="#N"><strong>N</strong></a>
- | <a href="#O"><strong>O</strong></a>
- | <a href="#P"><strong>P</strong></a>
- | <a href="#R"><strong>R</strong></a>
- | <a href="#S"><strong>S</strong></a>
- | <a href="#T"><strong>T</strong></a>
- | <a href="#U"><strong>U</strong></a>
- | <a href="#V"><strong>V</strong></a>
- 
-</div>
-<h2 id="A">A</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+    <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+      <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+  
+</nav>
+      </div>
+    </div>
+    <button type="button" @click="showSidebar = false"
+      class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+        stroke="none" class="h-4 w-4">
+        <path
+          d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z" />
+      </svg>
+    </button>
+  </aside>
+        <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs"
+     class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+  <a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground"
+     href="index.html">
+    <span class="hidden md:inline">orchestro  documentation</span>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         height="18"
+         width="18"
+         viewBox="0 96 960 960"
+         aria-label="Home"
+         fill="currentColor"
+         stroke="none"
+         class="md:hidden">
+      <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z" />
+    </svg>
+  </a>
+  
+<div class="mr-1">/</div><span aria-current="page"
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Index</span>
+</nav>
+
+<div id="content" role="main">
+
+  <h1 id="index">Index</h1>
+  <h2 id="A">A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.utils.html#orchestro.utils.child.InvalidChild.about">about (orchestro.utils.child.InvalidChild attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.InvalidChild.about">(orchestro.utils.InvalidChild attribute)</a>
 </li>
         <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam.about">(orchestro.utils.InvalidParam attribute)</a>
@@ -110,7 +154,7 @@
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.ActionModule">ActionModule (class in orchestro.roles.enhomie.action_plugins.enhomie_params)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.ActionModule">(class in orchestro.roles.enrobie.action_plugins.enrobie_params)</a>
 </li>
       </ul></li>
@@ -121,10 +165,10 @@
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.add_host">add_host() (orchestro.inventory.orche.InventoryModule method)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.group.OrcheGroupParams.ansible">ansible (orchestro.orche.params.group.OrcheGroupParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheGroupParams.ansible">(orchestro.orche.params.OrcheGroupParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheSystemParams.ansible">(orchestro.orche.params.OrcheSystemParams attribute)</a>
@@ -134,7 +178,7 @@
       </ul></li>
       <li><a href="orchestro.execution.html#orchestro.execution.config.arguments">arguments() (in module orchestro.execution.config)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#orchestro.execution.crypts.arguments">(in module orchestro.execution.crypts)</a>
 </li>
         <li><a href="orchestro.execution.html#orchestro.execution.vault.arguments">(in module orchestro.execution.vault)</a>
@@ -142,35 +186,37 @@
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.autostart">autostart (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.autostart">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="B">B</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="B">B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.build_objects">build_objects() (orchestro.orche.childs.orche.OrcheChilds method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds.build_objects">(orchestro.orche.childs.OrcheChilds method)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.build_orche">build_orche() (orchestro.inventory.orche.InventoryModule method)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="C">C</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="C">C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.utils.html#orchestro.utils.child.InvalidChild.child">child (orchestro.utils.child.InvalidChild attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.InvalidChild.child">(orchestro.utils.InvalidChild attribute)</a>
 </li>
         <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam.child">(orchestro.utils.InvalidParam attribute)</a>
@@ -182,15 +228,15 @@
 </li>
       <li><a href="orchestro.orche.html#orchestro.orche.Orche.childs">childs (orchestro.orche.Orche property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.orche.Orche.childs">(orchestro.orche.orche.Orche property)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.html#orchestro.orche.Orche.config">config (orchestro.orche.Orche property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.orche.Orche.config">(orchestro.orche.orche.Orche property)</a>
 </li>
         <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.config">(orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
@@ -204,31 +250,32 @@
 </li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.console">console (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.console">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="D">D</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="D">D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.database">database (orchestro.orche.params.orche.OrcheParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheParams.database">(orchestro.orche.params.OrcheParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.directory">directory (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.directory">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.child.OrcheChildParams.display">display (orchestro.orche.params.child.OrcheChildParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.group.OrcheGroupParams.display">(orchestro.orche.params.group.OrcheGroupParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheChildParams.display">(orchestro.orche.params.OrcheChildParams attribute)</a>
@@ -249,10 +296,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrchePersonParams.domain">domain (orchestro.orche.params.OrchePersonParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheSystemParams.domain">(orchestro.orche.params.OrcheSystemParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.person.OrchePersonParams.domain">(orchestro.orche.params.person.OrchePersonParams attribute)</a>
@@ -262,7 +309,7 @@
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.Orche.dryrun">dryrun (orchestro.orche.Orche property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.orche.Orche.dryrun">(orchestro.orche.orche.Orche property)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.dryrun">(orchestro.orche.params.orche.OrcheParams attribute)</a>
@@ -272,7 +319,7 @@
       </ul></li>
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.dumped">dumped (orchestro.inventory.orche.InventoryModule property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.dumped">(orchestro.orche.childs.child.OrcheChild property)</a>
 </li>
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.dumped">(orchestro.orche.childs.orche.OrcheChilds property)</a>
@@ -287,14 +334,15 @@
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="E">E</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="E">E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.enable">enable (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.enable">(orchestro.orche.childs.OrcheChild property)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.child.OrcheChildParams.enable">(orchestro.orche.params.child.OrcheChildParams attribute)</a>
@@ -319,66 +367,68 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.enconfig">enconfig (orchestro.orche.params.orche.OrcheParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheParams.enconfig">(orchestro.orche.params.OrcheParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.encrypts">encrypts (orchestro.orche.params.orche.OrcheParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheParams.encrypts">(orchestro.orche.params.OrcheParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.enlogger">enlogger (orchestro.orche.params.orche.OrcheParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheParams.enlogger">(orchestro.orche.params.OrcheParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam.error">error (orchestro.utils.InvalidParam attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.param.InvalidParam.error">(orchestro.utils.param.InvalidParam attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.execution.html#orchestro.execution.config.execution">execution() (in module orchestro.execution.config)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#orchestro.execution.crypts.execution">(in module orchestro.execution.crypts)</a>
 </li>
         <li><a href="orchestro.execution.html#orchestro.execution.vault.execution">(in module orchestro.execution.vault)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="F">F</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="F">F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.filters.html#orchestro.filters.common.FilterModule">FilterModule (class in orchestro.filters.common)</a>
 </li>
       <li><a href="orchestro.filters.html#orchestro.filters.common.FilterModule.filters">filters() (orchestro.filters.common.FilterModule method)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrchePersonParams.first">first (orchestro.orche.params.OrchePersonParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.person.OrchePersonParams.first">(orchestro.orche.params.person.OrchePersonParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="G">G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.group">group (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.group">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
@@ -386,7 +436,7 @@
 </li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.groups">groups (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.groups">(orchestro.orche.childs.orche.OrcheChilds property)</a>
 </li>
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.groups">(orchestro.orche.childs.OrcheChild property)</a>
@@ -399,16 +449,17 @@
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="I">I</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="I">I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.html#orchestro.orche.config.inheritance">inheritance() (in module orchestro.orche.config)</a>
 </li>
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.child.OrcheChildParams.inherits">inherits (orchestro.orche.params.child.OrcheChildParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.group.OrcheGroupParams.inherits">(orchestro.orche.params.group.OrcheGroupParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheChildParams.inherits">(orchestro.orche.params.OrcheChildParams attribute)</a>
@@ -429,7 +480,7 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.utils.html#orchestro.utils.InvalidChild">InvalidChild</a>, <a href="orchestro.utils.html#orchestro.utils.child.InvalidChild">[1]</a>
 </li>
       <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam">InvalidParam</a>, <a href="orchestro.utils.html#orchestro.utils.param.InvalidParam">[1]</a>
@@ -437,14 +488,15 @@
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule">InventoryModule (class in orchestro.inventory.orche)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="K">K</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="K">K</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.kind">kind (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.group.OrcheGroup.kind">(orchestro.orche.childs.group.OrcheGroup property)</a>
 </li>
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.kind">(orchestro.orche.childs.OrcheChild property)</a>
@@ -465,76 +517,78 @@
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="L">L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrchePersonParams.last">last (orchestro.orche.params.OrchePersonParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.person.OrchePersonParams.last">(orchestro.orche.params.person.OrchePersonParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log">log() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_c">log_c() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log_c">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_d">log_d() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log_d">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_e">log_e() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log_e">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_i">log_i() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log_i">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_w">log_w() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.log_w">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.Orche.logger">logger (orchestro.orche.Orche property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.orche.Orche.logger">(orchestro.orche.orche.Orche property)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.logging">logging (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.logging">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="M">M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.child.OrcheChildParams.memberof">memberof (orchestro.orche.params.child.OrcheChildParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.group.OrcheGroupParams.memberof">(orchestro.orche.params.group.OrcheGroupParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheChildParams.memberof">(orchestro.orche.params.OrcheChildParams attribute)</a>
@@ -556,14 +610,14 @@
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.config.OrcheConfig.merge_params">merge_params() (orchestro.orche.config.OrcheConfig method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.OrcheConfig.merge_params">(orchestro.orche.OrcheConfig method)</a>
 </li>
       </ul></li>
       <li>
     module
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.html#module-orchestro">orchestro</a>
 </li>
         <li><a href="orchestro.html#module-orchestro.conftest">orchestro.conftest</a>
@@ -696,26 +750,28 @@
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="N">N</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="N">N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.name">name (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.name">(orchestro.orche.childs.OrcheChild property)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="O">O</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="O">O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.execution.html#orchestro.execution.config.operation">operation() (in module orchestro.execution.config)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#orchestro.execution.crypts.operation">(in module orchestro.execution.crypts)</a>
 </li>
         <li><a href="orchestro.execution.html#orchestro.execution.vault.operation">(in module orchestro.execution.vault)</a>
@@ -723,19 +779,19 @@
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.Orche">Orche (class in orchestro.orche)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.orche.Orche">(class in orchestro.orche.orche)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.orche">orche (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.orche">(orchestro.orche.childs.OrcheChild property)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.html#orchestro.conftest.orche">orche() (in module orchestro.conftest)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.models.OrcheModels.orche">(orchestro.orche.models.OrcheModels class method)</a>
 </li>
       </ul></li>
@@ -743,31 +799,31 @@
 </li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild">OrcheChild (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild">(class in orchestro.orche.childs.child)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds">OrcheChilds (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds">(class in orchestro.orche.childs.orche)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.OrcheConfig">OrcheConfig (class in orchestro.orche)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#orchestro.orche.config.OrcheConfig">(class in orchestro.orche.config)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheGroup">OrcheGroup (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.group.OrcheGroup">(class in orchestro.orche.childs.group)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger">OrcheLogger (class in orchestro.orche.addons)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger">(class in orchestro.orche.addons.logger)</a>
 </li>
       </ul></li>
@@ -775,500 +831,501 @@
 </li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrchePerson">OrchePerson (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.person.OrchePerson">(class in orchestro.orche.childs.person)</a>
 </li>
       </ul></li>
       <li>
     orchestro
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.html#module-orchestro">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.conftest
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.html#module-orchestro.conftest">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#module-orchestro.execution">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.config
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#module-orchestro.execution.config">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.crypts
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#module-orchestro.execution.crypts">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.test.html#module-orchestro.execution.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.test.test_config
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.test.html#module-orchestro.execution.test.test_config">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.test.test_crypts
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.test.html#module-orchestro.execution.test.test_crypts">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.test.test_vault
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.test.html#module-orchestro.execution.test.test_vault">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.execution.vault
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.html#module-orchestro.execution.vault">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.filters
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.filters.html#module-orchestro.filters">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.filters.common
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.filters.html#module-orchestro.filters.common">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.inventory
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.inventory.html#module-orchestro.inventory">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.inventory.orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.inventory.html#module-orchestro.inventory.orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.inventory.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.inventory.test.html#module-orchestro.inventory.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.inventory.test.test_orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.inventory.test.html#module-orchestro.inventory.test.test_orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.library
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.library.html#module-orchestro.library">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#module-orchestro.orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.addons
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#module-orchestro.orche.addons">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.addons.logger
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#module-orchestro.orche.addons.logger">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.addons.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.test.html#module-orchestro.orche.addons.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.addons.test.test_logger
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.test.html#module-orchestro.orche.addons.test.test_logger">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.child
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.child">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.group
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.group">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.person
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.person">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.subnet
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.subnet">module</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li>
     orchestro.orche.childs.system
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#module-orchestro.orche.childs.system">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_child
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_child">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_group
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_group">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_person
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_person">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_subnet
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_subnet">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.childs.test.test_system
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.test.html#module-orchestro.orche.childs.test.test_system">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.common
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#module-orchestro.orche.common">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.config
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#module-orchestro.orche.config">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.models
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#module-orchestro.orche.models">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.html#module-orchestro.orche.orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.child
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.child">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.common
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.common">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.group
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.group">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.person
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.person">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.subnet
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.subnet">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.params.system
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#module-orchestro.orche.params.system">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.test.html#module-orchestro.orche.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.test.test_config
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.test.html#module-orchestro.orche.test.test_config">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.test.test_models
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.test.html#module-orchestro.orche.test.test_models">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.orche.test.test_orche
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.test.html#module-orchestro.orche.test.test_orche">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.html#module-orchestro.roles">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enhomie
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enhomie.html#module-orchestro.roles.enhomie">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enhomie.action_plugins
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enhomie.action_plugins.html#module-orchestro.roles.enhomie.action_plugins">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enhomie.action_plugins.enhomie_params
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enhomie.action_plugins.html#module-orchestro.roles.enhomie.action_plugins.enhomie_params">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enrobie
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.html#module-orchestro.roles.enrobie">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enrobie.action_plugins
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#module-orchestro.roles.enrobie.action_plugins">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.roles.enrobie.action_plugins.enrobie_params
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#module-orchestro.roles.enrobie.action_plugins.enrobie_params">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#module-orchestro.utils">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils.child
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#module-orchestro.utils.child">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils.param
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#module-orchestro.utils.param">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils.test
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.test.html#module-orchestro.utils.test">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils.test.test_child
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.test.html#module-orchestro.utils.test.test_child">module</a>
 </li>
       </ul></li>
       <li>
     orchestro.utils.test.test_param
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.test.html#module-orchestro.utils.test.test_param">module</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheSubnet">OrcheSubnet (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.subnet.OrcheSubnet">(class in orchestro.orche.childs.subnet)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheSystem">OrcheSystem (class in orchestro.orche.childs)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.system.OrcheSystem">(class in orchestro.orche.childs.system)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="P">P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.package">package (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.package">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam.param">param (orchestro.utils.InvalidParam attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.param.InvalidParam.param">(orchestro.utils.param.InvalidParam attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.params">params (orchestro.orche.childs.child.OrcheChild property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.group.OrcheGroup.params">(orchestro.orche.childs.group.OrcheGroup property)</a>
 </li>
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChild.params">(orchestro.orche.childs.OrcheChild property)</a>
@@ -1297,7 +1354,7 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.parse">parse() (orchestro.inventory.orche.InventoryModule method)</a>
 </li>
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.parse_orche">parse_orche() (orchestro.inventory.orche.InventoryModule method)</a>
@@ -1308,7 +1365,7 @@
 </li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.persons">persons (orchestro.orche.childs.orche.OrcheChilds property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds.persons">(orchestro.orche.childs.OrcheChilds property)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.persons">(orchestro.orche.params.orche.OrcheParams attribute)</a>
@@ -1318,25 +1375,26 @@
       </ul></li>
       <li><a href="orchestro.utils.html#orchestro.utils.child.InvalidChild.phase">phase (orchestro.utils.child.InvalidChild attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.InvalidChild.phase">(orchestro.utils.InvalidChild attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.python">python (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.python">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="R">R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.group.OrcheGroupParams.realm">realm (orchestro.orche.params.group.OrcheGroupParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheGroupParams.realm">(orchestro.orche.params.OrcheGroupParams attribute)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrchePersonParams.realm">(orchestro.orche.params.OrchePersonParams attribute)</a>
@@ -1349,60 +1407,61 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.html#orchestro.conftest.replaces">replaces() (in module orchestro.conftest)</a>
 </li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.repo_path">repo_path (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.repo_path">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.repo_version">repo_version (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.repo_version">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.ActionModule.run">run() (orchestro.roles.enhomie.action_plugins.enhomie_params.ActionModule method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.ActionModule.run">(orchestro.roles.enrobie.action_plugins.enrobie_params.ActionModule method)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="S">S</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="S">S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.set_value">set_value() (orchestro.inventory.orche.InventoryModule method)</a>
 </li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.start">start() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.start">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.stop">stop() (orchestro.orche.addons.logger.OrcheLogger method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.addons.html#orchestro.orche.addons.OrcheLogger.stop">(orchestro.orche.addons.OrcheLogger method)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.params.html#orchestro.orche.params.OrcheSubnetParams.subnet">subnet (orchestro.orche.params.OrcheSubnetParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.subnet.OrcheSubnetParams.subnet">(orchestro.orche.params.subnet.OrcheSubnetParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="orchestro.orche.html#orchestro.orche.models.OrcheModels.subnet">subnet() (orchestro.orche.models.OrcheModels class method)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.subnets">subnets (orchestro.orche.childs.orche.OrcheChilds property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds.subnets">(orchestro.orche.childs.OrcheChilds property)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.subnets">(orchestro.orche.params.orche.OrcheParams attribute)</a>
@@ -1414,7 +1473,7 @@
 </li>
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.systems">systems (orchestro.orche.childs.orche.OrcheChilds property)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds.systems">(orchestro.orche.childs.OrcheChilds property)</a>
 </li>
         <li><a href="orchestro.orche.params.html#orchestro.orche.params.orche.OrcheParams.systems">(orchestro.orche.params.orche.OrcheParams attribute)</a>
@@ -1423,14 +1482,15 @@
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="T">T</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="T">T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.execution.test.html#orchestro.execution.test.test_config.test_arguments">test_arguments() (in module orchestro.execution.test.test_config)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.execution.test.html#orchestro.execution.test.test_crypts.test_arguments">(in module orchestro.execution.test.test_crypts)</a>
 </li>
         <li><a href="orchestro.execution.test.html#orchestro.execution.test.test_vault.test_arguments">(in module orchestro.execution.test.test_vault)</a>
@@ -1451,7 +1511,7 @@
       <li><a href="orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_child.test_OrcheChild_cover">test_OrcheChild_cover() (in module orchestro.orche.childs.test.test_child)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_orche.test_OrcheChilds">test_OrcheChilds() (in module orchestro.orche.childs.test.test_orche)</a>
 </li>
       <li><a href="orchestro.orche.test.html#orchestro.orche.test.test_config.test_OrcheConfig">test_OrcheConfig() (in module orchestro.orche.test.test_config)</a>
@@ -1473,34 +1533,36 @@
       <li><a href="orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_system.test_OrcheSystem_cover">test_OrcheSystem_cover() (in module orchestro.orche.childs.test.test_system)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="U">U</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="U">U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.unique">unique (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.unique">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.user">user (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.user">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
-
-<h2 id="V">V</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  </tr>
+      </table>
+  
+  <h2 id="V">V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild.validate">validate() (orchestro.orche.childs.child.OrcheChild method)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.group.OrcheGroup.validate">(orchestro.orche.childs.group.OrcheGroup method)</a>
 </li>
         <li><a href="orchestro.orche.childs.html#orchestro.orche.childs.orche.OrcheChilds.validate">(orchestro.orche.childs.orche.OrcheChilds method)</a>
@@ -1525,10 +1587,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
       <li><a href="orchestro.utils.html#orchestro.utils.InvalidParam.value">value (orchestro.utils.InvalidParam attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.utils.html#orchestro.utils.param.InvalidParam.value">(orchestro.utils.param.InvalidParam attribute)</a>
 </li>
       </ul></li>
@@ -1536,40 +1598,38 @@
 </li>
       <li><a href="orchestro.roles.enhomie.action_plugins.html#orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams.version">version (orchestro.roles.enhomie.action_plugins.enhomie_params.RoleParams attribute)</a>
 
-      <ul>
+      <ul style="list-style-type:none">
         <li><a href="orchestro.roles.enrobie.action_plugins.html#orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams.version">(orchestro.roles.enrobie.action_plugins.enrobie_params.RoleParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-</tr></table>
+  </tr>
+      </table>
+  
 
-
-
-           </div>
-          </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2024, Enasis Network.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+</div></div>
+<aside id="right-sidebar" class="hidden text-sm xl:block">
+<div class="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-6 space-y-2">
+<a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#A">A</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#B">B</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#C">C</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#D">D</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#E">E</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#F">F</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#G">G</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#I">I</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#K">K</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#L">L</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#M">M</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#N">N</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#O">O</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#P">P</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#R">R</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#S">S</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#T">T</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#U">U</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#V">V</a>
+</div>
+</aside>
+        </main>
       </div>
-    </section>
+    </div><footer class="py-6 border-t border-border md:py-0">
+    <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+      <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+        <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024, Enasis Network&nbsp;Built with <a class="font-medium underline underline-offset-4"
+    href="https://www.sphinx-doc.org"
+    rel="noreferrer">Sphinx 7.3.7</a></p>
+</div>
+</div>
+</footer>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
+  
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="defer" src="_static/theme.js?v=e82a16a3"></script>
+  
 </body>
 </html>
