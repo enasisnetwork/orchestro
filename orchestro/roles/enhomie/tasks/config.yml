@@ -11,7 +11,7 @@
 
 - name: Clone the configuration from repository
 
-  git:
+  ansible.builtin.git:
     repo: '{{ enhomie_repo_path }}'
     dest: >-
       {{ enhomie_directory -}}
@@ -35,7 +35,7 @@
 
 - name: Template the service configuration file
 
-  template:
+  ansible.builtin.template:
     src: config.j2
     dest: >-
       {{ enhomie_directory -}}

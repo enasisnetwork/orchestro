@@ -11,7 +11,7 @@
 
 - name: Control the state of package service
 
-  systemd:
+  ansible.builtin.systemd:
     name: '{{ enrobie_service }}'
     state: >-
       {%- set tags = ansible_run_tags -%}

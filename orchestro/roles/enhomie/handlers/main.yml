@@ -11,4 +11,4 @@
 
 - name: Include downstream tasks within roles
 
-  import_tasks: service.yml
+  ansible.builtin.import_tasks: service.yml

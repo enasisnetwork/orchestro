@@ -4,14 +4,20 @@
 
 Project for executing the Ansible playbooks for system automation.
 
-[![](https://img.shields.io/github/actions/workflow/status/enasisnetwork/orchestro/build.yml?style=flat-square&label=GitHub%20actions)](https://github.com/enasisnetwork/orchestro/actions)<br>
-[![codecov](https://img.shields.io/codecov/c/github/enasisnetwork/orchestro?token=7PGOXKJU0E&style=flat-square&logoColor=FFFFFF&label=Coverage)](https://codecov.io/gh/enasisnetwork/orchestro)<br>
-[![](https://img.shields.io/readthedocs/orchestro?style=flat-square&label=Read%20the%20Docs)](https://orchestro.readthedocs.io)<br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/flake8.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/flake8.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/pylint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/pylint.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/mypy.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/mypy.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/yamllint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/yamllint.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/ansblint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/ansblint.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/pytest.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/pytest.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/coverage.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/coverage.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/sphinx.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/sphinx.png"></a><br>
 
 ## Documentation
-Documentation is on [Read the Docs](https://orchestro.readthedocs.io).
+Read [project documentation](https://enasisnetwork.github.io/orchestro/sphinx)
+built using the [Sphinx](https://www.sphinx-doc.org/) project.
 Should you venture into the sections below you will be able to use the
-`sphinx` recipe to build documention in the `docs/html` directory.
+`sphinx` recipe to build documention in the `sphinx/html` directory.
 
 ## Quick start for local development
 Start by cloning the repository to your local machine.
@@ -52,5 +58,3 @@ make -s pytest
 1. Push to the `main` branch.
 
 1. Create [repository](https://github.com/enasisnetwork/orchestro) release.
-
-1. Update [Read the Docs](https://orchestro.readthedocs.io) documentation.
