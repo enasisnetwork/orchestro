@@ -11,7 +11,7 @@
 
 - name: Create directories for related package
 
-  file:
+  ansible.builtin.file:
     path: '{{ item.path }}'
     owner: '{{ enrobie_user }}'
     group: '{{ enrobie_group }}'

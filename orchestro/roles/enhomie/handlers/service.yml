@@ -11,7 +11,7 @@
 
 - name: restart enhomie
 
-  systemd:
+  ansible.builtin.systemd:
     name: '{{ enhomie_service }}'
     state: restarted
 
