@@ -150,7 +150,7 @@ postprocess html... [ 91%] /home/runner/work/orchestro/orchestro/main/sphinx/htm
 postprocess html... [ 96%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.utils.html
 postprocess html... [100%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.utils.test.html
 
-build succeeded, 110 warnings.
+build succeeded, 132 warnings.
 
 The HTML pages are in sphinx/html.
     DONE
