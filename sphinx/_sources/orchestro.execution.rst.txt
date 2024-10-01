@@ -1,0 +1,45 @@
+orchestro.execution package
+===========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.execution.test
+
+Submodules
+----------
+
+orchestro.execution.config module
+---------------------------------
+
+.. automodule:: orchestro.execution.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+orchestro.execution.crypts module
+---------------------------------
+
+.. automodule:: orchestro.execution.crypts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+orchestro.execution.vault module
+--------------------------------
+
+.. automodule:: orchestro.execution.vault
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro.execution
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+orchestro.inventory.test package
+================================
+
+Submodules
+----------
+
+orchestro.inventory.test.test\_orche module
+-------------------------------------------
+
+.. automodule:: orchestro.inventory.test.test_orche
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro.inventory.test
+   :members:
+   :undoc-members:
+   :show-inheritance:

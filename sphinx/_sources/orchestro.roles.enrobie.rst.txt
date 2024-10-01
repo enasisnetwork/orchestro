@@ -1,0 +1,18 @@
+orchestro.roles.enrobie package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.roles.enrobie.action_plugins
+
+Module contents
+---------------
+
+.. automodule:: orchestro.roles.enrobie
+   :members:
+   :undoc-members:
+   :show-inheritance:

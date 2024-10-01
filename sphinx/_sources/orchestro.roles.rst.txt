@@ -1,0 +1,19 @@
+orchestro.roles package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.roles.enhomie
+   orchestro.roles.enrobie
+
+Module contents
+---------------
+
+.. automodule:: orchestro.roles
+   :members:
+   :undoc-members:
+   :show-inheritance:

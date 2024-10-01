@@ -1,0 +1,29 @@
+orchestro.orche.addons package
+==============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.orche.addons.test
+
+Submodules
+----------
+
+orchestro.orche.addons.logger module
+------------------------------------
+
+.. automodule:: orchestro.orche.addons.logger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro.orche.addons
+   :members:
+   :undoc-members:
+   :show-inheritance:

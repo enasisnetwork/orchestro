@@ -1,0 +1,21 @@
+orchestro.orche.addons.test package
+===================================
+
+Submodules
+----------
+
+orchestro.orche.addons.test.test\_logger module
+-----------------------------------------------
+
+.. automodule:: orchestro.orche.addons.test.test_logger
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro.orche.addons.test
+   :members:
+   :undoc-members:
+   :show-inheritance:

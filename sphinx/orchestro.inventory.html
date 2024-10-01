@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>orchestro.inventory package &mdash; orchestro  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            orchestro
+          </a>
+              <div class="version">
+                0.4.3
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">orchestro.inventory package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-orchestro.inventory.orche">orchestro.inventory.orche module</a><ul>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule"><code class="docutils literal notranslate"><span class="pre">InventoryModule</span></code></a><ul>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.add_child"><code class="docutils literal notranslate"><span class="pre">InventoryModule.add_child()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.add_group"><code class="docutils literal notranslate"><span class="pre">InventoryModule.add_group()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.add_host"><code class="docutils literal notranslate"><span class="pre">InventoryModule.add_host()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.build_orche"><code class="docutils literal notranslate"><span class="pre">InventoryModule.build_orche()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.dumped"><code class="docutils literal notranslate"><span class="pre">InventoryModule.dumped</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.parse"><code class="docutils literal notranslate"><span class="pre">InventoryModule.parse()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.parse_orche"><code class="docutils literal notranslate"><span class="pre">InventoryModule.parse_orche()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.parse_paths"><code class="docutils literal notranslate"><span class="pre">InventoryModule.parse_paths()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.set_value"><code class="docutils literal notranslate"><span class="pre">InventoryModule.set_value()</span></code></a></li>
+<li><a class="reference internal" href="#orchestro.inventory.orche.InventoryModule.verify_file"><code class="docutils literal notranslate"><span class="pre">InventoryModule.verify_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-orchestro.inventory">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">orchestro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">orchestro.inventory package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/orchestro.inventory.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="orchestro-inventory-package">
+<h1>orchestro.inventory package<a class="headerlink" href="#orchestro-inventory-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="orchestro.inventory.test.html">orchestro.inventory.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.inventory.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.inventory.test.html#module-orchestro.inventory.test.test_orche">orchestro.inventory.test.test_orche module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orchestro.inventory.test.html#orchestro.inventory.test.test_orche.test_InventoryModule"><code class="docutils literal notranslate"><span class="pre">test_InventoryModule()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.inventory.test.html#module-orchestro.inventory.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-orchestro.inventory.orche">
+<span id="orchestro-inventory-orche-module"></span><h2>orchestro.inventory.orche module<a class="headerlink" href="#module-orchestro.inventory.orche" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Orchestrations.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">orchestro.inventory.orche.</span></span><span class="sig-name descname"><span class="pre">InventoryModule</span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInventoryPlugin</span></code></p>
+<p>Process and update Ansible inventory from Orche objects.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.add_child">
+<span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.add_child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.add_child" title="Link to this definition"></a></dt>
+<dd><p>Perform the operations related to the Ansible inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional arguments passed for downstream.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments passed for downstream.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.add_group">
+<span class="sig-name descname"><span class="pre">add_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.add_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.add_group" title="Link to this definition"></a></dt>
+<dd><p>Perform the operations related to the Ansible inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional arguments passed for downstream.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments passed for downstream.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.add_host">
+<span class="sig-name descname"><span class="pre">add_host</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.add_host"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.add_host" title="Link to this definition"></a></dt>
+<dd><p>Perform the operations related to the Ansible inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional arguments passed for downstream.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments passed for downstream.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.build_orche">
+<span class="sig-name descname"><span class="pre">build_orche</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="orchestro.orche.html#orchestro.orche.orche.Orche" title="orchestro.orche.orche.Orche"><span class="pre">Orche</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.build_orche"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.build_orche" title="Link to this definition"></a></dt>
+<dd><p>Construct instances using the configuration parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.dumped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dumped</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.dumped" title="Link to this definition"></a></dt>
+<dd><p>Return the facts about the attributes from the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">InventoryData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.parse" title="Link to this definition"></a></dt>
+<dd><p>Process and update Ansible inventory from Orche objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inventory</strong> – Reference to Ansible inventory object.</p></li>
+<li><p><strong>loader</strong> – Reference for the Ansible loader object.</p></li>
+<li><p><strong>path</strong> – Value which represents source of inventory.</p></li>
+<li><p><strong>cache</strong> – Indicates taht internal cache is enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.parse_orche">
+<span class="sig-name descname"><span class="pre">parse_orche</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.parse_orche"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.parse_orche" title="Link to this definition"></a></dt>
+<dd><p>Process and update Ansible inventory from Orche objects.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.parse_paths">
+<span class="sig-name descname"><span class="pre">parse_paths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.parse_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.parse_paths" title="Link to this definition"></a></dt>
+<dd><p>Process and update Ansible inventory from Orche objects.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.set_value">
+<span class="sig-name descname"><span class="pre">set_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.set_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.set_value" title="Link to this definition"></a></dt>
+<dd><p>Perform the operations related to the Ansible inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional arguments passed for downstream.</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments passed for downstream.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.inventory.orche.InventoryModule.verify_file">
+<span class="sig-name descname"><span class="pre">verify_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/orchestro/inventory/orche.html#InventoryModule.verify_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.inventory.orche.InventoryModule.verify_file" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Complete or relative path to the YAML file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating the parameters are valid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-orchestro.inventory">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-orchestro.inventory" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Orchestrations.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

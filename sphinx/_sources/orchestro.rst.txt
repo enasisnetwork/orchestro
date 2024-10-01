@@ -1,0 +1,35 @@
+orchestro package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.execution
+   orchestro.filters
+   orchestro.inventory
+   orchestro.library
+   orchestro.orche
+   orchestro.roles
+   orchestro.utils
+
+Submodules
+----------
+
+orchestro.conftest module
+-------------------------
+
+.. automodule:: orchestro.conftest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,10 @@
+orchestro.library package
+=========================
+
+Module contents
+---------------
+
+.. automodule:: orchestro.library
+   :members:
+   :undoc-members:
+   :show-inheritance:

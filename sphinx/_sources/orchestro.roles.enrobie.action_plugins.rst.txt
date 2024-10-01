@@ -1,0 +1,21 @@
+orchestro.roles.enrobie.action\_plugins package
+===============================================
+
+Submodules
+----------
+
+orchestro.roles.enrobie.action\_plugins.enrobie\_params module
+--------------------------------------------------------------
+
+.. automodule:: orchestro.roles.enrobie.action_plugins.enrobie_params
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: orchestro.roles.enrobie.action_plugins
+   :members:
+   :undoc-members:
+   :show-inheritance:
