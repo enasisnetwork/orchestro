@@ -305,7 +305,7 @@ jobs:
             "pylint": "$PYLINT",
             "mypy": "$MYPY",
             "yamllint": "$YAMLLINT",
-            "yamllint": "$ANSBLINT",
+            "ansblint": "$ANSBLINT",
             "pytest": "$PYTEST",
             "coverage": "$COVERAGE",
             "sphinx": "$SPHINX"
