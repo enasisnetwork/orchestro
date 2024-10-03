@@ -198,6 +198,13 @@ jobs:
             ../static/validate/yamllint.txt
 
           ansi2txt \
+            < ../static/validate/ansblint.txt \
+            > ../static/validate/ansblint.tmp
+
+          mv ../static/validate/ansblint.tmp \
+            ../static/validate/ansblint.txt
+
+          ansi2txt \
             < ../static/validate/pytest.txt \
             > ../static/validate/pytest.tmp
 
@@ -224,6 +231,7 @@ jobs:
           PYLINT="unknown"
           MYPY="unknown"
           YAMLLINT="unknown"
+          ANSBLINT="unknown"
           PYTEST="unknown"
           COVERAGE="unknown"
           SPHINX="unknown"
@@ -256,6 +264,13 @@ jobs:
             YAMLLINT="failing"
           fi
 
+          OUTCOME="${{ steps.ansblint.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            ANSBLINT="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            ANSBLINT="failing"
+          fi
+
           OUTCOME="${{ steps.pytest.outcome }}"
           if [[ "$OUTCOME" == "success" ]]; then
             PYTEST="passing"
@@ -280,6 +295,7 @@ jobs:
             "pylint": "$PYLINT",
             "mypy": "$MYPY",
             "yamllint": "$YAMLLINT",
+            "yamllint": "$ANSBLINT",
             "pytest": "$PYTEST",
             "coverage": "$COVERAGE",
             "sphinx": "$SPHINX"
