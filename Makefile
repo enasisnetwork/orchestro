@@ -608,36 +608,6 @@ cloc:
 
 
 
-.PHONY: pypackage
-pypackage: \
-	.check-venv-develop
-	@## Create the Python compatible package
-	@#
-	@$(MAKE) cleanup
-	@#
-	$(call MAKE_PR2NT,\
-		<cD>make <cL>pypackage<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Create <c90>package<c37> \
-		build directory..<c0>)
-	$(VENVD)/bin/python \
-		-m build \
-		--sdist --wheel \
-		--outdir $(PROJECT).dist
-	$(VENVD)/bin/python \
-		-m twine check \
-		$(PROJECT).dist/*
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	$(call MAKE_PR3NT,\
-		<c37>Remove <c90>package<c37> \
-		build directory..<c0>)
-	@rm -rf $(PROJECT).egg-info
-	@rm -rf build
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-
-
-
 .check-python:
 ifndef PYTHON
 	$(error PYTHON variable is not defined)
