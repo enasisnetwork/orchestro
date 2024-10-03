@@ -6,6 +6,7 @@ Project for executing the Ansible playbooks for system automation.
 
 <a href="https://enasisnetwork.github.io/orchestro/validate/flake8.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/flake8.png"></a><br>
 <a href="https://enasisnetwork.github.io/orchestro/validate/pylint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/pylint.png"></a><br>
+<a href="https://enasisnetwork.github.io/orchestro/validate/ruff.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/ruff.png"></a><br>
 <a href="https://enasisnetwork.github.io/orchestro/validate/mypy.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/mypy.png"></a><br>
 <a href="https://enasisnetwork.github.io/orchestro/validate/yamllint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/yamllint.png"></a><br>
 <a href="https://enasisnetwork.github.io/orchestro/validate/ansblint.txt"><img src="https://enasisnetwork.github.io/orchestro/badges/ansblint.png"></a><br>
