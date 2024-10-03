@@ -44,6 +44,10 @@ help: .check-python
 
 
 
+-include orchestro/playbooks/*/Makefile
+
+
+
 .PHONY: cleanup
 cleanup:
 	@## Executes all various cleanup for cache
