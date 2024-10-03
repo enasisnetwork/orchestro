@@ -487,6 +487,58 @@ yamllint: \
 	@$(VENVD)/bin/yamllint \
 		-s .github
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
+.PHONY: ansblint
+
+
+
+ansblint: \
+	.check-venv-develop
+	@## Execute the relevant linters and tests
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ansblint<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ansible-lint<c37> \
+		in <c90>playbooks<c37>..<c0>)
+	@( \
+		set -e; \
+		. $(VENVD)/bin/activate; \
+		ansible-lint \
+			-q --strict \
+			--show-relpath \
+			-c .ansible-lint \
+			orchestro/playbooks; \
+		deactivate)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ansible-lint<c37> \
+		on <c90>roles<c37>..<c0>)
+	@( \
+		set -e; \
+		. $(VENVD)/bin/activate; \
+		ansible-lint \
+			-q --strict \
+			--show-relpath \
+			-c .ansible-lint \
+			orchestro/roles; \
+		deactivate)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ansible-lint<c37> \
+		on <c90>inventory<c37>..<c0>)
+	@( \
+		set -e; \
+		. $(VENVD)/bin/activate; \
+		ansible-lint \
+			-q --strict \
+			--show-relpath \
+			-c .ansible-lint \
+			orchestro/inventory; \
+		deactivate)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
 
