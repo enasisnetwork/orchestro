@@ -2,6 +2,8 @@
 
 ansible-dev-tools
 
+ruff
+
 flake8
 flake8-2020
 flake8-annotations

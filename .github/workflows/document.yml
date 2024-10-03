@@ -114,6 +114,7 @@ jobs:
 
           FLAKE8="unknown"
           PYLINT="unknown"
+          RUFF="unknown"
           MYPY="unknown"
           YAMLLINT="unknown"
           ANSBLINT="unknown"
@@ -124,6 +125,7 @@ jobs:
           if [ -f "static/validate/index.json" ]; then
             FLAKE8=$(jq -r '.flake8 // "unknown"' static/validate/index.json)
             PYLINT=$(jq -r '.pylint // "unknown"' static/validate/index.json)
+            RUFF=$(jq -r '.ruff // "unknown"' static/validate/index.json)
             MYPY=$(jq -r '.mypy // "unknown"' static/validate/index.json)
             YAMLLINT=$(jq -r '.yamllint // "unknown"' static/validate/index.json)
             ANSBLINT=$(jq -r '.ansblint // "unknown"' static/validate/index.json)
@@ -134,6 +136,7 @@ jobs:
 
           echo "flake8=$FLAKE8" >> $GITHUB_ENV
           echo "pylint=$PYLINT" >> $GITHUB_ENV
+          echo "ruff=$RUFF" >> $GITHUB_ENV
           echo "mypy=$MYPY" >> $GITHUB_ENV
           echo "yamllint=$YAMLLINT" >> $GITHUB_ENV
           echo "ansblint=$ANSBLINT" >> $GITHUB_ENV
@@ -148,17 +151,11 @@ jobs:
         run: |
 
           STATUS="${{ env.flake8 }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/flake8.png" \
-            "Flake8" "$COLOR" "$STATUS"
+            --file "../static/badges/flake8.png" \
+            --label "Flake8" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for Pylint
@@ -166,17 +163,23 @@ jobs:
         run: |
 
           STATUS="${{ env.pylint }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/pylint.png" \
-            "Pylint" "$COLOR" "$STATUS"
+            --file "../static/badges/pylint.png" \
+            --label "Pylint" \
+            --value "$STATUS"
+
+      # Construct additional content
+      - name: Build badge for Ruff
+        working-directory: main
+        run: |
+
+          STATUS="${{ env.ruff }}"
+
+          python makebadge.py \
+            --file "../static/badges/ruff.png" \
+            --label "Ruff" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for Mypy
@@ -184,17 +187,11 @@ jobs:
         run: |
 
           STATUS="${{ env.mypy }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/mypy.png" \
-            "Mypy" "$COLOR" "$STATUS"
+            --file "../static/badges/mypy.png" \
+            --label "Mypy" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for YAMLlint
@@ -202,17 +199,11 @@ jobs:
         run: |
 
           STATUS="${{ env.yamllint }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/yamllint.png" \
-            "YAMLlint" "$COLOR" "$STATUS"
+            --file "../static/badges/yamllint.png" \
+            --label "YAMLlint" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for Ansible Lint
@@ -220,17 +211,11 @@ jobs:
         run: |
 
           STATUS="${{ env.ansblint }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/ansblint.png" \
-            "Ansible Lint" "$COLOR" "$STATUS"
+            --file "../static/badges/ansblint.png" \
+            --label "Ansible Lint" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for Pytest
@@ -238,17 +223,11 @@ jobs:
         run: |
 
           STATUS="${{ env.pytest }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/pytest.png" \
-            "Pytest" "$COLOR" "$STATUS"
+            --file "../static/badges/pytest.png" \
+            --label "Pytest" \
+            --value "$STATUS"
 
       # Construct additional content
       - name: Build badge for Coverage.py
@@ -256,19 +235,11 @@ jobs:
         run: |
 
           STATUS="${{ env.coverage }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" -eq 100 ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" -ge 80 ]]; then
-            COLOR="yellow"
-          elif [[ "$STATUS" -ge 0 ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/coverage.png" \
-            "Coverage.py" "$COLOR" "${STATUS}%"
+            --file "../static/badges/coverage.png" \
+            --label "Coverage.py" \
+            --value "${STATUS}%"
 
       # Construct additional content
       - name: Build badge for Sphinx
@@ -276,17 +247,11 @@ jobs:
         run: |
 
           STATUS="${{ env.sphinx }}"
-          COLOR="gray"
-
-          if [[ "$STATUS" == "passing" ]]; then
-            COLOR="green"
-          elif [[ "$STATUS" == "failing" ]]; then
-            COLOR="red"
-          fi
 
           python makebadge.py \
-            "../static/badges/sphinx.png" \
-            "Sphinx" "$COLOR" "$STATUS"
+            --file "../static/badges/sphinx.png" \
+            --label "Sphinx" \
+            --value "$STATUS"
 
 
       # Save content in static branch
