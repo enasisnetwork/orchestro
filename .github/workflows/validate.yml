@@ -307,7 +307,7 @@ jobs:
             "yamllint": "$YAMLLINT",
             "ansblint": "$ANSBLINT",
             "pytest": "$PYTEST",
-            "coverage": "$COVERAGE",
+            "coverage": $COVERAGE,
             "sphinx": "$SPHINX"
           }
           EOF
