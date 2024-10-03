@@ -144,6 +144,16 @@ jobs:
         continue-on-error: true
 
       # Validate the Python project
+      - name: Lint using Ansible Lint
+        id: ansblint
+        working-directory: main
+        run: |
+          set -oe pipefail
+          make -s ansblint \
+            | tee ../static/validate/ansblint.txt
+        continue-on-error: true
+
+      # Validate the Python project
       - name: Test with Pytest
         id: pytest
         working-directory: main
