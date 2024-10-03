@@ -230,7 +230,7 @@ jobs:
 
           python makebadge.py \
             "../static/badges/ansblint.png" \
-            "YAMLlint" "$COLOR" "$STATUS"
+            "Ansible Lint" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Pytest
