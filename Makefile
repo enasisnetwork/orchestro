@@ -44,10 +44,6 @@ help: .check-python
 
 
 
--include orchestro/playbooks/*/Makefile
-
-
-
 .PHONY: cleanup
 cleanup:
 	@## Executes all various cleanup for cache
@@ -66,7 +62,6 @@ linters:
 	@$(MAKE) pylint
 	@$(MAKE) mypy
 	@$(MAKE) yamllint
-	@$(MAKE) ansblint
 
 
 
@@ -77,7 +72,6 @@ linters-pass:
 	@$(MAKE) pylint || true
 	@$(MAKE) mypy || true
 	@$(MAKE) yamllint || true
-	@$(MAKE) ansblint || true
 
 
 
@@ -496,58 +490,6 @@ yamllint: \
 
 
 
-.PHONY: ansblint
-ansblint: \
-	.check-venv-develop
-	@## Execute the relevant linters and tests
-	@#
-	$(call MAKE_PR2NT,\
-		<cD>make <cL>ansblint<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ansible-lint<c37> \
-		in <c90>playbooks<c37>..<c0>)
-	@( \
-		set -e; \
-		. $(VENVD)/bin/activate; \
-		ansible-lint \
-			-q --strict \
-			--show-relpath \
-			-c .ansible-lint \
-			orchestro/playbooks; \
-		deactivate)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ansible-lint<c37> \
-		on <c90>roles<c37>..<c0>)
-	@( \
-		set -e; \
-		. $(VENVD)/bin/activate; \
-		ansible-lint \
-			-q --strict \
-			--show-relpath \
-			-c .ansible-lint \
-			orchestro/roles; \
-		deactivate)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ansible-lint<c37> \
-		on <c90>inventory<c37>..<c0>)
-	@( \
-		set -e; \
-		. $(VENVD)/bin/activate; \
-		ansible-lint \
-			-q --strict \
-			--show-relpath \
-			-c .ansible-lint \
-			orchestro/inventory; \
-		deactivate)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-
-
-
 .PHONY: sphinx
 sphinx: \
 	.check-venv-develop \
@@ -614,33 +556,87 @@ cloc:
 
 
 
-.PHONY: badge
-badge: \
+.PHONY: pypackage
+pypackage: \
 	.check-venv-develop
-	@## Create the image for README badge
+	@## Create the Python compatible package
 	@#
-ifndef name
-	$(error name not defined)
-endif
-ifndef label
-	$(error label not defined)
-endif
-ifndef color
-	$(error color not defined)
-endif
-ifndef value
-	$(error value not defined)
-endif
+	@$(MAKE) cleanup
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>badge<c0>)
+		<cD>make <cL>pypackage<c0>)
 	@#
 	$(call MAKE_PR3NT,\
-		<c37>Generate <c90>badge<c37> \
-		file <c90>$(name)<c37>..<c0>)
-	$(VENVD)/bin/python -B makebadge.py \
-		"$(name)" "$(label)" \
-		$(color) "$(value)"
+		<c37>Create <c90>package<c37> \
+		build directory..<c0>)
+	$(VENVD)/bin/python \
+		-m build \
+		--sdist --wheel \
+		--outdir $(PROJECT).dist
+	$(VENVD)/bin/python \
+		-m twine check \
+		$(PROJECT).dist/*
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	$(call MAKE_PR3NT,\
+		<c37>Remove <c90>package<c37> \
+		build directory..<c0>)
+	@rm -rf $(PROJECT).egg-info
+	@rm -rf build
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: pypi-upload-test
+pypi-upload-test: \
+	$(PROJECT).dist .check-venv-develop
+	@## Upload the Python package to PyPi test
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>pypi-upload-test<c0>)
+	@#
+	@$(VENVD)/bin/python -Bc 'if 1:\
+		confirm = input(\
+			"Are you sure? [y/N] ");\
+		assert confirm == "y";'
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Upload to <c90>package<c37> \
+		to <c90>test<c37> servers..<c0>)
+	$(VENVD)/bin/python \
+		-m twine upload \
+		--verbose \
+		--repository testpypi \
+		$(PROJECT).dist/*
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: pypi-upload-prod
+pypi-upload-prod: \
+	$(PROJECT).dist .check-venv-develop
+	@## Upload the Python package to PyPi prod
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>pypi-upload-prod<c0>)
+	@#
+	@$(VENVD)/bin/python -Bc 'if 1:\
+		confirm = input(\
+			"Are you sure? [y/N] ");\
+		assert confirm == "y";'
+	@#
+	@$(VENVD)/bin/python -Bc 'if 1:\
+		confirm = input(\
+			"Do you understand this "\
+			"is production? [y/N] ");\
+		assert confirm == "y";'
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Upload to <c90>package<c37> \
+		to <c90>prod<c37> servers..<c0>)
+	$(VENVD)/bin/python \
+		-m twine upload \
+		--verbose \
+		$(PROJECT).dist/*
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
