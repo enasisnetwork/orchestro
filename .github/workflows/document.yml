@@ -116,6 +116,7 @@ jobs:
           PYLINT="unknown"
           MYPY="unknown"
           YAMLLINT="unknown"
+          ANSBLINT="unknown"
           PYTEST="unknown"
           COVERAGE="unknown"
           SPHINX="unknown"
@@ -125,6 +126,7 @@ jobs:
             PYLINT=$(jq -r '.pylint // "unknown"' static/validate/index.json)
             MYPY=$(jq -r '.mypy // "unknown"' static/validate/index.json)
             YAMLLINT=$(jq -r '.yamllint // "unknown"' static/validate/index.json)
+            ANSBLINT=$(jq -r '.ansblint // "unknown"' static/validate/index.json)
             PYTEST=$(jq -r '.pytest // "unknown"' static/validate/index.json)
             COVERAGE=$(jq -r '.coverage // "unknown"' static/validate/index.json)
             SPHINX=$(jq -r '.sphinx // "unknown"' static/validate/index.json)
@@ -134,6 +136,7 @@ jobs:
           echo "pylint=$PYLINT" >> $GITHUB_ENV
           echo "mypy=$MYPY" >> $GITHUB_ENV
           echo "yamllint=$YAMLLINT" >> $GITHUB_ENV
+          echo "ansblint=$ANSBLINT" >> $GITHUB_ENV
           echo "pytest=$PYTEST" >> $GITHUB_ENV
           echo "coverage=$COVERAGE" >> $GITHUB_ENV
           echo "sphinx=$SPHINX" >> $GITHUB_ENV
@@ -209,6 +212,24 @@ jobs:
 
           python makebadge.py \
             "../static/badges/yamllint.png" \
+            "YAMLlint" "$COLOR" "$STATUS"
+
+      # Construct additional content
+      - name: Build badge for Ansible Lint
+        working-directory: main
+        run: |
+
+          STATUS="${{ env.ansblint }}"
+          COLOR="gray"
+
+          if [[ "$STATUS" == "passing" ]]; then
+            COLOR="green"
+          elif [[ "$STATUS" == "failing" ]]; then
+            COLOR="red"
+          fi
+
+          python makebadge.py \
+            "../static/badges/ansblint.png" \
             "YAMLlint" "$COLOR" "$STATUS"
 
       # Construct additional content
