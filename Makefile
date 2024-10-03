@@ -586,61 +586,6 @@ pypackage: \
 
 
 
-.PHONY: pypi-upload-test
-pypi-upload-test: \
-	$(PROJECT).dist .check-venv-develop
-	@## Upload the Python package to PyPi test
-	@#
-	$(call MAKE_PR2NT,\
-		<cD>make <cL>pypi-upload-test<c0>)
-	@#
-	@$(VENVD)/bin/python -Bc 'if 1:\
-		confirm = input(\
-			"Are you sure? [y/N] ");\
-		assert confirm == "y";'
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Upload to <c90>package<c37> \
-		to <c90>test<c37> servers..<c0>)
-	$(VENVD)/bin/python \
-		-m twine upload \
-		--verbose \
-		--repository testpypi \
-		$(PROJECT).dist/*
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-
-
-
-.PHONY: pypi-upload-prod
-pypi-upload-prod: \
-	$(PROJECT).dist .check-venv-develop
-	@## Upload the Python package to PyPi prod
-	@#
-	$(call MAKE_PR2NT,\
-		<cD>make <cL>pypi-upload-prod<c0>)
-	@#
-	@$(VENVD)/bin/python -Bc 'if 1:\
-		confirm = input(\
-			"Are you sure? [y/N] ");\
-		assert confirm == "y";'
-	@#
-	@$(VENVD)/bin/python -Bc 'if 1:\
-		confirm = input(\
-			"Do you understand this "\
-			"is production? [y/N] ");\
-		assert confirm == "y";'
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Upload to <c90>package<c37> \
-		to <c90>prod<c37> servers..<c0>)
-	$(VENVD)/bin/python \
-		-m twine upload \
-		--verbose \
-		$(PROJECT).dist/*
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-
-
-
 .check-python:
 ifndef PYTHON
 	$(error PYTHON variable is not defined)
