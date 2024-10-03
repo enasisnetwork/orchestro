@@ -62,6 +62,7 @@ linters:
 	@$(MAKE) pylint
 	@$(MAKE) mypy
 	@$(MAKE) yamllint
+	@$(MAKE) ansblint
 
 
 
@@ -72,6 +73,7 @@ linters-pass:
 	@$(MAKE) pylint || true
 	@$(MAKE) mypy || true
 	@$(MAKE) yamllint || true
+	@$(MAKE) ansblint || true
 
 
 
