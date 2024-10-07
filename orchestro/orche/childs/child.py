@@ -134,9 +134,9 @@ class OrcheChild:
         self,
     ) -> 'Orche':
         """
-        Return the Orche instance to which this instance belongs.
+        Return the Orche instance to which the instance belongs.
 
-        :returns: Orche instance to which this instance belongs.
+        :returns: Orche instance to which the instance belongs.
         """
 
         return self.__orche
