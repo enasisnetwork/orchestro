@@ -19,7 +19,8 @@
       restarted
       {%- elif 'state-started' in tags -%}
       started
-      {%- elif 'state-stopped' in tags -%}
+      {%- elif 'state-stopped' in tags
+           or 'reinstall' in tags -%}
       stopped
       {%- endif -%}
 

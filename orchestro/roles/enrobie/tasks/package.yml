@@ -9,6 +9,21 @@
 
 
 
+- name: Remove virtual env when doing reinstall
+
+  file:
+    path: '{{ enrobie_directory }}/venv'
+    state: absent
+
+  become: yes
+
+  tags: reinstall
+
+
+
+
+
+
 - name: Install the package in the virtual env
 
   ansible.builtin.pip:
@@ -20,5 +35,7 @@
     state: latest
     version: >-
       {{ enrobie_version | default(omit) }}
+
+  become_user: '{{ enrobie_user }}'
 
   tags: always

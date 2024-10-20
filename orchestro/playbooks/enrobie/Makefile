@@ -52,6 +52,35 @@ endif
 
 
 
+.PHONY: enrobie-reinstall
+enrobie-reinstall:
+	@## Remove existing venv and then install
+	@#
+ifndef limit
+	$(error limit not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>enrobie-reinstall<c0>)
+	@#
+	@$(VENVP)/bin/python -Bc 'if 1:\
+		confirm = input(\
+			"Are you sure? [y/N] ");\
+		assert confirm == "y";'
+	@#
+	@( \
+		set -e; \
+		. $(VENVP)/bin/activate; \
+		ansible_gather="yes" \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=reinstall \
+			orchestro/playbooks/enrobie/default.yml; \
+		deactivate)
+
+
+
 .PHONY: enrobie-configure
 enrobie-configure:
 	@## Bypass install and configure package
