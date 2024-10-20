@@ -9,6 +9,21 @@
 
 
 
+- name: Remove virtual env when doing reinstall
+
+  ansible.builtin.file:
+    path: '{{ enhomie_directory }}/venv'
+    state: absent
+
+  become: true
+
+  tags: reinstall
+
+
+
+
+
+
 - name: Install the package in the virtual env
 
   ansible.builtin.pip:
@@ -20,5 +35,8 @@
     state: latest
     version: >-
       {{ enhomie_version | default(omit) }}
+
+  become: true
+  become_user: '{{ enhomie_user }}'
 
   tags: always

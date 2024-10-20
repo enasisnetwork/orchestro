@@ -60,7 +60,18 @@
   ansible.builtin.include_tasks: >-
     tasks/folders.yml
 
-  tags: install
+  tags:
+    - install
+    - reinstall
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/state.yml
+
+  tags: reinstall
 
 
 
@@ -69,7 +80,9 @@
   ansible.builtin.include_tasks: >-
     tasks/package.yml
 
-  tags: install
+  tags:
+    - install
+    - reinstall
 
 
 
@@ -80,6 +93,7 @@
 
   tags:
     - install
+    - reinstall
     - configure
 
 
@@ -89,7 +103,9 @@
   ansible.builtin.include_tasks: >-
     tasks/systemd.yml
 
-  tags: install
+  tags:
+    - install
+    - reinstall
 
 
 
