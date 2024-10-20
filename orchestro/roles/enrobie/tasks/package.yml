@@ -11,11 +11,11 @@
 
 - name: Remove virtual env when doing reinstall
 
-  file:
+  ansible.builtin.file:
     path: '{{ enrobie_directory }}/venv'
     state: absent
 
-  become: yes
+  become: true
 
   tags: reinstall
 
@@ -36,6 +36,7 @@
     version: >-
       {{ enrobie_version | default(omit) }}
 
+  become: true
   become_user: '{{ enrobie_user }}'
 
   tags: always
