@@ -1,7 +1,2 @@
 >>> make ansblint
   ● Executing ansible-lint in playbooks..
-    DONE
-  ● Executing ansible-lint on roles..
-    DONE
-  ● Executing ansible-lint on inventory..
-    DONE
