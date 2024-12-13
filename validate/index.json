@@ -4,7 +4,7 @@
   "ruff": "passing",
   "mypy": "passing",
   "yamllint": "passing",
-  "ansblint": "failing",
+  "ansblint": "passing",
   "pytest": "passing",
   "coverage": "100",
   "sphinx": "passing"
