@@ -15,7 +15,7 @@
     <title>orchestro.orche.params.orche | orchestro  documentation</title>
     <meta property="og:title" content="orchestro.orche.params.orche | orchestro  documentation" />
     <meta name="twitter:title" content="orchestro.orche.params.orche | orchestro  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,25 +150,25 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Params</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Params</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 </span><span id="line-18">
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">.group</span> <span class="kn">import</span> <span class="n">OrcheGroupParams</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">.person</span> <span class="kn">import</span> <span class="n">OrchePersonParams</span>
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">.subnet</span> <span class="kn">import</span> <span class="n">OrcheSubnetParams</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">.system</span> <span class="kn">import</span> <span class="n">OrcheSystemParams</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">.group</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheGroupParams</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">.person</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrchePersonParams</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">.subnet</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSubnetParams</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">.system</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSystemParams</span>
 </span><span id="line-23">
 </span><span id="line-24">
 </span><span id="line-25">
 <div class="viewcode-block" id="OrcheParams">
 <a class="viewcode-back" href="../../../../orchestro.orche.params.html#orchestro.orche.params.OrcheParams">[docs]</a>
-</span><span id="line-26"><span class="k">class</span> <span class="nc">OrcheParams</span><span class="p">(</span><span class="n">Params</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-26"><span class="k">class</span><span class="w"> </span><span class="nc">OrcheParams</span><span class="p">(</span><span class="n">Params</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-27"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-28"><span class="sd">    Process and validate the core configuration parameters.</span>
 </span><span id="line-29"><span class="sd">    &quot;&quot;&quot;</span>
@@ -209,7 +209,7 @@
 </span><span id="line-64">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="line-65">
 </span><span id="line-66">
-</span><span id="line-67">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-67">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-68">        <span class="c1"># NOCVR</span>
 </span><span id="line-69">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-70">        <span class="o">/</span><span class="p">,</span>

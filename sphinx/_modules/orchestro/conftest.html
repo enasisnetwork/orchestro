@@ -15,7 +15,7 @@
     <title>orchestro.conftest | orchestro  documentation</title>
     <meta property="og:title" content="orchestro.conftest | orchestro  documentation" />
     <meta name="twitter:title" content="orchestro.conftest | orchestro  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../search.html" />
@@ -150,23 +150,23 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span id="line-11">
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.utils</span> <span class="kn">import</span> <span class="n">save_text</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_text</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">fixture</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">pytest</span><span class="w"> </span><span class="kn">import</span> <span class="n">fixture</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">EXAMPLES</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">PROJECT</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">.orche</span> <span class="kn">import</span> <span class="n">Orche</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">.orche</span> <span class="kn">import</span> <span class="n">OrcheConfig</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">EXAMPLES</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">PROJECT</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orche</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheConfig</span>
 </span><span id="line-21">
 </span><span id="line-22">
 </span><span id="line-23">
 <div class="viewcode-block" id="config_factory">
 <a class="viewcode-back" href="../../orchestro.html#orchestro.conftest.config_factory">[docs]</a>
-</span><span id="line-24"><span class="k">def</span> <span class="nf">config_factory</span><span class="p">(</span>
+</span><span id="line-24"><span class="k">def</span><span class="w"> </span><span class="nf">config_factory</span><span class="p">(</span>
 </span><span id="line-25">    <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 </span><span id="line-26"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheConfig</span><span class="p">:</span>
 </span><span id="line-27"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -212,7 +212,7 @@
 <div class="viewcode-block" id="config">
 <a class="viewcode-back" href="../../orchestro.html#orchestro.conftest.config">[docs]</a>
 </span><span id="line-66"><span class="nd">@fixture</span>
-</span><span id="line-67"><span class="k">def</span> <span class="nf">config</span><span class="p">(</span>
+</span><span id="line-67"><span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span>
 </span><span id="line-68">    <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 </span><span id="line-69"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheConfig</span><span class="p">:</span>
 </span><span id="line-70"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -230,7 +230,7 @@
 <div class="viewcode-block" id="replaces">
 <a class="viewcode-back" href="../../orchestro.html#orchestro.conftest.replaces">[docs]</a>
 </span><span id="line-81"><span class="nd">@fixture</span>
-</span><span id="line-82"><span class="k">def</span> <span class="nf">replaces</span><span class="p">(</span>
+</span><span id="line-82"><span class="k">def</span><span class="w"> </span><span class="nf">replaces</span><span class="p">(</span>
 </span><span id="line-83">    <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 </span><span id="line-84"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-85"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -249,7 +249,7 @@
 </span><span id="line-97">
 <div class="viewcode-block" id="orche_factory">
 <a class="viewcode-back" href="../../orchestro.html#orchestro.conftest.orche_factory">[docs]</a>
-</span><span id="line-98"><span class="k">def</span> <span class="nf">orche_factory</span><span class="p">(</span>
+</span><span id="line-98"><span class="k">def</span><span class="w"> </span><span class="nf">orche_factory</span><span class="p">(</span>
 </span><span id="line-99">    <span class="n">config</span><span class="p">:</span> <span class="n">OrcheConfig</span><span class="p">,</span>
 </span><span id="line-100"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
 </span><span id="line-101"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -267,7 +267,7 @@
 <div class="viewcode-block" id="orche">
 <a class="viewcode-back" href="../../orchestro.html#orchestro.conftest.orche">[docs]</a>
 </span><span id="line-112"><span class="nd">@fixture</span>
-</span><span id="line-113"><span class="k">def</span> <span class="nf">orche</span><span class="p">(</span>
+</span><span id="line-113"><span class="k">def</span><span class="w"> </span><span class="nf">orche</span><span class="p">(</span>
 </span><span id="line-114">    <span class="n">config</span><span class="p">:</span> <span class="n">OrcheConfig</span><span class="p">,</span>
 </span><span id="line-115"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
 </span><span id="line-116"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>

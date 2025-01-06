@@ -15,7 +15,7 @@
     <title>orchestro.orche.addons.logger | orchestro  documentation</title>
     <meta property="og:title" content="orchestro.orche.addons.logger | orchestro  documentation" />
     <meta name="twitter:title" content="orchestro.orche.addons.logger | orchestro  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,20 +150,20 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-12">
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">clsname</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">clsname</span>
 </span><span id="line-15">
 </span><span id="line-16"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-17">    <span class="kn">from</span> <span class="nn">..orche</span> <span class="kn">import</span> <span class="n">Orche</span>
+</span><span id="line-17">    <span class="kn">from</span><span class="w"> </span><span class="nn">..orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orche</span>
 </span><span id="line-18">
 </span><span id="line-19">
 </span><span id="line-20">
 <div class="viewcode-block" id="OrcheLogger">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger">[docs]</a>
-</span><span id="line-21"><span class="k">class</span> <span class="nc">OrcheLogger</span><span class="p">:</span>
+</span><span id="line-21"><span class="k">class</span><span class="w"> </span><span class="nc">OrcheLogger</span><span class="p">:</span>
 </span><span id="line-22"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-23"><span class="sd">    Methods for extending use of underlying logging library.</span>
 </span><span id="line-24"><span class="sd">    &quot;&quot;&quot;</span>
@@ -171,7 +171,7 @@
 </span><span id="line-26">    <span class="n">__orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span>
 </span><span id="line-27">
 </span><span id="line-28">
-</span><span id="line-29">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-29">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-30">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-31">        <span class="n">orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span><span class="p">,</span>
 </span><span id="line-32">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -184,7 +184,7 @@
 </span><span id="line-39">
 <div class="viewcode-block" id="OrcheLogger.start">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.start">[docs]</a>
-</span><span id="line-40">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span>
+</span><span id="line-40">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
 </span><span id="line-41">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-42">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-43"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -201,7 +201,7 @@
 </span><span id="line-53">
 <div class="viewcode-block" id="OrcheLogger.stop">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.stop">[docs]</a>
-</span><span id="line-54">    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span>
+</span><span id="line-54">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
 </span><span id="line-55">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-56">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-57"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -216,7 +216,7 @@
 
 </span><span id="line-66">
 </span><span id="line-67">
-</span><span id="line-68">    <span class="k">def</span> <span class="nf">__process</span><span class="p">(</span>
+</span><span id="line-68">    <span class="k">def</span><span class="w"> </span><span class="nf">__process</span><span class="p">(</span>
 </span><span id="line-69">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-70">        <span class="n">kwargs</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
 </span><span id="line-71">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -247,7 +247,7 @@
 </span><span id="line-96">
 <div class="viewcode-block" id="OrcheLogger.log">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log">[docs]</a>
-</span><span id="line-97">    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span>
+</span><span id="line-97">    <span class="k">def</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span>
 </span><span id="line-98">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-99">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-100">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -272,7 +272,7 @@
 </span><span id="line-118">
 <div class="viewcode-block" id="OrcheLogger.log_c">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_c">[docs]</a>
-</span><span id="line-119">    <span class="k">def</span> <span class="nf">log_c</span><span class="p">(</span>
+</span><span id="line-119">    <span class="k">def</span><span class="w"> </span><span class="nf">log_c</span><span class="p">(</span>
 </span><span id="line-120">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-121">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-122">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -297,7 +297,7 @@
 </span><span id="line-140">
 <div class="viewcode-block" id="OrcheLogger.log_d">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_d">[docs]</a>
-</span><span id="line-141">    <span class="k">def</span> <span class="nf">log_d</span><span class="p">(</span>
+</span><span id="line-141">    <span class="k">def</span><span class="w"> </span><span class="nf">log_d</span><span class="p">(</span>
 </span><span id="line-142">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-143">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-144">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -322,7 +322,7 @@
 </span><span id="line-162">
 <div class="viewcode-block" id="OrcheLogger.log_e">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_e">[docs]</a>
-</span><span id="line-163">    <span class="k">def</span> <span class="nf">log_e</span><span class="p">(</span>
+</span><span id="line-163">    <span class="k">def</span><span class="w"> </span><span class="nf">log_e</span><span class="p">(</span>
 </span><span id="line-164">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-165">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-166">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -347,7 +347,7 @@
 </span><span id="line-184">
 <div class="viewcode-block" id="OrcheLogger.log_i">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_i">[docs]</a>
-</span><span id="line-185">    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span>
+</span><span id="line-185">    <span class="k">def</span><span class="w"> </span><span class="nf">log_i</span><span class="p">(</span>
 </span><span id="line-186">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-187">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-188">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -372,7 +372,7 @@
 </span><span id="line-206">
 <div class="viewcode-block" id="OrcheLogger.log_w">
 <a class="viewcode-back" href="../../../../orchestro.orche.addons.html#orchestro.orche.addons.logger.OrcheLogger.log_w">[docs]</a>
-</span><span id="line-207">    <span class="k">def</span> <span class="nf">log_w</span><span class="p">(</span>
+</span><span id="line-207">    <span class="k">def</span><span class="w"> </span><span class="nf">log_w</span><span class="p">(</span>
 </span><span id="line-208">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-209">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-210">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

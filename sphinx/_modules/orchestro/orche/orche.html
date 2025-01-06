@@ -15,7 +15,7 @@
     <title>orchestro.orche.orche | orchestro  documentation</title>
     <meta property="og:title" content="orchestro.orche.orche | orchestro  documentation" />
     <meta name="twitter:title" content="orchestro.orche.orche | orchestro  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,24 +150,24 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-12">
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">clsname</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">clsname</span>
 </span><span id="line-15">
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">.addons</span> <span class="kn">import</span> <span class="n">OrcheLogger</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.childs</span> <span class="kn">import</span> <span class="n">OrcheChilds</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheLogger</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheChilds</span>
 </span><span id="line-18">
 </span><span id="line-19"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-20">    <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">OrcheConfig</span>
-</span><span id="line-21">    <span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">OrcheParams</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheConfig</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheParams</span>
 </span><span id="line-22">
 </span><span id="line-23">
 </span><span id="line-24">
 <div class="viewcode-block" id="Orche">
 <a class="viewcode-back" href="../../../orchestro.orche.html#orchestro.orche.orche.Orche">[docs]</a>
-</span><span id="line-25"><span class="k">class</span> <span class="nc">Orche</span><span class="p">:</span>
+</span><span id="line-25"><span class="k">class</span><span class="w"> </span><span class="nc">Orche</span><span class="p">:</span>
 </span><span id="line-26"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-27"><span class="sd">    Interact with chat networks and integrate using plugins.</span>
 </span><span id="line-28">
@@ -181,7 +181,7 @@
 </span><span id="line-36">    <span class="n">__childs</span><span class="p">:</span> <span class="n">OrcheChilds</span>
 </span><span id="line-37">
 </span><span id="line-38">
-</span><span id="line-39">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-39">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-40">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-41">        <span class="n">config</span><span class="p">:</span> <span class="s1">&#39;OrcheConfig&#39;</span><span class="p">,</span>
 </span><span id="line-42">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -209,7 +209,7 @@
 </span><span id="line-64">
 </span><span id="line-65">
 </span><span id="line-66">    <span class="nd">@property</span>
-</span><span id="line-67">    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span>
+</span><span id="line-67">    <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span>
 </span><span id="line-68">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-69">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;OrcheConfig&#39;</span><span class="p">:</span>
 </span><span id="line-70"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -222,7 +222,7 @@
 </span><span id="line-77">
 </span><span id="line-78">
 </span><span id="line-79">    <span class="nd">@property</span>
-</span><span id="line-80">    <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span>
+</span><span id="line-80">    <span class="k">def</span><span class="w"> </span><span class="nf">logger</span><span class="p">(</span>
 </span><span id="line-81">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-82">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheLogger</span><span class="p">:</span>
 </span><span id="line-83"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -235,7 +235,7 @@
 </span><span id="line-90">
 </span><span id="line-91">
 </span><span id="line-92">    <span class="nd">@property</span>
-</span><span id="line-93">    <span class="k">def</span> <span class="nf">childs</span><span class="p">(</span>
+</span><span id="line-93">    <span class="k">def</span><span class="w"> </span><span class="nf">childs</span><span class="p">(</span>
 </span><span id="line-94">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-95">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheChilds</span><span class="p">:</span>
 </span><span id="line-96"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -248,7 +248,7 @@
 </span><span id="line-103">
 </span><span id="line-104">
 </span><span id="line-105">    <span class="nd">@property</span>
-</span><span id="line-106">    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span>
+</span><span id="line-106">    <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
 </span><span id="line-107">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-108">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;OrcheParams&#39;</span><span class="p">:</span>
 </span><span id="line-109"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -261,7 +261,7 @@
 </span><span id="line-116">
 </span><span id="line-117">
 </span><span id="line-118">    <span class="nd">@property</span>
-</span><span id="line-119">    <span class="k">def</span> <span class="nf">dryrun</span><span class="p">(</span>
+</span><span id="line-119">    <span class="k">def</span><span class="w"> </span><span class="nf">dryrun</span><span class="p">(</span>
 </span><span id="line-120">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-121">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-122"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -274,7 +274,7 @@
 </span><span id="line-129">
 </span><span id="line-130">
 </span><span id="line-131">    <span class="nd">@property</span>
-</span><span id="line-132">    <span class="k">def</span> <span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-132">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
 </span><span id="line-133">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-134">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-135"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

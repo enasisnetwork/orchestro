@@ -15,7 +15,7 @@
     <title>orchestro.inventory.orche | orchestro  documentation</title>
     <meta property="og:title" content="orchestro.inventory.orche | orchestro  documentation" />
     <meta name="twitter:title" content="orchestro.inventory.orche | orchestro  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,28 +150,28 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span> <span class="k">as</span> <span class="n">os_path</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">path</span> <span class="k">as</span> <span class="n">sys_path</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">environ</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span> <span class="k">as</span> <span class="n">os_path</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span> <span class="k">as</span> <span class="n">sys_path</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">ansible.inventory.data</span> <span class="kn">import</span> <span class="n">InventoryData</span>  <span class="c1"># type: ignore</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">ansible.parsing.dataloader</span> <span class="kn">import</span> <span class="n">DataLoader</span>  <span class="c1"># type: ignore</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">ansible.plugins.inventory</span> <span class="kn">import</span> <span class="n">BaseInventoryPlugin</span>  <span class="c1"># type: ignore</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">ansible.inventory.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">InventoryData</span>  <span class="c1"># type: ignore</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">ansible.parsing.dataloader</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>  <span class="c1"># type: ignore</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">ansible.plugins.inventory</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseInventoryPlugin</span>  <span class="c1"># type: ignore</span>
 </span><span id="line-20">
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">config_load</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-23"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">NCTrue</span>
-</span><span id="line-24"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">sort_dict</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config_load</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-23"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCTrue</span>
+</span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_dict</span>
 </span><span id="line-25">
 </span><span id="line-26"><span class="n">sys_path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os_path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
 </span><span id="line-27">
-</span><span id="line-28"><span class="kn">from</span> <span class="nn">orchestro.orche</span> <span class="kn">import</span> <span class="n">Orche</span>
-</span><span id="line-29"><span class="kn">from</span> <span class="nn">orchestro.orche</span> <span class="kn">import</span> <span class="n">OrcheConfig</span>
-</span><span id="line-30"><span class="kn">from</span> <span class="nn">orchestro.orche.childs</span> <span class="kn">import</span> <span class="n">OrcheGroup</span>
-</span><span id="line-31"><span class="kn">from</span> <span class="nn">orchestro.orche.childs</span> <span class="kn">import</span> <span class="n">OrcheSystem</span>
+</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orche</span>
+</span><span id="line-29"><span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheConfig</span>
+</span><span id="line-30"><span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheGroup</span>
+</span><span id="line-31"><span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSystem</span>
 </span><span id="line-32">
 </span><span id="line-33">
 </span><span id="line-34">
@@ -181,7 +181,7 @@
 </span><span id="line-38">
 <div class="viewcode-block" id="InventoryModule">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule">[docs]</a>
-</span><span id="line-39"><span class="k">class</span> <span class="nc">InventoryModule</span><span class="p">(</span><span class="n">BaseInventoryPlugin</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
+</span><span id="line-39"><span class="k">class</span><span class="w"> </span><span class="nc">InventoryModule</span><span class="p">(</span><span class="n">BaseInventoryPlugin</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
 </span><span id="line-40"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-41"><span class="sd">    Process and update Ansible inventory from Orche objects.</span>
 </span><span id="line-42"><span class="sd">    &quot;&quot;&quot;</span>
@@ -189,7 +189,7 @@
 </span><span id="line-44">
 <div class="viewcode-block" id="InventoryModule.verify_file">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.verify_file">[docs]</a>
-</span><span id="line-45">    <span class="k">def</span> <span class="nf">verify_file</span><span class="p">(</span>
+</span><span id="line-45">    <span class="k">def</span><span class="w"> </span><span class="nf">verify_file</span><span class="p">(</span>
 </span><span id="line-46">        <span class="c1"># NOCVR</span>
 </span><span id="line-47">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-48">        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -207,7 +207,7 @@
 </span><span id="line-59">
 <div class="viewcode-block" id="InventoryModule.add_child">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.add_child">[docs]</a>
-</span><span id="line-60">    <span class="k">def</span> <span class="nf">add_child</span><span class="p">(</span>
+</span><span id="line-60">    <span class="k">def</span><span class="w"> </span><span class="nf">add_child</span><span class="p">(</span>
 </span><span id="line-61">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-62">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-63">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -225,7 +225,7 @@
 </span><span id="line-74">
 <div class="viewcode-block" id="InventoryModule.add_group">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.add_group">[docs]</a>
-</span><span id="line-75">    <span class="k">def</span> <span class="nf">add_group</span><span class="p">(</span>
+</span><span id="line-75">    <span class="k">def</span><span class="w"> </span><span class="nf">add_group</span><span class="p">(</span>
 </span><span id="line-76">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-77">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-78">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -243,7 +243,7 @@
 </span><span id="line-89">
 <div class="viewcode-block" id="InventoryModule.add_host">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.add_host">[docs]</a>
-</span><span id="line-90">    <span class="k">def</span> <span class="nf">add_host</span><span class="p">(</span>
+</span><span id="line-90">    <span class="k">def</span><span class="w"> </span><span class="nf">add_host</span><span class="p">(</span>
 </span><span id="line-91">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-92">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-93">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -261,7 +261,7 @@
 </span><span id="line-104">
 <div class="viewcode-block" id="InventoryModule.set_value">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.set_value">[docs]</a>
-</span><span id="line-105">    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span>
+</span><span id="line-105">    <span class="k">def</span><span class="w"> </span><span class="nf">set_value</span><span class="p">(</span>
 </span><span id="line-106">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-107">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-108">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -279,7 +279,7 @@
 </span><span id="line-119">
 <div class="viewcode-block" id="InventoryModule.parse">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.parse">[docs]</a>
-</span><span id="line-120">    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span>
+</span><span id="line-120">    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span>
 </span><span id="line-121">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-122">        <span class="n">inventory</span><span class="p">:</span> <span class="n">InventoryData</span><span class="p">,</span>
 </span><span id="line-123">        <span class="n">loader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
@@ -308,7 +308,7 @@
 </span><span id="line-145">
 <div class="viewcode-block" id="InventoryModule.build_orche">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.build_orche">[docs]</a>
-</span><span id="line-146">    <span class="k">def</span> <span class="nf">build_orche</span><span class="p">(</span>
+</span><span id="line-146">    <span class="k">def</span><span class="w"> </span><span class="nf">build_orche</span><span class="p">(</span>
 </span><span id="line-147">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-148">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
 </span><span id="line-149"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -343,7 +343,7 @@
 </span><span id="line-177">
 <div class="viewcode-block" id="InventoryModule.parse_orche">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.parse_orche">[docs]</a>
-</span><span id="line-178">    <span class="k">def</span> <span class="nf">parse_orche</span><span class="p">(</span>  <span class="c1"># noqa: CFQ001</span>
+</span><span id="line-178">    <span class="k">def</span><span class="w"> </span><span class="nf">parse_orche</span><span class="p">(</span>  <span class="c1"># noqa: CFQ001</span>
 </span><span id="line-179">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-180">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-181"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -376,7 +376,7 @@
 </span><span id="line-208">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-209">
 </span><span id="line-210">
-</span><span id="line-211">        <span class="k">def</span> <span class="nf">_invalid</span><span class="p">(</span>
+</span><span id="line-211">        <span class="k">def</span><span class="w"> </span><span class="nf">_invalid</span><span class="p">(</span>
 </span><span id="line-212">            <span class="n">group</span><span class="p">:</span> <span class="n">_ISVALID</span><span class="p">,</span>
 </span><span id="line-213">        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-214">
@@ -478,7 +478,7 @@
 </span><span id="line-309">
 <div class="viewcode-block" id="InventoryModule.parse_paths">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule.parse_paths">[docs]</a>
-</span><span id="line-310">    <span class="k">def</span> <span class="nf">parse_paths</span><span class="p">(</span>
+</span><span id="line-310">    <span class="k">def</span><span class="w"> </span><span class="nf">parse_paths</span><span class="p">(</span>
 </span><span id="line-311">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-312">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-313"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -498,13 +498,13 @@
 </span><span id="line-327">            <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">hvars</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)))</span>
 </span><span id="line-328">
 </span><span id="line-329">
-</span><span id="line-330">        <span class="k">def</span> <span class="nf">_add_group</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-330">        <span class="k">def</span><span class="w"> </span><span class="nf">_add_group</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-331">
 </span><span id="line-332">            <span class="bp">self</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span>  <span class="c1"># NOCVR</span>
 </span><span id="line-333">                <span class="n">file</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
 </span><span id="line-334">
 </span><span id="line-335">
-</span><span id="line-336">        <span class="k">def</span> <span class="nf">_add_host</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-336">        <span class="k">def</span><span class="w"> </span><span class="nf">_add_host</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-337">
 </span><span id="line-338">            <span class="bp">self</span><span class="o">.</span><span class="n">add_host</span><span class="p">(</span>
 </span><span id="line-339">                <span class="n">host</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">stem</span><span class="p">,</span>
@@ -557,7 +557,7 @@
 </span><span id="line-385">
 </span><span id="line-386">
 </span><span id="line-387">    <span class="nd">@property</span>
-</span><span id="line-388">    <span class="k">def</span> <span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-388">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
 </span><span id="line-389">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-390">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-391"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
