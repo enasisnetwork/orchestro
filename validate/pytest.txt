@@ -17,7 +17,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.8, pytest-8.3.4, pluggy-1.5.0 -- /home/runner/work/orchestro/orchestro/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=3931252367
+Using --randomly-seed=2661342570
 rootdir: /home/runner/work/orchestro/orchestro/main
 plugins: randomly-3.16.0, mypy-0.10.3, cov-6.0.0, sphinx-0.6.3, clarity-1.0.1, xdist-3.6.1
 created: 4/4 workers
@@ -25,178 +25,178 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-orchestro/execution/__init__.py::mypy 
-orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
-orchestro/execution/test/test_crypts.py::mypy 
-orchestro/filters/common.py::mypy 
-[gw0] [  1%] PASSED orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
-orchestro/orche/test/test_models.py::test_OrcheModels_cover 
-[gw0] [  2%] PASSED orchestro/orche/test/test_models.py::test_OrcheModels_cover 
-orchestro/conftest.py::mypy 
-[gw1] [  3%] PASSED orchestro/execution/__init__.py::mypy 
-orchestro/execution/test/test_config.py::mypy 
-[gw1] [  4%] PASSED orchestro/execution/test/test_config.py::mypy 
-orchestro/execution/config.py::mypy 
-[gw1] [  5%] PASSED orchestro/execution/config.py::mypy 
-orchestro/execution/test/__init__.py::mypy 
-[gw1] [  6%] PASSED orchestro/execution/test/__init__.py::mypy 
-orchestro/__init__.py::mypy-status 
-[gw1] [  8%] PASSED orchestro/__init__.py::mypy-status 
-orchestro/orche/childs/__init__.py::mypy 
-[gw0] [  9%] PASSED orchestro/conftest.py::mypy 
-[gw3] [ 10%] PASSED orchestro/filters/common.py::mypy 
-[gw2] [ 11%] PASSED orchestro/execution/test/test_crypts.py::mypy 
-orchestro/__init__.py::mypy 
-[gw1] [ 12%] PASSED orchestro/orche/childs/__init__.py::mypy 
-orchestro/orche/childs/orche.py::mypy 
-[gw0] [ 13%] PASSED orchestro/__init__.py::mypy 
-orchestro/inventory/test/__init__.py::mypy 
-[gw1] [ 15%] PASSED orchestro/orche/childs/orche.py::mypy 
-orchestro/execution/test/test_vault.py::mypy 
-orchestro/orche/childs/child.py::mypy 
-orchestro/execution/crypts.py::mypy 
-[gw3] [ 16%] PASSED orchestro/inventory/test/__init__.py::mypy 
-[gw2] [ 17%] PASSED orchestro/execution/test/test_vault.py::mypy 
-[gw1] [ 18%] PASSED orchestro/orche/childs/child.py::mypy 
-orchestro/inventory/orche.py::mypy 
-orchestro/orche/childs/group.py::mypy 
-orchestro/inventory/test/test_orche.py::mypy 
-[gw0] [ 19%] PASSED orchestro/execution/crypts.py::mypy 
-[gw1] [ 20%] PASSED orchestro/orche/childs/group.py::mypy 
-orchestro/orche/childs/test/test_child.py::mypy 
-[gw3] [ 22%] PASSED orchestro/inventory/orche.py::mypy 
-orchestro/orche/addons/test/test_logger.py::mypy 
-[gw1] [ 23%] PASSED orchestro/orche/childs/test/test_child.py::mypy 
-orchestro/execution/vault.py::mypy 
-orchestro/orche/childs/subnet.py::mypy 
-[gw0] [ 24%] PASSED orchestro/orche/addons/test/test_logger.py::mypy 
-[gw2] [ 25%] PASSED orchestro/inventory/test/test_orche.py::mypy 
-[gw3] [ 26%] PASSED orchestro/execution/vault.py::mypy 
-orchestro/orche/addons/test/__init__.py::mypy 
-orchestro/library/__init__.py::mypy 
-orchestro/filters/__init__.py::mypy 
-[gw0] [ 27%] PASSED orchestro/orche/addons/test/__init__.py::mypy 
-[gw3] [ 29%] PASSED orchestro/library/__init__.py::mypy 
-orchestro/orche/addons/__init__.py::mypy 
-[gw2] [ 30%] PASSED orchestro/filters/__init__.py::mypy 
-orchestro/orche/childs/test/test_orche.py::mypy 
-[gw0] [ 31%] PASSED orchestro/orche/addons/__init__.py::mypy 
-orchestro/orche/addons/logger.py::mypy 
-orchestro/inventory/__init__.py::mypy 
-[gw0] [ 32%] PASSED orchestro/orche/addons/logger.py::mypy 
-[gw3] [ 33%] PASSED orchestro/orche/childs/test/test_orche.py::mypy 
-orchestro/orche/__init__.py::mypy 
-orchestro/orche/childs/test/test_person.py::mypy 
-[gw2] [ 34%] PASSED orchestro/inventory/__init__.py::mypy 
-[gw0] [ 36%] PASSED orchestro/orche/__init__.py::mypy 
-[gw3] [ 37%] PASSED orchestro/orche/childs/test/test_person.py::mypy 
-orchestro/orche/params/group.py::mypy 
-orchestro/orche/common.py::mypy 
-orchestro/orche/childs/test/test_subnet.py::mypy 
-[gw0] [ 38%] PASSED orchestro/orche/common.py::mypy 
-[gw3] [ 39%] PASSED orchestro/orche/childs/test/test_subnet.py::mypy 
-[gw2] [ 40%] PASSED orchestro/orche/params/group.py::mypy 
-orchestro/orche/params/orche.py::mypy 
-orchestro/orche/childs/test/test_system.py::mypy 
-orchestro/orche/params/system.py::mypy 
-[gw0] [ 41%] PASSED orchestro/orche/params/orche.py::mypy 
-[gw3] [ 43%] PASSED orchestro/orche/childs/test/test_system.py::mypy 
-[gw2] [ 44%] PASSED orchestro/orche/params/system.py::mypy 
-orchestro/orche/test/__init__.py::mypy 
-orchestro/orche/config.py::mypy 
-orchestro/orche/params/common.py::mypy 
-[gw0] [ 45%] PASSED orchestro/orche/test/__init__.py::mypy 
-[gw3] [ 46%] PASSED orchestro/orche/config.py::mypy 
-orchestro/orche/test/test_config.py::mypy 
-orchestro/orche/models.py::mypy 
-[gw0] [ 47%] PASSED orchestro/orche/test/test_config.py::mypy 
-[gw3] [ 48%] PASSED orchestro/orche/models.py::mypy 
-orchestro/orche/orche.py::mypy 
-[gw0] [ 50%] PASSED orchestro/orche/orche.py::mypy 
-orchestro/orche/params/child.py::mypy 
-orchestro/orche/params/subnet.py::mypy 
-[gw1] [ 51%] PASSED orchestro/orche/childs/subnet.py::mypy 
-[gw3] [ 52%] PASSED orchestro/orche/params/child.py::mypy 
-[gw0] [ 53%] PASSED orchestro/orche/params/subnet.py::mypy 
-orchestro/orche/childs/person.py::mypy 
-orchestro/orche/test/test_models.py::mypy 
-orchestro/orche/params/person.py::mypy 
-[gw1] [ 54%] PASSED orchestro/orche/childs/person.py::mypy 
-[gw0] [ 55%] PASSED orchestro/orche/params/person.py::mypy 
-[gw3] [ 56%] PASSED orchestro/orche/test/test_models.py::mypy 
-orchestro/roles/enrobie/__init__.py::mypy 
-orchestro/orche/childs/test/__init__.py::mypy 
-orchestro/orche/test/test_orche.py::mypy 
-[gw0] [ 58%] PASSED orchestro/roles/enrobie/__init__.py::mypy 
-[gw1] [ 59%] PASSED orchestro/orche/childs/test/__init__.py::mypy 
-[gw3] [ 60%] PASSED orchestro/orche/test/test_orche.py::mypy 
-orchestro/roles/enhomie/action_plugins/enhomie_params.py::mypy 
-orchestro/orche/childs/system.py::mypy 
-orchestro/roles/enhomie/__init__.py::mypy 
-[gw1] [ 61%] PASSED orchestro/orche/childs/system.py::mypy 
-[gw0] [ 62%] PASSED orchestro/roles/enhomie/action_plugins/enhomie_params.py::mypy 
-[gw3] [ 63%] PASSED orchestro/roles/enhomie/__init__.py::mypy 
-orchestro/utils/param.py::mypy 
-orchestro/orche/childs/test/test_group.py::mypy 
-orchestro/roles/enrobie/action_plugins/__init__.py::mypy 
-[gw0] [ 65%] PASSED orchestro/utils/param.py::mypy 
-[gw1] [ 66%] PASSED orchestro/orche/childs/test/test_group.py::mypy 
-orchestro/roles/enrobie/action_plugins/enrobie_params.py::mypy 
-[gw3] [ 67%] PASSED orchestro/roles/enrobie/action_plugins/__init__.py::mypy 
-orchestro/utils/child.py::mypy 
-[gw0] [ 68%] PASSED orchestro/roles/enrobie/action_plugins/enrobie_params.py::mypy 
-orchestro/roles/__init__.py::mypy 
-[gw1] [ 69%] PASSED orchestro/utils/child.py::mypy 
-orchestro/roles/enhomie/action_plugins/__init__.py::mypy 
-[gw2] [ 70%] PASSED orchestro/orche/params/common.py::mypy 
-[gw3] [ 72%] PASSED orchestro/roles/__init__.py::mypy 
-orchestro/orche/params/__init__.py::mypy 
-[gw0] [ 73%] PASSED orchestro/roles/enhomie/action_plugins/__init__.py::mypy 
-orchestro/utils/__init__.py::mypy 
-orchestro/utils/test/__init__.py::mypy 
-[gw2] [ 74%] PASSED orchestro/orche/params/__init__.py::mypy 
-orchestro/utils/test/test_child.py::mypy 
-[gw3] [ 75%] PASSED orchestro/utils/__init__.py::mypy 
-[gw1] [ 76%] PASSED orchestro/utils/test/__init__.py::mypy 
-orchestro/utils/test/test_param.py::mypy 
-[gw0] [ 77%] PASSED orchestro/utils/test/test_child.py::mypy 
-orchestro/orche/test/test_config.py::test_OrcheConfig 
-[gw2] [ 79%] PASSED orchestro/utils/test/test_param.py::mypy 
-orchestro/orche/childs/test/test_group.py::test_OrcheGroup_cover 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
-[gw0] [ 80%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
-orchestro/execution/test/test_vault.py::test_arguments 
-[gw0] [ 81%] PASSED orchestro/execution/test/test_vault.py::test_arguments 
-orchestro/utils/test/test_child.py::test_InvalidChild_cover 
-[gw1] [ 82%] PASSED orchestro/orche/childs/test/test_group.py::test_OrcheGroup_cover 
-orchestro/utils/test/test_param.py::test_InvalidParam 
-[gw2] [ 83%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
-orchestro/orche/childs/test/test_person.py::test_OrchePerson_cover 
-[gw3] [ 84%] PASSED orchestro/orche/test/test_config.py::test_OrcheConfig 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
-[gw0] [ 86%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild_cover 
-orchestro/utils/test/test_child.py::test_InvalidChild 
-[gw0] [ 87%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild 
-[gw1] [ 88%] PASSED orchestro/utils/test/test_param.py::test_InvalidParam 
-orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
-orchestro/execution/test/test_config.py::test_arguments 
-[gw2] [ 89%] PASSED orchestro/orche/childs/test/test_person.py::test_OrchePerson_cover 
-[gw1] [ 90%] PASSED orchestro/execution/test/test_config.py::test_arguments 
-orchestro/orche/test/test_orche.py::test_Orche 
 orchestro/orche/childs/test/test_system.py::test_OrcheSystem_cover 
-[gw3] [ 91%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
-orchestro/orche/test/test_orche.py::test_Orche_cover 
-[gw3] [ 93%] PASSED orchestro/orche/test/test_orche.py::test_Orche_cover 
-[gw0] [ 94%] PASSED orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
+orchestro/execution/config.py::mypy 
+orchestro/utils/test/test_child.py::test_InvalidChild 
+orchestro/execution/test/test_crypts.py::mypy 
+[gw1] [  1%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild 
 orchestro/inventory/test/test_orche.py::test_InventoryModule 
-[gw1] [ 95%] PASSED orchestro/orche/childs/test/test_system.py::test_OrcheSystem_cover 
+[gw0] [  2%] PASSED orchestro/orche/childs/test/test_system.py::test_OrcheSystem_cover 
+orchestro/orche/test/test_config.py::test_OrcheConfig 
+[gw1] [  3%] PASSED orchestro/inventory/test/test_orche.py::test_InventoryModule 
+orchestro/execution/__init__.py::mypy 
+[gw0] [  4%] PASSED orchestro/orche/test/test_config.py::test_OrcheConfig 
+orchestro/orche/childs/test/test_group.py::test_OrcheGroup_cover 
+[gw0] [  5%] PASSED orchestro/orche/childs/test/test_group.py::test_OrcheGroup_cover 
 orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet_cover 
-[gw2] [ 96%] PASSED orchestro/orche/test/test_orche.py::test_Orche 
+[gw0] [  6%] PASSED orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet_cover 
+orchestro/utils/test/test_child.py::test_InvalidChild_cover 
+[gw0] [  8%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild_cover 
+orchestro/inventory/test/__init__.py::mypy 
+[gw2] [  9%] PASSED orchestro/execution/config.py::mypy 
+orchestro/conftest.py::mypy 
+[gw2] [ 10%] PASSED orchestro/conftest.py::mypy 
+orchestro/execution/test/__init__.py::mypy 
+[gw2] [ 11%] PASSED orchestro/execution/test/__init__.py::mypy 
+orchestro/execution/crypts.py::mypy 
+[gw2] [ 12%] PASSED orchestro/execution/crypts.py::mypy 
+orchestro/__init__.py::mypy-status 
+[gw2] [ 13%] PASSED orchestro/__init__.py::mypy-status 
+orchestro/orche/addons/test/__init__.py::mypy 
+[gw2] [ 15%] PASSED orchestro/orche/addons/test/__init__.py::mypy 
+orchestro/library/__init__.py::mypy 
+[gw2] [ 16%] PASSED orchestro/library/__init__.py::mypy 
+orchestro/orche/addons/logger.py::mypy 
+[gw1] [ 17%] PASSED orchestro/execution/__init__.py::mypy 
+[gw2] [ 18%] PASSED orchestro/orche/addons/logger.py::mypy 
+orchestro/execution/test/test_config.py::mypy 
+orchestro/orche/__init__.py::mypy 
+[gw2] [ 19%] PASSED orchestro/orche/__init__.py::mypy 
+orchestro/orche/childs/test/__init__.py::mypy 
+[gw1] [ 20%] PASSED orchestro/execution/test/test_config.py::mypy 
+orchestro/__init__.py::mypy 
+[gw3] [ 22%] PASSED orchestro/execution/test/test_crypts.py::mypy 
+[gw0] [ 23%] PASSED orchestro/inventory/test/__init__.py::mypy 
+[gw1] [ 24%] PASSED orchestro/__init__.py::mypy 
+orchestro/execution/test/test_vault.py::mypy 
+orchestro/inventory/test/test_orche.py::mypy 
+[gw3] [ 25%] PASSED orchestro/execution/test/test_vault.py::mypy 
+orchestro/orche/childs/test/test_child.py::mypy 
+[gw0] [ 26%] PASSED orchestro/inventory/test/test_orche.py::mypy 
+orchestro/inventory/__init__.py::mypy 
+orchestro/execution/vault.py::mypy 
+[gw3] [ 27%] PASSED orchestro/inventory/__init__.py::mypy 
+[gw1] [ 29%] PASSED orchestro/orche/childs/test/test_child.py::mypy 
+orchestro/filters/__init__.py::mypy 
+[gw0] [ 30%] PASSED orchestro/execution/vault.py::mypy 
+orchestro/orche/childs/person.py::mypy 
+[gw3] [ 31%] PASSED orchestro/filters/__init__.py::mypy 
+orchestro/inventory/orche.py::mypy 
+orchestro/filters/common.py::mypy 
+[gw0] [ 32%] PASSED orchestro/inventory/orche.py::mypy 
+[gw3] [ 33%] PASSED orchestro/filters/common.py::mypy 
+orchestro/orche/addons/test/test_logger.py::mypy 
+orchestro/orche/childs/test/test_orche.py::mypy 
+[gw0] [ 34%] PASSED orchestro/orche/addons/test/test_logger.py::mypy 
+[gw3] [ 36%] PASSED orchestro/orche/childs/test/test_orche.py::mypy 
+orchestro/orche/addons/__init__.py::mypy 
+orchestro/orche/childs/test/test_person.py::mypy 
+[gw0] [ 37%] PASSED orchestro/orche/addons/__init__.py::mypy 
+[gw3] [ 38%] PASSED orchestro/orche/childs/test/test_person.py::mypy 
+orchestro/orche/params/common.py::mypy 
+orchestro/orche/childs/test/test_subnet.py::mypy 
+[gw0] [ 39%] PASSED orchestro/orche/params/common.py::mypy 
+[gw3] [ 40%] PASSED orchestro/orche/childs/test/test_subnet.py::mypy 
+orchestro/orche/models.py::mypy 
+orchestro/orche/childs/test/test_system.py::mypy 
+[gw0] [ 41%] PASSED orchestro/orche/models.py::mypy 
+orchestro/orche/common.py::mypy 
+[gw3] [ 43%] PASSED orchestro/orche/childs/test/test_system.py::mypy 
+orchestro/orche/params/system.py::mypy 
+[gw0] [ 44%] PASSED orchestro/orche/common.py::mypy 
+[gw3] [ 45%] PASSED orchestro/orche/params/system.py::mypy 
+orchestro/orche/params/orche.py::mypy 
+[gw2] [ 46%] PASSED orchestro/orche/childs/test/__init__.py::mypy 
+orchestro/orche/orche.py::mypy 
+orchestro/orche/childs/__init__.py::mypy 
+[gw0] [ 47%] PASSED orchestro/orche/params/orche.py::mypy 
+[gw3] [ 48%] PASSED orchestro/orche/orche.py::mypy 
+orchestro/orche/params/subnet.py::mypy 
+[gw2] [ 50%] PASSED orchestro/orche/childs/__init__.py::mypy 
+orchestro/orche/params/child.py::mypy 
+[gw0] [ 51%] PASSED orchestro/orche/params/subnet.py::mypy 
+orchestro/orche/childs/subnet.py::mypy 
+orchestro/orche/config.py::mypy 
+[gw3] [ 52%] PASSED orchestro/orche/params/child.py::mypy 
+[gw0] [ 53%] PASSED orchestro/orche/config.py::mypy 
+[gw2] [ 54%] PASSED orchestro/orche/childs/subnet.py::mypy 
+orchestro/orche/params/person.py::mypy 
+orchestro/orche/childs/child.py::mypy 
+[gw1] [ 55%] PASSED orchestro/orche/childs/person.py::mypy 
+[gw2] [ 56%] PASSED orchestro/orche/childs/child.py::mypy 
+orchestro/orche/childs/group.py::mypy 
+[gw3] [ 58%] PASSED orchestro/orche/params/person.py::mypy 
+orchestro/orche/test/test_config.py::mypy 
+orchestro/orche/test/__init__.py::mypy 
+[gw0] [ 59%] PASSED orchestro/orche/test/__init__.py::mypy 
+[gw3] [ 60%] PASSED orchestro/orche/test/test_config.py::mypy 
+orchestro/orche/params/__init__.py::mypy 
+[gw1] [ 61%] PASSED orchestro/orche/childs/group.py::mypy 
+[gw0] [ 62%] PASSED orchestro/orche/params/__init__.py::mypy 
+orchestro/orche/childs/system.py::mypy 
+orchestro/orche/childs/orche.py::mypy 
+orchestro/orche/params/group.py::mypy 
+[gw2] [ 63%] PASSED orchestro/orche/childs/orche.py::mypy 
+orchestro/orche/test/test_models.py::mypy 
+[gw1] [ 65%] PASSED orchestro/orche/childs/system.py::mypy 
+orchestro/orche/test/test_orche.py::mypy 
+[gw3] [ 66%] PASSED orchestro/orche/params/group.py::mypy 
+orchestro/orche/childs/test/test_group.py::mypy 
+orchestro/roles/__init__.py::mypy 
+[gw2] [ 67%] PASSED orchestro/orche/test/test_orche.py::mypy 
+[gw1] [ 68%] PASSED orchestro/orche/childs/test/test_group.py::mypy 
+[gw3] [ 69%] PASSED orchestro/roles/__init__.py::mypy 
+orchestro/roles/enrobie/action_plugins/__init__.py::mypy 
+orchestro/roles/enhomie/action_plugins/enhomie_params.py::mypy 
+orchestro/utils/child.py::mypy 
+[gw3] [ 70%] PASSED orchestro/utils/child.py::mypy 
+[gw2] [ 72%] PASSED orchestro/roles/enrobie/action_plugins/__init__.py::mypy 
+orchestro/utils/__init__.py::mypy 
+orchestro/roles/enhomie/action_plugins/__init__.py::mypy 
+[gw3] [ 73%] PASSED orchestro/utils/__init__.py::mypy 
+[gw2] [ 74%] PASSED orchestro/roles/enhomie/action_plugins/__init__.py::mypy 
+orchestro/utils/test/__init__.py::mypy 
+orchestro/roles/enhomie/__init__.py::mypy 
+[gw3] [ 75%] PASSED orchestro/utils/test/__init__.py::mypy 
+[gw2] [ 76%] PASSED orchestro/roles/enhomie/__init__.py::mypy 
+orchestro/utils/test/test_child.py::mypy 
+orchestro/utils/param.py::mypy 
+[gw3] [ 77%] PASSED orchestro/utils/test/test_child.py::mypy 
+orchestro/utils/test/test_param.py::mypy 
+[gw2] [ 79%] PASSED orchestro/utils/param.py::mypy 
+[gw3] [ 80%] PASSED orchestro/utils/test/test_param.py::mypy 
+orchestro/orche/test/test_models.py::test_OrcheModels_cover 
+orchestro/execution/test/test_vault.py::test_arguments 
+[gw3] [ 81%] PASSED orchestro/orche/test/test_models.py::test_OrcheModels_cover 
+orchestro/execution/test/test_config.py::test_arguments 
+[gw0] [ 82%] PASSED orchestro/orche/test/test_models.py::mypy 
+[gw2] [ 83%] PASSED orchestro/execution/test/test_vault.py::test_arguments 
+orchestro/roles/enrobie/action_plugins/enrobie_params.py::mypy 
+orchestro/utils/test/test_param.py::test_InvalidParam 
+[gw3] [ 84%] PASSED orchestro/execution/test/test_config.py::test_arguments 
+[gw0] [ 86%] PASSED orchestro/roles/enrobie/action_plugins/enrobie_params.py::mypy 
+orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
+orchestro/orche/test/test_orche.py::test_Orche 
+[gw1] [ 87%] PASSED orchestro/roles/enhomie/action_plugins/enhomie_params.py::mypy 
+orchestro/roles/enrobie/__init__.py::mypy 
+[gw1] [ 88%] PASSED orchestro/roles/enrobie/__init__.py::mypy 
 orchestro/execution/test/test_crypts.py::test_arguments 
-[gw2] [ 97%] PASSED orchestro/execution/test/test_crypts.py::test_arguments 
-[gw0] [ 98%] PASSED orchestro/inventory/test/test_orche.py::test_InventoryModule 
-[gw1] [100%] PASSED orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet_cover 
+[gw1] [ 89%] PASSED orchestro/execution/test/test_crypts.py::test_arguments 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
+[gw2] [ 90%] PASSED orchestro/utils/test/test_param.py::test_InvalidParam 
+orchestro/orche/test/test_orche.py::test_Orche_cover 
+[gw2] [ 91%] PASSED orchestro/orche/test/test_orche.py::test_Orche_cover 
+[gw3] [ 93%] PASSED orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
+orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
+[gw0] [ 94%] PASSED orchestro/orche/test/test_orche.py::test_Orche 
+orchestro/orche/childs/test/test_person.py::test_OrchePerson_cover 
+[gw1] [ 95%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
+[gw3] [ 96%] PASSED orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
+[gw2] [ 97%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
+[gw0] [ 98%] PASSED orchestro/orche/childs/test/test_person.py::test_OrchePerson_cover 
+[gw1] [100%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
 
 ---------- coverage: platform linux, python 3.12.8-final-0 -----------
 Name                                                       Stmts   Miss  Cover
@@ -272,7 +272,7 @@ TOTAL                                                       1167      0   100%
 ===================================== mypy =====================================
 
 Success: no issues found in 65 source files
-============================= 86 passed in 28.70s ==============================
+============================= 86 passed in 29.40s ==============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
