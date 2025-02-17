@@ -323,11 +323,6 @@ pytest: \
 	.check-venv-package
 	@## Execute the relevant linters and tests
 	@#
-	@$(MAKE) cleanup-pycache
-	@$(MAKE) cleanup-pytest
-	@$(MAKE) cleanup-coveragepy
-	@$(MAKE) cleanup-mypy
-	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>pytest<c0>)
 	@#
@@ -361,9 +356,6 @@ pytest: \
 mypy: \
 	.check-venv-develop
 	@## Execute the relevant linters and tests
-	@#
-	@$(MAKE) cleanup-pycache
-	@$(MAKE) cleanup-mypy
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>mypy<c0>)
@@ -407,8 +399,6 @@ flake8: \
 	.check-venv-develop
 	@## Execute the relevant linters and tests
 	@#
-	@$(MAKE) cleanup-pycache
-	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>flake8<c0>)
 	@#
@@ -443,8 +433,6 @@ flake8: \
 pylint: \
 	.check-venv-develop
 	@## Execute the relevant linters and tests
-	@#
-	@$(MAKE) cleanup-pycache
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>pylint<c0>)
@@ -491,8 +479,6 @@ pylint: \
 ruff: \
 	.check-venv-develop
 	@## Execute the relevant linters and tests
-	@#
-	@$(MAKE) cleanup-pycache
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>ruff<c0>)
@@ -615,9 +601,6 @@ sphinx: \
 	.check-venv-develop \
 	.check-venv-package
 	@## Build HTML documentation using Sphinx
-	@#
-	@$(MAKE) cleanup-pycache
-	@$(MAKE) cleanup-sphinx
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>sphinx<c0>)
