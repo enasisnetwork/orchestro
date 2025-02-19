@@ -23,13 +23,13 @@ orchestro.conftest module
 
 .. automodule:: orchestro.conftest
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

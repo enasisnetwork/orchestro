@@ -17,21 +17,21 @@ orchestro.utils.child module
 
 .. automodule:: orchestro.utils.child
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.utils.param module
 ----------------------------
 
 .. automodule:: orchestro.utils.param
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.utils
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

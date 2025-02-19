@@ -17,13 +17,13 @@ orchestro.orche.addons.logger module
 
 .. automodule:: orchestro.orche.addons.logger
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.orche.addons
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

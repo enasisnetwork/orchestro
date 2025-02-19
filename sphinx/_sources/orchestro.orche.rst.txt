@@ -20,37 +20,37 @@ orchestro.orche.common module
 
 .. automodule:: orchestro.orche.common
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.config module
 -----------------------------
 
 .. automodule:: orchestro.orche.config
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.models module
 -----------------------------
 
 .. automodule:: orchestro.orche.models
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.orche module
 ----------------------------
 
 .. automodule:: orchestro.orche.orche
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.orche
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

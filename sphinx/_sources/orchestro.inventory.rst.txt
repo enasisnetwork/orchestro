@@ -17,13 +17,13 @@ orchestro.inventory.orche module
 
 .. automodule:: orchestro.inventory.orche
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.inventory
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

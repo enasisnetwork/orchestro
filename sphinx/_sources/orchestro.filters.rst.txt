@@ -9,13 +9,13 @@ orchestro.filters.common module
 
 .. automodule:: orchestro.filters.common
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.filters
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

@@ -9,29 +9,29 @@ orchestro.orche.test.test\_config module
 
 .. automodule:: orchestro.orche.test.test_config
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.test.test\_models module
 ----------------------------------------
 
 .. automodule:: orchestro.orche.test.test_models
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.test.test\_orche module
 ---------------------------------------
 
 .. automodule:: orchestro.orche.test.test_orche
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.orche.test
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

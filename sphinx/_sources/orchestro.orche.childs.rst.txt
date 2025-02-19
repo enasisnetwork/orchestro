@@ -17,53 +17,53 @@ orchestro.orche.childs.child module
 
 .. automodule:: orchestro.orche.childs.child
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.childs.group module
 -----------------------------------
 
 .. automodule:: orchestro.orche.childs.group
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.childs.orche module
 -----------------------------------
 
 .. automodule:: orchestro.orche.childs.orche
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.childs.person module
 ------------------------------------
 
 .. automodule:: orchestro.orche.childs.person
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.childs.subnet module
 ------------------------------------
 
 .. automodule:: orchestro.orche.childs.subnet
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 orchestro.orche.childs.system module
 ------------------------------------
 
 .. automodule:: orchestro.orche.childs.system
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.orche.childs
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

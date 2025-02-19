@@ -9,13 +9,13 @@ orchestro.roles.enhomie.action\_plugins.enhomie\_params module
 
 .. automodule:: orchestro.roles.enhomie.action_plugins.enhomie_params
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Module contents
 ---------------
 
 .. automodule:: orchestro.roles.enhomie.action_plugins
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
