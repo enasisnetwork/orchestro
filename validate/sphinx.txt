@@ -3,8 +3,8 @@
 Running Sphinx v8.2.1
 loading translations [en]... done
 making output directory... done
-loading intersphinx inventory 'encommon' from https://encommon.readthedocs.io/en/latest/objects.inv ...
-loading intersphinx inventory 'enconnect' from https://enconnect.readthedocs.io/en/latest/objects.inv ...
+loading intersphinx inventory 'encommon' from https://enasisnetwork.github.io/encommon/sphinx/objects.inv ...
+loading intersphinx inventory 'enconnect' from https://enasisnetwork.github.io/enconnect/sphinx/objects.inv ...
 loading intersphinx inventory 'jinja2' from https://jinja.palletsprojects.com/en/latest/objects.inv ...
 loading intersphinx inventory 'netaddr' from https://netaddr.readthedocs.io/en/latest/objects.inv ...
 loading intersphinx inventory 'pydantic' from https://docs.pydantic.dev/latest/objects.inv ...
@@ -37,7 +37,7 @@ writing additional pages... search done
 dumping search index in English (code: en)... done
 dumping object inventory... done
 postprocess html... [  4%] /home/runner/work/orchestro/orchestro/main/sphinx/html/index.htmlpostprocess html... [  9%] /home/runner/work/orchestro/orchestro/main/sphinx/html/modules.htmlpostprocess html... [ 13%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.htmlpostprocess html... [ 17%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.execution.htmlpostprocess html... [ 22%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.execution.test.htmlpostprocess html... [ 26%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.filters.htmlpostprocess html... [ 30%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.inventory.htmlpostprocess html... [ 35%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.inventory.test.htmlpostprocess html... [ 39%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.library.htmlpostprocess html... [ 43%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.htmlpostprocess html... [ 48%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.addons.htmlpostprocess html... [ 52%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.addons.test.htmlpostprocess html... [ 57%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.childs.htmlpostprocess html... [ 61%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.childs.test.htmlpostprocess html... [ 65%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.params.htmlpostprocess html... [ 70%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.orche.test.htmlpostprocess html... [ 74%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.roles.htmlpostprocess html... [ 78%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.roles.enhomie.htmlpostprocess html... [ 83%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.roles.enhomie.action_plugins.htmlpostprocess html... [ 87%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.roles.enrobie.htmlpostprocess html... [ 91%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.roles.enrobie.action_plugins.htmlpostprocess html... [ 96%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.utils.htmlpostprocess html... [100%] /home/runner/work/orchestro/orchestro/main/sphinx/html/orchestro.utils.test.html
-build succeeded, 338 warnings.
+build succeeded, 316 warnings.
 
 The HTML pages are in sphinx/html.
     DONE
