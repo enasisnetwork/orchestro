@@ -18,6 +18,7 @@
       /repos/{{ enhomie_unique }}
     depth: 1
     version: '{{ enhomie_repo_version }}'
+    force: true
 
   when:
 

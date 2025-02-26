@@ -18,6 +18,7 @@
       /repos/{{ enrobie_unique }}
     depth: 1
     version: '{{ enrobie_repo_version }}'
+    force: true
 
   when:
 
