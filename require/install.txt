@@ -1,2 +1,2 @@
 ansible-core
-encommon>=0.22.3
+encommon>=0.22.4
