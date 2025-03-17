@@ -168,7 +168,7 @@
 <a class="viewcode-back" href="../../../../orchestro.orche.childs.html#orchestro.orche.childs.child.OrcheChild">[docs]</a>
 </span><span id="line-24"><span class="k">class</span><span class="w"> </span><span class="nc">OrcheChild</span><span class="p">:</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-26"><span class="sd">    Normalize the desired parameters with multiple products.</span>
+</span><span id="line-26"><span class="sd">    Parent object for child objects within the project base.</span>
 </span><span id="line-27">
 </span><span id="line-28"><span class="sd">    :param orche: Primary class instance for Orchestrations.</span>
 </span><span id="line-29"><span class="sd">    :param name: Name of the object within the Orche config.</span>
@@ -376,24 +376,23 @@
 </span><span id="line-228">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">childs</span><span class="p">)</span>
 </span><span id="line-229">
 </span><span id="line-230">
-</span><span id="line-231">
-</span><span id="line-232">    <span class="nd">@property</span>
-</span><span id="line-233">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
-</span><span id="line-234">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-235">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-</span><span id="line-236"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-237"><span class="sd">        Return the facts about the attributes from the instance.</span>
-</span><span id="line-238">
-</span><span id="line-239"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
-</span><span id="line-240"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-241">
-</span><span id="line-242">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
-</span><span id="line-243">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
-</span><span id="line-244">
-</span><span id="line-245">        <span class="k">return</span> <span class="p">{</span>
-</span><span id="line-246">            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-247">            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
-</span><span id="line-248">            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
+</span><span id="line-231">    <span class="nd">@property</span>
+</span><span id="line-232">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-233">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-234">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+</span><span id="line-235"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-236"><span class="sd">        Return the facts about the attributes from the instance.</span>
+</span><span id="line-237">
+</span><span id="line-238"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
+</span><span id="line-239"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-240">
+</span><span id="line-241">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
+</span><span id="line-242">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
+</span><span id="line-243">
+</span><span id="line-244">        <span class="k">return</span> <span class="p">{</span>
+</span><span id="line-245">            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-246">            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
+</span><span id="line-247">            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
 
 </span></code></pre></div>
     </div></div>
