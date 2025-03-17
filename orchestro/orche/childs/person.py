@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 
 class OrchePerson(OrcheChild):
     """
-    Integrate with the Orche routine and perform operations.
+    Contain the properties regarding the actual user person.
     """
 
 

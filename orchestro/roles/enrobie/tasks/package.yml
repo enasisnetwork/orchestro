@@ -40,3 +40,31 @@
   become_user: '{{ enrobie_user }}'
 
   tags: always
+
+
+
+
+
+
+- name: Install PydanticAI in the virtual env
+
+  ansible.builtin.pip:
+    name: '{{ item }}'
+    virtualenv: >-
+      {{ enrobie_directory }}/venv
+    virtualenv_command: >-
+      {{ enrobie_python }} -m venv
+    state: present
+
+  loop:
+    - pydantic-ai-slim
+    - pydantic-ai-slim[anthropic]
+    - pydantic-ai-slim[openai]
+
+  loop_control:
+    label: '{{ item }}'
+
+  become: true
+  become_user: '{{ enrobie_user }}'
+
+  tags: always
