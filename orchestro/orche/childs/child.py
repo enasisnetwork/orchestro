@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 
 class OrcheChild:
     """
-    Normalize the desired parameters with multiple products.
+    Parent object for child objects within the project base.
 
     :param orche: Primary class instance for Orchestrations.
     :param name: Name of the object within the Orche config.
@@ -226,7 +226,6 @@ class OrcheChild:
             childs.add(child)
 
         return list(childs)
-
 
 
     @property
