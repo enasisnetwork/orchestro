@@ -13,7 +13,6 @@ from typing import get_args
 
 from encommon.config import Config
 from encommon.config import Params
-from encommon.parse import Jinja2
 from encommon.types import DictStrAny
 from encommon.types import dedup_list
 from encommon.types import delate
@@ -149,11 +148,10 @@ class OrcheConfig(Config):
         """
 
         merge = self.merge
+        jinja2 = self.jinja2
 
-
-        jinja2 = Jinja2({
-            'source': merge,
-            'config': self})
+        jinja2.set_static(
+            'source', merge)
 
         parse = jinja2.parse
 
