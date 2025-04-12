@@ -161,6 +161,9 @@ class OrcheConfig(Config):
         assert isinstance(
             params, OrcheParams)
 
+        (jinja2
+         .set_static('source'))
+
 
         dumped = params.endumped
 
