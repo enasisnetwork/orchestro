@@ -37,7 +37,7 @@ orchestro/orche/childs/test/test_person.py                    21      0   100%
 orchestro/orche/childs/test/test_subnet.py                    21      0   100%
 orchestro/orche/childs/test/test_system.py                    21      0   100%
 orchestro/orche/common.py                                      2      0   100%
-orchestro/orche/config.py                                    100      0   100%
+orchestro/orche/config.py                                    101      0   100%
 orchestro/orche/models.py                                     27      0   100%
 orchestro/orche/orche.py                                      40      0   100%
 orchestro/orche/params/__init__.py                             8      0   100%
@@ -66,4 +66,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1167      0   100%
+TOTAL                                                       1168      0   100%
