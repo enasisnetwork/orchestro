@@ -18,7 +18,9 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -41,8 +43,10 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -70,8 +74,10 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -94,8 +100,10 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -121,8 +129,10 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \

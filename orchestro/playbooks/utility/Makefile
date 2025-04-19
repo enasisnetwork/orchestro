@@ -18,7 +18,9 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
@@ -41,7 +43,9 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
@@ -64,6 +68,7 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible-vault \
 			encrypt_string \
@@ -81,6 +86,7 @@ utility-decrypt:
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible-vault decrypt; \
 		deactivate)
@@ -96,6 +102,7 @@ utility-inventory:
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible-inventory --graph; \
 		deactivate)
@@ -128,6 +135,7 @@ endif
 	@#
 	@( \
 		set -e; \
+		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ANSIBLE_CONFIG=ansible.cfg \
 		ansible \

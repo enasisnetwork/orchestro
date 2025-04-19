@@ -9,9 +9,7 @@ is permitted, for more information consult the project license file.
 
 from copy import deepcopy
 from os import environ
-from os import path as os_path
 from pathlib import Path
-from sys import path as sys_path
 from typing import Any
 
 from ansible.inventory.data import InventoryData  # type: ignore
@@ -22,8 +20,6 @@ from encommon.config import config_load
 from encommon.types import DictStrAny
 from encommon.types import NCTrue
 from encommon.types import sort_dict
-
-sys_path.insert(0, os_path.abspath('.'))
 
 from orchestro.orche import Orche
 from orchestro.orche import OrcheConfig

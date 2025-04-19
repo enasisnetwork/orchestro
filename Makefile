@@ -7,6 +7,10 @@
 
 
 
+-include orchestro.env
+
+
+
 PYTHON ?= ../../Execution/python312/bin/python
 
 VENVP ?= .venv-package
@@ -39,12 +43,18 @@ help: .check-python
 	@## Construct this helpful menu of recipes
 	$(call MAKE_PRINT)
 	@COLOR=$(MAKE_COLOR) \
+		ORCHE_EXTRA_PLAYBOOKS=$(ORCHE_EXTRA_PLAYBOOKS) \
 		$(PYTHON) -B makefile.py
 	$(call MAKE_PRINT)
 
 
 
 -include orchestro/playbooks/*/Makefile
+
+
+ifneq ($(strip $(ORCHE_EXTRA_PLAYBOOKS)),)
+-include $(ORCHE_EXTRA_PLAYBOOKS)/*/Makefile
+endif
 
 
 
@@ -57,6 +67,7 @@ cleanup:
 	@$(MAKE) cleanup-ruff
 	@$(MAKE) cleanup-mypy
 	@$(MAKE) cleanup-sphinx
+	@$(MAKE) cleanup-ansible
 
 
 
@@ -243,6 +254,25 @@ cleanup-sphinx:
 
 
 
+.PHONY: cleanup-ansible
+cleanup-ansible:
+	@## Remove temporal generated cache files
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>cleanup-ansible<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Removing <c90>Ansible<c37> \
+		cache files..<c0>)
+	@find . \
+		-name '.ansible' \
+		-maxdepth 1 \
+		-exec rm -rf '{}' \; \
+		2>/dev/null || true
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
 .PHONY: venv-create
 venv-create: \
 	.check-python
@@ -329,7 +359,8 @@ pytest: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pytest<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENVP)/bin/pytest -v \
+	@PYTHONPATH=. \
+	$(VENVP)/bin/pytest -v \
 		$(PROJECT)/$(subpackage) \
 		--numprocesses=4 \
 		--cov=$(PROJECT)/$(subpackage) \
@@ -558,6 +589,7 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-lint \
 			-q --strict \
 			--show-relpath \
@@ -572,6 +604,7 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-lint \
 			-q --strict \
 			--show-relpath \
@@ -586,6 +619,7 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
+		PYTHONPATH=. \
 		ansible-lint \
 			-q --strict \
 			--show-relpath \
