@@ -413,7 +413,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         _tags = (
             context.CLIARGS
-            .get('tags', []))
+            .get('tags') or [])
 
         tags = [
             x for x in _tags
@@ -421,7 +421,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         more = list(
             context.CLIARGS
-            .get('args', []))
+            .get('args') or [])
 
 
         dumped = array_ansi({

@@ -104,7 +104,9 @@ utility-inventory:
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
-		ansible-inventory --graph; \
+		PYTHONPATH=. \
+		ansible-inventory --graph \
+		$(ansible_args); \
 		deactivate)
 
 
