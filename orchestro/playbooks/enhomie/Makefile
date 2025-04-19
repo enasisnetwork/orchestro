@@ -67,15 +67,12 @@ endif
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-reinstall<c0>)
 	@#
-	@$(VENVP)/bin/python -Bc 'if 1:\
-		confirm = input(\
-			"Are you sure? [y/N] ");\
-		assert confirm == "y";'
-	@#
 	@( \
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
+		orche_ensured="yes" \
+		orche_confirm="yes" \
 		ansible_gather="yes" \
 		PYTHONPATH=. \
 		ansible-playbook \
