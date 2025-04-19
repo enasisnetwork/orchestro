@@ -39,3 +39,19 @@ Orche Children
    :members:
    :show-inheritance:
    :noindex:
+
+Homie Automate Playbook
+-----------------------
+
+.. autoclass:: orchestro.roles.enhomie.RoleParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
+Chatting Robie Playbook
+-----------------------
+
+.. autoclass:: orchestro.roles.enrobie.RoleParams
+   :members:
+   :show-inheritance:
+   :noindex:
