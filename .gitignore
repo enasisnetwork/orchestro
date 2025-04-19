@@ -8,10 +8,10 @@
 
 
 !/orchestro
-!/.ansible-lint
 !/ansible.cfg
 
 !/.github
+!/.ansible-lint
 !/.yamllint
 !/sphinx/
 /sphinx/*

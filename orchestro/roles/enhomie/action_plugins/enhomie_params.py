@@ -7,8 +7,6 @@ is permitted, for more information consult the project license file.
 
 
 
-from os import path as os_path
-from sys import path as sys_path
 from typing import Annotated
 from typing import Optional
 
@@ -17,11 +15,9 @@ from ansible.plugins.action import ActionBase  # type: ignore
 from encommon.types import DictStrAny
 from encommon.types import sort_dict
 
-from pydantic import Field
-
-sys_path.insert(0, os_path.abspath('.'))
-
 from orchestro.orche.params.common import OrcheParamsModel
+
+from pydantic import Field
 
 
 
