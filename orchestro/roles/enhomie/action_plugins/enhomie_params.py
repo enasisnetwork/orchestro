@@ -29,52 +29,62 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
     unique: Annotated[
         str,
         Field(...,
-              description='Unique name for the deployment')]
+              description='Unique name for the deployment',
+              min_length=1)]
 
     directory: Annotated[
         str,
         Field('/opt/enhomie',
-              description='Base directory for the package')]
+              description='Base directory for the package',
+              min_length=1)]
 
     user: Annotated[
         str,
         Field('enhomie',
-              description='Local system user for deployment')]
+              description='Local system user for deployment',
+              min_length=1)]
 
     group: Annotated[
         str,
         Field('enhomie',
-              description='Local system group for deployment')]
+              description='Local system group for deployment',
+              min_length=1)]
 
     python: Annotated[
         str,
         Field('python3',
-              description='Python for creating virtual env')]
+              description='Python for creating virtual env',
+              min_length=1)]
 
     package: Annotated[
         str,
         Field('enhomie',
-              description='Installation package or path')]
+              description='Installation package or path',
+              min_length=1)]
 
     version: Annotated[
         Optional[str],
         Field(None,
-              description='Which version instead of latest')]
+              description='Which version instead of latest',
+              min_length=1)]
 
     repo_path: Annotated[
         Optional[str],
         Field(None,
-              description='Clone configuration repository')]
+              description='Clone configuration repository',
+              min_length=1)]
 
     repo_version: Annotated[
         Optional[str],
         Field(None,
-              description='Clone configuration repository')]
+              description='Clone configuration repository',
+              min_length=1)]
 
     config: Annotated[
         Optional[DictStrAny],
         Field(None,
-              description='Clone configuration repository')]
+              description='Clone configuration repository',
+              min_length=1)]
 
     logging: Annotated[
         Optional[bool],
