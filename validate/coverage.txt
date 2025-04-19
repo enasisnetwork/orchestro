@@ -13,7 +13,7 @@ orchestro/execution/vault.py                                  15      0   100%
 orchestro/filters/__init__.py                                  0      0   100%
 orchestro/filters/common.py                                    3      0   100%
 orchestro/inventory/__init__.py                                0      0   100%
-orchestro/inventory/orche.py                                 118      0   100%
+orchestro/inventory/orche.py                                 115      0   100%
 orchestro/inventory/test/__init__.py                           0      0   100%
 orchestro/inventory/test/test_orche.py                        18      0   100%
 orchestro/library/__init__.py                                  0      0   100%
@@ -53,12 +53,12 @@ orchestro/orche/test/test_config.py                           20      0   100%
 orchestro/orche/test/test_models.py                            9      0   100%
 orchestro/orche/test/test_orche.py                            27      0   100%
 orchestro/roles/__init__.py                                    0      0   100%
-orchestro/roles/enhomie/__init__.py                            0      0   100%
+orchestro/roles/enhomie/__init__.py                            2      0   100%
 orchestro/roles/enhomie/action_plugins/__init__.py             0      0   100%
-orchestro/roles/enhomie/action_plugins/enhomie_params.py      25      0   100%
-orchestro/roles/enrobie/__init__.py                            0      0   100%
+orchestro/roles/enhomie/action_plugins/enhomie_params.py      22      0   100%
+orchestro/roles/enrobie/__init__.py                            2      0   100%
 orchestro/roles/enrobie/action_plugins/__init__.py             0      0   100%
-orchestro/roles/enrobie/action_plugins/enrobie_params.py      25      0   100%
+orchestro/roles/enrobie/action_plugins/enrobie_params.py      22      0   100%
 orchestro/utils/__init__.py                                    3      0   100%
 orchestro/utils/child.py                                      18      0   100%
 orchestro/utils/param.py                                      29      0   100%
@@ -66,4 +66,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1168      0   100%
+TOTAL                                                       1163      0   100%
