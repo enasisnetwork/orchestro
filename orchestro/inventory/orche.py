@@ -12,6 +12,7 @@ from os import environ
 from pathlib import Path
 from typing import Any
 
+from ansible import context  # type: ignore
 from ansible.inventory.data import InventoryData  # type: ignore
 from ansible.parsing.dataloader import DataLoader  # type: ignore
 from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
@@ -20,6 +21,8 @@ from encommon.config import config_load
 from encommon.types import DictStrAny
 from encommon.types import NCTrue
 from encommon.types import sort_dict
+from encommon.utils import array_ansi
+from encommon.utils import print_ansi
 
 from orchestro.orche import Orche
 from orchestro.orche import OrcheConfig
@@ -137,6 +140,9 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         self.parse_orche()
         self.parse_paths()
+        self.show_cliargs()
+        self.show_confirm()
+
 
 
     def build_orche(
@@ -378,6 +384,92 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             elif kind == 'host':
                 _add_host()
 
+
+    def show_cliargs(
+        # NOCVR
+        self,
+    ) -> None:
+        """
+        Show command line arguments that were passed to Ansible.
+        """
+
+        _files = environ.get(
+            'orche_files')
+
+        files = (
+            _files.split(',')
+            if _files else None)
+
+        _paths = environ.get(
+            'orche_paths')
+
+        paths = (
+            _paths.split(',')
+            if _paths else None)
+
+
+        args = environ.get(
+            'ansible_args')
+
+        _tags = (
+            context.CLIARGS
+            .get('tags', []))
+
+        tags = [
+            x for x in _tags
+            if x != 'donothing']
+
+        more = list(
+            context.CLIARGS
+            .get('args', []))
+
+
+        dumped = array_ansi({
+            'ansible_args': args,
+            '_ansible_tags': tags,
+            '_ansible_args': more,
+            'orche_files': files,
+            'orche_paths': paths})
+
+        dashes = '─' * 60
+
+        print_ansi(
+            f'<c33>{dashes}<c0>\n'
+            f'{dumped}\n'
+            f'<c33>{dashes}<c0>')
+
+
+    def show_confirm(
+        # NOCVR
+        self,
+    ) -> None:
+        """
+        Require confirmation from the user in order to proceed.
+        """
+
+        ensured = environ.get(
+            'orche_ensured')
+
+        confirm = environ.get(
+            'orche_confirm')
+
+        if ensured != 'yes':
+            return None
+
+        answer = input(
+            'Are you sure? [y/N] ')
+
+        assert answer == 'y', (
+            'User did not confirm')
+
+        if confirm != 'yes':
+            return None
+
+        answer = input(
+            'Confirm sure? [y/N] ')
+
+        assert answer == 'y', (
+            'User did not confirm')
 
 
     @property
