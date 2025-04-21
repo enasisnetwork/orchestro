@@ -21,15 +21,15 @@
 
 
 
-
-
-
 - name: Include downstream tasks within roles
 
   ansible.builtin.include_tasks: >-
     tasks/params.yml
 
   tags: always
+
+
+
 
 
 
@@ -43,15 +43,6 @@
 
 
 
-
-
-
-- name: Include downstream tasks within roles
-
-  ansible.builtin.include_tasks: >-
-    tasks/overview.yml
-
-  tags: overview
 
 
 
@@ -118,3 +109,15 @@
     - state-restarted
     - state-stopped
     - state-started
+
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/overview.yml
+
+  tags: overview

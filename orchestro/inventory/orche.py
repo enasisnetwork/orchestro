@@ -246,6 +246,11 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                     ansbgrp.endumped
                     .items())
 
+                self.set_value(
+                    group.name,
+                    'orche_group',
+                    value=group)
+
                 for key, value in vars:
 
                     self.set_value(
@@ -289,6 +294,11 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 vars = (
                     ansbsys.endumped
                     .items())
+
+                self.set_value(
+                    system.name,
+                    'orche_system',
+                    value=system)
 
                 for key, value in vars:
 

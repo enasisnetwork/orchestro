@@ -6,12 +6,9 @@
 
 
 .PHONY: utility-overview
-utility-overview:
+utility-overview: \
+	.check-limit .check-stage
 	@## Dump relevant information about hosts
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-overview<c0>)
@@ -20,7 +17,7 @@ endif
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
@@ -31,12 +28,9 @@ endif
 
 
 .PHONY: utility-ping
-utility-ping:
+utility-ping: \
+	.check-limit .check-stage
 	@## Dump relevant information about hosts
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-ping<c0>)
@@ -45,7 +39,7 @@ endif
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
@@ -56,7 +50,8 @@ endif
 
 
 .PHONY: utility-encrypt
-utility-encrypt:
+utility-encrypt: \
+	.check-stage
 	@## Encrypt information with Ansible Vault
 	@#
 ifndef vault
@@ -78,7 +73,8 @@ endif
 
 
 .PHONY: utility-decrypt
-utility-decrypt:
+utility-decrypt: \
+	.check-stage
 	@## Encrypt information with Ansible Vault
 	@#
 	$(call MAKE_PR2NT,\
@@ -94,7 +90,8 @@ utility-decrypt:
 
 
 .PHONY: utility-inventory
-utility-inventory:
+utility-inventory: \
+	.check-stage
 	@## Dump the Ansible inventory information
 	@#
 	$(call MAKE_PR2NT,\
@@ -104,7 +101,7 @@ utility-inventory:
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-inventory --graph \
 		$(ansible_args); \
 		deactivate)
@@ -112,12 +109,10 @@ utility-inventory:
 
 
 .PHONY: utility-custom
-utility-custom:
+utility-custom: \
+	.check-limit .check-stage
 	@## Dump relevant information about hosts
 	@#
-ifndef limit
-	$(error limit not defined)
-endif
 ifndef ansible_module_name
 	$(error ansible_module_name not defined)
 endif

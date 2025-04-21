@@ -20,10 +20,7 @@
     version: '{{ enhomie_repo_version }}'
     force: true
 
-  when:
-
-    - >-  # when repository defined
-      enhomie_repo_path is not none
+  when: enhomie_repo_path
 
   notify: restart enhomie
 
