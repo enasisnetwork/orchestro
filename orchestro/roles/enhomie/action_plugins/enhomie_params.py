@@ -118,7 +118,7 @@ class ActionModule(ActionBase):  # type: ignore
         """
         Perform whatever operation is associated with the file.
 
-        :param tmp: Deprecated paramter, not longer being used.
+        :param tmp: Placeholder for since deprecated parameter.
         :param task_vars: Variables associated around this task.
         :returns: Dictionary of results for the module process.
         """

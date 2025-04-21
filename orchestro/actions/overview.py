@@ -43,9 +43,8 @@ class ActionModule(ActionBase):  # type: ignore
         """
         Perform whatever operation is associated with the file.
 
-        .. note::
-           Parameters intentioanlly undefined for this method.
-
+        :param tmp: Placeholder for since deprecated parameter.
+        :param task_vars: Variables associated around this task.
         :returns: Returned following parent super instantiation.
         """
 
