@@ -30,7 +30,7 @@ utility-overview: \
 .PHONY: utility-ping
 utility-ping: \
 	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	@## Login to the host and report reachable
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-ping<c0>)
@@ -111,7 +111,7 @@ utility-inventory: \
 .PHONY: utility-custom
 utility-custom: \
 	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	@## Run Ansible module with given arguments
 	@#
 ifndef ansible_module_name
 	$(error ansible_module_name not defined)
