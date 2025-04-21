@@ -190,46 +190,45 @@
 </span><span id="line-43"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-44"><span class="sd">        Perform whatever operation is associated with the file.</span>
 </span><span id="line-45">
-</span><span id="line-46"><span class="sd">        .. note::</span>
-</span><span id="line-47"><span class="sd">           Parameters intentioanlly undefined for this method.</span>
-</span><span id="line-48">
-</span><span id="line-49"><span class="sd">        :returns: Returned following parent super instantiation.</span>
-</span><span id="line-50"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-51">
-</span><span id="line-52">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_task</span><span class="o">.</span><span class="n">args</span>
-</span><span id="line-53">
-</span><span id="line-54">        <span class="k">assert</span> <span class="n">task_vars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-55">
-</span><span id="line-56">        <span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">()</span>
-</span><span id="line-57">
-</span><span id="line-58">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">array_ansi</span><span class="p">(</span>
-</span><span id="line-59">            <span class="n">params</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">],</span>
-</span><span id="line-60">            <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="line-61">
-</span><span id="line-62">        <span class="n">dashes</span> <span class="o">=</span> <span class="s1">&#39;─&#39;</span> <span class="o">*</span> <span class="mi">60</span>
-</span><span id="line-63">
-</span><span id="line-64">        <span class="n">hostname</span> <span class="o">=</span> <span class="n">task_vars</span><span class="p">[</span>
-</span><span id="line-65">            <span class="s1">&#39;inventory_hostname&#39;</span><span class="p">]</span>
-</span><span id="line-66">
-</span><span id="line-67">        <span class="n">output</span> <span class="o">=</span> <span class="n">make_ansi</span><span class="p">(</span>
-</span><span id="line-68">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-</span><span id="line-69">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span>
-</span><span id="line-70">            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-</span><span id="line-71">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span><span class="p">)</span>
-</span><span id="line-72">
-</span><span id="line-73">        <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span>
-</span><span id="line-74">            <span class="n">msg</span><span class="o">=</span><span class="n">output</span><span class="p">,</span>
-</span><span id="line-75">            <span class="n">screen_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="line-76">
-</span><span id="line-77">        <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-</span><span id="line-78">            <span class="n">tmp</span><span class="p">,</span> <span class="n">task_vars</span><span class="p">)</span>
-</span><span id="line-79">
-</span><span id="line-80">        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;changed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-81">
-</span><span id="line-82">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-83">            <span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
-</span><span id="line-84">
-</span><span id="line-85">        <span class="k">return</span> <span class="n">result</span></div>
+</span><span id="line-46"><span class="sd">        :param tmp: Placeholder for since deprecated parameter.</span>
+</span><span id="line-47"><span class="sd">        :param task_vars: Variables associated around this task.</span>
+</span><span id="line-48"><span class="sd">        :returns: Returned following parent super instantiation.</span>
+</span><span id="line-49"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-50">
+</span><span id="line-51">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_task</span><span class="o">.</span><span class="n">args</span>
+</span><span id="line-52">
+</span><span id="line-53">        <span class="k">assert</span> <span class="n">task_vars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-54">
+</span><span id="line-55">        <span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">()</span>
+</span><span id="line-56">
+</span><span id="line-57">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">array_ansi</span><span class="p">(</span>
+</span><span id="line-58">            <span class="n">params</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">],</span>
+</span><span id="line-59">            <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="line-60">
+</span><span id="line-61">        <span class="n">dashes</span> <span class="o">=</span> <span class="s1">&#39;─&#39;</span> <span class="o">*</span> <span class="mi">60</span>
+</span><span id="line-62">
+</span><span id="line-63">        <span class="n">hostname</span> <span class="o">=</span> <span class="n">task_vars</span><span class="p">[</span>
+</span><span id="line-64">            <span class="s1">&#39;inventory_hostname&#39;</span><span class="p">]</span>
+</span><span id="line-65">
+</span><span id="line-66">        <span class="n">output</span> <span class="o">=</span> <span class="n">make_ansi</span><span class="p">(</span>
+</span><span id="line-67">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span><span id="line-68">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span>
+</span><span id="line-69">            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span><span id="line-70">            <span class="sa">f</span><span class="s1">&#39;&lt;c32&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span><span class="p">)</span>
+</span><span id="line-71">
+</span><span id="line-72">        <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span>
+</span><span id="line-73">            <span class="n">msg</span><span class="o">=</span><span class="n">output</span><span class="p">,</span>
+</span><span id="line-74">            <span class="n">screen_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="line-75">
+</span><span id="line-76">        <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span><span id="line-77">            <span class="n">tmp</span><span class="p">,</span> <span class="n">task_vars</span><span class="p">)</span>
+</span><span id="line-78">
+</span><span id="line-79">        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;changed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="line-80">
+</span><span id="line-81">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-82">            <span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+</span><span id="line-83">
+</span><span id="line-84">        <span class="k">return</span> <span class="n">result</span></div>
 </div>
 
 </span></code></pre></div>
