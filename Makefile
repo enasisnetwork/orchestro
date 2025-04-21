@@ -9,6 +9,8 @@
 
 -include orchestro.env
 
+ORCHE_ROOT ?= ./
+
 
 
 PYTHON ?= ../../Execution/python312/bin/python
@@ -50,7 +52,6 @@ help: .check-python
 
 
 -include orchestro/playbooks/*/Makefile
-
 
 ifneq ($(strip $(ORCHE_EXTRA_PLAYBOOKS)),)
 -include $(ORCHE_EXTRA_PLAYBOOKS)/*/Makefile
@@ -359,7 +360,7 @@ pytest: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pytest<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@PYTHONPATH=. \
+	@PYTHONPATH=$(ORCHE_ROOT) \
 	$(VENVP)/bin/pytest -v \
 		$(PROJECT)/$(subpackage) \
 		--numprocesses=4 \
@@ -589,12 +590,14 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
-		PYTHONPATH=. \
+		cd orchestro; \
 		ansible-lint \
 			-q --strict \
+			--project-dir . \
 			--show-relpath \
-			-c .ansible-lint \
-			orchestro/playbooks; \
+			--offline \
+			-c ../.ansible-lint \
+			playbooks; \
 		deactivate)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
@@ -604,12 +607,14 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
-		PYTHONPATH=. \
+		cd orchestro; \
 		ansible-lint \
 			-q --strict \
+			--project-dir . \
 			--show-relpath \
-			-c .ansible-lint \
-			orchestro/roles; \
+			--offline \
+			-c ../.ansible-lint \
+			roles; \
 		deactivate)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
@@ -619,12 +624,14 @@ ansblint: \
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
-		PYTHONPATH=. \
+		cd orchestro; \
 		ansible-lint \
 			-q --strict \
+			--project-dir . \
 			--show-relpath \
-			-c .ansible-lint \
-			orchestro/inventory; \
+			--offline \
+			-c ../.ansible-lint \
+			inventory; \
 		deactivate)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
@@ -706,4 +713,13 @@ endif
 .check-venv-package:
 ifeq (,$(wildcard $(VENVP)))
 	$(error Package environment does not exist)
+endif
+
+.check-stage:
+ifndef stage
+	$(error stage not defined)
+endif
+.check-limit:
+ifndef limit
+	$(error limit not defined)
 endif

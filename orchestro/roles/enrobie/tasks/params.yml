@@ -93,43 +93,30 @@
   ansible.builtin.set_fact:
 
     enrobie_unique: >-
-      {%- set value = pbvalidate.params.unique -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.unique }}
     enrobie_directory: >-
-      {%- set value = pbvalidate.params.directory -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.directory }}
     enrobie_user: >-
-      {%- set value = pbvalidate.params.user -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.user }}
     enrobie_group: >-
-      {%- set value = pbvalidate.params.group -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.group }}
     enrobie_python: >-
-      {%- set value = pbvalidate.params.python -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.python }}
     enrobie_package: >-
-      {%- set value = pbvalidate.params.package -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.package }}
     enrobie_version: >-
-      {%- set value = pbvalidate.params.version -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.version }}
     enrobie_repo_path: >-
-      {%- set value = pbvalidate.params.repo_path -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.repo_path }}
     enrobie_repo_version: >-
-      {%- set value = pbvalidate.params.repo_version -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.repo_version }}
     enrobie_config: >-
-      {%- set value = pbvalidate.params.config -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.config }}
     enrobie_logging: >-
-      {%- set value = pbvalidate.params.logging -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.logging }}
     enrobie_console: >-
-      {%- set value = pbvalidate.params.console -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.console }}
     enrobie_autostart: >-
-      {%- set value = pbvalidate.params.autostart -%}
-      {{- value if value is not none else omit -}}
+      {{ pbvalidate.params.autostart }}
 
   tags: always

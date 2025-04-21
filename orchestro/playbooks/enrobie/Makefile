@@ -6,12 +6,9 @@
 
 
 .PHONY: enrobie-overview
-enrobie-overview:
+enrobie-overview: \
+	.check-limit .check-stage
 	@## Dump relevant information about hosts
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-overview<c0>)
@@ -20,7 +17,7 @@ endif
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -31,12 +28,9 @@ endif
 
 
 .PHONY: enrobie-install
-enrobie-install:
+enrobie-install: \
+	.check-limit .check-stage
 	@## Install and configure related package
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-install<c0>)
@@ -46,7 +40,7 @@ endif
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -57,27 +51,21 @@ endif
 
 
 .PHONY: enrobie-reinstall
-enrobie-reinstall:
+enrobie-reinstall: \
+	.check-limit .check-stage
 	@## Remove existing venv and then install
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-reinstall<c0>)
-	@#
-	@$(VENVP)/bin/python -Bc 'if 1:\
-		confirm = input(\
-			"Are you sure? [y/N] ");\
-		assert confirm == "y";'
 	@#
 	@( \
 		set -e; \
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
+		orche_ensured="yes" \
+		orche_confirm="yes" \
 		ansible_gather="yes" \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -88,12 +76,9 @@ endif
 
 
 .PHONY: enrobie-configure
-enrobie-configure:
+enrobie-configure: \
+	.check-limit .check-stage
 	@## Bypass install and configure package
-	@#
-ifndef limit
-	$(error limit not defined)
-endif
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-configure<c0>)
@@ -103,7 +88,7 @@ endif
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \
@@ -114,12 +99,10 @@ endif
 
 
 .PHONY: enrobie-state
-enrobie-state:
+enrobie-state: \
+	.check-limit .check-stage
 	@## Control the state of package service
 	@#
-ifndef limit
-	$(error limit not defined)
-endif
 ifndef state
 	$(error state not defined)
 endif
@@ -132,7 +115,7 @@ endif
 		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
-		PYTHONPATH=. \
+		PYTHONPATH=$(ORCHE_ROOT) \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="$(limit)" \

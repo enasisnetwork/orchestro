@@ -27,14 +27,11 @@
 - name: Include downstream tasks within roles
 
   ansible.builtin.include_tasks: >-
-    tasks/overview.yml
+    tasks/ping.yml
 
-  when:
+  when: inventory_hostname != "localhost"
 
-    - >-  # target is not localhost
-      inventory_hostname != "localhost"
-
-  tags: overview
+  tags: ping
 
 
 
@@ -44,11 +41,8 @@
 - name: Include downstream tasks within roles
 
   ansible.builtin.include_tasks: >-
-    tasks/ping.yml
+    tasks/overview.yml
 
-  when:
+  when: inventory_hostname != "localhost"
 
-    - >-  # target is not localhost
-      inventory_hostname != "localhost"
-
-  tags: ping
+  tags: overview

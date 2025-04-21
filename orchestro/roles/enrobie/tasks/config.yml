@@ -20,10 +20,7 @@
     version: '{{ enrobie_repo_version }}'
     force: true
 
-  when:
-
-    - >-  # when repository defined
-      enrobie_repo_path is not none
+  when: enrobie_repo_path
 
   notify: restart enrobie
 
