@@ -69,3 +69,6 @@ def test_OrcheSystem_cover(
     assert system.groups
 
     assert system.dumped
+
+
+    assert system.domain

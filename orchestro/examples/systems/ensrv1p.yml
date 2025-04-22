@@ -10,7 +10,7 @@ systems:
   ####################
   ensrv1p:
     enable: true
-    inherits: template_almalin
+    inherits: template_almalinux
     memberof:
       - jupiter
       - roles_enhomie

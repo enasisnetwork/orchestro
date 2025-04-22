@@ -70,3 +70,6 @@ def test_OrchePerson_cover(
     assert not person.groups
 
     assert person.dumped
+
+
+    assert person.domain

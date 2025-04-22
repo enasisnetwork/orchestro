@@ -59,7 +59,7 @@ def test_InventoryModule(
         'roles_enhomie',
         'roles_enrobie',
         'systems',
-        'systems_almalin',
+        'systems_almalinux',
         'systems_openbsd',
         'systems_windows',
         'ungrouped']

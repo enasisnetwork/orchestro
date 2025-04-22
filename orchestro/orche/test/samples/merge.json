@@ -11,7 +11,7 @@
   },
   "dryrun": false,
   "groups": {
-    "systems_almalin": {
+    "systems_almalinux": {
       "enable": true,
       "memberof": "systems",
       "display": "AlmaLinux"
@@ -148,7 +148,7 @@
     },
     "ensrv1p": {
       "enable": true,
-      "inherits": "template_almalin",
+      "inherits": "template_almalinux",
       "memberof": [
         "jupiter",
         "roles_enhomie"
@@ -160,7 +160,7 @@
     },
     "ensrv2p": {
       "enable": true,
-      "inherits": "template_almalin",
+      "inherits": "template_almalinux",
       "memberof": [
         "neptune",
         "roles_enrobie"
@@ -174,14 +174,15 @@
       "enable": false,
       "display": "Gateway Template"
     },
-    "template_almalin": {
+    "template_almalinux": {
       "enable": false,
       "inherits": "template_default",
-      "memberof": "systems_almalin",
+      "memberof": "systems_almalinux",
       "display": "AlmaLinux Template"
     },
     "template_default": {
       "enable": false,
+      "domain": "enasis.net",
       "display": "Default Template",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",

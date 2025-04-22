@@ -8,7 +8,7 @@ groups:
   #######################
   ## AlmaLinux Systems ##
   #######################
-  systems_almalin:
+  systems_almalinux:
     enable: true
     memberof: systems
     display: AlmaLinux

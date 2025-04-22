@@ -10,7 +10,7 @@ systems:
   ####################
   ensrv2p:
     enable: true
-    inherits: template_almalin
+    inherits: template_almalinux
     memberof:
       - neptune
       - roles_enrobie
