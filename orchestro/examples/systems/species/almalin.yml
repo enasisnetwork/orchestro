@@ -8,8 +8,8 @@ systems:
   ########################
   ## AlmaLinux Template ##
   ########################
-  template_almalin:
+  template_almalinux:
     enable: false
     inherits: template_default
-    memberof: systems_almalin
+    memberof: systems_almalinux
     display: AlmaLinux Template

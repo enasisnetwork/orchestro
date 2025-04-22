@@ -14,7 +14,7 @@
     "file_path": null
   },
   "groups": {
-    "systems_almalin": {
+    "systems_almalinux": {
       "enable": true,
       "inherits": null,
       "display": "AlmaLinux",
@@ -202,7 +202,7 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -220,7 +220,7 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -238,7 +238,7 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -256,7 +256,7 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -265,17 +265,17 @@
     "ensrv1p": {
       "enable": true,
       "inherits": [
-        "template_almalin",
+        "template_almalinux",
         "template_default"
       ],
       "display": "Jupiter Server",
       "memberof": [
         "jupiter",
         "roles_enhomie",
-        "systems_almalin"
+        "systems_almalinux"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "enhomie_directory": "/opt/enhomie",
         "ansible_host": "{{ inventory_hostname }}",
@@ -285,17 +285,17 @@
     "ensrv2p": {
       "enable": true,
       "inherits": [
-        "template_almalin",
+        "template_almalinux",
         "template_default"
       ],
       "display": "Neptune Server",
       "memberof": [
         "neptune",
         "roles_enrobie",
-        "systems_almalin"
+        "systems_almalinux"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "enrobie_directory": "/opt/enrobie",
         "ansible_host": "{{ inventory_hostname }}",
@@ -311,17 +311,17 @@
       "domain": null,
       "ansible": null
     },
-    "template_almalin": {
+    "template_almalinux": {
       "enable": false,
       "inherits": [
         "template_default"
       ],
       "display": "AlmaLinux Template",
       "memberof": [
-        "systems_almalin"
+        "systems_almalinux"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -333,7 +333,7 @@
       "display": "Default Template",
       "memberof": null,
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"
@@ -349,7 +349,7 @@
         "systems_openbsd"
       ],
       "realm": "ansible",
-      "domain": null,
+      "domain": "enasis.net",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root"

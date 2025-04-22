@@ -10,6 +10,7 @@ systems:
   ######################
   template_default:
     enable: false
+    domain: enasis.net
     display: Default Template
 
 

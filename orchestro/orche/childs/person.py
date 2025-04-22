@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Literal
+from typing import Optional
 from typing import TYPE_CHECKING
 
 from .child import OrcheChild
@@ -71,3 +72,16 @@ class OrchePerson(OrcheChild):
             params, model)
 
         return params
+
+
+    @property
+    def domain(
+        self,
+    ) -> Optional[str]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.domain
