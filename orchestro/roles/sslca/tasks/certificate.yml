@@ -13,14 +13,26 @@
 
   ansible.builtin.set_fact:
 
+    _sslca_rootkeys: >-
+      {{ sslca_persist.rootkeys }}/
+      {{- _authority.name }}
+    _sslca_rootfiles: >-
+      {{ sslca_persist.rootfiles }}/
+      {{- _authority.name }}
+
     _sslmy_certkeys: >-
       {{ sslca_persist.certkeys }}/
-      {{- _certificate.parent }}/
+      {{- _authority.name }}/
       {{- _certificate.name }}
     _sslmy_certfiles: >-
       {{ sslca_persist.certfiles }}/
-      {{- _certificate.parent }}/
+      {{- _authority.name }}/
       {{- _certificate.name }}
+
+    _sslca_name: >-
+      {{ _authority.name }}
+    _sslca_password: >-
+      {{ _authority.password }}
 
     _sslmy_name: >-
       {{ _certificate.name }}
@@ -30,12 +42,10 @@
       {{ _certificate.common }}
     _sslmy_alias: >-
       {{ _certificate.alias }}
-    _sslmy_parent: >-
-      {{ _certificate.parent }}
     _sslmy_expire: >-
       {{ _certificate.expire }}
 
-  tags: certificate-build
+  tags: always
 
 
 
@@ -43,14 +53,48 @@
 
   ansible.builtin.set_fact:
 
-    _authority: >-
-      {%- set parent = _sslmy_parent -%}
-      {%- for item in sslca_authority
-           if item.name == parent -%}
-      {{-   item -}}
-      {%- endfor -%}
+    _sslmy_mycnf: >-
+      {{ _sslmy_certfiles }}/child.cnf
+    _sslmy_mykey: >-
+      {{ _sslmy_certkeys }}/
+      {{- _sslmy_name }}.key.pem
+    _sslmy_mycsr: >-
+      {{ _sslmy_certfiles }}/csr/
+      {{- _sslmy_name }}.csr.pem
+    _sslmy_mycert: >-
+      {{ _sslmy_certfiles }}/certs/
+      {{- _sslmy_name }}.cert.pem
+    _sslmy_mychain: >-
+      {{ _sslmy_certfiles }}/certs/
+      {{- _sslmy_name }}.chain.pem
 
-  tags: certificate-build
+    _sslmy_thumb: >-
+      {{ _sslmy_certfiles }}/certs/
+      {{- _sslmy_name }}.cert.txt
+    _sslmy_rsakey: >-
+      {{ _sslmy_certkeys }}/
+      {{- _sslmy_name }}.rsa.key
+    _sslmy_rsapub: >-
+      {{ _sslmy_certfiles }}/certs/
+      {{- _sslmy_name }}.rsa.pub
+
+  tags: always
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    _sslmy_cacnf: >-
+      {{ _sslca_rootfiles }}/parent.cnf
+    _sslmy_cachain: >-
+      {{ _sslca_rootfiles }}/certs/
+      {{- _sslca_name }}.chain.pem
+
+    _sslmy_capass: '{{ _sslca_password }}'
+
+  tags: always
 
 
 
@@ -70,5 +114,23 @@
 
   ansible.builtin.include_tasks: >-
     tasks/certificate/config.yml
+
+  tags: certificate-build
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/certificate/build.yml
+
+  tags: certificate-build
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/certificate/extras.yml
 
   tags: certificate-build

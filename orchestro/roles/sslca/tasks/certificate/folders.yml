@@ -17,9 +17,10 @@
     state: directory
 
   loop:
-
     - path: '{{ _sslmy_certkeys }}'
     - path: '{{ _sslmy_certfiles }}'
+    - path: '{{ _sslmy_certfiles }}/certs'
+    - path: '{{ _sslmy_certfiles }}/csr'
 
   loop_control:
     label: '{{ item.path | basename(2) }}'

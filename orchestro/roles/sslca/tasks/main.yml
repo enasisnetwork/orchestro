@@ -58,6 +58,15 @@
   ansible.builtin.include_tasks: >-
     tasks/certificate.yml
 
+  vars:
+    _authority: >-
+      {%- set cert = _certificate -%}
+      {%- set parent = cert.parent -%}
+      {%- for item in sslca_authority
+           if item.name == parent -%}
+      {{-   item -}}
+      {%- endfor -%}
+
   loop: '{{ sslca_certificate or [] }}'
 
   loop_control:

@@ -19,7 +19,7 @@
   loop:
 
     - src: child.j2
-      dest: '{{ _sslmy_certfiles }}/child.cnf'
+      dest: '{{ _sslmy_mycnf }}'
 
   loop_control:
     label: '{{ item.dest | basename(2) }}'

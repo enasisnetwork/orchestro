@@ -19,7 +19,7 @@
   loop:
 
     - src: parent.j2
-      dest: '{{ _sslca_rootfiles }}/parent.cnf'
+      dest: '{{ _sslca_mycnf }}'
 
   loop_control:
     label: '{{ item.dest | basename(1) }}'
