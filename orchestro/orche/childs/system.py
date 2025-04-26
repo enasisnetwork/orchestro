@@ -11,6 +11,9 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.types import DictStrAny
+from encommon.types import NCNone
+
 from .child import OrcheChild
 from ..models import OrcheModels
 
@@ -75,6 +78,19 @@ class OrcheSystem(OrcheChild):
 
 
     @property
+    def realm(
+        self,
+    ) -> Optional[str]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.realm
+
+
+    @property
     def domain(
         self,
     ) -> Optional[str]:
@@ -85,3 +101,40 @@ class OrcheSystem(OrcheChild):
         """
 
         return self.params.domain
+
+
+    @property
+    def fqdn(
+        self,
+    ) -> str:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        returned = self.name
+        domain = self.domain
+
+        if domain is not None:
+            returned += f'.{domain}'
+
+        return returned
+
+
+    @property
+    def ansible(
+        self,
+    ) -> Optional[DictStrAny]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        ansible = self.params.ansible
+
+        if ansible is not None:
+            return ansible.endumped
+
+        return NCNone

@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 
-def test_OrcheSubnet_cover(
+def test_OrcheSubnet(
     orche: 'Orche',
 ) -> None:
     """
@@ -60,6 +60,8 @@ def test_OrcheSubnet_cover(
     assert subnet.orche
 
     assert subnet.enable
+
+    assert subnet.display
 
     assert subnet.name == 'jupiter_domesnet'
 

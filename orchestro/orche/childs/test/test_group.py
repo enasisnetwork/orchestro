@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 
-def test_OrcheGroup_cover(
+def test_OrcheGroup(
     orche: 'Orche',
 ) -> None:
     """
@@ -60,6 +60,8 @@ def test_OrcheGroup_cover(
 
     assert group.enable
 
+    assert group.display
+
     assert group.name == 'jupiter'
 
     assert group.kind == 'group'
@@ -69,3 +71,8 @@ def test_OrcheGroup_cover(
     assert not group.groups
 
     assert group.dumped
+
+
+    assert group.realm
+
+    assert not group.ansible
