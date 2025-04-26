@@ -1,0 +1,59 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    _sslca_rootkeys: >-
+      {{ sslca_persist.rootkeys }}/
+      {{- _authority.name }}
+    _sslca_rootfiles: >-
+      {{ sslca_persist.rootfiles }}/
+      {{- _authority.name }}
+    _sslca_certkeys: >-
+      {{ sslca_persist.certkeys }}/
+      {{- _authority.name }}
+    _sslca_certfiles: >-
+      {{ sslca_persist.certfiles }}/
+      {{- _authority.name }}
+
+    _sslca_name: >-
+      {{ _authority.name }}
+    _sslca_password: >-
+      {{ _authority.password }}
+    _sslca_parent: >-
+      {{ _authority.parent }}
+    _sslca_expire: >-
+      {{ _authority.expire }}
+
+  tags: always
+
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/authority/folders.yml
+
+  tags: authority-build
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/authority/config.yml
+
+  tags: authority-build

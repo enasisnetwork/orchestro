@@ -1,0 +1,74 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    _sslmy_certkeys: >-
+      {{ sslca_persist.certkeys }}/
+      {{- _certificate.parent }}/
+      {{- _certificate.name }}
+    _sslmy_certfiles: >-
+      {{ sslca_persist.certfiles }}/
+      {{- _certificate.parent }}/
+      {{- _certificate.name }}
+
+    _sslmy_name: >-
+      {{ _certificate.name }}
+    _sslmy_kind: >-
+      {{ _certificate.kind }}
+    _sslmy_common: >-
+      {{ _certificate.common }}
+    _sslmy_alias: >-
+      {{ _certificate.alias }}
+    _sslmy_parent: >-
+      {{ _certificate.parent }}
+    _sslmy_expire: >-
+      {{ _certificate.expire }}
+
+  tags: certificate-build
+
+
+
+- name: Declare relevant playbook variables
+
+  ansible.builtin.set_fact:
+
+    _authority: >-
+      {%- set parent = _sslmy_parent -%}
+      {%- for item in sslca_authority
+           if item.name == parent -%}
+      {{-   item -}}
+      {%- endfor -%}
+
+  tags: certificate-build
+
+
+
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/certificate/folders.yml
+
+  tags: certificate-build
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/certificate/config.yml
+
+  tags: certificate-build
