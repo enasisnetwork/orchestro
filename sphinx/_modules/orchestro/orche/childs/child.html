@@ -343,9 +343,9 @@
 </span><span id="line-195">
 </span><span id="line-196">
 </span><span id="line-197">    <span class="nd">@property</span>
-</span><span id="line-198">    <span class="k">def</span><span class="w"> </span><span class="nf">groups</span><span class="p">(</span>
+</span><span id="line-198">    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span>
 </span><span id="line-199">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-200">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;OrcheGroup&#39;</span><span class="p">]:</span>
+</span><span id="line-200">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 </span><span id="line-201"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-202"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-203">
@@ -353,46 +353,64 @@
 </span><span id="line-205"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-206">
 </span><span id="line-207">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-208">        <span class="n">names</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">memberof</span>
+</span><span id="line-208">        <span class="n">display</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">display</span>
 </span><span id="line-209">
-</span><span id="line-210">        <span class="n">groups</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-211">            <span class="bp">self</span><span class="o">.</span><span class="n">orche</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-212">            <span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+</span><span id="line-210">        <span class="k">return</span> <span class="p">(</span>
+</span><span id="line-211">            <span class="n">display</span> <span class="k">if</span> <span class="n">display</span>
+</span><span id="line-212">            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </span><span id="line-213">
-</span><span id="line-214">        <span class="n">childs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="s1">&#39;OrcheGroup&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="line-215">
-</span><span id="line-216">        <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-217">            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">childs</span><span class="p">)</span>
-</span><span id="line-218">
-</span><span id="line-219">        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
-</span><span id="line-220">
-</span><span id="line-221">            <span class="n">child</span> <span class="o">=</span> <span class="n">groups</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-</span><span id="line-222">
-</span><span id="line-223">            <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
-</span><span id="line-224">                <span class="k">continue</span>
-</span><span id="line-225">
-</span><span id="line-226">            <span class="n">childs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</span><span id="line-214">
+</span><span id="line-215">    <span class="nd">@property</span>
+</span><span id="line-216">    <span class="k">def</span><span class="w"> </span><span class="nf">groups</span><span class="p">(</span>
+</span><span id="line-217">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-218">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;OrcheGroup&#39;</span><span class="p">]:</span>
+</span><span id="line-219"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-220"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-221">
+</span><span id="line-222"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-223"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-224">
+</span><span id="line-225">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-226">        <span class="n">names</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">memberof</span>
 </span><span id="line-227">
-</span><span id="line-228">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">childs</span><span class="p">)</span>
-</span><span id="line-229">
-</span><span id="line-230">
-</span><span id="line-231">    <span class="nd">@property</span>
-</span><span id="line-232">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
-</span><span id="line-233">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-234">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-</span><span id="line-235"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-236"><span class="sd">        Return the facts about the attributes from the instance.</span>
-</span><span id="line-237">
-</span><span id="line-238"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
-</span><span id="line-239"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-228">        <span class="n">groups</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-229">            <span class="bp">self</span><span class="o">.</span><span class="n">orche</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-230">            <span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+</span><span id="line-231">
+</span><span id="line-232">        <span class="n">childs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="s1">&#39;OrcheGroup&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="line-233">
+</span><span id="line-234">        <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-235">            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">childs</span><span class="p">)</span>
+</span><span id="line-236">
+</span><span id="line-237">        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+</span><span id="line-238">
+</span><span id="line-239">            <span class="n">child</span> <span class="o">=</span> <span class="n">groups</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 </span><span id="line-240">
-</span><span id="line-241">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
-</span><span id="line-242">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
+</span><span id="line-241">            <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
+</span><span id="line-242">                <span class="k">continue</span>
 </span><span id="line-243">
-</span><span id="line-244">        <span class="k">return</span> <span class="p">{</span>
-</span><span id="line-245">            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-246">            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
-</span><span id="line-247">            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
+</span><span id="line-244">            <span class="n">childs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</span><span id="line-245">
+</span><span id="line-246">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">childs</span><span class="p">)</span>
+</span><span id="line-247">
+</span><span id="line-248">
+</span><span id="line-249">    <span class="nd">@property</span>
+</span><span id="line-250">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-251">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-252">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+</span><span id="line-253"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-254"><span class="sd">        Return the facts about the attributes from the instance.</span>
+</span><span id="line-255">
+</span><span id="line-256"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
+</span><span id="line-257"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-258">
+</span><span id="line-259">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
+</span><span id="line-260">        <span class="n">dumped</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
+</span><span id="line-261">
+</span><span id="line-262">        <span class="k">return</span> <span class="p">{</span>
+</span><span id="line-263">            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-264">            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
+</span><span id="line-265">            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
 
 </span></code></pre></div>
     </div></div>

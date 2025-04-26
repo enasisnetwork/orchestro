@@ -161,9 +161,9 @@
 </span><span id="line-18">
 </span><span id="line-19">
 </span><span id="line-20">
-<div class="viewcode-block" id="test_OrcheSubnet_cover">
-<a class="viewcode-back" href="../../../../../orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_subnet.test_OrcheSubnet_cover">[docs]</a>
-</span><span id="line-21"><span class="k">def</span><span class="w"> </span><span class="nf">test_OrcheSubnet_cover</span><span class="p">(</span>
+<div class="viewcode-block" id="test_OrcheSubnet">
+<a class="viewcode-back" href="../../../../../orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_subnet.test_OrcheSubnet">[docs]</a>
+</span><span id="line-21"><span class="k">def</span><span class="w"> </span><span class="nf">test_OrcheSubnet</span><span class="p">(</span>
 </span><span id="line-22">    <span class="n">orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span><span class="p">,</span>
 </span><span id="line-23"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-24"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -206,15 +206,17 @@
 </span><span id="line-61">
 </span><span id="line-62">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">enable</span>
 </span><span id="line-63">
-</span><span id="line-64">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;jupiter_domesnet&#39;</span>
+</span><span id="line-64">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">display</span>
 </span><span id="line-65">
-</span><span id="line-66">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;subnet&#39;</span>
+</span><span id="line-66">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;jupiter_domesnet&#39;</span>
 </span><span id="line-67">
-</span><span id="line-68">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-68">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;subnet&#39;</span>
 </span><span id="line-69">
-</span><span id="line-70">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">groups</span>
+</span><span id="line-70">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-71">
-</span><span id="line-72">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">dumped</span></div>
+</span><span id="line-72">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">groups</span>
+</span><span id="line-73">
+</span><span id="line-74">    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">dumped</span></div>
 
 </span></code></pre></div>
     </div></div>

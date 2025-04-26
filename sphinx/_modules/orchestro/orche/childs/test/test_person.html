@@ -161,9 +161,9 @@
 </span><span id="line-18">
 </span><span id="line-19">
 </span><span id="line-20">
-<div class="viewcode-block" id="test_OrchePerson_cover">
-<a class="viewcode-back" href="../../../../../orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_person.test_OrchePerson_cover">[docs]</a>
-</span><span id="line-21"><span class="k">def</span><span class="w"> </span><span class="nf">test_OrchePerson_cover</span><span class="p">(</span>
+<div class="viewcode-block" id="test_OrchePerson">
+<a class="viewcode-back" href="../../../../../orchestro.orche.childs.test.html#orchestro.orche.childs.test.test_person.test_OrchePerson">[docs]</a>
+</span><span id="line-21"><span class="k">def</span><span class="w"> </span><span class="nf">test_OrchePerson</span><span class="p">(</span>
 </span><span id="line-22">    <span class="n">orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span><span class="p">,</span>
 </span><span id="line-23"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-24"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -206,18 +206,26 @@
 </span><span id="line-61">
 </span><span id="line-62">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">enable</span>
 </span><span id="line-63">
-</span><span id="line-64">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;robert_domain&#39;</span>
+</span><span id="line-64">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">display</span>
 </span><span id="line-65">
-</span><span id="line-66">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span>
+</span><span id="line-66">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;robert_domain&#39;</span>
 </span><span id="line-67">
-</span><span id="line-68">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-68">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span>
 </span><span id="line-69">
-</span><span id="line-70">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">person</span><span class="o">.</span><span class="n">groups</span>
+</span><span id="line-70">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-71">
-</span><span id="line-72">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">dumped</span>
+</span><span id="line-72">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">person</span><span class="o">.</span><span class="n">groups</span>
 </span><span id="line-73">
-</span><span id="line-74">
-</span><span id="line-75">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">domain</span></div>
+</span><span id="line-74">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">dumped</span>
+</span><span id="line-75">
+</span><span id="line-76">
+</span><span id="line-77">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">realm</span>
+</span><span id="line-78">
+</span><span id="line-79">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">domain</span>
+</span><span id="line-80">
+</span><span id="line-81">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">fqdn</span>
+</span><span id="line-82">
+</span><span id="line-83">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">display</span> <span class="o">==</span> <span class="s1">&#39;Robert Harris&#39;</span></div>
 
 </span></code></pre></div>
     </div></div>
