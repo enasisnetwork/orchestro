@@ -15,6 +15,9 @@ orchestro/execution/test/test_vault.py                         4      0   100%
 orchestro/execution/vault.py                                  15      0   100%
 orchestro/filters/__init__.py                                  0      0   100%
 orchestro/filters/common.py                                    3      0   100%
+orchestro/filters/override.py                                 14      0   100%
+orchestro/filters/test/__init__.py                             0      0   100%
+orchestro/filters/test/test_override.py                       20      0   100%
 orchestro/inventory/__init__.py                                0      0   100%
 orchestro/inventory/orche.py                                 122      0   100%
 orchestro/inventory/test/__init__.py                           0      0   100%
@@ -69,4 +72,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1255      0   100%
+TOTAL                                                       1289      0   100%
