@@ -195,6 +195,24 @@ class OrcheChild:
 
 
     @property
+    def display(
+        self,
+    ) -> str:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        display = params.display
+
+        return (
+            display if display
+            else self.name)
+
+
+    @property
     def groups(
         self,
     ) -> list['OrcheGroup']:

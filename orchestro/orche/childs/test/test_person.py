@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 
-def test_OrchePerson_cover(
+def test_OrchePerson(
     orche: 'Orche',
 ) -> None:
     """
@@ -61,6 +61,8 @@ def test_OrchePerson_cover(
 
     assert person.enable
 
+    assert person.display
+
     assert person.name == 'robert_domain'
 
     assert person.kind == 'person'
@@ -72,4 +74,10 @@ def test_OrchePerson_cover(
     assert person.dumped
 
 
+    assert person.realm
+
     assert person.domain
+
+    assert person.fqdn
+
+    assert person.display == 'Robert Harris'

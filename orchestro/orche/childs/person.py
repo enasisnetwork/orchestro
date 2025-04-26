@@ -11,6 +11,8 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.types.strings import SPACED
+
 from .child import OrcheChild
 from ..models import OrcheModels
 
@@ -75,6 +77,19 @@ class OrchePerson(OrcheChild):
 
 
     @property
+    def realm(
+        self,
+    ) -> Optional[str]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.realm
+
+
+    @property
     def domain(
         self,
     ) -> Optional[str]:
@@ -85,3 +100,52 @@ class OrchePerson(OrcheChild):
         """
 
         return self.params.domain
+
+
+    @property
+    def fqdn(
+        self,
+    ) -> str:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        returned = self.name
+        domain = self.domain
+
+        if domain is not None:
+            returned += f'@{domain}'
+
+        return returned
+
+
+    @property
+    def display(
+        self,
+    ) -> str:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        default = super().display
+
+        first = params.first
+        last = params.last
+
+        names: list[str] = []
+
+        if first is not None:
+            names.append(first)
+
+        if last is not None:
+            names.append(last)
+
+        return (
+            SPACED.join(names)
+            if len(names)
+            else default)

@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 
-def test_OrcheSystem_cover(
+def test_OrcheSystem(
     orche: 'Orche',
 ) -> None:
     """
@@ -60,6 +60,8 @@ def test_OrcheSystem_cover(
 
     assert system.enable
 
+    assert system.display
+
     assert system.name == 'ensrv1p'
 
     assert system.kind == 'system'
@@ -71,4 +73,10 @@ def test_OrcheSystem_cover(
     assert system.dumped
 
 
+    assert system.realm
+
     assert system.domain
+
+    assert system.fqdn
+
+    assert system.ansible

@@ -8,7 +8,11 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Literal
+from typing import Optional
 from typing import TYPE_CHECKING
+
+from encommon.types import DictStrAny
+from encommon.types import NCNone
 
 from .child import OrcheChild
 from ..models import OrcheModels
@@ -71,3 +75,34 @@ class OrcheGroup(OrcheChild):
             params, model)
 
         return params
+
+
+    @property
+    def realm(
+        self,
+    ) -> Optional[str]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.realm
+
+
+    @property
+    def ansible(
+        self,
+    ) -> Optional[DictStrAny]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        ansible = self.params.ansible
+
+        if ansible is not NCNone:
+            return ansible.endumped
+
+        return None
