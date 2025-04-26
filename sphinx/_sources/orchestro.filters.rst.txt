@@ -1,6 +1,14 @@
 orchestro.filters package
 =========================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.filters.test
+
 Submodules
 ----------
 
@@ -8,6 +16,14 @@ orchestro.filters.common module
 -------------------------------
 
 .. automodule:: orchestro.filters.common
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+orchestro.filters.override module
+---------------------------------
+
+.. automodule:: orchestro.filters.override
    :members:
    :show-inheritance:
    :undoc-members:

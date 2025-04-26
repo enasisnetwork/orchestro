@@ -90,6 +90,23 @@
 <div id="content" role="main">
 <section id="orchestro-filters-package">
 <h1>orchestro.filters package<a class="headerlink" href="#orchestro-filters-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#subpackages'">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="orchestro.filters.test.html">orchestro.filters.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.filters.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.filters.test.html#module-orchestro.filters.test.test_override">orchestro.filters.test.test_override module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orchestro.filters.test.html#orchestro.filters.test.test_override.test_basename"><code class="docutils literal notranslate"><span class="pre">test_basename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="orchestro.filters.test.html#orchestro.filters.test.test_override.test_basename_raises"><code class="docutils literal notranslate"><span class="pre">test_basename_raises()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orchestro.filters.test.html#module-orchestro.filters.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#submodules'">¶</a></h2>
 </section>
@@ -115,6 +132,44 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 </dd></dl>
 </section>
+<section id="module-orchestro.filters.override">
+<span id="orchestro-filters-override-module"></span><h2>orchestro.filters.override module<a class="headerlink" href="#module-orchestro.filters.override" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-orchestro.filters.override'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Orchestrations.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="orchestro.filters.override.FilterModule">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">orchestro.filters.override.</span></span><span class="sig-name descname"><span class="pre">FilterModule</span></span><a class="reference internal" href="_modules/orchestro/filters/override.html#FilterModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.filters.override.FilterModule" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#orchestro.filters.override.FilterModule'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Define the filter plugin functions available to the Ansible routines.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="orchestro.filters.override.FilterModule.filters">
+<span class="sig-name descname"><span class="pre">filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/orchestro/filters/override.html#FilterModule.filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.filters.override.FilterModule.filters" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#orchestro.filters.override.FilterModule.filters'">¶</a></dt>
+<dd><p>Return the filter plugin functions available to Ansible routines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Filter plugin functions available to Ansible routines.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="orchestro.filters.override.basename">
+<span class="sig-prename descclassname"><span class="pre">orchestro.filters.override.</span></span><span class="sig-name descname"><span class="pre">basename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="reference internal" href="_modules/orchestro/filters/override.html#basename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#orchestro.filters.override.basename" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#orchestro.filters.override.basename'">¶</a></dt>
+<dd><p>Return the file name optionally including their parents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – Complete or relative path for processing.</p></li>
+<li><p><strong>parents</strong> – Optional include the additional parents.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>File name optionally including their parents.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-orchestro.filters">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-orchestro.filters" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-orchestro.filters'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Orchestrations.</p>
@@ -125,12 +180,21 @@ is permitted, for more information consult the project license file.</p>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
+<li><a :data-current="activeSection === '#subpackages'" class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a :data-current="activeSection === '#submodules'" class="reference internal" href="#submodules">Submodules</a></li>
 <li><a :data-current="activeSection === '#module-orchestro.filters.common'" class="reference internal" href="#module-orchestro.filters.common">orchestro.filters.common module</a><ul>
 <li><a :data-current="activeSection === '#orchestro.filters.common.FilterModule'" class="reference internal" href="#orchestro.filters.common.FilterModule"><code class="docutils literal notranslate"><span class="pre">FilterModule</span></code></a><ul>
 <li><a :data-current="activeSection === '#orchestro.filters.common.FilterModule.filters'" class="reference internal" href="#orchestro.filters.common.FilterModule.filters"><code class="docutils literal notranslate"><span class="pre">FilterModule.filters()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#module-orchestro.filters.override'" class="reference internal" href="#module-orchestro.filters.override">orchestro.filters.override module</a><ul>
+<li><a :data-current="activeSection === '#orchestro.filters.override.FilterModule'" class="reference internal" href="#orchestro.filters.override.FilterModule"><code class="docutils literal notranslate"><span class="pre">FilterModule</span></code></a><ul>
+<li><a :data-current="activeSection === '#orchestro.filters.override.FilterModule.filters'" class="reference internal" href="#orchestro.filters.override.FilterModule.filters"><code class="docutils literal notranslate"><span class="pre">FilterModule.filters()</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#orchestro.filters.override.basename'" class="reference internal" href="#orchestro.filters.override.basename"><code class="docutils literal notranslate"><span class="pre">basename()</span></code></a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#module-orchestro.filters'" class="reference internal" href="#module-orchestro.filters">Module contents</a></li>
