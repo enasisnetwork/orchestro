@@ -139,9 +139,13 @@ def children() -> None:
     Locate and enumerate Makefiles from recipe directories.
     """
 
-    makefiles = list(glob(
-        'orchestro/playbooks'
-        '/*/Makefile'))
+    makefiles = sorted(
+        glob(
+            'orchestro/playbooks'
+            '/*/Makefile')
+        + glob(
+            'orchestro/playbooks'
+            '/*/*.mk'))
 
 
     playbooks = environ.get(
@@ -154,9 +158,13 @@ def children() -> None:
             Path(playbooks)
             .exists())
 
-        addon = list(glob(
-            f'{playbooks}'
-            '/*/Makefile'))
+        addon = sorted(
+            glob(
+                f'{playbooks}'
+                '/*/Makefile')
+            + glob(
+                f'{playbooks}'
+                '/*/*.mk'))
 
         makefiles.extend(addon)
 
