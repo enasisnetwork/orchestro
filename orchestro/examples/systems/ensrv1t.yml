@@ -5,16 +5,16 @@
 systems:
 
 
-  ####################
-  ## Jupiter Server ##
-  ####################
-  ensrv1p:
+  ###################
+  ## Saturn Server ##
+  ###################
+  ensrv1t:
     enable: true
     inherits: template_almalinux
     memberof:
-      - jupiter
+      - saturn
       - roles_enhomie
-    display: Jupiter Server
+    display: Saturn Server
 
 
     #######################

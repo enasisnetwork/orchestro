@@ -11,4 +11,4 @@ groups:
   systems_openbsd:
     enable: true
     memberof: systems
-    display: OpenBSD Systems
+    display: OpenBSD

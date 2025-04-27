@@ -11,3 +11,4 @@ groups:
   systems:
     enable: true
     display: Managed Systems
+    memberof: roles_sslca

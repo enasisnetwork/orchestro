@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  ####################
+  ## Fedora Systems ##
+  ####################
+  systems_fedora:
+    enable: true
+    memberof: systems
+    display: Fedora

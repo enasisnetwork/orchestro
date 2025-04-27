@@ -111,7 +111,7 @@ def test_OrcheLogger_cover(
     systems = childs.systems
 
 
-    system = systems['ensrv1p']
+    system = systems['ensrv1t']
 
 
     logger.log_i(base=orche)

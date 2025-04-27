@@ -1,0 +1,25 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf1x1t:
+    enable: true
+    inherits: template_openbsd
+    memberof: saturn
+    display: Saturn Gateway Primary
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf1x2t:
+    enable: true
+    inherits: template_openbsd
+    memberof: saturn
+    display: Saturn Gateway Secondary

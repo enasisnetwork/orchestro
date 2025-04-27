@@ -68,7 +68,7 @@ def test_InvalidChild_cover(
     childs = orche.childs
     systems = childs.systems
 
-    system = systems['ensrv1p']
+    system = systems['ensrv1t']
 
 
     raises = InvalidChild(

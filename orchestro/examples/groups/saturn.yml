@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  ######################
+  ## Saturn Inventory ##
+  ######################
+  saturn:
+    enable: true
+    memberof: default
+    display: Saturn Inventory

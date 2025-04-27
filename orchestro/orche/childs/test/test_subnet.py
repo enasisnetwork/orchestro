@@ -32,7 +32,7 @@ def test_OrcheSubnet(
 
 
     subnet = subnets[
-        'jupiter_domesnet']
+        'saturn_domesnet']
 
 
     attrs = lattrs(subnet)
@@ -63,7 +63,7 @@ def test_OrcheSubnet(
 
     assert subnet.display
 
-    assert subnet.name == 'jupiter_domesnet'
+    assert subnet.name == 'saturn_domesnet'
 
     assert subnet.kind == 'subnet'
 

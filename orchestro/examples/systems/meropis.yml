@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ########################
+  ## Robert Workstation ##
+  ########################
+  meropis:
+    enable: true
+    inherits: template_windows
+    memberof: saturn
+    display: Robert Workstation

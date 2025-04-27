@@ -43,30 +43,34 @@ def test_InventoryModule(
     groups = ansinv.groups
 
     assert sorted(hosts) == [
-        'engwf1x1p',
-        'engwf1x2p',
-        'engwf2x1p',
-        'engwf2x2p',
-        'ensrv1p',
-        'ensrv2p',
-        'localhost']
+        'aegaeon',
+        'engwf1x1t',
+        'engwf1x2t',
+        'engwf2x1t',
+        'engwf2x2t',
+        'ensrv1t',
+        'ensrv2t',
+        'localhost',
+        'meropis']
 
     assert sorted(groups) == [
         'all',
-        'jupiter',
-        'neptune',
         'orche',
         'roles_enhomie',
         'roles_enrobie',
+        'roles_sslca',
+        'saturn',
         'systems',
         'systems_almalinux',
+        'systems_fedora',
         'systems_openbsd',
         'systems_windows',
-        'ungrouped']
+        'ungrouped',
+        'uranus']
 
 
     dumped = orche.dumped
 
-    assert len(dumped['hosts']) == 7
+    assert len(dumped['hosts']) == 9
 
-    assert len(dumped['groups']) == 11
+    assert len(dumped['groups']) == 13

@@ -259,9 +259,7 @@ def inheritance(
 
         for name in inhrts:
 
-            assert _dumped is not None
-
-            _inhrt = _dumped[name]
+            _inhrt = origin[name]
 
             inhrt = deepcopy(_inhrt)
 
@@ -287,6 +285,8 @@ def inheritance(
 
         if _dumped is None:
             continue
+
+        origin = deepcopy(_dumped)
 
         items = _dumped.items()
 
