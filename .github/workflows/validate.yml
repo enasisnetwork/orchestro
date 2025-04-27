@@ -393,6 +393,11 @@ jobs:
             exit 1
           fi
 
+          OUTCOME="${{ steps.ansblint.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
           OUTCOME="${{ steps.pytest.outcome }}"
           if [[ "$OUTCOME" == "failure" ]]; then
             exit 1
