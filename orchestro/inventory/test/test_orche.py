@@ -43,10 +43,10 @@ def test_InventoryModule(
     groups = ansinv.groups
 
     assert sorted(hosts) == [
-        'engwf1g1p',
-        'engwf1g2p',
-        'engwf2g1p',
-        'engwf2g2p',
+        'engwf1x1p',
+        'engwf1x2p',
+        'engwf2x1p',
+        'engwf2x2p',
         'ensrv1p',
         'ensrv2p',
         'localhost']

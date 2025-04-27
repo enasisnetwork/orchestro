@@ -14,8 +14,8 @@
   "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
   "dryrun": false,
   "systems": {
-    "engwf1g1p": {
-      "name": "engwf1g1p",
+    "engwf1x1p": {
+      "name": "engwf1x1p",
       "kind": "system",
       "params": {
         "enable": true,
@@ -36,8 +36,8 @@
         }
       }
     },
-    "engwf1g2p": {
-      "name": "engwf1g2p",
+    "engwf1x2p": {
+      "name": "engwf1x2p",
       "kind": "system",
       "params": {
         "enable": true,
@@ -58,8 +58,8 @@
         }
       }
     },
-    "engwf2g1p": {
-      "name": "engwf2g1p",
+    "engwf2x1p": {
+      "name": "engwf2x1p",
       "kind": "system",
       "params": {
         "enable": true,
@@ -80,8 +80,8 @@
         }
       }
     },
-    "engwf2g2p": {
-      "name": "engwf2g2p",
+    "engwf2x2p": {
+      "name": "engwf2x2p",
       "kind": "system",
       "params": {
         "enable": true,
