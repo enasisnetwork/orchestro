@@ -410,34 +410,34 @@
 </span><span id="line-259">
 </span><span id="line-260">        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">inhrts</span><span class="p">:</span>
 </span><span id="line-261">
-</span><span id="line-262">            <span class="k">assert</span> <span class="n">_dumped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-262">            <span class="n">_inhrt</span> <span class="o">=</span> <span class="n">origin</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 </span><span id="line-263">
-</span><span id="line-264">            <span class="n">_inhrt</span> <span class="o">=</span> <span class="n">_dumped</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-264">            <span class="n">inhrt</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">_inhrt</span><span class="p">)</span>
 </span><span id="line-265">
-</span><span id="line-266">            <span class="n">inhrt</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">_inhrt</span><span class="p">)</span>
-</span><span id="line-267">
-</span><span id="line-268">            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;inherits&#39;</span><span class="p">)</span>
-</span><span id="line-269">            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;enable&#39;</span><span class="p">)</span>
-</span><span id="line-270">
-</span><span id="line-271">            <span class="n">merge_dicts</span><span class="p">(</span>
-</span><span id="line-272">                <span class="n">dict1</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
-</span><span id="line-273">                <span class="n">dict2</span><span class="o">=</span><span class="n">inhrt</span><span class="p">,</span>
-</span><span id="line-274">                <span class="n">force</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="line-275">
-</span><span id="line-276">        <span class="n">dedup_list</span><span class="p">(</span>
-</span><span id="line-277">            <span class="n">source</span><span class="p">[</span><span class="s1">&#39;inherits&#39;</span><span class="p">])</span>
-</span><span id="line-278">
+</span><span id="line-266">            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;inherits&#39;</span><span class="p">)</span>
+</span><span id="line-267">            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;enable&#39;</span><span class="p">)</span>
+</span><span id="line-268">
+</span><span id="line-269">            <span class="n">merge_dicts</span><span class="p">(</span>
+</span><span id="line-270">                <span class="n">dict1</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+</span><span id="line-271">                <span class="n">dict2</span><span class="o">=</span><span class="n">inhrt</span><span class="p">,</span>
+</span><span id="line-272">                <span class="n">force</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="line-273">
+</span><span id="line-274">        <span class="n">dedup_list</span><span class="p">(</span>
+</span><span id="line-275">            <span class="n">source</span><span class="p">[</span><span class="s1">&#39;inherits&#39;</span><span class="p">])</span>
+</span><span id="line-276">
+</span><span id="line-277">
+</span><span id="line-278">    <span class="n">kinds</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">OrcheKinds</span><span class="p">)</span>
 </span><span id="line-279">
-</span><span id="line-280">    <span class="n">kinds</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">OrcheKinds</span><span class="p">)</span>
+</span><span id="line-280">    <span class="k">for</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
 </span><span id="line-281">
-</span><span id="line-282">    <span class="k">for</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
+</span><span id="line-282">        <span class="n">key</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s1">s&#39;</span>
 </span><span id="line-283">
-</span><span id="line-284">        <span class="n">key</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s1">s&#39;</span>
+</span><span id="line-284">        <span class="n">_dumped</span> <span class="o">=</span> <span class="n">dumped</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span><span id="line-285">
-</span><span id="line-286">        <span class="n">_dumped</span> <span class="o">=</span> <span class="n">dumped</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-287">
-</span><span id="line-288">        <span class="k">if</span> <span class="n">_dumped</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-289">            <span class="k">continue</span>
+</span><span id="line-286">        <span class="k">if</span> <span class="n">_dumped</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-287">            <span class="k">continue</span>
+</span><span id="line-288">
+</span><span id="line-289">        <span class="n">origin</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">_dumped</span><span class="p">)</span>
 </span><span id="line-290">
 </span><span id="line-291">        <span class="n">items</span> <span class="o">=</span> <span class="n">_dumped</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </span><span id="line-292">

@@ -715,256 +715,263 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
 </span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-6"><span class="w">      </span><span class="nt">"authority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-7"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certificate authority parameters"</span><span class="p">,</span>
-</span><span id="line-8"><span class="w">         </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-9"><span class="w">            </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/ParentParams"</span>
-</span><span id="line-10"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-11"><span class="w">         </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-12"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authority"</span><span class="p">,</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-14"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-15"><span class="w">      </span><span class="nt">"certificate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-16"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-17"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-18"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-19"><span class="w">                  </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/ChildParams"</span>
-</span><span id="line-20"><span class="w">               </span><span class="p">},</span>
-</span><span id="line-21"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-22"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-23"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-8"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-9"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-10"><span class="w">                  </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/ParentParams"</span>
+</span><span id="line-11"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-13"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-15"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-18"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-19"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certificate authority parameters"</span><span class="p">,</span>
+</span><span id="line-20"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authority"</span>
+</span><span id="line-21"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-22"><span class="w">      </span><span class="nt">"certificate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-24"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-25"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-26"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-27"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-28"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-29"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed certificate parameters"</span><span class="p">,</span>
-</span><span id="line-30"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certificate"</span>
-</span><span id="line-31"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-32"><span class="w">      </span><span class="nt">"persist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-33"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/PersistParams"</span><span class="p">,</span>
-</span><span id="line-34"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where certificate files are stored"</span>
-</span><span id="line-35"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-36"><span class="w">      </span><span class="nt">"defaults"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-37"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/DefaultParams"</span><span class="p">,</span>
-</span><span id="line-38"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter values"</span>
-</span><span id="line-39"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-40"><span class="w">      </span><span class="nt">"openssl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-41"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/bin/openssl"</span><span class="p">,</span>
-</span><span id="line-42"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path to OpenSSL executable binary"</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-</span><span id="line-44"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Openssl"</span><span class="p">,</span>
-</span><span id="line-45"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-46"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-47"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-48"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-49"><span class="w">      </span><span class="nt">"ChildParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-50"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
-</span><span id="line-51"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-52"><span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-53"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Used for the directory naming"</span><span class="p">,</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-</span><span id="line-55"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-56"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name"</span><span class="p">,</span>
-</span><span id="line-57"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-58"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-59"><span class="w">            </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kind of certificate to create"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-62"><span class="w">                  </span><span class="s2">"server"</span><span class="p">,</span>
-</span><span id="line-63"><span class="w">                  </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-64"><span class="w">                  </span><span class="s2">"person"</span>
-</span><span id="line-65"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-66"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kind"</span><span class="p">,</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-68"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-69"><span class="w">            </span><span class="nt">"common"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-70"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common name for certificate"</span><span class="p">,</span>
-</span><span id="line-71"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">254</span><span class="p">,</span>
-</span><span id="line-72"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-73"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common"</span><span class="p">,</span>
+</span><span id="line-25"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-26"><span class="w">                  </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/ChildParams"</span>
+</span><span id="line-27"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-28"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-29"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-30"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-31"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-32"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-33"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-34"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-35"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-36"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signed certificate parameters"</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certificate"</span>
+</span><span id="line-38"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-39"><span class="w">      </span><span class="nt">"persist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-40"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/PersistParams"</span><span class="p">,</span>
+</span><span id="line-41"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where certificate files are stored"</span>
+</span><span id="line-42"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-43"><span class="w">      </span><span class="nt">"defaults"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-44"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/DefaultParams"</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter values"</span>
+</span><span id="line-46"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-47"><span class="w">      </span><span class="nt">"openssl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-48"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/bin/openssl"</span><span class="p">,</span>
+</span><span id="line-49"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Path to OpenSSL executable binary"</span><span class="p">,</span>
+</span><span id="line-50"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Openssl"</span><span class="p">,</span>
+</span><span id="line-52"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-53"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-54"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-55"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-56"><span class="w">      </span><span class="nt">"ChildParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-59"><span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Used for the directory naming"</span><span class="p">,</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name"</span><span class="p">,</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-65"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-66"><span class="w">            </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kind of certificate to create"</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-69"><span class="w">                  </span><span class="s2">"server"</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">                  </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-71"><span class="w">                  </span><span class="s2">"person"</span>
+</span><span id="line-72"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-73"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kind"</span><span class="p">,</span>
 </span><span id="line-74"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
 </span><span id="line-75"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-76"><span class="w">            </span><span class="nt">"alias"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-77"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-78"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-79"><span class="w">                     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-80"><span class="w">                        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-81"><span class="w">                     </span><span class="p">},</span>
-</span><span id="line-82"><span class="w">                     </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-83"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-84"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-76"><span class="w">            </span><span class="nt">"common"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-77"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common name for certificate"</span><span class="p">,</span>
+</span><span id="line-78"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">254</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-80"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common"</span><span class="p">,</span>
+</span><span id="line-81"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-82"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-83"><span class="w">            </span><span class="nt">"alias"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-85"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-86"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-87"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-88"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-89"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subject alternative names"</span><span class="p">,</span>
-</span><span id="line-91"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alias"</span>
-</span><span id="line-92"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-93"><span class="w">            </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-94"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From which authority to sign"</span><span class="p">,</span>
-</span><span id="line-95"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-96"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent"</span><span class="p">,</span>
-</span><span id="line-97"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-98"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-99"><span class="w">            </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-100"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-101"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-102"><span class="w">                     </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
-</span><span id="line-103"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-</span><span id="line-104"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-105"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-106"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-107"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-108"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-109"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-110"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-111"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When new certificates expire"</span><span class="p">,</span>
-</span><span id="line-112"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span>
-</span><span id="line-113"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-114"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-115"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-116"><span class="w">            </span><span class="s2">"name"</span><span class="p">,</span>
-</span><span id="line-117"><span class="w">            </span><span class="s2">"kind"</span><span class="p">,</span>
-</span><span id="line-118"><span class="w">            </span><span class="s2">"common"</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">            </span><span class="s2">"parent"</span>
-</span><span id="line-120"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-121"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChildParams"</span><span class="p">,</span>
-</span><span id="line-122"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-123"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-124"><span class="w">      </span><span class="nt">"DefaultParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-125"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
-</span><span id="line-126"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-127"><span class="w">            </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-128"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-132"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-133"><span class="w">            </span><span class="nt">"department"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-134"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
-</span><span id="line-135"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Department"</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-138"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-139"><span class="w">            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-140"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
-</span><span id="line-141"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-142"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span>
-</span><span id="line-143"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-144"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-145"><span class="w">            </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-146"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-147"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-148"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-149"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-150"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-151"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-152"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-153"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-154"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-155"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-156"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
-</span><span id="line-157"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span>
-</span><span id="line-158"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-159"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-160"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-161"><span class="w">            </span><span class="s2">"company"</span><span class="p">,</span>
-</span><span id="line-162"><span class="w">            </span><span class="s2">"department"</span><span class="p">,</span>
-</span><span id="line-163"><span class="w">            </span><span class="s2">"country"</span>
-</span><span id="line-164"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-165"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DefaultParams"</span><span class="p">,</span>
-</span><span id="line-166"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-167"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-168"><span class="w">      </span><span class="nt">"ParentParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-169"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
-</span><span id="line-170"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-171"><span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-172"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Used for the directory naming"</span><span class="p">,</span>
-</span><span id="line-173"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-174"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name"</span><span class="p">,</span>
-</span><span id="line-175"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-176"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-177"><span class="w">            </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-178"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passphrase for encrypting key"</span><span class="p">,</span>
-</span><span id="line-179"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-180"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password"</span><span class="p">,</span>
-</span><span id="line-181"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-182"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-183"><span class="w">            </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-184"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-185"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-186"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-187"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-188"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-189"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-190"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-191"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-192"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-193"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-194"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine to be an intermediate"</span><span class="p">,</span>
-</span><span id="line-195"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent"</span>
-</span><span id="line-196"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-197"><span class="w">            </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-198"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When new certificates expire"</span><span class="p">,</span>
-</span><span id="line-199"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
-</span><span id="line-200"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-</span><span id="line-201"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span><span class="p">,</span>
-</span><span id="line-202"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-203"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-204"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-205"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-206"><span class="w">            </span><span class="s2">"name"</span><span class="p">,</span>
-</span><span id="line-207"><span class="w">            </span><span class="s2">"password"</span><span class="p">,</span>
-</span><span id="line-208"><span class="w">            </span><span class="s2">"expire"</span>
-</span><span id="line-209"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-210"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ParentParams"</span><span class="p">,</span>
-</span><span id="line-211"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-212"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-213"><span class="w">      </span><span class="nt">"PersistParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-214"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
-</span><span id="line-215"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-216"><span class="w">            </span><span class="nt">"rootkeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-217"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the root keys are stored"</span><span class="p">,</span>
-</span><span id="line-218"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-219"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rootkeys"</span><span class="p">,</span>
-</span><span id="line-220"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-221"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-222"><span class="w">            </span><span class="nt">"rootfiles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-223"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the root files are stored"</span><span class="p">,</span>
-</span><span id="line-224"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-225"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rootfiles"</span><span class="p">,</span>
-</span><span id="line-226"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-227"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-228"><span class="w">            </span><span class="nt">"certkeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-229"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the cert keys are stored"</span><span class="p">,</span>
-</span><span id="line-230"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-231"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certkeys"</span><span class="p">,</span>
-</span><span id="line-232"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-233"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-234"><span class="w">            </span><span class="nt">"certfiles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-235"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the cert files are stored"</span><span class="p">,</span>
-</span><span id="line-236"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-237"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certfiles"</span><span class="p">,</span>
-</span><span id="line-238"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-239"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-240"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-241"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-242"><span class="w">            </span><span class="s2">"rootkeys"</span><span class="p">,</span>
-</span><span id="line-243"><span class="w">            </span><span class="s2">"rootfiles"</span><span class="p">,</span>
-</span><span id="line-244"><span class="w">            </span><span class="s2">"certkeys"</span><span class="p">,</span>
-</span><span id="line-245"><span class="w">            </span><span class="s2">"certfiles"</span>
-</span><span id="line-246"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-247"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PersistParams"</span><span class="p">,</span>
-</span><span id="line-248"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-249"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-250"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-251"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-252"><span class="w">      </span><span class="s2">"authority"</span><span class="p">,</span>
-</span><span id="line-253"><span class="w">      </span><span class="s2">"persist"</span><span class="p">,</span>
-</span><span id="line-254"><span class="w">      </span><span class="s2">"defaults"</span>
-</span><span id="line-255"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-256"><span class="p">}</span>
+</span><span id="line-86"><span class="w">                     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-87"><span class="w">                        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-88"><span class="w">                     </span><span class="p">},</span>
+</span><span id="line-89"><span class="w">                     </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-91"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-92"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-93"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-94"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-95"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-96"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-97"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subject alternative names"</span><span class="p">,</span>
+</span><span id="line-98"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alias"</span>
+</span><span id="line-99"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-100"><span class="w">            </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-101"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From which authority to sign"</span><span class="p">,</span>
+</span><span id="line-102"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-103"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent"</span><span class="p">,</span>
+</span><span id="line-104"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-105"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-106"><span class="w">            </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-107"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-108"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-109"><span class="w">                     </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+</span><span id="line-110"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="line-111"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-112"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-115"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-116"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-117"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When new certificates expire"</span><span class="p">,</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span>
+</span><span id="line-120"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-121"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-122"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-123"><span class="w">            </span><span class="s2">"name"</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">            </span><span class="s2">"kind"</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">            </span><span class="s2">"common"</span><span class="p">,</span>
+</span><span id="line-126"><span class="w">            </span><span class="s2">"parent"</span>
+</span><span id="line-127"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-128"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChildParams"</span><span class="p">,</span>
+</span><span id="line-129"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-130"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-131"><span class="w">      </span><span class="nt">"DefaultParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-132"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
+</span><span id="line-133"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-134"><span class="w">            </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-135"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
+</span><span id="line-136"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-137"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span>
+</span><span id="line-138"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-139"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-140"><span class="w">            </span><span class="nt">"department"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-141"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
+</span><span id="line-142"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-143"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Department"</span><span class="p">,</span>
+</span><span id="line-144"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-145"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-146"><span class="w">            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-149"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span>
+</span><span id="line-150"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-151"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-152"><span class="w">            </span><span class="nt">"website"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-153"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-154"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-155"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-156"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-157"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-158"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-159"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-160"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-161"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-162"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-163"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default authority parameter value"</span><span class="p">,</span>
+</span><span id="line-164"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span>
+</span><span id="line-165"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-166"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-167"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-168"><span class="w">            </span><span class="s2">"company"</span><span class="p">,</span>
+</span><span id="line-169"><span class="w">            </span><span class="s2">"department"</span><span class="p">,</span>
+</span><span id="line-170"><span class="w">            </span><span class="s2">"country"</span>
+</span><span id="line-171"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-172"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DefaultParams"</span><span class="p">,</span>
+</span><span id="line-173"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-174"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-175"><span class="w">      </span><span class="nt">"ParentParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-176"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
+</span><span id="line-177"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-178"><span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-179"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Used for the directory naming"</span><span class="p">,</span>
+</span><span id="line-180"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name"</span><span class="p">,</span>
+</span><span id="line-182"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-183"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-184"><span class="w">            </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-185"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passphrase for encrypting key"</span><span class="p">,</span>
+</span><span id="line-186"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-187"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password"</span><span class="p">,</span>
+</span><span id="line-188"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-189"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-190"><span class="w">            </span><span class="nt">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-191"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-192"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-193"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-194"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-195"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-196"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-197"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-198"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-199"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-200"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-201"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine to be an intermediate"</span><span class="p">,</span>
+</span><span id="line-202"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parent"</span>
+</span><span id="line-203"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-204"><span class="w">            </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-205"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When new certificates expire"</span><span class="p">,</span>
+</span><span id="line-206"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+</span><span id="line-207"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="line-208"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span><span class="p">,</span>
+</span><span id="line-209"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-210"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-211"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-212"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-213"><span class="w">            </span><span class="s2">"name"</span><span class="p">,</span>
+</span><span id="line-214"><span class="w">            </span><span class="s2">"password"</span><span class="p">,</span>
+</span><span id="line-215"><span class="w">            </span><span class="s2">"expire"</span>
+</span><span id="line-216"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-217"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ParentParams"</span><span class="p">,</span>
+</span><span id="line-218"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-219"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-220"><span class="w">      </span><span class="nt">"PersistParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-221"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Orche configuration parameters."</span><span class="p">,</span>
+</span><span id="line-222"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-223"><span class="w">            </span><span class="nt">"rootkeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-224"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the root keys are stored"</span><span class="p">,</span>
+</span><span id="line-225"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-226"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rootkeys"</span><span class="p">,</span>
+</span><span id="line-227"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-228"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-229"><span class="w">            </span><span class="nt">"rootfiles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-230"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the root files are stored"</span><span class="p">,</span>
+</span><span id="line-231"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-232"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rootfiles"</span><span class="p">,</span>
+</span><span id="line-233"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-234"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-235"><span class="w">            </span><span class="nt">"certkeys"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-236"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the cert keys are stored"</span><span class="p">,</span>
+</span><span id="line-237"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-238"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certkeys"</span><span class="p">,</span>
+</span><span id="line-239"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-240"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-241"><span class="w">            </span><span class="nt">"certfiles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-242"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Where the cert files are stored"</span><span class="p">,</span>
+</span><span id="line-243"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-244"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Certfiles"</span><span class="p">,</span>
+</span><span id="line-245"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-246"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-247"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-248"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-249"><span class="w">            </span><span class="s2">"rootkeys"</span><span class="p">,</span>
+</span><span id="line-250"><span class="w">            </span><span class="s2">"rootfiles"</span><span class="p">,</span>
+</span><span id="line-251"><span class="w">            </span><span class="s2">"certkeys"</span><span class="p">,</span>
+</span><span id="line-252"><span class="w">            </span><span class="s2">"certfiles"</span>
+</span><span id="line-253"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-254"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PersistParams"</span><span class="p">,</span>
+</span><span id="line-255"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-256"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-257"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-258"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-259"><span class="w">      </span><span class="s2">"authority"</span><span class="p">,</span>
+</span><span id="line-260"><span class="w">      </span><span class="s2">"persist"</span><span class="p">,</span>
+</span><span id="line-261"><span class="w">      </span><span class="s2">"defaults"</span>
+</span><span id="line-262"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-263"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -975,7 +982,7 @@ is permitted, for more information consult the project license file.</p>
 </dd>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority" title="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">authority</span> <span class="pre">(Annotated[list[orchestro.roles.sslca.action_plugins.sslca_params.ParentParams],</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Certificate</span> <span class="pre">authority</span> <span class="pre">parameters',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority" title="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority"><code class="xref py py-obj docutils literal notranslate"><span class="pre">authority</span> <span class="pre">(Annotated[list[orchestro.roles.sslca.action_plugins.sslca_params.ParentParams]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Certificate</span> <span class="pre">authority</span> <span class="pre">parameters',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.certificate" title="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.certificate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">certificate</span> <span class="pre">(Annotated[list[orchestro.roles.sslca.action_plugins.sslca_params.ChildParams]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Signed</span> <span class="pre">certificate</span> <span class="pre">parameters',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.defaults" title="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.defaults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">defaults</span> <span class="pre">(Annotated[orchestro.roles.sslca.action_plugins.sslca_params.DefaultParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Default</span> <span class="pre">authority</span> <span class="pre">parameter</span> <span class="pre">values')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.openssl" title="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.openssl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default='/usr/bin/openssl',</span> <span class="pre">description='Path</span> <span class="pre">to</span> <span class="pre">OpenSSL</span> <span class="pre">executable</span> <span class="pre">binary',</span> <span class="pre">metadata=[MinLen(min_length=5)])])</span></code></a></p></li>
@@ -992,7 +999,7 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.ParentParams" title="orchestro.roles.sslca.action_plugins.sslca_params.ParentParams"><span class="pre">ParentParams</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Certificate</span> <span class="pre">authority</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#orchestro.roles.sslca.action_plugins.sslca_params.ParentParams" title="orchestro.roles.sslca.action_plugins.sslca_params.ParentParams"><span class="pre">ParentParams</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Certificate</span> <span class="pre">authority</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#orchestro.roles.sslca.action_plugins.sslca_params.RoleParams.authority'">¶</a></dt>
 <dd><p>Certificate authority parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>

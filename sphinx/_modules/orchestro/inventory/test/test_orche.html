@@ -188,33 +188,37 @@
 </span><span id="line-43">    <span class="n">groups</span> <span class="o">=</span> <span class="n">ansinv</span><span class="o">.</span><span class="n">groups</span>
 </span><span id="line-44">
 </span><span id="line-45">    <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
-</span><span id="line-46">        <span class="s1">&#39;engwf1x1p&#39;</span><span class="p">,</span>
-</span><span id="line-47">        <span class="s1">&#39;engwf1x2p&#39;</span><span class="p">,</span>
-</span><span id="line-48">        <span class="s1">&#39;engwf2x1p&#39;</span><span class="p">,</span>
-</span><span id="line-49">        <span class="s1">&#39;engwf2x2p&#39;</span><span class="p">,</span>
-</span><span id="line-50">        <span class="s1">&#39;ensrv1p&#39;</span><span class="p">,</span>
-</span><span id="line-51">        <span class="s1">&#39;ensrv2p&#39;</span><span class="p">,</span>
-</span><span id="line-52">        <span class="s1">&#39;localhost&#39;</span><span class="p">]</span>
-</span><span id="line-53">
-</span><span id="line-54">    <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
-</span><span id="line-55">        <span class="s1">&#39;all&#39;</span><span class="p">,</span>
-</span><span id="line-56">        <span class="s1">&#39;jupiter&#39;</span><span class="p">,</span>
-</span><span id="line-57">        <span class="s1">&#39;neptune&#39;</span><span class="p">,</span>
+</span><span id="line-46">        <span class="s1">&#39;aegaeon&#39;</span><span class="p">,</span>
+</span><span id="line-47">        <span class="s1">&#39;engwf1x1t&#39;</span><span class="p">,</span>
+</span><span id="line-48">        <span class="s1">&#39;engwf1x2t&#39;</span><span class="p">,</span>
+</span><span id="line-49">        <span class="s1">&#39;engwf2x1t&#39;</span><span class="p">,</span>
+</span><span id="line-50">        <span class="s1">&#39;engwf2x2t&#39;</span><span class="p">,</span>
+</span><span id="line-51">        <span class="s1">&#39;ensrv1t&#39;</span><span class="p">,</span>
+</span><span id="line-52">        <span class="s1">&#39;ensrv2t&#39;</span><span class="p">,</span>
+</span><span id="line-53">        <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+</span><span id="line-54">        <span class="s1">&#39;meropis&#39;</span><span class="p">]</span>
+</span><span id="line-55">
+</span><span id="line-56">    <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
+</span><span id="line-57">        <span class="s1">&#39;all&#39;</span><span class="p">,</span>
 </span><span id="line-58">        <span class="s1">&#39;orche&#39;</span><span class="p">,</span>
 </span><span id="line-59">        <span class="s1">&#39;roles_enhomie&#39;</span><span class="p">,</span>
 </span><span id="line-60">        <span class="s1">&#39;roles_enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-61">        <span class="s1">&#39;systems&#39;</span><span class="p">,</span>
-</span><span id="line-62">        <span class="s1">&#39;systems_almalinux&#39;</span><span class="p">,</span>
-</span><span id="line-63">        <span class="s1">&#39;systems_openbsd&#39;</span><span class="p">,</span>
-</span><span id="line-64">        <span class="s1">&#39;systems_windows&#39;</span><span class="p">,</span>
-</span><span id="line-65">        <span class="s1">&#39;ungrouped&#39;</span><span class="p">]</span>
-</span><span id="line-66">
-</span><span id="line-67">
-</span><span id="line-68">    <span class="n">dumped</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">dumped</span>
-</span><span id="line-69">
-</span><span id="line-70">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">7</span>
+</span><span id="line-61">        <span class="s1">&#39;roles_sslca&#39;</span><span class="p">,</span>
+</span><span id="line-62">        <span class="s1">&#39;saturn&#39;</span><span class="p">,</span>
+</span><span id="line-63">        <span class="s1">&#39;systems&#39;</span><span class="p">,</span>
+</span><span id="line-64">        <span class="s1">&#39;systems_almalinux&#39;</span><span class="p">,</span>
+</span><span id="line-65">        <span class="s1">&#39;systems_fedora&#39;</span><span class="p">,</span>
+</span><span id="line-66">        <span class="s1">&#39;systems_openbsd&#39;</span><span class="p">,</span>
+</span><span id="line-67">        <span class="s1">&#39;systems_windows&#39;</span><span class="p">,</span>
+</span><span id="line-68">        <span class="s1">&#39;ungrouped&#39;</span><span class="p">,</span>
+</span><span id="line-69">        <span class="s1">&#39;uranus&#39;</span><span class="p">]</span>
+</span><span id="line-70">
 </span><span id="line-71">
-</span><span id="line-72">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">11</span></div>
+</span><span id="line-72">    <span class="n">dumped</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">dumped</span>
+</span><span id="line-73">
+</span><span id="line-74">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">9</span>
+</span><span id="line-75">
+</span><span id="line-76">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">13</span></div>
 
 </span></code></pre></div>
     </div></div>
