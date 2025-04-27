@@ -52,9 +52,11 @@ help: .check-python
 
 
 -include orchestro/playbooks/*/Makefile
+-include orchestro/playbooks/*/*.mk
 
 ifneq ($(strip $(ORCHE_EXTRA_PLAYBOOKS)),)
 -include $(ORCHE_EXTRA_PLAYBOOKS)/*/Makefile
+-include $(ORCHE_EXTRA_PLAYBOOKS)/*/*.mk
 endif
 
 
