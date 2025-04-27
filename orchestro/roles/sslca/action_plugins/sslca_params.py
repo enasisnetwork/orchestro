@@ -71,6 +71,8 @@ class ParentParams(OrcheParamsModel, extra='ignore'):
         Perform advanced validation on the parameters provided.
         """
 
+        assert value is not None
+
         time = Time(value)
 
         return time.simple
@@ -285,6 +287,12 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
         Field(...,
               description='Default authority parameter values')]
 
+    openssl: Annotated[
+        str,
+        Field('/usr/bin/openssl',
+              description='Path to OpenSSL executable binary',
+              min_length=5)]
+
 
     @model_validator(mode='after')
     def check_authority(
@@ -369,6 +377,29 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
                 f' {name} not exists')
 
         return self
+
+
+    @field_validator(
+        'openssl',
+        mode='before')
+    @classmethod
+    def parse_openssl(
+        # NOCVR
+        cls,
+        value: Any,  # noqa: ANN401
+    ) -> str:
+        """
+        Perform advanced validation on the parameters provided.
+        """
+
+        path = Path(value)
+
+        if path.exists():
+            return str(path)
+
+        raise ValueError(
+            'path for openssl'
+            ' does not exist')
 
 
 

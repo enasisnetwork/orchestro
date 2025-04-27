@@ -30,6 +30,15 @@
 
 
 
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    tasks/validate.yml
+
+  tags: always
+
+
+
 
 
 

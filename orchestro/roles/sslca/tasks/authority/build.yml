@@ -28,7 +28,7 @@
   loop:
     - creates: '{{ _sslca_mykey }}'
       command: >-
-        openssl req
+        {{ sslca_openssl }} req
         -new
         -config {{ _sslca_mycnf }}
         -out {{ _sslca_mycsr }}
@@ -36,7 +36,7 @@
         -passout env:MYPASSWORD
     - creates: '{{ _sslca_mycert }}'
       command: >-
-        openssl ca
+        {{ sslca_openssl }} ca
         -batch
         -selfsign
         -config {{ _sslca_mycnf }}
@@ -47,7 +47,7 @@
         -passin env:MYPASSWORD
     - creates: '{{ _sslca_mycrl }}'
       command: >-
-        openssl ca
+        {{ sslca_openssl }} ca
         -gencrl
         -config {{ _sslca_mycnf }}
         -out {{ _sslca_mycrl }}
@@ -88,7 +88,7 @@
   loop:
     - creates: '{{ _sslca_mykey }}'
       command: >-
-        openssl req
+        {{ sslca_openssl }} req
         -new
         -config {{ _sslca_mycnf }}
         -out {{ _sslca_mycsr }}
@@ -96,7 +96,7 @@
         -passout env:MYPASSWORD
     - creates: '{{ _sslca_mycert }}'
       command: >-
-        openssl ca
+        {{ sslca_openssl }} ca
         -batch
         -config {{ _sslca_cacnf }}
         -in {{ _sslca_mycsr }}
@@ -106,7 +106,7 @@
         -passin env:CAPASSWORD
     - creates: '{{ _sslca_mycrl }}'
       command: >-
-        openssl ca
+        {{ sslca_openssl }} ca
         -gencrl
         -config {{ _sslca_mycnf }}
         -out {{ _sslca_mycrl }}

@@ -22,6 +22,8 @@
       {{ sslca_persist | default(omit) }}
     sslca_defaults: >-
       {{ sslca_defaults | default(omit) }}
+    sslca_openssl: >-
+      {{ sslca_openssl | default(omit) }}
 
   tags: always
 
@@ -42,6 +44,8 @@
       {{ sslca_persist | default(omit) }}
     defaults: >-
       {{ sslca_defaults | default(omit) }}
+    openssl: >-
+      {{ sslca_openssl | default(omit) }}
 
   register: pbvalidate
 
@@ -64,5 +68,7 @@
       {{ pbvalidate.params.persist }}
     sslca_defaults: >-
       {{ pbvalidate.params.defaults }}
+    sslca_openssl: >-
+      {{ pbvalidate.params.openssl }}
 
   tags: always

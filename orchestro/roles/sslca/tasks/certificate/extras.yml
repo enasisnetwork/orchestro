@@ -28,7 +28,7 @@
     - creates: '{{ _sslmy_thumb }}'
       command: >-
         {% set thumb = _sslmy_thumb %}
-        openssl x509
+        {{ sslca_openssl }} x509
         -in {{ _sslmy_mycert }}
         -fingerprint
         -noout
@@ -37,13 +37,13 @@
 
     - creates: '{{ _sslmy_rsakey }}'
       command: >-
-        openssl rsa
+        {{ sslca_openssl }} rsa
         -in {{ _sslmy_mykey }}
         -passin pass:''
         -out {{ _sslmy_rsakey }}
     - creates: '{{ _sslmy_rsapub }}'
       command: >-
-        openssl rsa
+        {{ sslca_openssl }} rsa
         -in {{ _sslmy_rsakey }}
         -pubout
         -out {{ _sslmy_rsapub }}

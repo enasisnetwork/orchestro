@@ -39,7 +39,7 @@
   loop:
     - creates: '{{ _sslmy_mykey }}'
       command: >-
-        openssl req
+        {{ sslca_openssl }} req
         -new
         -config {{ _sslmy_mycnf }}
         -out {{ _sslmy_mycsr }}
@@ -48,7 +48,7 @@
         -subj "{{ subject }}"
     - creates: '{{ _sslmy_mycert }}'
       command: >-
-        openssl ca
+        {{ sslca_openssl }} ca
         -batch
         -config {{ _sslmy_cacnf }}
         -in {{ _sslmy_mycsr }}
