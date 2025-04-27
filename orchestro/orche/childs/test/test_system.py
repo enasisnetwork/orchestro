@@ -31,7 +31,7 @@ def test_OrcheSystem(
     systems = childs.systems
 
 
-    system = systems['ensrv1p']
+    system = systems['ensrv1t']
 
 
     attrs = lattrs(system)
@@ -62,7 +62,7 @@ def test_OrcheSystem(
 
     assert system.display
 
-    assert system.name == 'ensrv1p'
+    assert system.name == 'ensrv1t'
 
     assert system.kind == 'system'
 

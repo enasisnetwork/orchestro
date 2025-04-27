@@ -1,0 +1,35 @@
+---
+
+
+
+subnets:
+
+
+  #####################
+  ## Uranus Internal ##
+  #####################
+  uranus_internal:
+    enable: true
+    subnet: 172.18.12.0/24
+    memberof: uranus
+    display: Uranus Internal
+
+
+  #####################
+  ## Uranus Domesnet ##
+  #####################
+  uranus_domesnet:
+    enable: true
+    subnet: 172.18.52.0/24
+    memberof: uranus
+    display: Uranus Domesnet
+
+
+  #####################
+  ## Uranus External ##
+  #####################
+  uranus_external:
+    enable: true
+    subnet: 172.18.92.0/24
+    memberof: uranus
+    display: Uranus External

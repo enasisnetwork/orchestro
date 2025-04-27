@@ -31,7 +31,7 @@ def test_OrcheGroup(
     groups = childs.groups
 
 
-    group = groups['jupiter']
+    group = groups['saturn']
 
 
     attrs = lattrs(group)
@@ -62,7 +62,7 @@ def test_OrcheGroup(
 
     assert group.display
 
-    assert group.name == 'jupiter'
+    assert group.name == 'saturn'
 
     assert group.kind == 'group'
 

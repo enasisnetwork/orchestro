@@ -1,0 +1,14 @@
+---
+
+
+
+groups:
+
+
+  ######################
+  ## Uranus Inventory ##
+  ######################
+  uranus:
+    enable: true
+    memberof: default
+    display: Uranus Inventory

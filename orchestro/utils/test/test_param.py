@@ -32,7 +32,7 @@ def test_InvalidParam(
     childs = orche.childs
     systems = childs.systems
 
-    system = systems['ensrv1p']
+    system = systems['ensrv1t']
 
 
     raises = InvalidParam(
@@ -69,5 +69,5 @@ def test_InvalidParam(
         'Error (invalid) '
         'param (param) '
         'value (value) child '
-        '(OrcheSystem/ensrv1p)'
+        '(OrcheSystem/ensrv1t)'
         ' (about)')

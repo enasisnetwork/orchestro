@@ -11,11 +11,6 @@
   },
   "dryrun": false,
   "groups": {
-    "systems_almalinux": {
-      "enable": true,
-      "memberof": "systems",
-      "display": "AlmaLinux"
-    },
     "default": {
       "enable": false,
       "display": "Default Inventory"
@@ -42,29 +37,77 @@
         "enrobie_console": false
       }
     },
-    "jupiter": {
+    "roles_sslca": {
       "enable": true,
-      "memberof": "default",
-      "display": "Jupiter Inventory"
+      "display": "Ansible Certificate Authority",
+      "ansible": {
+        "sslca_defaults": {
+          "company": "Enasis Network Development",
+          "department": "Certificate Authority",
+          "country": "US",
+          "website": "http://pki.enasis.net"
+        },
+        "sslca_persist": {
+          "rootkeys": "/path/to/rootkeys",
+          "rootfiles": "/path/to/rootfiles",
+          "certkeys": "/path/to/certkeys",
+          "certfiles": "/path/to/certfiles"
+        },
+        "sslca_authority": [
+          {
+            "name": "genesis",
+            "password": "thisisanexample",
+            "expire": "+10y"
+          },
+          {
+            "name": "system",
+            "password": "thisisanexample",
+            "expire": "+10y",
+            "parent": "genesis"
+          },
+          {
+            "name": "person",
+            "password": "thisisanexample",
+            "expire": "+10y",
+            "parent": "genesis"
+          }
+        ]
+      }
     },
-    "neptune": {
+    "saturn": {
       "enable": true,
       "memberof": "default",
-      "display": "Neptune Inventory"
+      "display": "Saturn Inventory"
+    },
+    "systems": {
+      "enable": true,
+      "display": "Managed Systems",
+      "memberof": "roles_sslca"
+    },
+    "systems_almalinux": {
+      "enable": true,
+      "memberof": "systems",
+      "display": "AlmaLinux"
+    },
+    "systems_fedora": {
+      "enable": true,
+      "memberof": "systems",
+      "display": "Fedora"
     },
     "systems_openbsd": {
       "enable": true,
       "memberof": "systems",
-      "display": "OpenBSD Systems"
-    },
-    "systems": {
-      "enable": true,
-      "display": "Managed Systems"
+      "display": "OpenBSD"
     },
     "systems_windows": {
       "enable": true,
       "memberof": "systems",
       "display": "Windows"
+    },
+    "uranus": {
+      "enable": true,
+      "memberof": "default",
+      "display": "Uranus Inventory"
     }
   },
   "persons": {
@@ -84,95 +127,103 @@
     }
   },
   "subnets": {
-    "jupiter_internal": {
+    "saturn_internal": {
       "enable": true,
-      "subnet": "192.168.11.0/24",
-      "memberof": "jupiter",
-      "display": "Jupiter Internal"
+      "subnet": "172.18.11.0/24",
+      "memberof": "saturn",
+      "display": "Saturn Internal"
     },
-    "jupiter_domesnet": {
+    "saturn_domesnet": {
       "enable": true,
-      "subnet": "192.168.51.0/24",
-      "memberof": "jupiter",
-      "display": "Jupiter Domesnet"
+      "subnet": "172.18.51.0/24",
+      "memberof": "saturn",
+      "display": "Saturn Domesnet"
     },
-    "jupiter_external": {
+    "saturn_external": {
       "enable": true,
-      "subnet": "192.168.91.0/24",
-      "memberof": "jupiter",
-      "display": "Jupiter External"
+      "subnet": "172.18.91.0/24",
+      "memberof": "saturn",
+      "display": "Saturn External"
     },
-    "neptune_internal": {
+    "uranus_internal": {
       "enable": true,
-      "subnet": "192.168.12.0/24",
-      "memberof": "neptune",
-      "display": "Neptune Internal"
+      "subnet": "172.18.12.0/24",
+      "memberof": "uranus",
+      "display": "Uranus Internal"
     },
-    "neptune_domesnet": {
+    "uranus_domesnet": {
       "enable": true,
-      "subnet": "192.168.52.0/24",
-      "memberof": "neptune",
-      "display": "Neptune Domesnet"
+      "subnet": "172.18.52.0/24",
+      "memberof": "uranus",
+      "display": "Uranus Domesnet"
     },
-    "neptune_external": {
+    "uranus_external": {
       "enable": true,
-      "subnet": "192.168.92.0/24",
-      "memberof": "neptune",
-      "display": "Neptune External"
+      "subnet": "172.18.92.0/24",
+      "memberof": "uranus",
+      "display": "Uranus External"
     }
   },
   "systems": {
-    "engwf1x1p": {
+    "aegaeon": {
+      "enable": true,
+      "inherits": "template_fedora",
+      "memberof": "saturn",
+      "display": "Robert Workstation"
+    },
+    "engwf1x1t": {
       "enable": true,
       "inherits": "template_openbsd",
-      "memberof": "jupiter",
-      "display": "Jupiter Gateway Primary"
+      "memberof": "saturn",
+      "display": "Saturn Gateway Primary"
     },
-    "engwf1x2p": {
+    "engwf1x2t": {
       "enable": true,
       "inherits": "template_openbsd",
-      "memberof": "jupiter",
-      "display": "Jupiter Gateway Secondary"
+      "memberof": "saturn",
+      "display": "Saturn Gateway Secondary"
     },
-    "engwf2x1p": {
+    "engwf2x1t": {
       "enable": true,
       "inherits": "template_openbsd",
-      "memberof": "neptune",
-      "display": "Neptune Gateway Primary"
+      "memberof": "uranus",
+      "display": "Uranus Gateway Primary"
     },
-    "engwf2x2p": {
+    "engwf2x2t": {
       "enable": true,
       "inherits": "template_openbsd",
-      "memberof": "neptune",
-      "display": "Neptune Gateway Secondary"
+      "memberof": "uranus",
+      "display": "Uranus Gateway Secondary"
     },
-    "ensrv1p": {
+    "ensrv1t": {
       "enable": true,
       "inherits": "template_almalinux",
       "memberof": [
-        "jupiter",
+        "saturn",
         "roles_enhomie"
       ],
-      "display": "Jupiter Server",
+      "display": "Saturn Server",
       "ansible": {
         "enhomie_directory": "/opt/enhomie"
       }
     },
-    "ensrv2p": {
+    "ensrv2t": {
       "enable": true,
       "inherits": "template_almalinux",
       "memberof": [
-        "neptune",
+        "uranus",
         "roles_enrobie"
       ],
-      "display": "Neptune Server",
+      "display": "Uranus Server",
       "ansible": {
         "enrobie_directory": "/opt/enrobie"
       }
     },
-    "template_gateway": {
-      "enable": false,
-      "display": "Gateway Template"
+    "meropis": {
+      "enable": true,
+      "inherits": "template_windows",
+      "memberof": "saturn",
+      "display": "Robert Workstation"
     },
     "template_almalinux": {
       "enable": false,
@@ -186,14 +237,34 @@
       "display": "Default Template",
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
-        "ansible_user": "root"
+        "ansible_user": "root",
+        "sslca_certificate": [
+          {
+            "name": "{{ inventory_hostname }}",
+            "kind": "server",
+            "common": "{{ orche_system.fqdn }}",
+            "parent": "system"
+          }
+        ]
       }
+    },
+    "template_fedora": {
+      "enable": false,
+      "inherits": "template_default",
+      "memberof": "systems_fedora",
+      "display": "Fedora Template"
     },
     "template_openbsd": {
       "enable": false,
       "inherits": "template_default",
       "memberof": "systems_openbsd",
       "display": "OpenBSD Template"
+    },
+    "template_windows": {
+      "enable": false,
+      "inherits": "template_default",
+      "memberof": "systems_windows",
+      "display": "Windows Template"
     }
   }
 }

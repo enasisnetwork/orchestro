@@ -5,16 +5,16 @@
 systems:
 
 
-  ####################
-  ## Neptune Server ##
-  ####################
-  ensrv2p:
+  ###################
+  ## Uranus Server ##
+  ###################
+  ensrv2t:
     enable: true
     inherits: template_almalinux
     memberof:
-      - neptune
+      - uranus
       - roles_enrobie
-    display: Neptune Server
+    display: Uranus Server
 
 
     #######################

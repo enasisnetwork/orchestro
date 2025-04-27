@@ -20,3 +20,13 @@ systems:
     ansible:
       ansible_host: '{{ inventory_hostname }}'
       ansible_user: root
+
+
+      ###########################
+      ## Certificate Authority ##
+      ###########################
+      sslca_certificate:
+        - name: '{{ inventory_hostname }}'
+          kind: server
+          common: '{{ orche_system.fqdn }}'
+          parent: system

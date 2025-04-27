@@ -14,8 +14,38 @@
   "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
   "dryrun": false,
   "systems": {
-    "engwf1x1p": {
-      "name": "engwf1x1p",
+    "aegaeon": {
+      "name": "aegaeon",
+      "kind": "system",
+      "params": {
+        "enable": true,
+        "inherits": [
+          "template_fedora",
+          "template_default"
+        ],
+        "display": "Robert Workstation",
+        "memberof": [
+          "saturn",
+          "systems_fedora"
+        ],
+        "realm": "ansible",
+        "domain": "enasis.net",
+        "ansible": {
+          "ansible_host": "{{ inventory_hostname }}",
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
+        }
+      }
+    },
+    "engwf1x1t": {
+      "name": "engwf1x1t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -23,21 +53,29 @@
           "template_openbsd",
           "template_default"
         ],
-        "display": "Jupiter Gateway Primary",
+        "display": "Saturn Gateway Primary",
         "memberof": [
-          "jupiter",
+          "saturn",
           "systems_openbsd"
         ],
         "realm": "ansible",
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "engwf1x2p": {
-      "name": "engwf1x2p",
+    "engwf1x2t": {
+      "name": "engwf1x2t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -45,21 +83,29 @@
           "template_openbsd",
           "template_default"
         ],
-        "display": "Jupiter Gateway Secondary",
+        "display": "Saturn Gateway Secondary",
         "memberof": [
-          "jupiter",
+          "saturn",
           "systems_openbsd"
         ],
         "realm": "ansible",
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "engwf2x1p": {
-      "name": "engwf2x1p",
+    "engwf2x1t": {
+      "name": "engwf2x1t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -67,21 +113,29 @@
           "template_openbsd",
           "template_default"
         ],
-        "display": "Neptune Gateway Primary",
+        "display": "Uranus Gateway Primary",
         "memberof": [
-          "neptune",
+          "uranus",
           "systems_openbsd"
         ],
         "realm": "ansible",
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "engwf2x2p": {
-      "name": "engwf2x2p",
+    "engwf2x2t": {
+      "name": "engwf2x2t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -89,21 +143,29 @@
           "template_openbsd",
           "template_default"
         ],
-        "display": "Neptune Gateway Secondary",
+        "display": "Uranus Gateway Secondary",
         "memberof": [
-          "neptune",
+          "uranus",
           "systems_openbsd"
         ],
         "realm": "ansible",
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "ensrv1p": {
-      "name": "ensrv1p",
+    "ensrv1t": {
+      "name": "ensrv1t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -111,9 +173,9 @@
           "template_almalinux",
           "template_default"
         ],
-        "display": "Jupiter Server",
+        "display": "Saturn Server",
         "memberof": [
-          "jupiter",
+          "saturn",
           "roles_enhomie",
           "systems_almalinux"
         ],
@@ -122,12 +184,20 @@
         "ansible": {
           "enhomie_directory": "/opt/enhomie",
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "ensrv2p": {
-      "name": "ensrv2p",
+    "ensrv2t": {
+      "name": "ensrv2t",
       "kind": "system",
       "params": {
         "enable": true,
@@ -135,9 +205,9 @@
           "template_almalinux",
           "template_default"
         ],
-        "display": "Neptune Server",
+        "display": "Uranus Server",
         "memberof": [
-          "neptune",
+          "uranus",
           "roles_enrobie",
           "systems_almalinux"
         ],
@@ -146,21 +216,46 @@
         "ansible": {
           "enrobie_directory": "/opt/enrobie",
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
-    "template_gateway": {
-      "name": "template_gateway",
+    "meropis": {
+      "name": "meropis",
       "kind": "system",
       "params": {
-        "enable": false,
-        "inherits": null,
-        "display": "Gateway Template",
-        "memberof": null,
+        "enable": true,
+        "inherits": [
+          "template_windows",
+          "template_default"
+        ],
+        "display": "Robert Workstation",
+        "memberof": [
+          "saturn",
+          "systems_windows"
+        ],
         "realm": "ansible",
-        "domain": null,
-        "ansible": null
+        "domain": "enasis.net",
+        "ansible": {
+          "ansible_host": "{{ inventory_hostname }}",
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
+        }
       }
     },
     "template_almalinux": {
@@ -179,7 +274,15 @@
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
@@ -195,7 +298,43 @@
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
+        }
+      }
+    },
+    "template_fedora": {
+      "name": "template_fedora",
+      "kind": "system",
+      "params": {
+        "enable": false,
+        "inherits": [
+          "template_default"
+        ],
+        "display": "Fedora Template",
+        "memberof": [
+          "systems_fedora"
+        ],
+        "realm": "ansible",
+        "domain": "enasis.net",
+        "ansible": {
+          "ansible_host": "{{ inventory_hostname }}",
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     },
@@ -215,7 +354,43 @@
         "domain": "enasis.net",
         "ansible": {
           "ansible_host": "{{ inventory_hostname }}",
-          "ansible_user": "root"
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
+        }
+      }
+    },
+    "template_windows": {
+      "name": "template_windows",
+      "kind": "system",
+      "params": {
+        "enable": false,
+        "inherits": [
+          "template_default"
+        ],
+        "display": "Windows Template",
+        "memberof": [
+          "systems_windows"
+        ],
+        "realm": "ansible",
+        "domain": "enasis.net",
+        "ansible": {
+          "ansible_host": "{{ inventory_hostname }}",
+          "ansible_user": "root",
+          "sslca_certificate": [
+            {
+              "name": "{{ inventory_hostname }}",
+              "kind": "server",
+              "common": "{{ orche_system.fqdn }}",
+              "parent": "system"
+            }
+          ]
         }
       }
     }
@@ -251,100 +426,86 @@
     }
   },
   "subnets": {
-    "jupiter_internal": {
-      "name": "jupiter_internal",
+    "saturn_internal": {
+      "name": "saturn_internal",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Jupiter Internal",
+        "display": "Saturn Internal",
         "memberof": [
-          "jupiter"
+          "saturn"
         ],
-        "subnet": "192.168.11.0/24"
+        "subnet": "172.18.11.0/24"
       }
     },
-    "jupiter_domesnet": {
-      "name": "jupiter_domesnet",
+    "saturn_domesnet": {
+      "name": "saturn_domesnet",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Jupiter Domesnet",
+        "display": "Saturn Domesnet",
         "memberof": [
-          "jupiter"
+          "saturn"
         ],
-        "subnet": "192.168.51.0/24"
+        "subnet": "172.18.51.0/24"
       }
     },
-    "jupiter_external": {
-      "name": "jupiter_external",
+    "saturn_external": {
+      "name": "saturn_external",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Jupiter External",
+        "display": "Saturn External",
         "memberof": [
-          "jupiter"
+          "saturn"
         ],
-        "subnet": "192.168.91.0/24"
+        "subnet": "172.18.91.0/24"
       }
     },
-    "neptune_internal": {
-      "name": "neptune_internal",
+    "uranus_internal": {
+      "name": "uranus_internal",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Neptune Internal",
+        "display": "Uranus Internal",
         "memberof": [
-          "neptune"
+          "uranus"
         ],
-        "subnet": "192.168.12.0/24"
+        "subnet": "172.18.12.0/24"
       }
     },
-    "neptune_domesnet": {
-      "name": "neptune_domesnet",
+    "uranus_domesnet": {
+      "name": "uranus_domesnet",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Neptune Domesnet",
+        "display": "Uranus Domesnet",
         "memberof": [
-          "neptune"
+          "uranus"
         ],
-        "subnet": "192.168.52.0/24"
+        "subnet": "172.18.52.0/24"
       }
     },
-    "neptune_external": {
-      "name": "neptune_external",
+    "uranus_external": {
+      "name": "uranus_external",
       "kind": "subnet",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Neptune External",
+        "display": "Uranus External",
         "memberof": [
-          "neptune"
+          "uranus"
         ],
-        "subnet": "192.168.92.0/24"
+        "subnet": "172.18.92.0/24"
       }
     }
   },
   "groups": {
-    "systems_almalinux": {
-      "name": "systems_almalinux",
-      "kind": "group",
-      "params": {
-        "enable": true,
-        "inherits": null,
-        "display": "AlmaLinux",
-        "memberof": [
-          "systems"
-        ],
-        "realm": "ansible",
-        "ansible": null
-      }
-    },
     "default": {
       "name": "default",
       "kind": "group",
@@ -395,43 +556,59 @@
         }
       }
     },
-    "jupiter": {
-      "name": "jupiter",
+    "roles_sslca": {
+      "name": "roles_sslca",
       "kind": "group",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Jupiter Inventory",
-        "memberof": [
-          "default"
-        ],
+        "display": "Ansible Certificate Authority",
+        "memberof": null,
         "realm": "ansible",
-        "ansible": null
+        "ansible": {
+          "sslca_defaults": {
+            "company": "Enasis Network Development",
+            "department": "Certificate Authority",
+            "country": "US",
+            "website": "http://pki.enasis.net"
+          },
+          "sslca_persist": {
+            "rootkeys": "/path/to/rootkeys",
+            "rootfiles": "/path/to/rootfiles",
+            "certkeys": "/path/to/certkeys",
+            "certfiles": "/path/to/certfiles"
+          },
+          "sslca_authority": [
+            {
+              "name": "genesis",
+              "password": "thisisanexample",
+              "expire": "+10y"
+            },
+            {
+              "name": "system",
+              "password": "thisisanexample",
+              "expire": "+10y",
+              "parent": "genesis"
+            },
+            {
+              "name": "person",
+              "password": "thisisanexample",
+              "expire": "+10y",
+              "parent": "genesis"
+            }
+          ]
+        }
       }
     },
-    "neptune": {
-      "name": "neptune",
+    "saturn": {
+      "name": "saturn",
       "kind": "group",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Neptune Inventory",
+        "display": "Saturn Inventory",
         "memberof": [
           "default"
-        ],
-        "realm": "ansible",
-        "ansible": null
-      }
-    },
-    "systems_openbsd": {
-      "name": "systems_openbsd",
-      "kind": "group",
-      "params": {
-        "enable": true,
-        "inherits": null,
-        "display": "OpenBSD Systems",
-        "memberof": [
-          "systems"
         ],
         "realm": "ansible",
         "ansible": null
@@ -444,7 +621,51 @@
         "enable": true,
         "inherits": null,
         "display": "Managed Systems",
-        "memberof": null,
+        "memberof": [
+          "roles_sslca"
+        ],
+        "realm": "ansible",
+        "ansible": null
+      }
+    },
+    "systems_almalinux": {
+      "name": "systems_almalinux",
+      "kind": "group",
+      "params": {
+        "enable": true,
+        "inherits": null,
+        "display": "AlmaLinux",
+        "memberof": [
+          "systems"
+        ],
+        "realm": "ansible",
+        "ansible": null
+      }
+    },
+    "systems_fedora": {
+      "name": "systems_fedora",
+      "kind": "group",
+      "params": {
+        "enable": true,
+        "inherits": null,
+        "display": "Fedora",
+        "memberof": [
+          "systems"
+        ],
+        "realm": "ansible",
+        "ansible": null
+      }
+    },
+    "systems_openbsd": {
+      "name": "systems_openbsd",
+      "kind": "group",
+      "params": {
+        "enable": true,
+        "inherits": null,
+        "display": "OpenBSD",
+        "memberof": [
+          "systems"
+        ],
         "realm": "ansible",
         "ansible": null
       }
@@ -458,6 +679,20 @@
         "display": "Windows",
         "memberof": [
           "systems"
+        ],
+        "realm": "ansible",
+        "ansible": null
+      }
+    },
+    "uranus": {
+      "name": "uranus",
+      "kind": "group",
+      "params": {
+        "enable": true,
+        "inherits": null,
+        "display": "Uranus Inventory",
+        "memberof": [
+          "default"
         ],
         "realm": "ansible",
         "ansible": null

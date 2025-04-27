@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ########################
+  ## Robert Workstation ##
+  ########################
+  aegaeon:
+    enable: true
+    inherits: template_fedora
+    memberof: saturn
+    display: Robert Workstation

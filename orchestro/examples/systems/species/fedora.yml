@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  #####################
+  ## Fedora Template ##
+  #####################
+  template_fedora:
+    enable: false
+    inherits: template_default
+    memberof: systems_fedora
+    display: Fedora Template

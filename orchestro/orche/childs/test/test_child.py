@@ -27,10 +27,10 @@ def test_OrcheChild_cover(
     subnets = childs.subnets
 
     child1 = subnets[
-        'neptune_domesnet']
+        'uranus_domesnet']
 
     child2 = subnets[
-        'jupiter_domesnet']
+        'saturn_domesnet']
 
 
     sort = [child1, child2]

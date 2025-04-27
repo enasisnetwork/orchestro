@@ -1,0 +1,15 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Windows Template ##
+  ######################
+  template_windows:
+    enable: false
+    inherits: template_default
+    memberof: systems_windows
+    display: Windows Template

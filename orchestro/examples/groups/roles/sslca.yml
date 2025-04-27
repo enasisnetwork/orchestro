@@ -1,0 +1,46 @@
+---
+
+
+
+groups:
+
+
+  #####################
+  ## SSLCA Inventory ##
+  #####################
+  roles_sslca:
+    enable: true
+    display: Ansible Certificate Authority
+
+
+    #######################
+    ## Ansible Variables ##
+    #######################
+    ansible:
+
+
+      ###########################
+      ## Certificate Authority ##
+      ###########################
+      sslca_defaults:
+        company: Enasis Network Development
+        department: Certificate Authority
+        country: US
+        website: http://pki.enasis.net
+      sslca_persist:
+        rootkeys: /path/to/rootkeys
+        rootfiles: /path/to/rootfiles
+        certkeys: /path/to/certkeys
+        certfiles: /path/to/certfiles
+      sslca_authority:
+        - name: genesis
+          password: thisisanexample
+          expire: '+10y'
+        - name: system
+          password: thisisanexample
+          expire: '+10y'
+          parent: genesis
+        - name: person
+          password: thisisanexample
+          expire: '+10y'
+          parent: genesis

@@ -1,0 +1,35 @@
+---
+
+
+
+subnets:
+
+
+  #####################
+  ## Saturn Internal ##
+  #####################
+  saturn_internal:
+    enable: true
+    subnet: 172.18.11.0/24
+    memberof: saturn
+    display: Saturn Internal
+
+
+  #####################
+  ## Saturn Domesnet ##
+  #####################
+  saturn_domesnet:
+    enable: true
+    subnet: 172.18.51.0/24
+    memberof: saturn
+    display: Saturn Domesnet
+
+
+  #####################
+  ## Saturn External ##
+  #####################
+  saturn_external:
+    enable: true
+    subnet: 172.18.91.0/24
+    memberof: saturn
+    display: Saturn External

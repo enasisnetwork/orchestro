@@ -1,0 +1,25 @@
+---
+
+
+
+systems:
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf2x1t:
+    enable: true
+    inherits: template_openbsd
+    memberof: uranus
+    display: Uranus Gateway Primary
+
+
+  ######################
+  ## Gateway Firewall ##
+  ######################
+  engwf2x2t:
+    enable: true
+    inherits: template_openbsd
+    memberof: uranus
+    display: Uranus Gateway Secondary

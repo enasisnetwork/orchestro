@@ -7,6 +7,10 @@ is permitted, for more information consult the project license file.
 
 
 
+# NOTE Do not forget about params.yml
+
+
+
 from pathlib import Path
 from typing import Annotated
 from typing import Any
@@ -266,7 +270,7 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
     """
 
     authority: Annotated[
-        list[ParentParams],
+        Optional[list[ParentParams]],
         Field(...,
               description='Certificate authority parameters',
               min_length=1)]
@@ -304,6 +308,9 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
         """
 
         authority = self.authority
+
+        if not authority:
+            return self
 
         names = sorted(
             x.name for x in
@@ -348,6 +355,8 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
 
         if not certificate:
             return self
+
+        assert authority is not None
 
         names = sorted(
             x.name for x in
