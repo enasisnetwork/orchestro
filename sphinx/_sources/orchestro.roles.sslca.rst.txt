@@ -1,0 +1,18 @@
+orchestro.roles.sslca package
+=============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   orchestro.roles.sslca.action_plugins
+
+Module contents
+---------------
+
+.. automodule:: orchestro.roles.sslca
+   :members:
+   :show-inheritance:
+   :undoc-members:

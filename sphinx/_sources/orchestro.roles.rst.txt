@@ -9,6 +9,7 @@ Subpackages
 
    orchestro.roles.enhomie
    orchestro.roles.enrobie
+   orchestro.roles.sslca
 
 Module contents
 ---------------
