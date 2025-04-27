@@ -190,7 +190,7 @@
     }
   },
   "systems": {
-    "engwf1g1p": {
+    "engwf1x1p": {
       "enable": true,
       "inherits": [
         "template_openbsd",
@@ -208,7 +208,7 @@
         "ansible_user": "root"
       }
     },
-    "engwf1g2p": {
+    "engwf1x2p": {
       "enable": true,
       "inherits": [
         "template_openbsd",
@@ -226,7 +226,7 @@
         "ansible_user": "root"
       }
     },
-    "engwf2g1p": {
+    "engwf2x1p": {
       "enable": true,
       "inherits": [
         "template_openbsd",
@@ -244,7 +244,7 @@
         "ansible_user": "root"
       }
     },
-    "engwf2g2p": {
+    "engwf2x2p": {
       "enable": true,
       "inherits": [
         "template_openbsd",

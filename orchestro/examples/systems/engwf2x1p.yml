@@ -8,8 +8,8 @@ systems:
   ######################
   ## Gateway Firewall ##
   ######################
-  engwf1g1p:
+  engwf2x1p:
     enable: true
     inherits: template_openbsd
-    memberof: jupiter
-    display: Jupiter Gateway Primary
+    memberof: neptune
+    display: Neptune Gateway Primary
