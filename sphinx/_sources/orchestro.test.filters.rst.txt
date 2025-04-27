@@ -1,13 +1,13 @@
-orchestro.filters.test package
+orchestro.test.filters package
 ==============================
 
 Submodules
 ----------
 
-orchestro.filters.test.test\_override module
+orchestro.test.filters.test\_override module
 --------------------------------------------
 
-.. automodule:: orchestro.filters.test.test_override
+.. automodule:: orchestro.test.filters.test_override
    :members:
    :show-inheritance:
    :undoc-members:
@@ -15,7 +15,7 @@ orchestro.filters.test.test\_override module
 Module contents
 ---------------
 
-.. automodule:: orchestro.filters.test
+.. automodule:: orchestro.test.filters
    :members:
    :show-inheritance:
    :undoc-members:

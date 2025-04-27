@@ -15,6 +15,7 @@ Subpackages
    orchestro.library
    orchestro.orche
    orchestro.roles
+   orchestro.test
    orchestro.utils
 
 Submodules

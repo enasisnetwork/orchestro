@@ -1,14 +1,6 @@
 orchestro.filters package
 =========================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   orchestro.filters.test
-
 Submodules
 ----------
 
