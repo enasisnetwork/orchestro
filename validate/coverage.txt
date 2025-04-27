@@ -63,6 +63,9 @@ orchestro/roles/enhomie/action_plugins/enhomie_params.py      22      0   100%
 orchestro/roles/enrobie/__init__.py                            2      0   100%
 orchestro/roles/enrobie/action_plugins/__init__.py             0      0   100%
 orchestro/roles/enrobie/action_plugins/enrobie_params.py      22      0   100%
+orchestro/roles/sslca/__init__.py                              2      0   100%
+orchestro/roles/sslca/action_plugins/__init__.py               0      0   100%
+orchestro/roles/sslca/action_plugins/sslca_params.py          42      0   100%
 orchestro/test/__init__.py                                     0      0   100%
 orchestro/test/filters/__init__.py                             0      0   100%
 orchestro/test/filters/test_override.py                       20      0   100%
@@ -73,4 +76,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1289      0   100%
+TOTAL                                                       1333      0   100%
