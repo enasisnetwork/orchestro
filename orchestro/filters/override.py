@@ -70,5 +70,4 @@ def basename(
 
     result = parts[-count:]
 
-    return str(
-        Path(*result))
+    return str(Path(*result))
