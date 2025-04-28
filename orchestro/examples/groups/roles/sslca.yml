@@ -33,14 +33,14 @@ groups:
         certkeys: /path/to/certkeys
         certfiles: /path/to/certfiles
       sslca_authority:
-        - name: genesis
+        genesis:
           password: thisisanexample
           expire: '+10y'
-        - name: system
+        system:
           password: thisisanexample
           expire: '+10y'
           parent: genesis
-        - name: person
+        person:
           password: thisisanexample
           expire: '+10y'
           parent: genesis

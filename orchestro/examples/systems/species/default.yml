@@ -26,7 +26,8 @@ systems:
       ## Certificate Authority ##
       ###########################
       sslca_certificate:
-        - name: '{{ inventory_hostname }}'
+        system:
+          name: '{{ inventory_hostname }}'
           kind: server
           common: '{{ orche_system.fqdn }}'
           parent: system

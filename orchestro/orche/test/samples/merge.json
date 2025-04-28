@@ -53,25 +53,22 @@
           "certkeys": "/path/to/certkeys",
           "certfiles": "/path/to/certfiles"
         },
-        "sslca_authority": [
-          {
-            "name": "genesis",
+        "sslca_authority": {
+          "genesis": {
             "password": "thisisanexample",
             "expire": "+10y"
           },
-          {
-            "name": "system",
+          "system": {
             "password": "thisisanexample",
             "expire": "+10y",
             "parent": "genesis"
           },
-          {
-            "name": "person",
+          "person": {
             "password": "thisisanexample",
             "expire": "+10y",
             "parent": "genesis"
           }
-        ]
+        }
       }
     },
     "saturn": {
@@ -238,14 +235,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_fedora": {
