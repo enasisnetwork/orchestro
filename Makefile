@@ -156,13 +156,13 @@ cleanup-pytest:
 		<c37>Removing <c90>pytest<c37> \
 		cache files..<c0>)
 	@find . \
-		-name '.pytest_cache' \
 		-maxdepth 1 \
+		-name '.pytest_cache' \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	@find . \
-		-name 'pytestdebug.log' \
 		-maxdepth 1 \
+		-name 'pytestdebug.log' \
 		-delete \; \
 		2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -180,18 +180,18 @@ cleanup-coveragepy:
 		<c37>Removing <c90>coveragepy<c37> \
 		cache files..<c0>)
 	@find . \
+		-maxdepth 1 \
 		-name 'htmlcov' \
-		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	@find . \
+		-maxdepth 1 \
 		-name '.coverage' \
-		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	@find . \
-		-name 'coverage.json' \
 		-maxdepth 1 \
+		-name 'coverage.json' \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -209,8 +209,8 @@ cleanup-ruff:
 		<c37>Removing <c90>mypy<c37> \
 		cache files..<c0>)
 	@find . \
-		-name '.ruff_cache' \
 		-maxdepth 1 \
+		-name '.ruff_cache' \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -228,8 +228,8 @@ cleanup-mypy:
 		<c37>Removing <c90>mypy<c37> \
 		cache files..<c0>)
 	@find . \
-		-name '.mypy_cache' \
 		-maxdepth 1 \
+		-name '.mypy_cache' \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -268,8 +268,8 @@ cleanup-ansible:
 		<c37>Removing <c90>Ansible<c37> \
 		cache files..<c0>)
 	@find . \
+		-maxdepth 2 \
 		-name '.ansible' \
-		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -724,6 +724,7 @@ endif
 ifndef stage
 	$(error stage not defined)
 endif
+
 .check-limit:
 ifndef limit
 	$(error limit not defined)

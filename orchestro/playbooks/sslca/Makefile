@@ -7,8 +7,8 @@
 
 .PHONY: sslca-overview
 sslca-overview: \
-	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	.check-stage .check-limit
+	@## Dump information related to operation
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>sslca-overview<c0>)
@@ -29,8 +29,8 @@ sslca-overview: \
 
 .PHONY: sslca-authority-build
 sslca-authority-build: \
-	.check-limit .check-stage
-	@## Build the bootable installation image
+	.check-stage .check-limit
+	@## Construct the certificate authorities
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>sslca-authority-build<c0>)
@@ -52,8 +52,8 @@ sslca-authority-build: \
 
 .PHONY: sslca-certificate-build
 sslca-certificate-build: \
-	.check-limit .check-stage
-	@## Build the bootable installation image
+	.check-stage .check-limit
+	@## Construct and sign the certificates
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>sslca-certificate-build<c0>)

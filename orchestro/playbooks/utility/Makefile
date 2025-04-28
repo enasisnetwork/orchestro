@@ -7,8 +7,8 @@
 
 .PHONY: utility-overview
 utility-overview: \
-	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	.check-stage .check-limit
+	@## Dump information related to operation
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-overview<c0>)
@@ -29,7 +29,7 @@ utility-overview: \
 
 .PHONY: utility-ping
 utility-ping: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Login to the host and report reachable
 	@#
 	$(call MAKE_PR2NT,\
@@ -75,7 +75,7 @@ endif
 .PHONY: utility-decrypt
 utility-decrypt: \
 	.check-stage
-	@## Encrypt information with Ansible Vault
+	@## Decrypt information with Ansible Vault
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-decrypt<c0>)
@@ -110,7 +110,7 @@ utility-inventory: \
 
 .PHONY: utility-custom
 utility-custom: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Run Ansible module with given arguments
 	@#
 ifndef ansible_module_name
