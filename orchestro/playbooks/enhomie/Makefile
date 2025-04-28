@@ -7,8 +7,8 @@
 
 .PHONY: enhomie-overview
 enhomie-overview: \
-	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	.check-stage .check-limit
+	@## Dump information related to operation
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-overview<c0>)
@@ -29,7 +29,7 @@ enhomie-overview: \
 
 .PHONY: enhomie-install
 enhomie-install: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Install and configure related package
 	@#
 	$(call MAKE_PR2NT,\
@@ -52,7 +52,7 @@ enhomie-install: \
 
 .PHONY: enhomie-reinstall
 enhomie-reinstall: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Remove existing venv and then install
 	@#
 	$(call MAKE_PR2NT,\
@@ -77,7 +77,7 @@ enhomie-reinstall: \
 
 .PHONY: enhomie-configure
 enhomie-configure: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Bypass install and configure package
 	@#
 	$(call MAKE_PR2NT,\
@@ -100,7 +100,7 @@ enhomie-configure: \
 
 .PHONY: enhomie-state
 enhomie-state: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Control the state of package service
 	@#
 ifndef state

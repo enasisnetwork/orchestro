@@ -7,8 +7,8 @@
 
 .PHONY: enrobie-overview
 enrobie-overview: \
-	.check-limit .check-stage
-	@## Dump relevant information about hosts
+	.check-stage .check-limit
+	@## Dump information related to operation
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-overview<c0>)
@@ -29,7 +29,7 @@ enrobie-overview: \
 
 .PHONY: enrobie-install
 enrobie-install: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Install and configure related package
 	@#
 	$(call MAKE_PR2NT,\
@@ -52,7 +52,7 @@ enrobie-install: \
 
 .PHONY: enrobie-reinstall
 enrobie-reinstall: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Remove existing venv and then install
 	@#
 	$(call MAKE_PR2NT,\
@@ -77,7 +77,7 @@ enrobie-reinstall: \
 
 .PHONY: enrobie-configure
 enrobie-configure: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Bypass install and configure package
 	@#
 	$(call MAKE_PR2NT,\
@@ -100,7 +100,7 @@ enrobie-configure: \
 
 .PHONY: enrobie-state
 enrobie-state: \
-	.check-limit .check-stage
+	.check-stage .check-limit
 	@## Control the state of package service
 	@#
 ifndef state
