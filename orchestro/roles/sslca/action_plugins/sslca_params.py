@@ -258,7 +258,7 @@ class PersistParams(OrcheParamsModel, extra='ignore'):
 
             raise ValueError(
                 f'{check} path does not'
-                ' exist on file system')
+                ' exist on filesystem')
 
         return self
 
