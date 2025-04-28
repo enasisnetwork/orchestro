@@ -40,6 +40,14 @@ Orche Children
    :show-inheritance:
    :noindex:
 
+Certificate Authority
+---------------------
+
+.. autoclass:: orchestro.roles.sslca.RoleParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 Homie Automate Playbook
 -----------------------
 
