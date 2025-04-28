@@ -588,28 +588,12 @@ ansblint: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>ansible-lint<c37> \
-		in <c90>playbooks<c37>..<c0>)
-	@( \
-		set -e; \
-		. $(VENVD)/bin/activate; \
-		cd orchestro; \
-		ansible-lint \
-			-q --strict \
-			--project-dir . \
-			--show-relpath \
-			--offline \
-			-c ../.ansible-lint \
-			playbooks; \
-		deactivate)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ansible-lint<c37> \
 		on <c90>roles<c37>..<c0>)
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
 		cd orchestro; \
+		ANSIBLE_JINJA2_EXTENSIONS="jinja2.ext.do" \
 		ansible-lint \
 			-q --strict \
 			--project-dir . \
@@ -622,11 +606,30 @@ ansblint: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>ansible-lint<c37> \
+		in <c90>playbooks<c37>..<c0>)
+	@( \
+		set -e; \
+		. $(VENVD)/bin/activate; \
+		cd orchestro; \
+		ANSIBLE_JINJA2_EXTENSIONS="jinja2.ext.do" \
+		ansible-lint \
+			-q --strict \
+			--project-dir . \
+			--show-relpath \
+			--offline \
+			-c ../.ansible-lint \
+			playbooks; \
+		deactivate)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ansible-lint<c37> \
 		on <c90>inventory<c37>..<c0>)
 	@( \
 		set -e; \
 		. $(VENVD)/bin/activate; \
 		cd orchestro; \
+		ANSIBLE_JINJA2_EXTENSIONS="jinja2.ext.do" \
 		ansible-lint \
 			-q --strict \
 			--project-dir . \
