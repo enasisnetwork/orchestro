@@ -298,6 +298,111 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
               min_length=5)]
 
 
+    @field_validator(
+        'authority',
+        mode='before')
+    @classmethod
+    def parse_authority(
+        # NOCVR
+        cls,
+        value: Any,  # noqa: ANN401
+    ) -> Optional[list[ParentParams]]:
+        """
+        Perform advanced validation on the parameters provided.
+        """
+
+        if (isinstance(value, list)
+                or value is None):
+            return value
+
+        model = ParentParams
+
+        returned: list[ParentParams] = []
+
+
+        assert isinstance(value, dict)
+
+        items = value.items()
+
+        for key, value in items:
+
+            value = dict(value)
+
+            if not value.get('name'):
+                value['name'] = key
+
+            item = model(**value)
+
+            returned.append(item)
+
+
+        return returned
+
+
+    @field_validator(
+        'certificate',
+        mode='before')
+    @classmethod
+    def parse_certificate(
+        # NOCVR
+        cls,
+        value: Any,  # noqa: ANN401
+    ) -> Optional[list[ChildParams]]:
+        """
+        Perform advanced validation on the parameters provided.
+        """
+
+        if (isinstance(value, list)
+                or value is None):
+            return value
+
+        model = ChildParams
+
+        returned: list[ChildParams] = []
+
+
+        assert isinstance(value, dict)
+
+        items = value.items()
+
+        for key, value in items:
+
+            value = dict(value)
+
+            if not value.get('name'):
+                value['name'] = key
+
+            item = model(**value)
+
+            returned.append(item)
+
+
+        return returned
+
+
+    @field_validator(
+        'openssl',
+        mode='before')
+    @classmethod
+    def parse_openssl(
+        # NOCVR
+        cls,
+        value: Any,  # noqa: ANN401
+    ) -> str:
+        """
+        Perform advanced validation on the parameters provided.
+        """
+
+        path = Path(value)
+
+        if path.exists():
+            return str(path)
+
+        raise ValueError(
+            'path for openssl'
+            ' does not exist')
+
+
     @model_validator(mode='after')
     def check_authority(
         # NOCVR
@@ -386,29 +491,6 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
                 f' {name} not exists')
 
         return self
-
-
-    @field_validator(
-        'openssl',
-        mode='before')
-    @classmethod
-    def parse_openssl(
-        # NOCVR
-        cls,
-        value: Any,  # noqa: ANN401
-    ) -> str:
-        """
-        Perform advanced validation on the parameters provided.
-        """
-
-        path = Path(value)
-
-        if path.exists():
-            return str(path)
-
-        raise ValueError(
-            'path for openssl'
-            ' does not exist')
 
 
 

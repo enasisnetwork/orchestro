@@ -71,25 +71,22 @@
           "certkeys": "/path/to/certkeys",
           "certfiles": "/path/to/certfiles"
         },
-        "sslca_authority": [
-          {
-            "name": "genesis",
+        "sslca_authority": {
+          "genesis": {
             "password": "thisisanexample",
             "expire": "+10y"
           },
-          {
-            "name": "system",
+          "system": {
             "password": "thisisanexample",
             "expire": "+10y",
             "parent": "genesis"
           },
-          {
-            "name": "person",
+          "person": {
             "password": "thisisanexample",
             "expire": "+10y",
             "parent": "genesis"
           }
-        ]
+        }
       }
     },
     "saturn": {
@@ -258,14 +255,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "engwf1x1t": {
@@ -284,14 +281,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "engwf1x2t": {
@@ -310,14 +307,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "engwf2x1t": {
@@ -336,14 +333,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "engwf2x2t": {
@@ -362,14 +359,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "ensrv1t": {
@@ -390,14 +387,14 @@
         "enhomie_directory": "/opt/enhomie",
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "ensrv2t": {
@@ -418,14 +415,14 @@
         "enrobie_directory": "/opt/enrobie",
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "meropis": {
@@ -444,14 +441,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_almalinux": {
@@ -468,14 +465,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_default": {
@@ -488,14 +485,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_fedora": {
@@ -512,14 +509,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_openbsd": {
@@ -536,14 +533,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     },
     "template_windows": {
@@ -560,14 +557,14 @@
       "ansible": {
         "ansible_host": "{{ inventory_hostname }}",
         "ansible_user": "root",
-        "sslca_certificate": [
-          {
+        "sslca_certificate": {
+          "system": {
             "name": "{{ inventory_hostname }}",
             "kind": "server",
             "common": "{{ orche_system.fqdn }}",
             "parent": "system"
           }
-        ]
+        }
       }
     }
   }
