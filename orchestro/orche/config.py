@@ -16,6 +16,7 @@ from encommon.config import Params
 from encommon.types import DictStrAny
 from encommon.types import dedup_list
 from encommon.types import delate
+from encommon.types import getate
 from encommon.types import merge_dicts
 from encommon.utils.common import PATHABLE
 
@@ -165,7 +166,7 @@ class OrcheConfig(Config):
          .set_static('source'))
 
 
-        dumped = params.endumped
+        dumped = params.enpruned
 
 
         inheritance(dumped)
@@ -217,35 +218,38 @@ def inheritance(
     """
 
 
-    def _resolved(
+    def _complete(
         source: DictStrAny,
-    ) -> None:
+    ) -> list[str]:
 
         names: list[str] = []
 
-        inhrts = source['inherits']
+        inhrts = getate(
+            source, 'inherits')
 
         if inhrts is None:
-            return None
+            return names
 
         for name in inhrts:
 
             names.append(name)
 
-            _inhrts = (
-                dumped[key][name]
-                .get('inherits'))
-
-            if _inhrts is None:
-                continue
+            _inhrts = _complete(
+                dumped[key][name])
 
             names.extend(_inhrts)
 
-        final = (
-            dedup_list(names)
-            or None)
+        return dedup_list(names)
 
-        source['inherits'] = final
+
+    def _resolved(
+        source: DictStrAny,
+    ) -> None:
+
+        final = _complete(source)
+
+        source['inherits'] = (
+            final or None)
 
 
     def _inherits(
@@ -269,7 +273,7 @@ def inheritance(
             merge_dicts(
                 dict1=source,
                 dict2=inhrt,
-                force=None)
+                force=False)
 
         dedup_list(
             source['inherits'])
