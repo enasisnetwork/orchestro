@@ -32,7 +32,6 @@
       {{ enrobie_directory }}/venv
     virtualenv_command: >-
       {{ enrobie_python }} -m venv
-    state: latest
     version: >-
       {{ enrobie_version | default(omit) }}
 
