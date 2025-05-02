@@ -44,7 +44,7 @@ pylint
 
 sphinx
 autodoc_pydantic
-sphinxawesome-theme
+pydata-sphinx-theme
 
 yamllint
 
