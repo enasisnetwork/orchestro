@@ -10,6 +10,7 @@ is permitted, for more information consult the project license file.
 from copy import deepcopy
 from os import environ
 from pathlib import Path
+from time import sleep as block_sleep
 from typing import Any
 
 from ansible import context  # type: ignore
@@ -403,6 +404,10 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         Show command line arguments that were passed to Ansible.
         """
 
+        limit = environ.get('limit')
+        stage = environ.get('stage')
+
+
         _files = environ.get(
             'orche_files')
 
@@ -435,6 +440,8 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
 
         dumped = array_ansi({
+            'limit': limit,
+            'stage': stage,
             'ansible_args': args,
             '_ansible_tags': tags,
             '_ansible_args': more,
@@ -447,6 +454,12 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             f'<c33>{dashes}<c0>\n'
             f'{dumped}\n'
             f'<c33>{dashes}<c0>')
+
+        print_ansi(
+            'Sleeping for '
+            '<c33>3<c0> seconds')
+
+        block_sleep(3)
 
 
     def show_confirm(
