@@ -17,7 +17,7 @@ orchestro/filters/__init__.py                                  0      0   100%
 orchestro/filters/common.py                                    3      0   100%
 orchestro/filters/override.py                                 14      0   100%
 orchestro/inventory/__init__.py                                0      0   100%
-orchestro/inventory/orche.py                                 122      0   100%
+orchestro/inventory/orche.py                                 123      0   100%
 orchestro/inventory/test/__init__.py                           0      0   100%
 orchestro/inventory/test/test_orche.py                        18      0   100%
 orchestro/library/__init__.py                                  0      0   100%
@@ -76,4 +76,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1334      0   100%
+TOTAL                                                       1335      0   100%
