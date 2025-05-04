@@ -327,8 +327,9 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
         for key, value in items:
 
             value = dict(value)
+            name = value.get('name')
 
-            if not value.get('name'):
+            if name is None:
                 value['name'] = key
 
             item = model(**value)
@@ -368,8 +369,9 @@ class RoleParams(OrcheParamsModel, extra='ignore'):
         for key, value in items:
 
             value = dict(value)
+            name = value.get('name')
 
-            if not value.get('name'):
+            if name is None:
                 value['name'] = key
 
             item = model(**value)
