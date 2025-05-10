@@ -7,15 +7,10 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   orchestro.actions
-   orchestro.callbacks
    orchestro.execution
-   orchestro.filters
    orchestro.inventory
-   orchestro.library
    orchestro.orche
    orchestro.roles
-   orchestro.test
    orchestro.utils
 
 Submodules
