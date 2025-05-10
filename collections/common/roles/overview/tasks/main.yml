@@ -11,7 +11,7 @@
 
 - name: Information about the inventory hosts
 
-  overview:
+  enasisnetwork.common.overview:
     input:
       ansible:
         host: '{{ ansible_host | default }}'
@@ -22,10 +22,6 @@
         {%- if orche | default -%}
         {{-   {'name': system.name,
                'domain': system.params.domain} -}}
-        {%- else -%}
-        'Not an OrcheSystem'
         {%- endif -%}
-
-  when: inventory_hostname != "localhost"
 
   tags: always
