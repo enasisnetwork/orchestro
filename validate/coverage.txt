@@ -1,9 +1,6 @@
 Name                                                       Stmts   Miss  Cover
 ------------------------------------------------------------------------------
 orchestro/__init__.py                                          6      0   100%
-orchestro/actions/__init__.py                                  0      0   100%
-orchestro/actions/overview.py                                 10      0   100%
-orchestro/callbacks/__init__.py                                0      0   100%
 orchestro/conftest.py                                         25      0   100%
 orchestro/execution/__init__.py                                0      0   100%
 orchestro/execution/config.py                                 15      0   100%
@@ -13,14 +10,10 @@ orchestro/execution/test/test_config.py                        4      0   100%
 orchestro/execution/test/test_crypts.py                        4      0   100%
 orchestro/execution/test/test_vault.py                         4      0   100%
 orchestro/execution/vault.py                                  15      0   100%
-orchestro/filters/__init__.py                                  0      0   100%
-orchestro/filters/common.py                                    3      0   100%
-orchestro/filters/override.py                                 14      0   100%
 orchestro/inventory/__init__.py                                0      0   100%
 orchestro/inventory/orche.py                                 123      0   100%
 orchestro/inventory/test/__init__.py                           0      0   100%
 orchestro/inventory/test/test_orche.py                        18      0   100%
-orchestro/library/__init__.py                                  0      0   100%
 orchestro/orche/__init__.py                                    3      0   100%
 orchestro/orche/addons/__init__.py                             2      0   100%
 orchestro/orche/addons/logger.py                              65      0   100%
@@ -66,9 +59,6 @@ orchestro/roles/enrobie/action_plugins/enrobie_params.py      22      0   100%
 orchestro/roles/sslca/__init__.py                              2      0   100%
 orchestro/roles/sslca/action_plugins/__init__.py               0      0   100%
 orchestro/roles/sslca/action_plugins/sslca_params.py          42      0   100%
-orchestro/test/__init__.py                                     0      0   100%
-orchestro/test/filters/__init__.py                             0      0   100%
-orchestro/test/filters/test_override.py                       20      0   100%
 orchestro/utils/__init__.py                                    3      0   100%
 orchestro/utils/child.py                                      18      0   100%
 orchestro/utils/param.py                                      29      0   100%
@@ -76,4 +66,4 @@ orchestro/utils/test/__init__.py                               0      0   100%
 orchestro/utils/test/test_child.py                            20      0   100%
 orchestro/utils/test/test_param.py                            16      0   100%
 ------------------------------------------------------------------------------
-TOTAL                                                       1335      0   100%
+TOTAL                                                       1288      0   100%

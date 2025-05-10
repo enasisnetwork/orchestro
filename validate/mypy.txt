@@ -1,6 +1,8 @@
 >>> make mypy
   ● Executing mypy in orchestro..
     DONE
+  ● Executing mypy in collections..
+    DONE
   ● Executing mypy in sphinx..
     DONE
   ● Executing mypy on makefile.py..

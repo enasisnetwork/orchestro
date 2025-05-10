@@ -1,6 +1,8 @@
 >>> make yamllint
   ● Executing yamllint in orchestro..
     DONE
+  ● Executing yamllint in collections..
+    DONE
   ● Executing yamllint on .yamllint..
     DONE
   ● Executing yamllint in .github..

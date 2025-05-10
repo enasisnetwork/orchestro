@@ -1,6 +1,8 @@
 >>> make pylint
   ● Executing pylint in orchestro..
     DONE
+  ● Executing pylint in collections..
+    DONE
   ● Executing pylint in sphinx..
     DONE
   ● Executing pylint on makefile.py..
