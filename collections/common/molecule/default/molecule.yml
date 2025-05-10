@@ -1,0 +1,35 @@
+---
+
+
+
+dependency:
+  name: galaxy
+  options:
+    requirements-file: ../../require.yml
+
+driver:
+  name: docker
+
+platforms:
+  - name: almalinux-9
+    image: almalinux:9
+    privileged: true
+
+provisioner:
+  name: ansible
+  options:
+    diff: true
+    v: true
+  config_options:
+    ssh_connection:
+      pipelining: true
+  playbooks:
+    converge: converge.yml
+
+verifier:
+  name: testinfra
+  directory: tests
+  options:
+    p: 'no:pytest-ansible'
+    c: '.'
+    v: 2

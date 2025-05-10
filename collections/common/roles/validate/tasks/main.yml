@@ -13,6 +13,4 @@
 
   ansible.builtin.ping:
 
-  when: inventory_hostname != "localhost"
-
   tags: always

@@ -426,13 +426,9 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         args = environ.get(
             'ansible_args')
 
-        _tags = (
+        tags = (
             context.CLIARGS
             .get('tags') or [])
-
-        tags = [
-            x for x in _tags
-            if x != 'donothing']
 
         more = list(
             context.CLIARGS

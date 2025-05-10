@@ -15,7 +15,7 @@ from encommon.parse.jinja2 import FILTERS
 
 class FilterModule:
     """
-    Define the filter plugin functions available to the Ansible routines.
+    Define filter functions available with Ansible routines.
     """
 
 
@@ -24,9 +24,9 @@ class FilterModule:
         self,
     ) -> FILTERS:
         """
-        Return the filter plugin functions available to Ansible routines.
+        Return the filter functions for use in Ansible routines.
 
-        :returns: Filter plugin functions available to Ansible routines.
+        :returns: Filter functions for use in Ansible routines.
         """
 
         return {'basename': basename}

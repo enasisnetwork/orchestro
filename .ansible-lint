@@ -3,6 +3,7 @@
 
 
 skip_list:
-  - yaml[empty-lines]
-  - name[casing]
+  - galaxy[no-changelog]
   - jinja[spacing]
+  - name[casing]
+  - yaml[empty-lines]

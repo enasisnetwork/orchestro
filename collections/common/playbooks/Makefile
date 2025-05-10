@@ -5,13 +5,13 @@
 
 
 
-.PHONY: utility-overview
-utility-overview: \
+.PHONY: common-overview
+common-overview: \
 	.check-stage .check-limit
 	@## Dump information related to operation
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-overview<c0>)
+		<cD>make <cL>common-overview<c0>)
 	@#
 	@( \
 		set -e; \
@@ -21,19 +21,18 @@ utility-overview: \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
-			--tags=overview \
-			orchestro/playbooks/utility/default.yml; \
+			enasisnetwork.common.overview; \
 		deactivate)
 
 
 
-.PHONY: utility-ping
-utility-ping: \
+.PHONY: common-validate
+common-validate: \
 	.check-stage .check-limit
 	@## Login to the host and report reachable
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-ping<c0>)
+		<cD>make <cL>common-validate<c0>)
 	@#
 	@( \
 		set -e; \
@@ -43,14 +42,13 @@ utility-ping: \
 		ansible-playbook \
 			$(ansible_args) \
 			--limit="localhost,$(limit)" \
-			--tags=ping \
-			orchestro/playbooks/utility/default.yml; \
+			enasisnetwork.common.validate; \
 		deactivate)
 
 
 
-.PHONY: utility-encrypt
-utility-encrypt: \
+.PHONY: common-encrypt
+common-encrypt: \
 	.check-stage
 	@## Encrypt information with Ansible Vault
 	@#
@@ -59,7 +57,7 @@ ifndef vault
 endif
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-encrypt<c0>)
+		<cD>make <cL>common-encrypt<c0>)
 	@#
 	@( \
 		set -e; \
@@ -72,13 +70,13 @@ endif
 
 
 
-.PHONY: utility-decrypt
-utility-decrypt: \
+.PHONY: common-decrypt
+common-decrypt: \
 	.check-stage
 	@## Decrypt information with Ansible Vault
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-decrypt<c0>)
+		<cD>make <cL>common-decrypt<c0>)
 	@#
 	@( \
 		set -e; \
@@ -89,13 +87,13 @@ utility-decrypt: \
 
 
 
-.PHONY: utility-inventory
-utility-inventory: \
+.PHONY: common-inventory
+common-inventory: \
 	.check-stage
 	@## Dump the Ansible inventory information
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-inventory<c0>)
+		<cD>make <cL>common-inventory<c0>)
 	@#
 	@( \
 		set -e; \
@@ -108,8 +106,8 @@ utility-inventory: \
 
 
 
-.PHONY: utility-custom
-utility-custom: \
+.PHONY: common-custom
+common-custom: \
 	.check-stage .check-limit
 	@## Run Ansible module with given arguments
 	@#
@@ -121,7 +119,7 @@ ifndef ansible_module_args
 endif
 	@#
 	$(call MAKE_PR2NT,\
-		<cD>make <cL>utility-custom<c0>)
+		<cD>make <cL>common-custom<c0>)
 	@#
 	@printf '    \033[91mansible_module_name:\033[0m %s'
 	echo $(ansible_module_name)

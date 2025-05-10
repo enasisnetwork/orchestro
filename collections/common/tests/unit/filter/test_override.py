@@ -9,7 +9,7 @@ is permitted, for more information consult the project license file.
 
 from pytest import raises
 
-from ...filters.override import basename
+from ....plugins.filter.override import basename
 
 
 

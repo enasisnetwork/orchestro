@@ -20,4 +20,4 @@
   strategy: linear
 
   roles:
-    - role: utility
+    - role: enasisnetwork.common.validate
