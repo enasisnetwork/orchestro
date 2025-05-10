@@ -141,45 +141,28 @@ def children() -> None:
 
     makefiles = sorted(
         glob(
-            'orchestro/playbooks'
-            '/*/Makefile')
+            'collections/*/'
+            'playbooks/Makefile')
         + glob(
-            'orchestro/playbooks'
-            '/*/*.mk'))
-
-
-    playbooks = environ.get(
-        'ORCHE_EXTRA_PLAYBOOKS')
-
-    if (playbooks is not None
-            and len(playbooks)):
-
-        assert (
-            Path(playbooks)
-            .exists())
-
-        addon = sorted(
-            glob(
-                f'{playbooks}'
-                '/*/Makefile')
-            + glob(
-                f'{playbooks}'
-                '/*/*.mk'))
-
-        makefiles.extend(addon)
-
-
-    makefiles = sorted(makefiles)
+            'collections/*/'
+            'playbooks/*.mk'))
 
 
     for file in makefiles:
 
+        parent = Path(file).parent
+
         role = (
-            Path(file)
-            .parent.name)
+            parent.parent.name
+            if 'collections' in file
+            else parent.name)
+
+        if str(file).endswith('.mk'):
+            name = Path(file).name
+            role += f'/{name[:-3]}'
 
         makeout(
-            f'\n <c37>playbooks/'
+            f'\n <c37>recipes/'
             f'<c90>{role}<c0>')
 
         makefile(file)

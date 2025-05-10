@@ -8,6 +8,8 @@
 
 
 !/orchestro
+!/orchestro.env
+!/collections
 !/ansible.cfg
 
 !/.github
