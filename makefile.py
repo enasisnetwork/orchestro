@@ -141,11 +141,13 @@ def children() -> None:
 
     makefiles = sorted(
         glob(
-            'collections/*/'
-            'playbooks/Makefile')
+            'collections/'
+            'ansible_collections'
+            '/*/*/playbooks/Makefile')
         + glob(
-            'collections/*/'
-            'playbooks/*.mk'))
+            'collections/'
+            'ansible_collections'
+            '/*/*/playbooks/*.mk'))
 
 
     for file in makefiles:

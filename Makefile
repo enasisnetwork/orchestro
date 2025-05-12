@@ -365,18 +365,6 @@ pytest: \
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>pytest<c37> \
-		in <c90>collections<c37>..<c0>)
-	@PYTHONPATH=$(ORCHE_ROOT) \
-	$(VENVP)/bin/pytest -v \
-		collections/ansible_collections \
-		--numprocesses=4 \
-		--mypy \
-		--doctest-modules \
-		$(pytest_args)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
 		<c37>Write <c90>coveragepy<c37> \
 		output to <c90>htmlcov<c37>..<c0>)
 	@$(VENVD)/bin/coverage html 1>/dev/null
@@ -404,15 +392,6 @@ mypy: \
 	@$(VENVD)/bin/mypy \
 		--no-error-summary \
 		$(mypy_args) $(PROJECT)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>mypy<c37> \
-		in <c90>collections<c37>..<c0>)
-	@$(VENVD)/bin/mypy \
-		--no-error-summary \
-		$(mypy_args) \
-		collections/ansible_collections
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
@@ -458,13 +437,6 @@ flake8: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
-		in <c90>collections<c37>..<c0>)
-	@$(VENVD)/bin/flake8 \
-		collections/ansible_collections
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>flake8<c37> \
 		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/flake8 sphinx
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -496,15 +468,6 @@ pylint: \
 		in <c90>$(PROJECT)<c37>..<c0>)
 	@$(VENVD)/bin/pylint \
 		-E $(PROJECT) \
-		--persistent=n \
-		-d duplicate-code
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>pylint<c37> \
-		in <c90>collections<c37>..<c0>)
-	@$(VENVD)/bin/pylint \
-		-E collections/ansible_collections \
 		--persistent=n \
 		-d duplicate-code
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -555,13 +518,6 @@ ruff: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>ruff<c37> \
-		in <c90>collections<c37>..<c0>)
-	@$(VENVD)/bin/ruff \
-		check -q collections/ansible_collections
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ruff<c37> \
 		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/ruff \
 		check -q sphinx/*.py
@@ -600,13 +556,6 @@ yamllint: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>yamllint<c37> \
-		in <c90>collections<c37>..<c0>)
-	@$(VENVD)/bin/yamllint \
-		-s collections/ansible_collections
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>yamllint<c37> \
 		on <c90>.yamllint<c37>..<c0>)
 	@$(VENVD)/bin/yamllint \
 		-s .yamllint
@@ -628,25 +577,6 @@ ansblint: \
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>ansblint<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ansible-lint<c37> \
-		on <c90>collections<c37>..<c0>)
-	@( \
-		set -e; \
-		. $(VENVD)/bin/activate; \
-		cd collections; \
-		ANSIBLE_COLLECTIONS_PATH="." \
-		ANSIBLE_JINJA2_EXTENSIONS="jinja2.ext.do" \
-		ansible-lint \
-			-q --strict \
-			--project-dir . \
-			--show-relpath \
-			--offline \
-			-c ../.ansible-lint \
-			ansible_collections; \
-		deactivate)
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>ansible-lint<c37> \
@@ -726,8 +656,7 @@ cloc:
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>cloc<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@cloc $(PROJECT) \
-		collections/ansible_collections
+	@cloc $(PROJECT)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
