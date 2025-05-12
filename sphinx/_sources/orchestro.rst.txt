@@ -8,9 +8,9 @@ Subpackages
    :maxdepth: 4
 
    orchestro.execution
+   orchestro.filters
    orchestro.inventory
    orchestro.orche
-   orchestro.roles
    orchestro.utils
 
 Submodules
