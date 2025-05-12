@@ -1,9 +1,0 @@
----
-
-
-
-collections:
-
-  - name: enasisnetwork.common
-    src: .
-    type: file
