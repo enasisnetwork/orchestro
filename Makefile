@@ -354,7 +354,6 @@ pytest: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pytest<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@PYTHONPATH=$(ORCHE_ROOT) \
 	$(VENVP)/bin/pytest -v \
 		$(PROJECT)/$(subpackage) \
 		--numprocesses=4 \
