@@ -46,6 +46,39 @@ information found in the `htmlcov` folder in the root of the project.
 make -s pytest
 ```
 
+## Running the Ansible playbooks
+Currently this project assumes it is within the directory structure
+of [workspace](https://github.com/enasisnetwork/workspace). This will
+change sometime in the near future- though it can be overridden now.
+- Specify `PYTHON` environment variable when calling `make`.
+- Install various collections into the `collections` directory.
+  - Replace the symbolic links or remove and place collections.
+  - This is where the `Makefile` and `makefile.py` will look.
+
+## Additional Ansible collections
+- Utility Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-utility),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)
+- Projects Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-projects),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/projects)
+- Certificates Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-certauth),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/certauth)
+- Provision Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-provision),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/provision)
+- Infrastructure Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-domain),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/domain)
+- Applications Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-appstack),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/appstack)
+- Internal Collection<br>
+  [GitHub](https://github.com/enasisnetwork/ansible-internal),
+  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/internal)
+
+
 ## Version management
 > :warning: Ensure that no changes are pending.
 
