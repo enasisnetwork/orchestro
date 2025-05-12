@@ -1,9 +1,0 @@
----
-
-
-
-- name: Import tasks and roles from playbook
-  import_playbook: enasisnetwork.common.overview
-
-- name: Import tasks and roles from playbook
-  import_playbook: enasisnetwork.common.validate

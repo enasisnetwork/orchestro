@@ -2,11 +2,6 @@
 
 pytest
 
-molecule
-molecule-docker
-testinfra
-
-pytest-ansible
 pytest-clarity
 pytest-cov
 pytest-mypy
