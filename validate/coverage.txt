@@ -1,6 +1,8 @@
 Name                                         Stmts   Miss  Cover
 ----------------------------------------------------------------
 orchestro/__init__.py                            6      0   100%
+orchestro/ansbtest/__init__.py                   0      0   100%
+orchestro/ansbtest/test_inventory.py            18      0   100%
 orchestro/conftest.py                           25      0   100%
 orchestro/execution/__init__.py                  0      0   100%
 orchestro/execution/config.py                   15      0   100%
@@ -11,23 +13,23 @@ orchestro/execution/test/test_crypts.py          4      0   100%
 orchestro/execution/test/test_vault.py           4      0   100%
 orchestro/execution/vault.py                    15      0   100%
 orchestro/filters/__init__.py                    0      0   100%
-orchestro/filters/common.py                      3      0   100%
+orchestro/filters/orche.py                       3      0   100%
 orchestro/inventory/__init__.py                  0      0   100%
-orchestro/inventory/orche.py                   123      0   100%
-orchestro/inventory/test/__init__.py             0      0   100%
-orchestro/inventory/test/test_orche.py          18      0   100%
+orchestro/inventory/orche.py                   129      0   100%
+orchestro/lookups/__init__.py                    0      0   100%
+orchestro/lookups/orche.py                       9      0   100%
 orchestro/orche/__init__.py                      3      0   100%
 orchestro/orche/addons/__init__.py               2      0   100%
 orchestro/orche/addons/logger.py                65      0   100%
 orchestro/orche/addons/test/__init__.py          0      0   100%
 orchestro/orche/addons/test/test_logger.py      39      0   100%
 orchestro/orche/childs/__init__.py               7      0   100%
-orchestro/orche/childs/child.py                 69      0   100%
-orchestro/orche/childs/group.py                 25      0   100%
+orchestro/orche/childs/child.py                 74      0   100%
+orchestro/orche/childs/group.py                 29      0   100%
 orchestro/orche/childs/orche.py                131      0   100%
-orchestro/orche/childs/person.py                43      0   100%
+orchestro/orche/childs/person.py                48      0   100%
 orchestro/orche/childs/subnet.py                21      0   100%
-orchestro/orche/childs/system.py                36      0   100%
+orchestro/orche/childs/system.py                40      0   100%
 orchestro/orche/childs/test/__init__.py          0      0   100%
 orchestro/orche/childs/test/test_child.py        8      0   100%
 orchestro/orche/childs/test/test_group.py       24      0   100%
@@ -58,4 +60,4 @@ orchestro/utils/test/__init__.py                 0      0   100%
 orchestro/utils/test/test_child.py              20      0   100%
 orchestro/utils/test/test_param.py              16      0   100%
 ----------------------------------------------------------------
-TOTAL                                         1199      0   100%
+TOTAL                                         1232      0   100%
