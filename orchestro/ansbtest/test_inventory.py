@@ -14,8 +14,8 @@ from ansible.parsing.dataloader import DataLoader  # type: ignore
 
 from encommon.types import DictStrAny
 
-from ..orche import InventoryModule
-from ... import EXAMPLES
+from .. import EXAMPLES
+from ..inventory.orche import InventoryModule
 
 
 
@@ -71,6 +71,6 @@ def test_InventoryModule(
 
     dumped = orche.dumped
 
-    assert len(dumped['hosts']) == 9
-
     assert len(dumped['groups']) == 13
+
+    assert len(dumped['hosts']) == 9

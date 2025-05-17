@@ -138,3 +138,22 @@ class OrcheSystem(OrcheChild):
             return ansible.endumped
 
         return NCNone
+
+
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        dumped = super().dumped
+
+        return dumped | {
+            'kind': self.kind,
+            'realm': self.realm,
+            'domain': self.domain,
+            'fqdn': self.fqdn}
