@@ -7,9 +7,11 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   orchestro.ansbtest
    orchestro.execution
    orchestro.filters
    orchestro.inventory
+   orchestro.lookups
    orchestro.orche
    orchestro.utils
 

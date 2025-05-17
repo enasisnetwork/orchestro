@@ -1,14 +1,6 @@
 orchestro.inventory package
 ===========================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   orchestro.inventory.test
-
 Submodules
 ----------
 

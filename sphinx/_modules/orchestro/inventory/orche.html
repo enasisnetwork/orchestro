@@ -295,6 +295,8 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCTrue</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_dict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMMAD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">SEMPTY</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">array_ansi</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_ansi</span>
 
@@ -485,6 +487,7 @@
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_orche</span><span class="p">()</span>
 
+        <span class="n">config</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">config</span>
         <span class="n">childs</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">childs</span>
 
 
@@ -496,8 +499,34 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
             <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">value</span><span class="o">=</span><span class="n">orche</span><span class="p">)</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_childs&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">childs</span><span class="o">.</span><span class="n">dumped</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_sargs&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">sargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_files&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="p">[</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">paths</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_paths&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="p">[</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">paths</span><span class="o">.</span><span class="n">paths</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_cargs&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">cargs</span><span class="p">)</span>
 
 
         <span class="n">groups</span> <span class="o">=</span> <span class="p">(</span>
@@ -545,11 +574,6 @@
                     <span class="n">ansbgrp</span><span class="o">.</span><span class="n">endumped</span>
                     <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-                    <span class="n">group</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                    <span class="s1">&#39;orche_group&#39;</span><span class="p">,</span>
-                    <span class="n">value</span><span class="o">=</span><span class="n">group</span><span class="p">)</span>
-
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
 
                     <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
@@ -588,16 +612,16 @@
                 <span class="n">system</span><span class="o">.</span><span class="n">params</span>
                 <span class="o">.</span><span class="n">ansible</span><span class="p">)</span>
 
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s1">&#39;orche_system&#39;</span><span class="p">,</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">ansibout</span><span class="p">)</span>
+
             <span class="k">if</span> <span class="n">ansbsys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
                 <span class="nb">vars</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">ansbsys</span><span class="o">.</span><span class="n">endumped</span>
                     <span class="o">.</span><span class="n">items</span><span class="p">())</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-                    <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                    <span class="s1">&#39;orche_system&#39;</span><span class="p">,</span>
-                    <span class="n">value</span><span class="o">=</span><span class="n">system</span><span class="p">)</span>
 
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
 
@@ -738,10 +762,22 @@
             <span class="n">context</span><span class="o">.</span><span class="n">CLIARGS</span>
             <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
 
+        <span class="k">if</span> <span class="n">COMMAD</span> <span class="ow">in</span> <span class="n">more</span><span class="p">:</span>
+            <span class="n">more</span> <span class="o">=</span> <span class="p">[</span><span class="n">SEMPTY</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">more</span><span class="p">)]</span>
+
+
+        <span class="n">module_name</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s1">&#39;ansible_module_name&#39;</span><span class="p">)</span>
+
+        <span class="n">module_args</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s1">&#39;ansible_module_args&#39;</span><span class="p">)</span>
+
 
         <span class="n">dumped</span> <span class="o">=</span> <span class="n">array_ansi</span><span class="p">({</span>
             <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
             <span class="s1">&#39;stage&#39;</span><span class="p">:</span> <span class="n">stage</span><span class="p">,</span>
+            <span class="s1">&#39;module_name&#39;</span><span class="p">:</span> <span class="n">module_name</span><span class="p">,</span>
+            <span class="s1">&#39;module_args&#39;</span><span class="p">:</span> <span class="n">module_args</span><span class="p">,</span>
             <span class="s1">&#39;ansible_args&#39;</span><span class="p">:</span> <span class="n">args</span><span class="p">,</span>
             <span class="s1">&#39;_ansible_tags&#39;</span><span class="p">:</span> <span class="n">tags</span><span class="p">,</span>
             <span class="s1">&#39;_ansible_args&#39;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
@@ -757,9 +793,9 @@
 
         <span class="n">print_ansi</span><span class="p">(</span>
             <span class="s1">&#39;Sleeping for &#39;</span>
-            <span class="s1">&#39;&lt;c33&gt;3&lt;c0&gt; seconds&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;&lt;c33&gt;2&lt;c0&gt; seconds&#39;</span><span class="p">)</span>
 
-        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></div>
+        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></div>
 
 
 

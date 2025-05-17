@@ -1,13 +1,13 @@
-orchestro.filters package
+orchestro.lookups package
 =========================
 
 Submodules
 ----------
 
-orchestro.filters.orche module
+orchestro.lookups.orche module
 ------------------------------
 
-.. automodule:: orchestro.filters.orche
+.. automodule:: orchestro.lookups.orche
    :members:
    :show-inheritance:
    :undoc-members:
@@ -15,7 +15,7 @@ orchestro.filters.orche module
 Module contents
 ---------------
 
-.. automodule:: orchestro.filters
+.. automodule:: orchestro.lookups
    :members:
    :show-inheritance:
    :undoc-members:

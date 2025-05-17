@@ -383,7 +383,23 @@
         <span class="k">if</span> <span class="n">ansible</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">NCNone</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ansible</span><span class="o">.</span><span class="n">endumped</span>
 
-        <span class="k">return</span> <span class="kc">None</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the facts about the attributes from the instance.</span>
+
+<span class="sd">        :returns: Facts about the attributes from the instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dumped</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dumped</span>
+
+        <span class="k">return</span> <span class="n">dumped</span> <span class="o">|</span> <span class="p">{</span>
+            <span class="s1">&#39;realm&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">realm</span><span class="p">}</span></div>
 
 </pre></div>
 
