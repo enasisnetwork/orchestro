@@ -22,6 +22,8 @@ from encommon.config import config_load
 from encommon.types import DictStrAny
 from encommon.types import NCTrue
 from encommon.types import sort_dict
+from encommon.types.strings import COMMAD
+from encommon.types.strings import SEMPTY
 from encommon.utils import array_ansi
 from encommon.utils import print_ansi
 
@@ -187,6 +189,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         orche = self.build_orche()
 
+        config = orche.config
         childs = orche.childs
 
 
@@ -198,8 +201,34 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         self.set_value(
             entity='orche',
-            varname='orche',
-            value=orche)
+            varname='orche_childs',
+            value=childs.dumped)
+
+        self.set_value(
+            entity='orche',
+            varname='orche_sargs',
+            value=config.sargs)
+
+        self.set_value(
+            entity='orche',
+            varname='orche_files',
+            value=[
+                str(x.resolve())
+                for x in
+                config.files.paths])
+
+        self.set_value(
+            entity='orche',
+            varname='orche_paths',
+            value=[
+                str(x.resolve())
+                for x in
+                config.paths.paths])
+
+        self.set_value(
+            entity='orche',
+            varname='orche_cargs',
+            value=config.cargs)
 
 
         groups = (
@@ -247,11 +276,6 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                     ansbgrp.endumped
                     .items())
 
-                self.set_value(
-                    group.name,
-                    'orche_group',
-                    value=group)
-
                 for key, value in vars:
 
                     self.set_value(
@@ -290,16 +314,16 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 system.params
                 .ansible)
 
+            self.set_value(
+                system.name,
+                'orche_system',
+                system.ansibout)
+
             if ansbsys is not None:
 
                 vars = (
                     ansbsys.endumped
                     .items())
-
-                self.set_value(
-                    system.name,
-                    'orche_system',
-                    value=system)
 
                 for key, value in vars:
 
@@ -434,10 +458,22 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             context.CLIARGS
             .get('args') or [])
 
+        if COMMAD in more:
+            more = [SEMPTY.join(more)]
+
+
+        module_name = environ.get(
+            'ansible_module_name')
+
+        module_args = environ.get(
+            'ansible_module_args')
+
 
         dumped = array_ansi({
             'limit': limit,
             'stage': stage,
+            'module_name': module_name,
+            'module_args': module_args,
             'ansible_args': args,
             '_ansible_tags': tags,
             '_ansible_args': more,
@@ -453,9 +489,9 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         print_ansi(
             'Sleeping for '
-            '<c33>3<c0> seconds')
+            '<c33>2<c0> seconds')
 
-        block_sleep(3)
+        block_sleep(2)
 
 
     def show_confirm(

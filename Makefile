@@ -660,6 +660,107 @@ cloc:
 
 
 
+.PHONY: ansible-encrypt
+ansible-encrypt: \
+	.check-stage
+	@## Encrypt information with Ansible Vault
+	@#
+ifndef vault
+	$(error vault not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ansible-encrypt<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		ansible-vault \
+			encrypt_string \
+			--encrypt-vault-id $(vault); \
+		deactivate)
+
+
+
+.PHONY: ansible-decrypt
+ansible-decrypt: \
+	.check-stage
+	@## Decrypt information with Ansible Vault
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ansible-decrypt<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		ansible-vault decrypt; \
+		deactivate)
+
+
+
+.PHONY: ansible-inventory
+ansible-inventory: \
+	.check-stage
+	@## Dump the Ansible inventory information
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ansible-inventory<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
+		ansible-inventory --graph \
+		$(ansible_args); \
+		deactivate)
+
+
+
+.PHONY: ansible-custom
+ansible-custom: \
+	.check-stage .check-limit
+	@## Run Ansible module with given arguments
+	@#
+ifndef ansible_module_name
+	$(error ansible_module_name not defined)
+endif
+ifndef ansible_module_args
+	$(error ansible_module_args not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ansible-custom<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
+		ANSIBLE_CONFIG=ansible.cfg \
+		ansible \
+			$(ansible_args) \
+			-m "$(ansible_module_name)" \
+			-a "$(ansible_module_args)" \
+			"!localhost,$(limit)"; \
+		deactivate)
+
+
+
 .check-python:
 ifndef PYTHON
 	$(error PYTHON variable is not defined)

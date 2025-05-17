@@ -106,3 +106,19 @@ class OrcheGroup(OrcheChild):
             return ansible.endumped
 
         return None
+
+
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        dumped = super().dumped
+
+        return dumped | {
+            'realm': self.realm}

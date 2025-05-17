@@ -42,7 +42,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "aegaeon.enasis.net"
     },
     "engwf1x1t": {
       "name": "engwf1x1t",
@@ -72,7 +75,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "engwf1x1t.enasis.net"
     },
     "engwf1x2t": {
       "name": "engwf1x2t",
@@ -102,7 +108,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "engwf1x2t.enasis.net"
     },
     "engwf2x1t": {
       "name": "engwf2x1t",
@@ -132,7 +141,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "engwf2x1t.enasis.net"
     },
     "engwf2x2t": {
       "name": "engwf2x2t",
@@ -162,7 +174,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "engwf2x2t.enasis.net"
     },
     "ensrv1t": {
       "name": "ensrv1t",
@@ -194,7 +209,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "ensrv1t.enasis.net"
     },
     "ensrv2t": {
       "name": "ensrv2t",
@@ -226,7 +244,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "ensrv2t.enasis.net"
     },
     "meropis": {
       "name": "meropis",
@@ -256,7 +277,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "meropis.enasis.net"
     },
     "template_almalinux": {
       "name": "template_almalinux",
@@ -284,7 +308,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "template_almalinux.enasis.net"
     },
     "template_default": {
       "name": "template_default",
@@ -308,7 +335,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "template_default.enasis.net"
     },
     "template_fedora": {
       "name": "template_fedora",
@@ -336,7 +366,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "template_fedora.enasis.net"
     },
     "template_openbsd": {
       "name": "template_openbsd",
@@ -364,7 +397,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "template_openbsd.enasis.net"
     },
     "template_windows": {
       "name": "template_windows",
@@ -392,7 +428,10 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible",
+      "domain": "enasis.net",
+      "fqdn": "template_windows.enasis.net"
     }
   },
   "persons": {
@@ -408,7 +447,11 @@
         "domain": "enasis.net",
         "first": "Robert",
         "last": "Harris"
-      }
+      },
+      "realm": "domain",
+      "domain": "enasis.net",
+      "fqdn": "robert_domain@enasis.net",
+      "display": "Robert Harris"
     },
     "robert_local": {
       "name": "robert_local",
@@ -422,7 +465,11 @@
         "domain": "local",
         "first": "Robert",
         "last": "Harris"
-      }
+      },
+      "realm": "local",
+      "domain": "local",
+      "fqdn": "robert_local@local",
+      "display": "Robert Harris"
     }
   },
   "subnets": {
@@ -516,7 +563,8 @@
         "memberof": null,
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "roles_enhomie": {
       "name": "roles_enhomie",
@@ -535,7 +583,8 @@
           "enhomie_logging": true,
           "enhomie_console": false
         }
-      }
+      },
+      "realm": "ansible"
     },
     "roles_enrobie": {
       "name": "roles_enrobie",
@@ -554,7 +603,8 @@
           "enrobie_logging": true,
           "enrobie_console": false
         }
-      }
+      },
+      "realm": "ansible"
     },
     "roles_sslca": {
       "name": "roles_sslca",
@@ -595,7 +645,8 @@
             }
           }
         }
-      }
+      },
+      "realm": "ansible"
     },
     "saturn": {
       "name": "saturn",
@@ -609,7 +660,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "systems": {
       "name": "systems",
@@ -623,7 +675,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "systems_almalinux": {
       "name": "systems_almalinux",
@@ -637,7 +690,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "systems_fedora": {
       "name": "systems_fedora",
@@ -651,7 +705,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "systems_openbsd": {
       "name": "systems_openbsd",
@@ -665,7 +720,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "systems_windows": {
       "name": "systems_windows",
@@ -679,7 +735,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     },
     "uranus": {
       "name": "uranus",
@@ -693,7 +750,8 @@
         ],
         "realm": "ansible",
         "ansible": null
-      }
+      },
+      "realm": "ansible"
     }
   }
 }

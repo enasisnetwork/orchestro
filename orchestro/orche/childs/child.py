@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from copy import deepcopy
 from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
@@ -259,7 +260,25 @@ class OrcheChild:
         params = self.__params
         dumped = params.endumped
 
-        return {
+        return deepcopy({
             'name': self.name,
             'kind': self.kind,
-            'params': dumped}
+            'params': dumped})
+
+
+    @property
+    def ansibout(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        dumped = self.dumped
+
+        return {
+            k: v for k, v
+            in dumped.items()
+            if k != 'params'}

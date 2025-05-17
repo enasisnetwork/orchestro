@@ -11,6 +11,7 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.types import DictStrAny
 from encommon.types.strings import SPACED
 
 from .child import OrcheChild
@@ -149,3 +150,23 @@ class OrchePerson(OrcheChild):
             SPACED.join(names)
             if len(names)
             else default)
+
+
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        dumped = super().dumped
+
+        return dumped | {
+            'kind': self.kind,
+            'realm': self.realm,
+            'domain': self.domain,
+            'fqdn': self.fqdn,
+            'display': self.display}
