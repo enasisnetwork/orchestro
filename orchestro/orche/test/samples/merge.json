@@ -15,7 +15,7 @@
       "enable": false,
       "display": "Default Inventory"
     },
-    "roles_enhomie": {
+    "enasisnetwork_enhomie": {
       "enable": true,
       "memberof": "default",
       "display": "Homie Automate",
@@ -26,7 +26,7 @@
         "enhomie_console": false
       }
     },
-    "roles_enrobie": {
+    "enasisnetwork_enrobie": {
       "enable": true,
       "memberof": "default",
       "display": "Chatting Robie",
@@ -37,9 +37,9 @@
         "enrobie_console": false
       }
     },
-    "roles_sslca": {
+    "enasisnetwork_sslca": {
       "enable": true,
-      "display": "Ansible Certificate Authority",
+      "display": "Certificate Authority",
       "ansible": {
         "sslca_defaults": {
           "company": "Enasis Network Development",
@@ -79,7 +79,7 @@
     "systems": {
       "enable": true,
       "display": "Managed Systems",
-      "memberof": "roles_sslca"
+      "memberof": "enasisnetwork_sslca"
     },
     "systems_almalinux": {
       "enable": true,
@@ -197,7 +197,7 @@
       "inherits": "template_almalinux",
       "memberof": [
         "saturn",
-        "roles_enhomie"
+        "enasisnetwork_enhomie"
       ],
       "display": "Saturn Server",
       "ansible": {
@@ -209,7 +209,7 @@
       "inherits": "template_almalinux",
       "memberof": [
         "uranus",
-        "roles_enrobie"
+        "enasisnetwork_enrobie"
       ],
       "display": "Uranus Server",
       "ansible": {

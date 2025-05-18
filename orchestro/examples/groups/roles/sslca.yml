@@ -8,9 +8,9 @@ groups:
   #####################
   ## SSLCA Inventory ##
   #####################
-  roles_sslca:
+  enasisnetwork_sslca:
     enable: true
-    display: Ansible Certificate Authority
+    display: Certificate Authority
 
 
     #######################

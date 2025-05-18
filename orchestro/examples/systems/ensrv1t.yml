@@ -13,7 +13,7 @@ systems:
     inherits: template_almalinux
     memberof:
       - saturn
-      - roles_enhomie
+      - enasisnetwork_enhomie
     display: Saturn Server
 
 

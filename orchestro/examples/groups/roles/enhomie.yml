@@ -8,7 +8,7 @@ groups:
   #####################
   ## Homie Inventory ##
   #####################
-  roles_enhomie:
+  enasisnetwork_enhomie:
     enable: true
     memberof: default
     display: Homie Automate
