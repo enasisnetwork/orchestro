@@ -8,7 +8,7 @@ groups:
   #####################
   ## Robie Inventory ##
   #####################
-  roles_enrobie:
+  enasisnetwork_enrobie:
     enable: true
     memberof: default
     display: Chatting Robie

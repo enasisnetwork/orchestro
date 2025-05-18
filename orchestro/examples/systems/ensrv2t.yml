@@ -13,7 +13,7 @@ systems:
     inherits: template_almalinux
     memberof:
       - uranus
-      - roles_enrobie
+      - enasisnetwork_enrobie
     display: Uranus Server
 
 

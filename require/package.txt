@@ -7,5 +7,4 @@ pytest-cov
 pytest-mypy
 pytest-randomly
 pytest-sphinx
-pytest-testinfra
 pytest-xdist

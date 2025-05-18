@@ -55,10 +55,10 @@ def test_InventoryModule(
 
     assert sorted(groups) == [
         'all',
+        'enasisnetwork_enhomie',
+        'enasisnetwork_enrobie',
+        'enasisnetwork_sslca',
         'orche',
-        'roles_enhomie',
-        'roles_enrobie',
-        'roles_sslca',
         'saturn',
         'systems',
         'systems_almalinux',

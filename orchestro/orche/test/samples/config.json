@@ -22,7 +22,7 @@
       "realm": "ansible",
       "ansible": null
     },
-    "roles_enhomie": {
+    "enasisnetwork_enhomie": {
       "enable": true,
       "inherits": null,
       "display": "Homie Automate",
@@ -37,7 +37,7 @@
         "enhomie_console": false
       }
     },
-    "roles_enrobie": {
+    "enasisnetwork_enrobie": {
       "enable": true,
       "inherits": null,
       "display": "Chatting Robie",
@@ -52,10 +52,10 @@
         "enrobie_console": false
       }
     },
-    "roles_sslca": {
+    "enasisnetwork_sslca": {
       "enable": true,
       "inherits": null,
-      "display": "Ansible Certificate Authority",
+      "display": "Certificate Authority",
       "memberof": null,
       "realm": "ansible",
       "ansible": {
@@ -104,7 +104,7 @@
       "inherits": null,
       "display": "Managed Systems",
       "memberof": [
-        "roles_sslca"
+        "enasisnetwork_sslca"
       ],
       "realm": "ansible",
       "ansible": null
@@ -378,7 +378,7 @@
       "display": "Saturn Server",
       "memberof": [
         "saturn",
-        "roles_enhomie",
+        "enasisnetwork_enhomie",
         "systems_almalinux"
       ],
       "realm": "ansible",
@@ -406,7 +406,7 @@
       "display": "Uranus Server",
       "memberof": [
         "uranus",
-        "roles_enrobie",
+        "enasisnetwork_enrobie",
         "systems_almalinux"
       ],
       "realm": "ansible",

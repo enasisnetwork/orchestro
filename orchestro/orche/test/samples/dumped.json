@@ -191,7 +191,7 @@
         "display": "Saturn Server",
         "memberof": [
           "saturn",
-          "roles_enhomie",
+          "enasisnetwork_enhomie",
           "systems_almalinux"
         ],
         "realm": "ansible",
@@ -226,7 +226,7 @@
         "display": "Uranus Server",
         "memberof": [
           "uranus",
-          "roles_enrobie",
+          "enasisnetwork_enrobie",
           "systems_almalinux"
         ],
         "realm": "ansible",
@@ -566,8 +566,8 @@
       },
       "realm": "ansible"
     },
-    "roles_enhomie": {
-      "name": "roles_enhomie",
+    "enasisnetwork_enhomie": {
+      "name": "enasisnetwork_enhomie",
       "kind": "group",
       "params": {
         "enable": true,
@@ -586,8 +586,8 @@
       },
       "realm": "ansible"
     },
-    "roles_enrobie": {
-      "name": "roles_enrobie",
+    "enasisnetwork_enrobie": {
+      "name": "enasisnetwork_enrobie",
       "kind": "group",
       "params": {
         "enable": true,
@@ -606,13 +606,13 @@
       },
       "realm": "ansible"
     },
-    "roles_sslca": {
-      "name": "roles_sslca",
+    "enasisnetwork_sslca": {
+      "name": "enasisnetwork_sslca",
       "kind": "group",
       "params": {
         "enable": true,
         "inherits": null,
-        "display": "Ansible Certificate Authority",
+        "display": "Certificate Authority",
         "memberof": null,
         "realm": "ansible",
         "ansible": {
@@ -671,7 +671,7 @@
         "inherits": null,
         "display": "Managed Systems",
         "memberof": [
-          "roles_sslca"
+          "enasisnetwork_sslca"
         ],
         "realm": "ansible",
         "ansible": null
