@@ -24,7 +24,7 @@ orchestro/orche/addons/logger.py                65      0   100%
 orchestro/orche/addons/test/__init__.py          0      0   100%
 orchestro/orche/addons/test/test_logger.py      39      0   100%
 orchestro/orche/childs/__init__.py               7      0   100%
-orchestro/orche/childs/child.py                 74      0   100%
+orchestro/orche/childs/child.py                 71      0   100%
 orchestro/orche/childs/group.py                 29      0   100%
 orchestro/orche/childs/orche.py                131      0   100%
 orchestro/orche/childs/person.py                48      0   100%
@@ -60,4 +60,4 @@ orchestro/utils/test/__init__.py                 0      0   100%
 orchestro/utils/test/test_child.py              20      0   100%
 orchestro/utils/test/test_param.py              16      0   100%
 ----------------------------------------------------------------
-TOTAL                                         1232      0   100%
+TOTAL                                         1229      0   100%
