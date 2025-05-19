@@ -1,6 +1,6 @@
 # Enasis Network Orchestrations
 
-> :warning: This project has not released its first major version.
+> This project has not released its first major version.
 
 Project for executing the Ansible playbooks for system automation.
 
@@ -30,27 +30,30 @@ change sometime in the near future- though it can be overridden now.
   - This is where the `Makefile` and `makefile.py` will look.
 
 ## Additional Ansible collections
-- Utility Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-utility),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)
-- Projects Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-projects),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/projects)
-- Certificates Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-certauth),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/certauth)
-- Provision Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-provision),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/provision)
-- Infrastructure Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-domain),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/domain)
-- Applications Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-appstack),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/appstack)
-- Internal Collection<br>
-  [GitHub](https://github.com/enasisnetwork/ansible-internal),
-  [Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/internal)
+- **Utility** supports other Enasis Network Ansible collections<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-utility),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)
+- **Projects** install and configure Enasis Network projects<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-projects),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/projects)
+- **Certificates** manage private key infrastructure authorities<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-certauth),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/certauth)
+- **Provision** provisioning and hardening inventory targets<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-provision),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/provision)
+- **Infrastructure** install and configure the infrastructure<br>
+  *This collection is only a placeholder for the moment*<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-domain),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/domain)
+- **Applications** install and configure the applications<br>
+  *This collection is only a placeholder for the moment*<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-appstack),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/appstack)
+- **Internal** specific to Robert Harris and the Enasis Network<br>
+  *This collection is only a placeholder for the moment*<br>
+  [GitHub repository](https://github.com/enasisnetwork/ansible-internal),
+  [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/internal)
 
 ## Quick start for local development
 Start by cloning the repository to your local machine.
