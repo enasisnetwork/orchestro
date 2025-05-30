@@ -1,9 +1,7 @@
 >>> make mypy
   ● Executing mypy in orchestro..
-    DONE
-  ● Executing mypy in sphinx..
-    DONE
-  ● Executing mypy on makefile.py..
-    DONE
-  ● Executing mypy on makebadge.py..
-    DONE
+orchestro/orche/config.py:141: error: Incompatible return value type (got "Params | None", expected "OrcheParams")  [return-value]
+orchestro/orche/config.py:198: error: Incompatible override of a setter type  [override]
+orchestro/orche/config.py:198: note:  (base class "Config" defined the type as "Params | None",
+orchestro/orche/config.py:198: note:  override has type "Params")
+orchestro/orche/config.py:198: note:  Setter types should behave contravariantly
