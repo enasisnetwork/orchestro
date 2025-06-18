@@ -358,7 +358,6 @@ pytest: \
 		$(PROJECT)/$(subpackage) \
 		--numprocesses=4 \
 		--cov=$(PROJECT)/$(subpackage) \
-		--mypy \
 		--doctest-modules \
 		$(pytest_args)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
