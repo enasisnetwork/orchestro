@@ -6,6 +6,6 @@
   "yamllint": "passing",
   "ansblint": "passing",
   "pytest": "failing",
-  "coverage": unknown,
+  "coverage": "unknown",
   "sphinx": "passing"
 }
