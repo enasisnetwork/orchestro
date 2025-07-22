@@ -5,7 +5,7 @@
   "mypy": "failing",
   "yamllint": "passing",
   "ansblint": "passing",
-  "pytest": "passing",
-  "coverage": "100",
+  "pytest": "failing",
+  "coverage": "unknown",
   "sphinx": "passing"
 }

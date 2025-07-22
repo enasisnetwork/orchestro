@@ -2,7 +2,7 @@ Name                                         Stmts   Miss  Cover
 ----------------------------------------------------------------
 orchestro/__init__.py                            6      0   100%
 orchestro/ansbtest/__init__.py                   0      0   100%
-orchestro/ansbtest/test_inventory.py            18      0   100%
+orchestro/ansbtest/test_inventory.py            18      2    89%
 orchestro/conftest.py                           25      0   100%
 orchestro/execution/__init__.py                  0      0   100%
 orchestro/execution/config.py                   15      0   100%
@@ -15,7 +15,7 @@ orchestro/execution/vault.py                    15      0   100%
 orchestro/filters/__init__.py                    0      0   100%
 orchestro/filters/orche.py                       3      0   100%
 orchestro/inventory/__init__.py                  0      0   100%
-orchestro/inventory/orche.py                   129      0   100%
+orchestro/inventory/orche.py                   129      6    95%
 orchestro/lookups/__init__.py                    0      0   100%
 orchestro/lookups/orche.py                       9      0   100%
 orchestro/orche/__init__.py                      3      0   100%
@@ -60,4 +60,4 @@ orchestro/utils/test/__init__.py                 0      0   100%
 orchestro/utils/test/test_child.py              20      0   100%
 orchestro/utils/test/test_param.py              16      0   100%
 ----------------------------------------------------------------
-TOTAL                                         1229      0   100%
+TOTAL                                         1229      8    99%
