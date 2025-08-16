@@ -36,7 +36,7 @@ highlighting module code... [  2%] orchestro.ansbtest.test_inventoryhighlightin
 writing additional pages... search done
 dumping search index in English (code: en)... done
 dumping object inventory... done
-build succeeded, 265 warnings.
+build succeeded, 266 warnings.
 
 The HTML pages are in sphinx/html.
     DONE
