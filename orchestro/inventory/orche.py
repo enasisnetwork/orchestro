@@ -551,7 +551,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         for name, host in hosts:
 
             _hosts[name] = (
-                host.serialize())
+                host.__dict__)
 
 
         groups = (
@@ -563,7 +563,7 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         for name, group in groups:
 
             _groups[name] = (
-                group.serialize())
+                group.__dict__)
 
 
         dumped = deepcopy(dumped)
