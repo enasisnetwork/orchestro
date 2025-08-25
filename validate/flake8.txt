@@ -1,6 +1,9 @@
 >>> make flake8
   ● Executing flake8 in orchestro..
-orchestro/orche/childs/child.py:20:1: I100 Import statements are in the wrong order. 'from ..orche import Orche' should be before 'from ..params import OrcheChildParams'
-orchestro/orche/models.py:15:1: I100 Import statements are in the wrong order. 'from .params import OrcheChildParams' should be before 'from .params import OrcheParams'
-orchestro/orche/models.py:17:1: I100 Import statements are in the wrong order. 'from .params import OrchePersonParams' should be before 'from .params import OrcheSystemParams'
-orchestro/orche/models.py:18:1: I100 Import statements are in the wrong order. 'from .params import OrcheGroupParams' should be before 'from .params import OrchePersonParams'
+    DONE
+  ● Executing flake8 in sphinx..
+    DONE
+  ● Executing flake8 on makefile.py..
+    DONE
+  ● Executing flake8 on makebadge.py..
+    DONE
