@@ -16,8 +16,8 @@ from ...utils import InvalidParam
 if TYPE_CHECKING:
     from .group import OrcheGroup
     from ..common import OrcheKinds
-    from ..params import OrcheChildParams
     from ..orche import Orche
+    from ..params import OrcheChildParams
 
 
 
