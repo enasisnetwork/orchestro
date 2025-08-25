@@ -859,7 +859,7 @@
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
 
             <span class="n">_hosts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">host</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+                <span class="n">host</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
 
 
         <span class="n">groups</span> <span class="o">=</span> <span class="p">(</span>
@@ -871,7 +871,7 @@
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
 
             <span class="n">_groups</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">group</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+                <span class="n">group</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
 
 
         <span class="n">dumped</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">dumped</span><span class="p">)</span>
