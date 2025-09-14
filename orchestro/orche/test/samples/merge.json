@@ -128,37 +128,61 @@
       "enable": true,
       "subnet": "172.18.11.0/24",
       "memberof": "saturn",
-      "display": "Saturn Internal"
+      "display": "Saturn Internal",
+      "macpref": "0e",
+      "gateway": "172.18.11.1",
+      "resolve": "172.18.11.1",
+      "ntpsync": "172.18.11.1"
     },
     "saturn_domesnet": {
       "enable": true,
       "subnet": "172.18.51.0/24",
       "memberof": "saturn",
-      "display": "Saturn Domesnet"
+      "display": "Saturn Domesnet",
+      "macpref": "0e",
+      "gateway": "172.18.51.1",
+      "resolve": "172.18.51.1",
+      "ntpsync": "172.18.51.1"
     },
     "saturn_external": {
       "enable": true,
       "subnet": "172.18.91.0/24",
       "memberof": "saturn",
-      "display": "Saturn External"
+      "display": "Saturn External",
+      "macpref": "0e",
+      "gateway": "172.18.91.1",
+      "resolve": "172.18.91.1",
+      "ntpsync": "172.18.91.1"
     },
     "uranus_internal": {
       "enable": true,
       "subnet": "172.18.12.0/24",
       "memberof": "uranus",
-      "display": "Uranus Internal"
+      "display": "Uranus Internal",
+      "macpref": "0e",
+      "gateway": "172.18.12.1",
+      "resolve": "172.18.12.1",
+      "ntpsync": "172.18.12.1"
     },
     "uranus_domesnet": {
       "enable": true,
       "subnet": "172.18.52.0/24",
       "memberof": "uranus",
-      "display": "Uranus Domesnet"
+      "display": "Uranus Domesnet",
+      "macpref": "0e",
+      "gateway": "172.18.52.1",
+      "resolve": "172.18.52.1",
+      "ntpsync": "172.18.52.1"
     },
     "uranus_external": {
       "enable": true,
       "subnet": "172.18.92.0/24",
       "memberof": "uranus",
-      "display": "Uranus External"
+      "display": "Uranus External",
+      "macpref": "0e",
+      "gateway": "172.18.92.1",
+      "resolve": "172.18.92.1",
+      "ntpsync": "172.18.92.1"
     }
   },
   "systems": {
@@ -166,31 +190,50 @@
       "enable": true,
       "inherits": "template_fedora",
       "memberof": "saturn",
-      "display": "Robert Workstation"
+      "display": "Robert Workstation",
+      "kvparsed": {
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.40\")\n    .dumped -}}"
+      }
     },
     "engwf1x1t": {
       "enable": true,
       "inherits": "template_openbsd",
       "memberof": "saturn",
-      "display": "Saturn Gateway Primary"
+      "display": "Saturn Gateway Primary",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.2\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.2\")\n    .dumped -}}"
+      }
     },
     "engwf1x2t": {
       "enable": true,
       "inherits": "template_openbsd",
       "memberof": "saturn",
-      "display": "Saturn Gateway Secondary"
+      "display": "Saturn Gateway Secondary",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.3\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.3\")\n    .dumped -}}"
+      }
     },
     "engwf2x1t": {
       "enable": true,
       "inherits": "template_openbsd",
       "memberof": "uranus",
-      "display": "Uranus Gateway Primary"
+      "display": "Uranus Gateway Primary",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.2\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .uranus_domesnet\n    .address(\"172.18.52.2\")\n    .dumped -}}"
+      }
     },
     "engwf2x2t": {
       "enable": true,
       "inherits": "template_openbsd",
       "memberof": "uranus",
-      "display": "Uranus Gateway Secondary"
+      "display": "Uranus Gateway Secondary",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.3\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .uranus_domesnet\n    .address(\"172.18.52.3\")\n    .dumped -}}"
+      }
     },
     "ensrv1t": {
       "enable": true,
@@ -200,6 +243,9 @@
         "enasisnetwork_enhomie"
       ],
       "display": "Saturn Server",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.31\")\n    .dumped -}}"
+      },
       "ansible": {
         "enhomie_directory": "/opt/enhomie"
       }
@@ -212,6 +258,9 @@
         "enasisnetwork_enrobie"
       ],
       "display": "Uranus Server",
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.31\")\n    .dumped -}}"
+      },
       "ansible": {
         "enrobie_directory": "/opt/enrobie"
       }
@@ -220,7 +269,10 @@
       "enable": true,
       "inherits": "template_windows",
       "memberof": "saturn",
-      "display": "Robert Workstation"
+      "display": "Robert Workstation",
+      "kvparsed": {
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.41\")\n    .dumped -}}"
+      }
     },
     "template_almalinux": {
       "enable": false,

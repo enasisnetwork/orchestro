@@ -60,7 +60,13 @@ def test_OrcheGroup(
 
     assert group.enable
 
+    assert not group.inherits
+
     assert group.display
+
+    assert not group.about
+
+    assert group.memberof
 
     assert group.name == 'saturn'
 
@@ -69,6 +75,10 @@ def test_OrcheGroup(
     assert group.params
 
     assert not group.groups
+
+    assert not group.kvparsed
+
+    assert not group.kvopaque
 
     assert group.dumped
 

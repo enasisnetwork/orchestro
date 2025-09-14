@@ -60,7 +60,13 @@ def test_OrcheSystem(
 
     assert system.enable
 
+    assert system.inherits
+
     assert system.display
+
+    assert not system.about
+
+    assert system.memberof
 
     assert system.name == 'ensrv1t'
 
@@ -69,6 +75,10 @@ def test_OrcheSystem(
     assert system.params
 
     assert system.groups
+
+    assert system.kvparsed
+
+    assert not system.kvopaque
 
     assert system.dumped
 

@@ -153,7 +153,6 @@ class OrcheSystem(OrcheChild):
         dumped = super().dumped
 
         return dumped | {
-            'kind': self.kind,
             'realm': self.realm,
             'domain': self.domain,
             'fqdn': self.fqdn}

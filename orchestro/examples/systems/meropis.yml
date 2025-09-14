@@ -13,3 +13,10 @@ systems:
     inherits: template_windows
     memberof: saturn
     display: Robert Workstation
+
+    kvparsed:
+      network_domesnet: >-
+        {{- orche.childs.subnets
+            .saturn_domesnet
+            .address("172.18.51.41")
+            .dumped -}}

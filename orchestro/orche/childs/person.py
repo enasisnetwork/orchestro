@@ -165,8 +165,6 @@ class OrchePerson(OrcheChild):
         dumped = super().dumped
 
         return dumped | {
-            'kind': self.kind,
             'realm': self.realm,
             'domain': self.domain,
-            'fqdn': self.fqdn,
-            'display': self.display}
+            'fqdn': self.fqdn}
