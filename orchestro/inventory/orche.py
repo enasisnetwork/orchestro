@@ -201,8 +201,8 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
 
         self.set_value(
             entity='orche',
-            varname='orche_childs',
-            value=childs.dumped)
+            varname='orche',
+            value=orche.dumped)
 
         self.set_value(
             entity='orche',
@@ -318,6 +318,16 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
                 system.name,
                 'orche_system',
                 system.ansibout)
+
+            self.set_value(
+                system.name,
+                'kvparsed',
+                system.kvparsed)
+
+            self.set_value(
+                system.name,
+                'kvopaque',
+                system.kvopaque)
 
             if ansbsys is not None:
 

@@ -29,6 +29,32 @@ class OrcheSubnetParams(OrcheChildParams, extra='forbid'):
               description='IPv4 or IPv6 network subnet',
               min_length=1)]
 
+    macpref: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional prefix for MAC address',
+              min_length=2,
+              max_length=2,
+              pattern=r'^[\da-fA-F]+$')]
+
+    gateway: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional gateway for the subnet',
+              min_length=1)]
+
+    resolve: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='Optional resolvers for subnet',
+              min_length=1)]
+
+    ntpsync: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='Optional NTP server for subnet',
+              min_length=1)]
+
 
     def __init__(
         # NOCVR
@@ -44,7 +70,11 @@ class OrcheSubnetParams(OrcheChildParams, extra='forbid'):
 
         if _parse is not None:
 
-            parsable = ['subnet']
+            parsable = [
+                'subnet',
+                'macpref',
+                'resolve',
+                'ntpsync']
 
             for key in parsable:
 
@@ -58,4 +88,23 @@ class OrcheSubnetParams(OrcheChildParams, extra='forbid'):
                 data[key] = value
 
 
-        super().__init__(**data)
+        listable = [
+            'resolve',
+            'ntpsync']
+
+        for key in listable:
+
+            value = data.get(key)
+
+            if value is None:
+                continue
+
+            if isinstance(value, list):
+                continue
+
+            data[key] = [value]
+
+
+        super().__init__(
+            _parse=_parse,
+            **data)

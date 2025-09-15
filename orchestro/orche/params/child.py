@@ -40,11 +40,35 @@ class OrcheChildParams(OrcheParamsModel, extra='forbid'):
               description='Friendly name value for child',
               min_length=1)]
 
+    about: Annotated[
+        Optional[str],
+        Field(None,
+              description='Additional optional information',
+              min_length=1)]
+
     memberof: Annotated[
         Optional[list[str]],
         Field(None,
               description='Groups child is a member of',
               min_length=1)]
+
+    kvparsed: Annotated[
+        dict[str, Any],
+        Field(default_factory=dict,
+              description=(
+                  'Additional metadata for child which is'
+                  ' parsed after childs are instantiated'
+                  ' and before Ansible consumes inventory'),
+              min_length=0)]
+
+    kvopaque: Annotated[
+        dict[str, Any],
+        Field(default_factory=dict,
+              description=(
+                  'Additional metadata for child which is'
+                  ' parsed after childs are instantiated'
+                  ' and when Ansible consumes inventory'),
+              min_length=0)]
 
 
     def __init__(

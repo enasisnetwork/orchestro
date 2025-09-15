@@ -16,6 +16,13 @@ systems:
       - enasisnetwork_enrobie
     display: Uranus Server
 
+    kvparsed:
+      network_internal: >-
+        {{- orche.childs.subnets
+            .uranus_internal
+            .address("172.18.12.31")
+            .dumped -}}
+
 
     #######################
     ## Ansible Variables ##

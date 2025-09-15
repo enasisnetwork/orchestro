@@ -61,7 +61,13 @@ def test_OrchePerson(
 
     assert person.enable
 
+    assert not person.inherits
+
     assert person.display
+
+    assert not person.about
+
+    assert not person.memberof
 
     assert person.name == 'robert_domain'
 
@@ -70,6 +76,10 @@ def test_OrchePerson(
     assert person.params
 
     assert not person.groups
+
+    assert not person.kvparsed
+
+    assert not person.kvopaque
 
     assert person.dumped
 

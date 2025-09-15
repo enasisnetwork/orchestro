@@ -13,6 +13,10 @@ subnets:
     subnet: 172.18.12.0/24
     memberof: uranus
     display: Uranus Internal
+    macpref: '0e'
+    gateway: 172.18.12.1
+    resolve: 172.18.12.1
+    ntpsync: 172.18.12.1
 
 
   #####################
@@ -23,6 +27,10 @@ subnets:
     subnet: 172.18.52.0/24
     memberof: uranus
     display: Uranus Domesnet
+    macpref: '0e'
+    gateway: 172.18.52.1
+    resolve: 172.18.52.1
+    ntpsync: 172.18.52.1
 
 
   #####################
@@ -33,3 +41,7 @@ subnets:
     subnet: 172.18.92.0/24
     memberof: uranus
     display: Uranus External
+    macpref: '0e'
+    gateway: 172.18.92.1
+    resolve: 172.18.92.1
+    ntpsync: 172.18.92.1

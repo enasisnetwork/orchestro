@@ -7,9 +7,11 @@ is permitted, for more information consult the project license file.
 
 
 
+from .jinja2 import OrcheJinja2
 from .logger import OrcheLogger
 
 
 
 __all__ = [
+    'OrcheJinja2',
     'OrcheLogger']

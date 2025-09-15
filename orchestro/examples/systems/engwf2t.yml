@@ -14,6 +14,18 @@ systems:
     memberof: uranus
     display: Uranus Gateway Primary
 
+    kvparsed:
+      network_internal: >-
+        {{- orche.childs.subnets
+            .uranus_internal
+            .address("172.18.12.2")
+            .dumped -}}
+      network_domesnet: >-
+        {{- orche.childs.subnets
+            .uranus_domesnet
+            .address("172.18.52.2")
+            .dumped -}}
+
 
   ######################
   ## Gateway Firewall ##
@@ -23,3 +35,15 @@ systems:
     inherits: template_openbsd
     memberof: uranus
     display: Uranus Gateway Secondary
+
+    kvparsed:
+      network_internal: >-
+        {{- orche.childs.subnets
+            .uranus_internal
+            .address("172.18.12.3")
+            .dumped -}}
+      network_domesnet: >-
+        {{- orche.childs.subnets
+            .uranus_domesnet
+            .address("172.18.52.3")
+            .dumped -}}

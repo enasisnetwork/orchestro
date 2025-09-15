@@ -1,3 +1,3 @@
-ansible-core
+ansible-core<2.19.0
 encommon>=0.22.11
 jmespath

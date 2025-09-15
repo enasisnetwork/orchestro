@@ -18,7 +18,10 @@
       "enable": false,
       "inherits": null,
       "display": "Default Inventory",
+      "about": null,
       "memberof": null,
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -26,9 +29,12 @@
       "enable": true,
       "inherits": null,
       "display": "Homie Automate",
+      "about": null,
       "memberof": [
         "default"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": {
         "enhomie_unique": "default",
@@ -41,9 +47,12 @@
       "enable": true,
       "inherits": null,
       "display": "Chatting Robie",
+      "about": null,
       "memberof": [
         "default"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": {
         "enrobie_unique": "default",
@@ -56,7 +65,10 @@
       "enable": true,
       "inherits": null,
       "display": "Certificate Authority",
+      "about": null,
       "memberof": null,
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": {
         "sslca_defaults": {
@@ -93,9 +105,12 @@
       "enable": true,
       "inherits": null,
       "display": "Saturn Inventory",
+      "about": null,
       "memberof": [
         "default"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -103,9 +118,12 @@
       "enable": true,
       "inherits": null,
       "display": "Managed Systems",
+      "about": null,
       "memberof": [
         "enasisnetwork_sslca"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -113,9 +131,12 @@
       "enable": true,
       "inherits": null,
       "display": "AlmaLinux",
+      "about": null,
       "memberof": [
         "systems"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -123,9 +144,12 @@
       "enable": true,
       "inherits": null,
       "display": "Fedora",
+      "about": null,
       "memberof": [
         "systems"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -133,9 +157,12 @@
       "enable": true,
       "inherits": null,
       "display": "OpenBSD",
+      "about": null,
       "memberof": [
         "systems"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -143,9 +170,12 @@
       "enable": true,
       "inherits": null,
       "display": "Windows",
+      "about": null,
       "memberof": [
         "systems"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     },
@@ -153,19 +183,27 @@
       "enable": true,
       "inherits": null,
       "display": "Uranus Inventory",
+      "about": null,
       "memberof": [
         "default"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "ansible": null
     }
   },
+  "kvopaque": {},
+  "kvparsed": {},
   "persons": {
     "robert_domain": {
       "enable": true,
       "inherits": null,
       "display": null,
+      "about": null,
       "memberof": null,
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "domain",
       "domain": "enasis.net",
       "first": "Robert",
@@ -175,7 +213,10 @@
       "enable": true,
       "inherits": null,
       "display": null,
+      "about": null,
       "memberof": null,
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "local",
       "domain": "local",
       "first": "Robert",
@@ -187,55 +228,121 @@
       "enable": true,
       "inherits": null,
       "display": "Saturn Internal",
+      "about": null,
       "memberof": [
         "saturn"
       ],
-      "subnet": "172.18.11.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.11.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.11.1",
+      "resolve": [
+        "172.18.11.1"
+      ],
+      "ntpsync": [
+        "172.18.11.1"
+      ]
     },
     "saturn_domesnet": {
       "enable": true,
       "inherits": null,
       "display": "Saturn Domesnet",
+      "about": null,
       "memberof": [
         "saturn"
       ],
-      "subnet": "172.18.51.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.51.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.51.1",
+      "resolve": [
+        "172.18.51.1"
+      ],
+      "ntpsync": [
+        "172.18.51.1"
+      ]
     },
     "saturn_external": {
       "enable": true,
       "inherits": null,
       "display": "Saturn External",
+      "about": null,
       "memberof": [
         "saturn"
       ],
-      "subnet": "172.18.91.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.91.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.91.1",
+      "resolve": [
+        "172.18.91.1"
+      ],
+      "ntpsync": [
+        "172.18.91.1"
+      ]
     },
     "uranus_internal": {
       "enable": true,
       "inherits": null,
       "display": "Uranus Internal",
+      "about": null,
       "memberof": [
         "uranus"
       ],
-      "subnet": "172.18.12.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.12.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.12.1",
+      "resolve": [
+        "172.18.12.1"
+      ],
+      "ntpsync": [
+        "172.18.12.1"
+      ]
     },
     "uranus_domesnet": {
       "enable": true,
       "inherits": null,
       "display": "Uranus Domesnet",
+      "about": null,
       "memberof": [
         "uranus"
       ],
-      "subnet": "172.18.52.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.52.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.52.1",
+      "resolve": [
+        "172.18.52.1"
+      ],
+      "ntpsync": [
+        "172.18.52.1"
+      ]
     },
     "uranus_external": {
       "enable": true,
       "inherits": null,
       "display": "Uranus External",
+      "about": null,
       "memberof": [
         "uranus"
       ],
-      "subnet": "172.18.92.0/24"
+      "kvparsed": {},
+      "kvopaque": {},
+      "subnet": "172.18.92.0/24",
+      "macpref": "0e",
+      "gateway": "172.18.92.1",
+      "resolve": [
+        "172.18.92.1"
+      ],
+      "ntpsync": [
+        "172.18.92.1"
+      ]
     }
   },
   "systems": {
@@ -246,10 +353,15 @@
         "template_default"
       ],
       "display": "Robert Workstation",
+      "about": null,
       "memberof": [
         "saturn",
         "systems_fedora"
       ],
+      "kvparsed": {
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.40\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -272,10 +384,16 @@
         "template_default"
       ],
       "display": "Saturn Gateway Primary",
+      "about": null,
       "memberof": [
         "saturn",
         "systems_openbsd"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.2\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.2\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -298,10 +416,16 @@
         "template_default"
       ],
       "display": "Saturn Gateway Secondary",
+      "about": null,
       "memberof": [
         "saturn",
         "systems_openbsd"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.3\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.3\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -324,10 +448,16 @@
         "template_default"
       ],
       "display": "Uranus Gateway Primary",
+      "about": null,
       "memberof": [
         "uranus",
         "systems_openbsd"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.2\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .uranus_domesnet\n    .address(\"172.18.52.2\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -350,10 +480,16 @@
         "template_default"
       ],
       "display": "Uranus Gateway Secondary",
+      "about": null,
       "memberof": [
         "uranus",
         "systems_openbsd"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.3\")\n    .dumped -}}",
+        "network_domesnet": "{{- orche.childs.subnets\n    .uranus_domesnet\n    .address(\"172.18.52.3\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -376,11 +512,16 @@
         "template_default"
       ],
       "display": "Saturn Server",
+      "about": null,
       "memberof": [
         "saturn",
         "enasisnetwork_enhomie",
         "systems_almalinux"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .saturn_internal\n    .address(\"172.18.11.31\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -404,11 +545,16 @@
         "template_default"
       ],
       "display": "Uranus Server",
+      "about": null,
       "memberof": [
         "uranus",
         "enasisnetwork_enrobie",
         "systems_almalinux"
       ],
+      "kvparsed": {
+        "network_internal": "{{- orche.childs.subnets\n    .uranus_internal\n    .address(\"172.18.12.31\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -432,10 +578,15 @@
         "template_default"
       ],
       "display": "Robert Workstation",
+      "about": null,
       "memberof": [
         "saturn",
         "systems_windows"
       ],
+      "kvparsed": {
+        "network_domesnet": "{{- orche.childs.subnets\n    .saturn_domesnet\n    .address(\"172.18.51.41\")\n    .dumped -}}"
+      },
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -457,9 +608,12 @@
         "template_default"
       ],
       "display": "AlmaLinux Template",
+      "about": null,
       "memberof": [
         "systems_almalinux"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -479,7 +633,10 @@
       "enable": false,
       "inherits": null,
       "display": "Default Template",
+      "about": null,
       "memberof": null,
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -501,9 +658,12 @@
         "template_default"
       ],
       "display": "Fedora Template",
+      "about": null,
       "memberof": [
         "systems_fedora"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -525,9 +685,12 @@
         "template_default"
       ],
       "display": "OpenBSD Template",
+      "about": null,
       "memberof": [
         "systems_openbsd"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {
@@ -549,9 +712,12 @@
         "template_default"
       ],
       "display": "Windows Template",
+      "about": null,
       "memberof": [
         "systems_windows"
       ],
+      "kvparsed": {},
+      "kvopaque": {},
       "realm": "ansible",
       "domain": "enasis.net",
       "ansible": {

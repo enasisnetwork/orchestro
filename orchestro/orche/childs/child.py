@@ -7,9 +7,13 @@ is permitted, for more information consult the project license file.
 
 
 
+from functools import cached_property
+from typing import Any
+from typing import Optional
 from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
+from encommon.types import sort_dict
 
 from ...utils import InvalidParam
 
@@ -195,6 +199,19 @@ class OrcheChild:
 
 
     @property
+    def inherits(
+        self,
+    ) -> Optional[list[str]]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.inherits
+
+
+    @property
     def display(
         self,
     ) -> str:
@@ -210,6 +227,75 @@ class OrcheChild:
         return (
             display if display
             else self.name)
+
+
+    @property
+    def about(
+        self,
+    ) -> Optional[str]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.about
+
+
+    @property
+    def memberof(
+        self,
+    ) -> Optional[list[str]]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.memberof
+
+
+    @cached_property
+    def kvparsed(
+        self,
+    ) -> dict[str, Any]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        orche = self.orche
+        params = self.params
+        jinja2 = orche.jinja2
+
+        kind = f'orche_{self.kind}'
+
+        values = jinja2.parse(
+            params.kvparsed,
+            {kind: self})
+
+        assert isinstance(values, dict)
+
+        return sort_dict(values)
+
+
+    @cached_property
+    def kvopaque(
+        self,
+    ) -> dict[str, Any]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        values = params.kvopaque
+
+        assert isinstance(values, dict)
+
+        return sort_dict(values)
 
 
     @property
@@ -257,8 +343,15 @@ class OrcheChild:
         """
 
         return {
+            'enable': self.enable,
+            'kind': self.kind,
             'name': self.name,
-            'kind': self.kind}
+            'inherits': self.inherits,
+            'display': self.display,
+            'about': self.about,
+            'memberof': self.memberof,
+            'kvparsed': self.kvparsed,
+            'kvopaque': self.kvopaque}
 
 
     @property

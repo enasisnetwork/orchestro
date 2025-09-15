@@ -61,7 +61,13 @@ def test_OrcheSubnet(
 
     assert subnet.enable
 
+    assert not subnet.inherits
+
     assert subnet.display
+
+    assert not subnet.about
+
+    assert subnet.memberof
 
     assert subnet.name == 'saturn_domesnet'
 
@@ -71,4 +77,11 @@ def test_OrcheSubnet(
 
     assert subnet.groups
 
+    assert not subnet.kvparsed
+
+    assert not subnet.kvopaque
+
     assert subnet.dumped
+
+
+    assert subnet.subnet

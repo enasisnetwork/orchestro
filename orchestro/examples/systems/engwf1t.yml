@@ -14,6 +14,18 @@ systems:
     memberof: saturn
     display: Saturn Gateway Primary
 
+    kvparsed:
+      network_internal: >-
+        {{- orche.childs.subnets
+            .saturn_internal
+            .address("172.18.11.2")
+            .dumped -}}
+      network_domesnet: >-
+        {{- orche.childs.subnets
+            .saturn_domesnet
+            .address("172.18.51.2")
+            .dumped -}}
+
 
   ######################
   ## Gateway Firewall ##
@@ -23,3 +35,15 @@ systems:
     inherits: template_openbsd
     memberof: saturn
     display: Saturn Gateway Secondary
+
+    kvparsed:
+      network_internal: >-
+        {{- orche.childs.subnets
+            .saturn_internal
+            .address("172.18.11.3")
+            .dumped -}}
+      network_domesnet: >-
+        {{- orche.childs.subnets
+            .saturn_domesnet
+            .address("172.18.51.3")
+            .dumped -}}

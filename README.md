@@ -43,7 +43,6 @@ change sometime in the near future- though it can be overridden now.
   [GitHub repository](https://github.com/enasisnetwork/ansible-provision),
   [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/provision)
 - **Infrastructure** install and configure the infrastructure<br>
-  *This collection is only a placeholder for the moment*<br>
   [GitHub repository](https://github.com/enasisnetwork/ansible-domain),
   [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/domain)
 - **Applications** install and configure the applications<br>

@@ -38,6 +38,7 @@ def test_Orche(
     assert attrs == [
         '_Orche__config',
         '_Orche__logger',
+        '_Orche__jinja2',
         '_Orche__childs']
 
 
@@ -63,6 +64,10 @@ def test_Orche(
 
     assert not orche.dryrun
 
+    assert not orche.kvparsed
+
+    assert not orche.kvopaque
+
 
     sample_path = (
         SAMPLES / 'dumped.json')
@@ -78,6 +83,25 @@ def test_Orche(
         replace=replaces)
 
     assert expect == sample
+
+
+
+def test_Orche_jinja2(
+    orche: Orche,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param orche: Primary class instance for Orchestrations.
+    """
+
+    j2parse = orche.j2parse
+
+    parsed = j2parse(
+        '{{ foo }}',
+        {'foo': 'bar'})
+
+    assert parsed == 'bar'
 
 
 

@@ -8,11 +8,16 @@ is permitted, for more information consult the project license file.
 
 
 from copy import deepcopy
+from functools import cached_property
+from typing import Any
+from typing import Optional
 from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
 from encommon.types import clsname
+from encommon.types import sort_dict
 
+from .addons import OrcheJinja2
 from .addons import OrcheLogger
 from .childs import OrcheChilds
 
@@ -32,6 +37,7 @@ class Orche:
     __config: 'OrcheConfig'
 
     __logger: OrcheLogger
+    __jinja2: OrcheJinja2
 
     __childs: OrcheChilds
 
@@ -52,6 +58,9 @@ class Orche:
 
         self.__logger = (
             OrcheLogger(self))
+
+        self.__jinja2 = (
+            OrcheJinja2(self))
 
         self.__childs = (
             OrcheChilds(self))
@@ -87,6 +96,19 @@ class Orche:
         """
 
         return self.__logger
+
+
+    @property
+    def jinja2(
+        self,
+    ) -> OrcheJinja2:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__jinja2
 
 
     @property
@@ -128,6 +150,46 @@ class Orche:
         return self.params.dryrun
 
 
+    @cached_property
+    def kvparsed(
+        self,
+    ) -> dict[str, Any]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        jinja2 = self.jinja2
+
+        values = jinja2.parse(
+            params.kvparsed,
+            {'orche': self})
+
+        assert isinstance(values, dict)
+
+        return sort_dict(values)
+
+
+    @cached_property
+    def kvopaque(
+        self,
+    ) -> dict[str, Any]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        params = self.params
+        values = params.kvopaque
+
+        assert isinstance(values, dict)
+
+        return sort_dict(values)
+
+
     @property
     def dumped(
         self,
@@ -150,3 +212,22 @@ class Orche:
             params[key] = value
 
         return params
+
+
+    def j2parse(
+        self,
+        value: Any,  # noqa: ANN401
+        statics: Optional[DictStrAny] = None,
+        literal: bool = True,
+    ) -> Any:  # noqa: ANN401
+        """
+        Return the provided input using the Jinja2 environment.
+
+        :param value: Input that will be processed and returned.
+        :param statics: Additional values available for parsing.
+        :param literal: Determine if Python objects are evaled.
+        :returns: Provided input using the Jinja2 environment.
+        """
+
+        return self.__jinja2.parse(
+            value, statics, literal)
