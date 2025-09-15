@@ -499,8 +499,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
             <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_childs&#39;</span><span class="p">,</span>
-            <span class="n">value</span><span class="o">=</span><span class="n">childs</span><span class="o">.</span><span class="n">dumped</span><span class="p">)</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">orche</span><span class="o">.</span><span class="n">dumped</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
             <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
@@ -616,6 +616,16 @@
                 <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
                 <span class="s1">&#39;orche_system&#39;</span><span class="p">,</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">ansibout</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s1">&#39;kvparsed&#39;</span><span class="p">,</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">kvparsed</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s1">&#39;kvopaque&#39;</span><span class="p">,</span>
+                <span class="n">system</span><span class="o">.</span><span class="n">kvopaque</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">ansbsys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 

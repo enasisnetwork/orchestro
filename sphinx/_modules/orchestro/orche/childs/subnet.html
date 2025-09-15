@@ -281,9 +281,13 @@
 
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">insubnet_ip</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">isvalid_ip</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">.child</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheChild</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheModels</span>
@@ -291,6 +295,116 @@
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">..params</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSubnetParams</span>
+
+
+
+<div class="viewcode-block" id="OrcheSubnetAddress">
+<a class="viewcode-back" href="../../../../orchestro.orche.childs.html#orchestro.orche.childs.subnet.OrcheSubnetAddress">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OrcheSubnetAddress</span><span class="p">(</span><span class="n">Network</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert the network into the various supported formats.</span>
+
+<span class="sd">    :param source: Network IPv4 or IPv6 network or address.</span>
+<span class="sd">    :param params: Parameters used to instantiate the child.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">macpref</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">gateway</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">resolve</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">ntpsync</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">params</span><span class="p">:</span> <span class="s1">&#39;OrcheSubnetParams&#39;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize instance for class using provided parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">macpref</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">macpref</span>
+            <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">macpref</span>
+            <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">gateway</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">gateway</span>
+            <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">gateway</span>
+            <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">resolve</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">resolve</span>
+            <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">resolve</span>
+            <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ntpsync</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">ntpsync</span>
+            <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">ntpsync</span>
+            <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hwaddr</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">hwaddr</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">hwaddr</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">macpref</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hwaddr</span>  <span class="c1"># NOCVR</span>
+
+        <span class="n">hwaddr</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">macpref</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;-</span><span class="si">{</span><span class="n">hwaddr</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">hwaddr</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the facts about the attributes from the instance.</span>
+
+<span class="sd">        :returns: Facts about the attributes from the instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="n">x</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span>
+
+                <span class="c1"># from default class</span>
+                <span class="s1">&#39;version&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;cidr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;address&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;address_cidr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;address_host&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;network&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;network_cidr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;broadcast&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;padded&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;reverse&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;hwaddr&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;netmask&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;ispublic&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;isprivate&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;islinklocal&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;islocalhost&#39;</span><span class="p">,</span>
+
+                <span class="c1"># from class override</span>
+                <span class="s1">&#39;gateway&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;resolve&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;ntpsync&#39;</span><span class="p">]}</span></div>
+
 
 
 
@@ -361,8 +475,97 @@
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
             <span class="n">params</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">params</span></div>
+        <span class="k">return</span> <span class="n">params</span>
 
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">subnet</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">subnet</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the facts about the attributes from the instance.</span>
+
+<span class="sd">        :returns: Facts about the attributes from the instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dumped</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dumped</span>
+
+        <span class="k">return</span> <span class="n">dumped</span> <span class="o">|</span> <span class="p">{</span>
+            <span class="s1">&#39;subnet&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnet</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="OrcheSubnet.address">
+<a class="viewcode-back" href="../../../../orchestro.orche.childs.html#orchestro.orche.childs.subnet.OrcheSubnet.address">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">address</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheSubnetAddress</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the facts about the attributes from the instance.</span>
+
+<span class="sd">        :returns: Facts about the attributes from the instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">subn</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subnet</span><span class="p">)</span>
+        <span class="n">cidr</span> <span class="o">=</span> <span class="n">subn</span><span class="o">.</span><span class="n">cidr</span>
+        <span class="n">addr</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">addr</span><span class="o">.</span><span class="n">cidr</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+            <span class="n">addr</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">addr</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;/</span><span class="si">{</span><span class="n">subn</span><span class="o">.</span><span class="n">cidr</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">addr</span><span class="o">.</span><span class="n">cidr</span> <span class="o">==</span> <span class="n">cidr</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Address (</span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s1">) CIDR&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39; mismatch (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">subnet</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Subnet (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">subnet</span><span class="si">}</span><span class="s1">)&#39;</span>
+            <span class="s1">&#39; is currently disabled&#39;</span><span class="p">)</span>
+
+
+        <span class="n">insubnet</span> <span class="o">=</span> <span class="n">insubnet_ip</span><span class="p">(</span>
+            <span class="n">addr</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
+            <span class="n">subn</span><span class="o">.</span><span class="n">address_cidr</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="n">insubnet</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Address (</span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s1">) not in&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39; subnet (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">subnet</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+
+        <span class="k">return</span> <span class="n">OrcheSubnetAddress</span><span class="p">(</span>
+            <span class="n">addr</span><span class="o">.</span><span class="n">address_cidr</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span></div>
+</div>
+
+
+
+
+
+
+<span class="c1"># maybe a function that returns special Network object?</span>
+
+<span class="c1"># set subnets = orche_childs.subnets</span>
+<span class="c1"># set subnet = subnets.saturn_internal</span>
+<span class="c1"># set addr = subnet.address(&quot;172.18.11.40&quot;)</span>
+
+<span class="c1"># set hwaddr = addr.hwaddr</span>
+<span class="c1"># set gateway = addr.gateway &lt;</span>
+<span class="c1"># set resolve = addr.resolve &lt;</span>
+<span class="c1"># set ntpsync = addr.ntpsync &lt;</span>
 </pre></div>
 
                 </article>

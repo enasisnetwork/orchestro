@@ -336,7 +336,13 @@
 
     <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">enable</span>
 
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">subnet</span><span class="o">.</span><span class="n">inherits</span>
+
     <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">display</span>
+
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">subnet</span><span class="o">.</span><span class="n">about</span>
+
+    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">memberof</span>
 
     <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;saturn_domesnet&#39;</span>
 
@@ -346,7 +352,14 @@
 
     <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">groups</span>
 
-    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">dumped</span></div>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">subnet</span><span class="o">.</span><span class="n">kvparsed</span>
+
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">subnet</span><span class="o">.</span><span class="n">kvopaque</span>
+
+    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">dumped</span>
+
+
+    <span class="k">assert</span> <span class="n">subnet</span><span class="o">.</span><span class="n">subnet</span></div>
 
 </pre></div>
 

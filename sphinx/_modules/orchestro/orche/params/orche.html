@@ -338,6 +338,24 @@
               <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for Orche groups&#39;</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
+    <span class="n">kvparsed</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+        <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+                  <span class="s1">&#39;Additional metadata for child which is&#39;</span>
+                  <span class="s1">&#39; parsed after childs are instantiated&#39;</span>
+                  <span class="s1">&#39; and before Ansible consumes inventory&#39;</span><span class="p">),</span>
+              <span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+
+    <span class="n">kvopaque</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+        <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="p">(</span>
+                  <span class="s1">&#39;Additional metadata for child which is&#39;</span>
+                  <span class="s1">&#39; parsed after childs are instantiated&#39;</span>
+                  <span class="s1">&#39; and when Ansible consumes inventory&#39;</span><span class="p">),</span>
+              <span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="c1"># NOCVR</span>

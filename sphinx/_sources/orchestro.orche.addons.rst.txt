@@ -12,6 +12,14 @@ Subpackages
 Submodules
 ----------
 
+orchestro.orche.addons.jinja2 module
+------------------------------------
+
+.. automodule:: orchestro.orche.addons.jinja2
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 orchestro.orche.addons.logger module
 ------------------------------------
 

@@ -281,11 +281,16 @@
 
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">clsname</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_dict</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheJinja2</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheLogger</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheChilds</span>
 
@@ -307,6 +312,7 @@
     <span class="n">__config</span><span class="p">:</span> <span class="s1">&#39;OrcheConfig&#39;</span>
 
     <span class="n">__logger</span><span class="p">:</span> <span class="n">OrcheLogger</span>
+    <span class="n">__jinja2</span><span class="p">:</span> <span class="n">OrcheJinja2</span>
 
     <span class="n">__childs</span><span class="p">:</span> <span class="n">OrcheChilds</span>
 
@@ -327,6 +333,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">OrcheLogger</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__jinja2</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">OrcheJinja2</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__childs</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">OrcheChilds</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -362,6 +371,19 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">jinja2</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheJinja2</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__jinja2</span>
 
 
     <span class="nd">@property</span>
@@ -403,6 +425,46 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">dryrun</span>
 
 
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kvparsed</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+        <span class="n">jinja2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">jinja2</span>
+
+        <span class="n">values</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">kvparsed</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;orche&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">})</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">sort_dict</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kvopaque</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">kvopaque</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">sort_dict</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -424,7 +486,29 @@
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
             <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-        <span class="k">return</span> <span class="n">params</span></div>
+        <span class="k">return</span> <span class="n">params</span>
+
+
+<div class="viewcode-block" id="Orche.j2parse">
+<a class="viewcode-back" href="../../../orchestro.orche.html#orchestro.orche.orche.Orche.j2parse">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">j2parse</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>  <span class="c1"># noqa: ANN401</span>
+        <span class="n">statics</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">literal</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the provided input using the Jinja2 environment.</span>
+
+<span class="sd">        :param value: Input that will be processed and returned.</span>
+<span class="sd">        :param statics: Additional values available for parsing.</span>
+<span class="sd">        :param literal: Determine if Python objects are evaled.</span>
+<span class="sd">        :returns: Provided input using the Jinja2 environment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__jinja2</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
+            <span class="n">value</span><span class="p">,</span> <span class="n">statics</span><span class="p">,</span> <span class="n">literal</span><span class="p">)</span></div>
+</div>
 
 </pre></div>
 
