@@ -87,5 +87,4 @@ class OrcheSystemParams(OrcheChildParams, extra='forbid'):
 
 
         super().__init__(
-            _parse=_parse,
-            **data)
+            _parse, **data)
