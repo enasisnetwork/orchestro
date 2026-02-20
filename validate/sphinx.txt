@@ -23,8 +23,8 @@ checking consistency... done
 preparing documents... done
 copying assets... 
 copying static files... 
-Writing evaluated template result to /home/runner/work/orchestro/orchestro/main/sphinx/html/_static/basic.css
 Writing evaluated template result to /home/runner/work/orchestro/orchestro/main/sphinx/html/_static/language_data.js
+Writing evaluated template result to /home/runner/work/orchestro/orchestro/main/sphinx/html/_static/basic.css
 Writing evaluated template result to /home/runner/work/orchestro/orchestro/main/sphinx/html/_static/documentation_options.js
 copying static files: done
 copying extra files... 
@@ -36,7 +36,7 @@ highlighting module code... [  2%] orchestro.ansbtest.test_inventoryhighlightin
 writing additional pages... search done
 dumping search index in English (code: en)... done
 dumping object inventory... done
-build succeeded, 378 warnings.
+build succeeded, 380 warnings.
 
 The HTML pages are in sphinx/html.
     DONE
