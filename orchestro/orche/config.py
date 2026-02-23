@@ -146,6 +146,9 @@ class OrcheConfig(Config):
     ) -> None:
         """
         Update the Pydantic model containing the configuration.
+
+        .. note::
+           Inheritance routine has inspired other projects.
         """
 
         merge = self.merge
@@ -213,6 +216,9 @@ def inheritance(
 ) -> None:
     """
     Perform the inheritance after resolving the inheritance.
+
+    .. note::
+       Inheritance routine has inspired other projects.
 
     :param dumped: Source contents which will be processed.
     """

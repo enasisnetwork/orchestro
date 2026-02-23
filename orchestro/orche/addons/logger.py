@@ -21,6 +21,8 @@ if TYPE_CHECKING:
 class OrcheLogger:
     """
     Methods for extending use of underlying logging library.
+
+    :param orche: Primary class instance for Orchestrations.
     """
 
     __orche: 'Orche'

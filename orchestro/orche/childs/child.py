@@ -15,6 +15,7 @@ from typing import TYPE_CHECKING
 from encommon.types import DictStrAny
 from encommon.types import sort_dict
 
+from ...utils import InvalidChild
 from ...utils import InvalidParam
 
 if TYPE_CHECKING:
@@ -309,7 +310,7 @@ class OrcheChild:
         """
 
         params = self.params
-        names = params.memberof
+        mmbrof = params.memberof
 
         groups = (
             self.orche.childs
@@ -317,10 +318,21 @@ class OrcheChild:
 
         childs: set['OrcheGroup'] = set()
 
-        if names is None:
+        if mmbrof is None:
             return list(childs)
 
-        for name in names:
+        for name in mmbrof:
+
+            if name not in groups:
+
+                about = (  # NOCVR
+                    f'Group ({name})'
+                    ' does not exist')
+
+                raise InvalidChild(
+                    child=self,
+                    phase='runtime',
+                    about=about)
 
             child = groups[name]
 
@@ -343,9 +355,9 @@ class OrcheChild:
         """
 
         return {
+            'name': self.name,
             'enable': self.enable,
             'kind': self.kind,
-            'name': self.name,
             'inherits': self.inherits,
             'display': self.display,
             'about': self.about,

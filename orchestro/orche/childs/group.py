@@ -78,6 +78,66 @@ class OrcheGroup(OrcheChild):
 
 
     @property
+    def members(
+        self,
+    ) -> list[OrcheChild]:
+        """
+        Return the members that have declared group membership.
+
+        :returns: Members that have declared group membership.
+        """
+
+        orche = self.orche
+        childs = orche.childs
+
+        systems = (
+            childs.systems
+            .values())
+
+        persons = (
+            childs.persons
+            .values())
+
+        subnets = (
+            childs.subnets
+            .values())
+
+        groups = (
+            childs.groups
+            .values())
+
+
+        _childs: set[OrcheChild] = set()
+
+        for system in systems:
+            _childs.add(system)
+
+        for person in persons:
+            _childs.add(person)
+
+        for subnet in subnets:
+            _childs.add(subnet)
+
+        for group in groups:
+            _childs.add(group)
+
+
+        members: set[OrcheChild] = set()
+
+        for child in _childs:
+
+            _groups = child.groups
+
+            if self not in _groups:
+                continue
+
+            members.add(child)
+
+
+        return list(members)
+
+
+    @property
     def realm(
         self,
     ) -> Optional[str]:
