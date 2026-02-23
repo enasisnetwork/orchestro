@@ -12,11 +12,14 @@ from os import environ
 from pathlib import Path
 from time import sleep as block_sleep
 from typing import Any
+from typing import TypeVar
+from typing import cast
 
 from ansible import context  # type: ignore
 from ansible.inventory.data import InventoryData  # type: ignore
 from ansible.parsing.dataloader import DataLoader  # type: ignore
 from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
+from ansible.template import trust_as_template  # type: ignore
 
 from encommon.config import config_load
 from encommon.types import DictStrAny
@@ -104,19 +107,54 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
         self.inventory.add_host(*args, **kwargs)
 
 
-    def set_value(
+    def set_value(  # noqa: CFQ004
         self,
-        *args: Any,
-        **kwargs: Any,
+        entity: str,
+        varname: str,
+        value: Any,  # noqa: ANN401
     ) -> None:
         """
         Perform the operations related to the Ansible inventory.
 
-        :param args: Positional arguments passed for downstream.
-        :param kwargs: Keyword arguments passed for downstream.
+        :param entity: What entity to use for variable context.
+        :param varname: Name of variable which will be created.
+        :param value: Value to popualte in the created variable.
         """
 
-        self.inventory.set_variable(*args, **kwargs)
+        Trusted = TypeVar('Trusted')
+
+
+        def _trusted_value(  # noqa: CFQ004
+            value: Trusted,
+        ) -> Trusted:
+
+            if isinstance(value, dict):
+
+                return cast(
+                    Trusted,
+                    {k: _trusted_value(v)
+                     for k, v
+                     in value.items()})
+
+            if isinstance(value, list):
+
+                return cast(
+                    Trusted,
+                    [_trusted_value(x)
+                     for x in value])
+
+            if isinstance(value, str):
+
+                return cast(
+                    Trusted,
+                    trust_as_template(value))
+
+            return value
+
+
+        self.inventory.set_variable(
+            entity, varname,
+            _trusted_value(value))
 
 
     def parse(

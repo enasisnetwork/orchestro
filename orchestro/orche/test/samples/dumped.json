@@ -15,9 +15,9 @@
   "dryrun": false,
   "systems": {
     "aegaeon": {
+      "name": "aegaeon",
       "enable": true,
       "kind": "system",
-      "name": "aegaeon",
       "inherits": [
         "template_fedora",
         "template_default"
@@ -61,9 +61,9 @@
       "fqdn": "aegaeon.enasis.net"
     },
     "engwf1x1t": {
+      "name": "engwf1x1t",
       "enable": true,
       "kind": "system",
-      "name": "engwf1x1t",
       "inherits": [
         "template_openbsd",
         "template_default"
@@ -132,9 +132,9 @@
       "fqdn": "engwf1x1t.enasis.net"
     },
     "engwf1x2t": {
+      "name": "engwf1x2t",
       "enable": true,
       "kind": "system",
-      "name": "engwf1x2t",
       "inherits": [
         "template_openbsd",
         "template_default"
@@ -203,9 +203,9 @@
       "fqdn": "engwf1x2t.enasis.net"
     },
     "engwf2x1t": {
+      "name": "engwf2x1t",
       "enable": true,
       "kind": "system",
-      "name": "engwf2x1t",
       "inherits": [
         "template_openbsd",
         "template_default"
@@ -274,9 +274,9 @@
       "fqdn": "engwf2x1t.enasis.net"
     },
     "engwf2x2t": {
+      "name": "engwf2x2t",
       "enable": true,
       "kind": "system",
-      "name": "engwf2x2t",
       "inherits": [
         "template_openbsd",
         "template_default"
@@ -345,9 +345,9 @@
       "fqdn": "engwf2x2t.enasis.net"
     },
     "ensrv1t": {
+      "name": "ensrv1t",
       "enable": true,
       "kind": "system",
-      "name": "ensrv1t",
       "inherits": [
         "template_almalinux",
         "template_default"
@@ -392,9 +392,9 @@
       "fqdn": "ensrv1t.enasis.net"
     },
     "ensrv2t": {
+      "name": "ensrv2t",
       "enable": true,
       "kind": "system",
-      "name": "ensrv2t",
       "inherits": [
         "template_almalinux",
         "template_default"
@@ -439,9 +439,9 @@
       "fqdn": "ensrv2t.enasis.net"
     },
     "meropis": {
+      "name": "meropis",
       "enable": true,
       "kind": "system",
-      "name": "meropis",
       "inherits": [
         "template_windows",
         "template_default"
@@ -485,9 +485,9 @@
       "fqdn": "meropis.enasis.net"
     },
     "template_almalinux": {
+      "name": "template_almalinux",
       "enable": false,
       "kind": "system",
-      "name": "template_almalinux",
       "inherits": [
         "template_default"
       ],
@@ -503,9 +503,9 @@
       "fqdn": "template_almalinux.enasis.net"
     },
     "template_default": {
+      "name": "template_default",
       "enable": false,
       "kind": "system",
-      "name": "template_default",
       "inherits": null,
       "display": "Default Template",
       "about": null,
@@ -517,9 +517,9 @@
       "fqdn": "template_default.enasis.net"
     },
     "template_fedora": {
+      "name": "template_fedora",
       "enable": false,
       "kind": "system",
-      "name": "template_fedora",
       "inherits": [
         "template_default"
       ],
@@ -535,9 +535,9 @@
       "fqdn": "template_fedora.enasis.net"
     },
     "template_openbsd": {
+      "name": "template_openbsd",
       "enable": false,
       "kind": "system",
-      "name": "template_openbsd",
       "inherits": [
         "template_default"
       ],
@@ -553,9 +553,9 @@
       "fqdn": "template_openbsd.enasis.net"
     },
     "template_windows": {
+      "name": "template_windows",
       "enable": false,
       "kind": "system",
-      "name": "template_windows",
       "inherits": [
         "template_default"
       ],
@@ -573,9 +573,9 @@
   },
   "persons": {
     "robert_domain": {
+      "name": "robert_domain",
       "enable": true,
       "kind": "person",
-      "name": "robert_domain",
       "inherits": null,
       "display": "Robert Harris",
       "about": null,
@@ -587,9 +587,9 @@
       "fqdn": "robert_domain@enasis.net"
     },
     "robert_local": {
+      "name": "robert_local",
       "enable": true,
       "kind": "person",
-      "name": "robert_local",
       "inherits": null,
       "display": "Robert Harris",
       "about": null,
@@ -603,9 +603,9 @@
   },
   "subnets": {
     "saturn_internal": {
+      "name": "saturn_internal",
       "enable": true,
       "kind": "subnet",
-      "name": "saturn_internal",
       "inherits": null,
       "display": "Saturn Internal",
       "about": null,
@@ -617,9 +617,9 @@
       "subnet": "172.18.11.0/24"
     },
     "saturn_domesnet": {
+      "name": "saturn_domesnet",
       "enable": true,
       "kind": "subnet",
-      "name": "saturn_domesnet",
       "inherits": null,
       "display": "Saturn Domesnet",
       "about": null,
@@ -631,9 +631,9 @@
       "subnet": "172.18.51.0/24"
     },
     "saturn_external": {
+      "name": "saturn_external",
       "enable": true,
       "kind": "subnet",
-      "name": "saturn_external",
       "inherits": null,
       "display": "Saturn External",
       "about": null,
@@ -645,9 +645,9 @@
       "subnet": "172.18.91.0/24"
     },
     "uranus_internal": {
+      "name": "uranus_internal",
       "enable": true,
       "kind": "subnet",
-      "name": "uranus_internal",
       "inherits": null,
       "display": "Uranus Internal",
       "about": null,
@@ -659,9 +659,9 @@
       "subnet": "172.18.12.0/24"
     },
     "uranus_domesnet": {
+      "name": "uranus_domesnet",
       "enable": true,
       "kind": "subnet",
-      "name": "uranus_domesnet",
       "inherits": null,
       "display": "Uranus Domesnet",
       "about": null,
@@ -673,9 +673,9 @@
       "subnet": "172.18.52.0/24"
     },
     "uranus_external": {
+      "name": "uranus_external",
       "enable": true,
       "kind": "subnet",
-      "name": "uranus_external",
       "inherits": null,
       "display": "Uranus External",
       "about": null,
@@ -689,9 +689,9 @@
   },
   "groups": {
     "default": {
+      "name": "default",
       "enable": false,
       "kind": "group",
-      "name": "default",
       "inherits": null,
       "display": "Default Inventory",
       "about": null,
@@ -701,9 +701,9 @@
       "realm": "ansible"
     },
     "enasisnetwork_enhomie": {
+      "name": "enasisnetwork_enhomie",
       "enable": true,
       "kind": "group",
-      "name": "enasisnetwork_enhomie",
       "inherits": null,
       "display": "Homie Automate",
       "about": null,
@@ -715,9 +715,9 @@
       "realm": "ansible"
     },
     "enasisnetwork_enrobie": {
+      "name": "enasisnetwork_enrobie",
       "enable": true,
       "kind": "group",
-      "name": "enasisnetwork_enrobie",
       "inherits": null,
       "display": "Chatting Robie",
       "about": null,
@@ -729,9 +729,9 @@
       "realm": "ansible"
     },
     "enasisnetwork_sslca": {
+      "name": "enasisnetwork_sslca",
       "enable": true,
       "kind": "group",
-      "name": "enasisnetwork_sslca",
       "inherits": null,
       "display": "Certificate Authority",
       "about": null,
@@ -741,9 +741,9 @@
       "realm": "ansible"
     },
     "saturn": {
+      "name": "saturn",
       "enable": true,
       "kind": "group",
-      "name": "saturn",
       "inherits": null,
       "display": "Saturn Inventory",
       "about": null,
@@ -755,9 +755,9 @@
       "realm": "ansible"
     },
     "systems": {
+      "name": "systems",
       "enable": true,
       "kind": "group",
-      "name": "systems",
       "inherits": null,
       "display": "Managed Systems",
       "about": null,
@@ -769,9 +769,9 @@
       "realm": "ansible"
     },
     "systems_almalinux": {
+      "name": "systems_almalinux",
       "enable": true,
       "kind": "group",
-      "name": "systems_almalinux",
       "inherits": null,
       "display": "AlmaLinux",
       "about": null,
@@ -783,9 +783,9 @@
       "realm": "ansible"
     },
     "systems_fedora": {
+      "name": "systems_fedora",
       "enable": true,
       "kind": "group",
-      "name": "systems_fedora",
       "inherits": null,
       "display": "Fedora",
       "about": null,
@@ -797,9 +797,9 @@
       "realm": "ansible"
     },
     "systems_openbsd": {
+      "name": "systems_openbsd",
       "enable": true,
       "kind": "group",
-      "name": "systems_openbsd",
       "inherits": null,
       "display": "OpenBSD",
       "about": null,
@@ -811,9 +811,9 @@
       "realm": "ansible"
     },
     "systems_windows": {
+      "name": "systems_windows",
       "enable": true,
       "kind": "group",
-      "name": "systems_windows",
       "inherits": null,
       "display": "Windows",
       "about": null,
@@ -825,9 +825,9 @@
       "realm": "ansible"
     },
     "uranus": {
+      "name": "uranus",
       "enable": true,
       "kind": "group",
-      "name": "uranus",
       "inherits": null,
       "display": "Uranus Inventory",
       "about": null,

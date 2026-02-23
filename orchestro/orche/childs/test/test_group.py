@@ -83,6 +83,8 @@ def test_OrcheGroup(
     assert group.dumped
 
 
+    assert group.members
+
     assert group.realm
 
     assert not group.ansible

@@ -28,6 +28,7 @@ change sometime in the near future- though it can be overridden now.
 - Install various collections into the `collections` directory.
   - Replace the symbolic links or remove and place collections.
   - This is where the `Makefile` and `makefile.py` will look.
+- `ANSIBLE_DISPLAY_TRACEBACK=always` to display tracebacks from plugins.
 
 ## Additional Ansible collections
 - **Utility** supports other Enasis Network Ansible collections<br>
