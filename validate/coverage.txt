@@ -15,7 +15,7 @@ orchestro/execution/vault.py                    15      0   100%
 orchestro/filters/__init__.py                    0      0   100%
 orchestro/filters/orche.py                       3      0   100%
 orchestro/inventory/__init__.py                  0      0   100%
-orchestro/inventory/orche.py                   131      0   100%
+orchestro/inventory/orche.py                   143      0   100%
 orchestro/lookups/__init__.py                    0      0   100%
 orchestro/lookups/orche.py                       9      0   100%
 orchestro/orche/__init__.py                      3      0   100%
@@ -25,15 +25,15 @@ orchestro/orche/addons/logger.py                65      0   100%
 orchestro/orche/addons/test/__init__.py          0      0   100%
 orchestro/orche/addons/test/test_logger.py      39      0   100%
 orchestro/orche/childs/__init__.py               7      0   100%
-orchestro/orche/childs/child.py                 99      0   100%
-orchestro/orche/childs/group.py                 29      0   100%
+orchestro/orche/childs/child.py                101      0   100%
+orchestro/orche/childs/group.py                 53      0   100%
 orchestro/orche/childs/orche.py                131      0   100%
 orchestro/orche/childs/person.py                48      0   100%
 orchestro/orche/childs/subnet.py                63      0   100%
 orchestro/orche/childs/system.py                40      0   100%
 orchestro/orche/childs/test/__init__.py          0      0   100%
 orchestro/orche/childs/test/test_child.py        8      0   100%
-orchestro/orche/childs/test/test_group.py       29      0   100%
+orchestro/orche/childs/test/test_group.py       30      0   100%
 orchestro/orche/childs/test/test_orche.py       16      0   100%
 orchestro/orche/childs/test/test_person.py      31      0   100%
 orchestro/orche/childs/test/test_subnet.py      28      0   100%
@@ -61,4 +61,4 @@ orchestro/utils/test/__init__.py                 0      0   100%
 orchestro/utils/test/test_child.py              20      0   100%
 orchestro/utils/test/test_param.py              16      0   100%
 ----------------------------------------------------------------
-TOTAL                                         1372      0   100%
+TOTAL                                         1411      0   100%
