@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/orchestro/orchestro/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=443296389
+Using --randomly-seed=3915355020
 rootdir: /home/runner/work/orchestro/orchestro/main
 plugins: randomly-4.1.0, cov-7.1.0, mypy-1.0.1, xdist-3.8.0, clarity-1.0.1, sphinx-0.7.1
 created: 4/4 workers
@@ -11,48 +11,48 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-orchestro/orche/childs/test/test_system.py::test_OrcheSystem 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
-orchestro/execution/test/test_config.py::test_arguments 
-orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
-[gw1] [  4%] PASSED orchestro/execution/test/test_config.py::test_arguments 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
-[gw0] [  9%] PASSED orchestro/orche/childs/test/test_system.py::test_OrcheSystem 
-[gw2] [ 14%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
-[gw3] [ 19%] PASSED orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
-orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
-orchestro/ansbtest/test_inventory.py::test_InventoryModule 
-[gw1] [ 23%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
-orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet 
-orchestro/orche/test/test_models.py::test_OrcheModels_cover 
-[gw1] [ 28%] PASSED orchestro/orche/test/test_models.py::test_OrcheModels_cover 
-orchestro/orche/test/test_config.py::test_OrcheConfig 
-[gw3] [ 33%] PASSED orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet 
-[gw2] [ 38%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
-orchestro/orche/test/test_orche.py::test_Orche_cover 
-orchestro/orche/test/test_orche.py::test_Orche 
-[gw3] [ 42%] PASSED orchestro/orche/test/test_orche.py::test_Orche_cover 
-orchestro/utils/test/test_child.py::test_InvalidChild 
-[gw3] [ 47%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild 
-orchestro/execution/test/test_crypts.py::test_arguments 
-[gw3] [ 52%] PASSED orchestro/execution/test/test_crypts.py::test_arguments 
-orchestro/execution/test/test_vault.py::test_arguments 
-[gw3] [ 57%] PASSED orchestro/execution/test/test_vault.py::test_arguments 
-orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
-[gw1] [ 61%] PASSED orchestro/orche/test/test_config.py::test_OrcheConfig 
-orchestro/utils/test/test_child.py::test_InvalidChild_cover 
-[gw3] [ 66%] PASSED orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
 orchestro/orche/childs/test/test_person.py::test_OrchePerson 
-[gw3] [ 71%] PASSED orchestro/orche/childs/test/test_person.py::test_OrchePerson 
-[gw1] [ 76%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild_cover 
-orchestro/utils/test/test_param.py::test_InvalidParam 
-[gw2] [ 80%] PASSED orchestro/orche/test/test_orche.py::test_Orche 
-orchestro/orche/childs/test/test_group.py::test_OrcheGroup 
-[gw1] [ 85%] PASSED orchestro/utils/test/test_param.py::test_InvalidParam 
-[gw2] [ 90%] PASSED orchestro/orche/childs/test/test_group.py::test_OrcheGroup 
-[gw0] [ 95%] PASSED orchestro/ansbtest/test_inventory.py::test_InventoryModule 
 orchestro/orche/test/test_orche.py::test_Orche_jinja2 
-[gw0] [100%] PASSED orchestro/orche/test/test_orche.py::test_Orche_jinja2 
+orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
+orchestro/orche/childs/test/test_group.py::test_OrcheGroup 
+[gw1] [  4%] PASSED orchestro/orche/childs/test/test_child.py::test_OrcheChild_cover 
+[gw3] [  9%] PASSED orchestro/orche/test/test_orche.py::test_Orche_jinja2 
+[gw0] [ 14%] PASSED orchestro/orche/childs/test/test_person.py::test_OrchePerson 
+orchestro/execution/test/test_crypts.py::test_arguments 
+[gw2] [ 19%] PASSED orchestro/orche/childs/test/test_group.py::test_OrcheGroup 
+orchestro/orche/test/test_orche.py::test_Orche 
+orchestro/utils/test/test_param.py::test_InvalidParam 
+[gw1] [ 23%] PASSED orchestro/execution/test/test_crypts.py::test_arguments 
+orchestro/execution/test/test_vault.py::test_arguments 
+orchestro/orche/test/test_orche.py::test_Orche_cover 
+[gw1] [ 28%] PASSED orchestro/execution/test/test_vault.py::test_arguments 
+[gw2] [ 33%] PASSED orchestro/orche/test/test_orche.py::test_Orche_cover 
+orchestro/utils/test/test_child.py::test_InvalidChild 
+orchestro/utils/test/test_child.py::test_InvalidChild_cover 
+[gw1] [ 38%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild 
+orchestro/orche/test/test_config.py::test_OrcheConfig 
+[gw0] [ 42%] PASSED orchestro/utils/test/test_param.py::test_InvalidParam 
+orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet 
+[gw2] [ 47%] PASSED orchestro/utils/test/test_child.py::test_InvalidChild_cover 
+orchestro/execution/test/test_config.py::test_arguments 
+[gw2] [ 52%] PASSED orchestro/execution/test/test_config.py::test_arguments 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
+[gw1] [ 57%] PASSED orchestro/orche/test/test_config.py::test_OrcheConfig 
+orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
+[gw3] [ 61%] PASSED orchestro/orche/test/test_orche.py::test_Orche 
+orchestro/orche/test/test_models.py::test_OrcheModels_cover 
+[gw3] [ 66%] PASSED orchestro/orche/test/test_models.py::test_OrcheModels_cover 
+orchestro/orche/childs/test/test_system.py::test_OrcheSystem 
+[gw0] [ 71%] PASSED orchestro/orche/childs/test/test_subnet.py::test_OrcheSubnet 
+orchestro/ansbtest/test_inventory.py::test_InventoryModule 
+[gw2] [ 76%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_cover 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
+[gw1] [ 80%] PASSED orchestro/orche/childs/test/test_orche.py::test_OrcheChilds 
+orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
+[gw3] [ 85%] PASSED orchestro/orche/childs/test/test_system.py::test_OrcheSystem 
+[gw2] [ 90%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger 
+[gw1] [ 95%] PASSED orchestro/orche/addons/test/test_logger.py::test_OrcheLogger_message 
+[gw0] [100%] PASSED orchestro/ansbtest/test_inventory.py::test_InventoryModule 
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.12.13-final-0 _______________
@@ -121,7 +121,7 @@ orchestro/utils/test/test_child.py              20      0   100%
 orchestro/utils/test/test_param.py              16      0   100%
 ----------------------------------------------------------------
 TOTAL                                         1411      0   100%
-============================== 21 passed in 6.36s ==============================
+============================== 21 passed in 6.43s ==============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
