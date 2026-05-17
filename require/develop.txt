@@ -1,5 +1,8 @@
 -r package.txt
 
+build
+twine
+
 ansible-dev-tools
 
 ruff
@@ -11,7 +14,6 @@ flake8-async
 flake8-bandit
 flake8-commas
 flake8-comprehensions
-#flake8-continuation
 flake8-datetimez
 flake8-docstrings
 flake8-encodings
@@ -34,15 +36,13 @@ flake8-secure-coding-standard
 flake8-sfs
 flake8-simplify
 flake8-super
-#flake8-tabs
-#flake8-use-pathlib
 
 mypy
 
 pylint
 
 sphinx
-autodoc_pydantic
+sphinxcontrib-pydantic
 pydata-sphinx-theme
 
 yamllint

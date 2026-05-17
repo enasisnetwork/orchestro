@@ -15,7 +15,7 @@ from typing import TYPE_CHECKING
 from encommon.types import clsname
 
 if TYPE_CHECKING:
-    from ..orche.childs import OrcheChild
+    from ..orche.childs.child import OrcheChild
 
 
 
@@ -36,7 +36,7 @@ class InvalidParam(Exception):
 
     :param error: Simple code describing the invalid error.
     :param about: Additional information for the exception.
-    :param child: Child class instance for Orchestrations.
+    :param child: Child class instance related to exception.
     :param param: Name of the parameter which is not valid.
     :param value: Value if any specified for the parameter.
     """

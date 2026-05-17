@@ -18,10 +18,10 @@ from encommon.types import DictStrAny
 
 from .child import OrcheChild
 from ..models import OrcheModels
-from ...utils import InvalidParam
+from ...utils.param import InvalidParam
 
 if TYPE_CHECKING:
-    from ..params import OrcheSubnetParams
+    from ..params.subnet import OrcheSubnetParams
 
 
 

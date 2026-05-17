@@ -241,6 +241,7 @@ cleanup-sphinx:
 	@find ./sphinx/ -type f \
 		! -name conf.py \
 		! -name index.rst \
+		! -name style.css \
 		-delete 2>/dev/null || true
 	@mkdir ./sphinx/makefiletmp
 	@find ./sphinx/*/ -type d \
@@ -609,7 +610,8 @@ sphinx: \
 		<c37>Building <c90>Sphinx<c37>\
 		documentation..<c0>)
 	@$(VENVD)/bin/sphinx-apidoc \
-		-o sphinx $(PROJECT)
+		-o sphinx $(PROJECT) \
+		"$(PROJECT)/*/test"
 	@$(VENVD)/bin/sphinx-build \
 		-b html sphinx/ sphinx/html
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -655,6 +657,36 @@ cloc:
 		<c37>Executing <c90>cloc<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
 	@cloc $(PROJECT)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: pypackage
+pypackage: \
+	.check-venv-develop
+	@## Create the Python compatible package
+	@#
+	@$(MAKE) cleanup
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>pypackage<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Create <c90>package<c37> \
+		build directory..<c0>)
+	$(VENVD)/bin/python \
+		-m build \
+		--sdist --wheel \
+		--outdir $(PROJECT).dist
+	$(VENVD)/bin/python \
+		-m twine check \
+		$(PROJECT).dist/*
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	$(call MAKE_PR3NT,\
+		<c37>Remove <c90>package<c37> \
+		build directory..<c0>)
+	@rm -rf $(PROJECT).egg-info
+	@rm -rf build
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 

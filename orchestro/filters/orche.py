@@ -7,7 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
-from encommon.parse.jinja2 import DEFAULT
+from encommon.parse.jinja2 import DEFAULT_FILTERS
 from encommon.parse.jinja2 import FILTERS
 
 
@@ -28,4 +28,4 @@ class FilterModule:
         :returns: Filter functions for use in Ansible routines.
         """
 
-        return DEFAULT
+        return DEFAULT_FILTERS

@@ -8,8 +8,8 @@ is permitted, for more information consult the project license file.
 
 
 from .child import OrcheChild
+from .childs import OrcheChilds
 from .group import OrcheGroup
-from .orche import OrcheChilds
 from .person import OrchePerson
 from .subnet import OrcheSubnet
 from .system import OrcheSystem

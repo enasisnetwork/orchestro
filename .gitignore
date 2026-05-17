@@ -23,6 +23,8 @@
 !/Makefile
 !/makebadge.py
 !/makefile.py
+!/MANIFEST.in
+!/pyproject.toml
 !/README.md
 !/require
 /require/*

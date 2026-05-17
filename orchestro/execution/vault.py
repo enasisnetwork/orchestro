@@ -15,7 +15,7 @@ from typing import Optional
 
 from encommon.types import DictStrAny
 
-from ..orche import OrcheConfig
+from ..orche.config import OrcheConfig
 
 
 

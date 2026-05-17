@@ -18,7 +18,7 @@ from .child import OrcheChild
 from ..models import OrcheModels
 
 if TYPE_CHECKING:
-    from ..params import OrcheSystemParams
+    from ..params.system import OrcheSystemParams
 
 
 
@@ -135,7 +135,7 @@ class OrcheSystem(OrcheChild):
         ansible = self.params.ansible
 
         if ansible is not None:
-            return ansible.endumped
+            return ansible.model_dump()
 
         return NCNone
 

@@ -9,5 +9,7 @@
   "enlogger": {
     "stdo_level": "debug"
   },
+  "console": true,
+  "debug": true,
   "dryrun": false
 }

@@ -16,8 +16,8 @@ from pytest import fixture
 
 from . import EXAMPLES
 from . import PROJECT
-from .orche import Orche
-from .orche import OrcheConfig
+from .orche.config import OrcheConfig
+from .orche.orche import Orche
 
 
 

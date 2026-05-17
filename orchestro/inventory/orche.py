@@ -30,10 +30,10 @@ from encommon.types.strings import SEMPTY
 from encommon.utils import array_ansi
 from encommon.utils import print_ansi
 
-from orchestro.orche import Orche
-from orchestro.orche import OrcheConfig
-from orchestro.orche.childs import OrcheGroup
-from orchestro.orche.childs import OrcheSystem
+from orchestro.orche.childs.group import OrcheGroup
+from orchestro.orche.childs.system import OrcheSystem
+from orchestro.orche.config import OrcheConfig
+from orchestro.orche.orche import Orche
 
 
 
@@ -311,7 +311,8 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             if ansbgrp is not None:
 
                 vars = (
-                    ansbgrp.endumped
+                    ansbgrp
+                    .model_dump()
                     .items())
 
                 for key, value in vars:
@@ -370,7 +371,8 @@ class InventoryModule(BaseInventoryPlugin):  # type: ignore
             if ansbsys is not None:
 
                 vars = (
-                    ansbsys.endumped
+                    ansbsys
+                    .model_dump()
                     .items())
 
                 for key, value in vars:

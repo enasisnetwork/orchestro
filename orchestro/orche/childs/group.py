@@ -18,7 +18,7 @@ from .child import OrcheChild
 from ..models import OrcheModels
 
 if TYPE_CHECKING:
-    from ..params import OrcheGroupParams
+    from ..params.group import OrcheGroupParams
 
 
 
@@ -163,7 +163,7 @@ class OrcheGroup(OrcheChild):
         ansible = self.params.ansible
 
         if ansible is not NCNone:
-            return ansible.endumped
+            return ansible.model_dump()
 
         return None
 

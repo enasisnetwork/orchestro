@@ -1,0 +1,6 @@
+
+
+
+include orchestro/version.txt
+
+recursive-include orchestro/examples *.yml

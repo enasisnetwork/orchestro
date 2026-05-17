@@ -13,7 +13,7 @@ from typing import TYPE_CHECKING
 from typing import Union
 
 if TYPE_CHECKING:
-    from ..orche.childs import OrcheChild
+    from ..orche.childs.child import OrcheChild
 
 
 
