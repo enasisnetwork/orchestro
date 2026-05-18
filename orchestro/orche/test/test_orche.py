@@ -58,9 +58,15 @@ def test_Orche(
 
     assert orche.logger
 
+    assert orche.jinja2
+
     assert orche.childs
 
     assert orche.params
+
+    assert orche.console
+
+    assert orche.debug
 
     assert not orche.dryrun
 
