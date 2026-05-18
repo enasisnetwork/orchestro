@@ -19,6 +19,7 @@
 /sphinx/*
 !/sphinx/conf.py
 !/sphinx/index.rst
+!/sphinx/style.css
 !/LICENSE
 !/Makefile
 !/makebadge.py
