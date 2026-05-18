@@ -10,7 +10,6 @@ Subpackages
    orchestro.orche.addons
    orchestro.orche.childs
    orchestro.orche.params
-   orchestro.orche.test
 
 Submodules
 ----------

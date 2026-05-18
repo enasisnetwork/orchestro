@@ -26,17 +26,17 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
+    <link rel="stylesheet" type="text/css" href="/home/runner/work/orchestro/orchestro/main/sphinx/style.css?v=5175246c" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
@@ -47,7 +47,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.6.4" />
+  <meta name="docsearch:version" content="0.7.0" />
   
     
     <script src="../../../_static/searchtools.js"></script>
@@ -65,7 +65,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -308,10 +310,10 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">array_ansi</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_ansi</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orche</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheConfig</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheGroup</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs.group</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheGroup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.childs.system</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheSystem</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrcheConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">orchestro.orche.orche</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orche</span>
 
 
 
@@ -614,7 +616,8 @@
             <span class="k">if</span> <span class="n">ansbgrp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
                 <span class="nb">vars</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">ansbgrp</span><span class="o">.</span><span class="n">endumped</span>
+                    <span class="n">ansbgrp</span>
+                    <span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
                     <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
@@ -673,7 +676,8 @@
             <span class="k">if</span> <span class="n">ansbsys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
                 <span class="nb">vars</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">ansbsys</span><span class="o">.</span><span class="n">endumped</span>
+                    <span class="n">ansbsys</span>
+                    <span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
                     <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">:</span>
@@ -960,8 +964,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -972,7 +976,7 @@
 
   <p class="copyright">
     
-      © Copyright 2024, Enasis Network.
+      © Copyright 2026, Enasis Network.
       <br/>
     
   </p>
@@ -995,7 +999,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
 </p></div>
       
     </div>

@@ -1,14 +1,6 @@
 orchestro.orche.childs package
 ==============================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   orchestro.orche.childs.test
-
 Submodules
 ----------
 
@@ -20,18 +12,18 @@ orchestro.orche.childs.child module
    :show-inheritance:
    :undoc-members:
 
-orchestro.orche.childs.group module
------------------------------------
+orchestro.orche.childs.childs module
+------------------------------------
 
-.. automodule:: orchestro.orche.childs.group
+.. automodule:: orchestro.orche.childs.childs
    :members:
    :show-inheritance:
    :undoc-members:
 
-orchestro.orche.childs.orche module
+orchestro.orche.childs.group module
 -----------------------------------
 
-.. automodule:: orchestro.orche.childs.orche
+.. automodule:: orchestro.orche.childs.group
    :members:
    :show-inheritance:
    :undoc-members:

@@ -1,14 +1,6 @@
 orchestro.utils package
 =======================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   orchestro.utils.test
-
 Submodules
 ----------
 

@@ -1,14 +1,6 @@
 orchestro.execution package
 ===========================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   orchestro.execution.test
-
 Submodules
 ----------
 

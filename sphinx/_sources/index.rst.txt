@@ -1,41 +1,46 @@
 Enasis Network Orchestrations
 =============================
 
-Configuration Container
------------------------
+Documentation Welcome
+---------------------
 
-.. autoclass:: orchestro.orche.OrcheConfig
+.. raw:: html
+
+   Welcome to the project documentation. Below you will find the most common
+   functions and classes within the library, but you may click your way further
+   into the project from there. You can also view the source code.
+
+Orche Configuration
+-------------------
+
+.. automodule:: orchestro.orche
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
+   :exclude-members: OrcheModels
 
-Parameters Container
---------------------
+Orche Parameters
+----------------
 
-.. autopydantic_model:: orchestro.orche.params.OrcheParams
+.. automodule:: orchestro.orche.params
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
+   :exclude-members: OrcheChildParams,
+                     OrcheParamsModel
 
 Orche Children
 --------------
 
-.. autopydantic_model:: orchestro.orche.params.OrcheSystemParams
+.. automodule:: orchestro.orche.childs
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
 
-.. autopydantic_model:: orchestro.orche.params.OrchePersonParams
-   :members:
-   :show-inheritance:
-   :noindex:
+Orche Add-ons
+-------------
 
-.. autopydantic_model:: orchestro.orche.params.OrcheSubnetParams
+.. automodule:: orchestro.orche.addons
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
-
-.. autopydantic_model:: orchestro.orche.params.OrcheGroupParams
-   :members:
-   :show-inheritance:
-   :noindex:
