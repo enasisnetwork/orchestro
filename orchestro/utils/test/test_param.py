@@ -16,7 +16,7 @@ from encommon.types import lattrs
 from ..param import InvalidParam
 
 if TYPE_CHECKING:
-    from ...orche import Orche
+    from ...orche.orche import Orche
 
 
 
@@ -33,6 +33,8 @@ def test_InvalidParam(
     systems = childs.systems
 
     system = systems['ensrv1t']
+
+    name = system.name
 
 
     raises = InvalidParam(
@@ -69,5 +71,5 @@ def test_InvalidParam(
         'Error (invalid) '
         'param (param) '
         'value (value) child '
-        '(OrcheSystem/ensrv1t)'
+        f'(OrcheSystem/{name})'
         ' (about)')

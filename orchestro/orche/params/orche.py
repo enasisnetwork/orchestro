@@ -34,10 +34,26 @@ class OrcheParams(Params, extra='forbid'):
               description='Database connection string',
               min_length=1)]
 
+    console: Annotated[
+        bool,
+        Field(False,
+              description=(
+                  'Output console information;'
+                  ' parameter is parsed by and'
+                  ' used in low-level config'))]
+
+    debug: Annotated[
+        bool,
+        Field(False,
+              description=(
+                  'Enable logging level debug;'
+                  ' parameter is parsed by and'
+                  ' used in low-level config'))]
+
     dryrun: Annotated[
         bool,
         Field(False,
-              description='Determine if changes applied')]
+              description='Whether to allow changes')]
 
     systems: Annotated[
         Optional[dict[str, OrcheSystemParams]],

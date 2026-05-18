@@ -17,13 +17,13 @@ from encommon.types import DictStrAny
 from encommon.types import clsname
 from encommon.types import sort_dict
 
-from .addons import OrcheJinja2
-from .addons import OrcheLogger
-from .childs import OrcheChilds
+from .addons.jinja2 import OrcheJinja2
+from .addons.logger import OrcheLogger
+from .childs.childs import OrcheChilds
 
 if TYPE_CHECKING:
     from .config import OrcheConfig
-    from .params import OrcheParams
+    from .params.orche import OrcheParams
 
 
 
@@ -138,6 +138,32 @@ class Orche:
 
 
     @property
+    def console(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.console
+
+
+    @property
+    def debug(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.debug
+
+
+    @property
     def dryrun(
         self,
     ) -> bool:
@@ -201,7 +227,8 @@ class Orche:
         """
 
         params = deepcopy(
-            self.params.endumped)
+            self.params
+            .model_dump())
 
         childs = deepcopy(
             self.childs.dumped)

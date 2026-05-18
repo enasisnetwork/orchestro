@@ -15,7 +15,7 @@ from encommon.types import DictStrAny
 from encommon.utils import array_ansi
 from encommon.utils import print_ansi
 
-from ..orche import OrcheConfig
+from ..orche.config import OrcheConfig
 
 
 

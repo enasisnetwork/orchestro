@@ -41,14 +41,14 @@ def test_OrcheChilds(
 
 
     assert inrepr(
-        'orche.OrcheChilds',
+        'childs.OrcheChilds',
         childs)
 
     assert isinstance(
         hash(childs), int)
 
     assert instr(
-        'orche.OrcheChilds',
+        'childs.OrcheChilds',
         childs)
 
 

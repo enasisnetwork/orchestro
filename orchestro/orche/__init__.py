@@ -8,10 +8,12 @@ is permitted, for more information consult the project license file.
 
 
 from .config import OrcheConfig
+from .models import OrcheModels
 from .orche import Orche
 
 
 
 __all__ = [
     'Orche',
-    'OrcheConfig']
+    'OrcheConfig',
+    'OrcheModels']

@@ -18,10 +18,11 @@ from encommon.types import dedup_list
 from encommon.types import delate
 from encommon.types import getate
 from encommon.types import merge_dicts
+from encommon.types import prune
 from encommon.utils.common import PATHABLE
 
 from .common import OrcheKinds
-from .params import OrcheParams
+from .params.orche import OrcheParams
 
 
 
@@ -62,9 +63,11 @@ class OrcheConfig(Config):
 
         if _console is True:
             cargs[key] = 'info'
+            cargs['console'] = True
 
         if _debug is True:
             cargs[key] = 'debug'
+            cargs['debug'] = True
 
 
         if 'config' in sargs:
@@ -83,7 +86,7 @@ class OrcheConfig(Config):
             paths=paths,
             cargs=cargs,
             sargs=sargs,
-            model=OrcheParams)
+            valid=OrcheParams)
 
         self.merge_params()
 
@@ -130,7 +133,7 @@ class OrcheConfig(Config):
             'encrypts': encrypts}
 
         params = (
-            self.model(**basic))
+            self.valid(**basic))
 
         assert isinstance(
             params, OrcheParams)
@@ -159,7 +162,7 @@ class OrcheConfig(Config):
 
         parse = jinja2.parse
 
-        params = self.model(
+        params = self.valid(
             parse, **merge)
 
         assert isinstance(
@@ -169,14 +172,16 @@ class OrcheConfig(Config):
          .set_static('source'))
 
 
-        dumped = params.enpruned
+        dumped = prune(
+            params.model_dump(),
+            paranoid=True)
 
 
         inheritance(dumped)
 
 
         params = (
-            self.model(**dumped))
+            self.valid(**dumped))
 
         assert isinstance(
             params, OrcheParams)

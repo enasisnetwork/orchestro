@@ -18,7 +18,7 @@ from .child import OrcheChild
 from ..models import OrcheModels
 
 if TYPE_CHECKING:
-    from ..params import OrchePersonParams
+    from ..params.person import OrchePersonParams
 
 
 

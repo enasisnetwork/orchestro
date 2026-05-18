@@ -15,8 +15,8 @@ from ansible.plugins.lookup import LookupBase  # type: ignore
 from encommon.types import DictStrAny
 from encommon.types import LDictStrAny
 
-from orchestro.orche import Orche
-from orchestro.orche import OrcheConfig
+from orchestro.orche.config import OrcheConfig
+from orchestro.orche.orche import Orche
 
 
 

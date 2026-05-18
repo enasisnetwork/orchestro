@@ -1,5 +1,7 @@
 {
+  "console": true,
   "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "debug": true,
   "dryrun": false,
   "enconfig": {
     "paths": [

@@ -16,7 +16,7 @@ from .group import OrcheGroup
 from .person import OrchePerson
 from .subnet import OrcheSubnet
 from .system import OrcheSystem
-from ...utils import InvalidChild
+from ...utils.child import InvalidChild
 
 if TYPE_CHECKING:
     from ..orche import Orche

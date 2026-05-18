@@ -16,18 +16,31 @@ from encommon.types import lattrs
 from ..child import InvalidChild
 
 if TYPE_CHECKING:
-    from ...orche import Orche
+    from ...orche.orche import Orche
 
 
 
-def test_InvalidChild() -> None:
+def test_InvalidChild(
+    orche: 'Orche',
+) -> None:
     """
     Perform various tests associated with relevant routines.
+
+    :param orche: Primary class instance for Orchestrations.
     """
 
+    childs = orche.childs
+    systems = childs.systems
+
+    system = systems['ensrv1t']
+
+    name = system.name
+
+
     raises = InvalidChild(
-        child='invalid',
-        phase='initial')
+        child=system,
+        phase='runtime',
+        about='about')
 
 
     attrs = lattrs(raises)
@@ -45,40 +58,27 @@ def test_InvalidChild() -> None:
         hash(raises), int)
 
     assert instr(
-        'Child (invalid)',
+        f'Child ({name})',
         raises)
 
-
-    assert str(raises) == (
-        'Child (invalid) '
-        'invalid within '
-        'phase (initial)')
-
-
-
-def test_InvalidChild_cover(
-    orche: 'Orche',
-) -> None:
-    """
-    Perform various tests associated with relevant routines.
-
-    :param orche: Primary class instance for Orchestrations.
-    """
-
-    childs = orche.childs
-    systems = childs.systems
-
-    system = systems['ensrv1t']
-
-
-    raises = InvalidChild(
-        child=system,
-        phase='runtime',
-        about='about')
-
-    name = system.name
 
     assert str(raises) == (
         f'Child ({name}) '
         'invalid within phase '
         '(runtime) (about)')
+
+
+
+def test_InvalidChild_cover() -> None:
+    """
+    Perform various tests associated with relevant routines.
+    """
+
+    raises = InvalidChild(
+        child='invalid',
+        phase='initial')
+
+    assert str(raises) == (
+        'Child (invalid) '
+        'invalid within '
+        'phase (initial)')

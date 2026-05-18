@@ -15,14 +15,14 @@ from typing import TYPE_CHECKING
 from encommon.types import DictStrAny
 from encommon.types import sort_dict
 
-from ...utils import InvalidChild
-from ...utils import InvalidParam
+from ...utils.child import InvalidChild
+from ...utils.param import InvalidParam
 
 if TYPE_CHECKING:
     from .group import OrcheGroup
     from ..common import OrcheKinds
     from ..orche import Orche
-    from ..params import OrcheChildParams
+    from ..params.child import OrcheChildParams
 
 
 

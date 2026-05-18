@@ -11,12 +11,12 @@ from typing import TYPE_CHECKING
 from typing import Type
 
 if TYPE_CHECKING:
-    from .params import OrcheChildParams
-    from .params import OrcheGroupParams
-    from .params import OrcheParams
-    from .params import OrchePersonParams
-    from .params import OrcheSubnetParams
-    from .params import OrcheSystemParams
+    from .params.child import OrcheChildParams
+    from .params.group import OrcheGroupParams
+    from .params.orche import OrcheParams
+    from .params.person import OrchePersonParams
+    from .params.subnet import OrcheSubnetParams
+    from .params.system import OrcheSystemParams
 
 
 
