@@ -47,5 +47,4 @@ pydata-sphinx-theme
 
 yamllint
 
-weasyprint
-wand
+enbasics
