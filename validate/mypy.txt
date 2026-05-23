@@ -5,5 +5,3 @@
     DONE
   ● Executing mypy on makefile.py..
     DONE
-  ● Executing mypy on makebadge.py..
-    DONE

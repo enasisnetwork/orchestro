@@ -5,5 +5,3 @@
     DONE
   ● Executing ruff on makefile.py..
     DONE
-  ● Executing ruff on makebadge.py..
-    DONE

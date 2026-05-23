@@ -5,5 +5,3 @@
     DONE
   ● Executing pylint on makefile.py..
     DONE
-  ● Executing pylint on makebadge.py..
-    DONE
