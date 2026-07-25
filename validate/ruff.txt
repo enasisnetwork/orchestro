@@ -1,7 +1,2951 @@
 >>> make ruff
   ● Executing ruff in orchestro..
-    DONE
-  ● Executing ruff in sphinx..
-    DONE
-  ● Executing ruff on makefile.py..
-    DONE
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/__init__.py:10:1
+   |
+10 | / from pathlib import Path
+11 | | from sys import flags
+   | |_____________________^
+   |
+help: Organize imports
+   |
+12 |
+   -
+   -
+13 | PROJECT = Path(__file__).parent
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/ansbtest/test_inventory.py:10:1
+   |
+10 | / from os import environ
+11 | |
+12 | | from ansible.inventory.data import InventoryData  # type: ignore
+13 | | from ansible.parsing.dataloader import DataLoader  # type: ignore
+14 | |
+15 | | from encommon.types import DictStrAny
+16 | |
+17 | | from .. import EXAMPLES
+18 | | from ..inventory.orche import InventoryModule
+   | |_____________________________________________^
+   |
+help: Organize imports
+   |
+13 | from ansible.parsing.dataloader import DataLoader  # type: ignore
+   -
+14 | from encommon.types import DictStrAny
+15 |
+16 | from .. import EXAMPLES
+17 | from ..inventory.orche import InventoryModule
+   -
+18 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/conftest.py:10:1
+   |
+10 | / from pathlib import Path
+11 | |
+12 | | from encommon.types import DictStrAny
+13 | | from encommon.utils import save_text
+14 | |
+15 | | from pytest import fixture
+16 | |
+17 | | from . import EXAMPLES
+18 | | from . import PROJECT
+19 | | from .orche.config import OrcheConfig
+20 | | from .orche.orche import Orche
+   | |______________________________^
+   |
+help: Organize imports
+   |
+13 | from encommon.utils import save_text
+   -
+14 | from pytest import fixture
+15 |
+   - from . import EXAMPLES
+   - from . import PROJECT
+16 + from . import EXAMPLES, PROJECT
+17 | from .orche.config import OrcheConfig
+18 | from .orche.orche import Orche
+   -
+19 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/config.py:10:1
+   |
+10 | / from argparse import ArgumentParser
+11 | | from sys import argv as sys_argv
+12 | | from typing import Optional
+13 | |
+14 | | from encommon.types import DictStrAny
+15 | | from encommon.utils import array_ansi
+16 | | from encommon.utils import print_ansi
+17 | |
+18 | | from ..orche.config import OrcheConfig
+   | |______________________________________^
+   |
+help: Organize imports
+   |
+14 | from encommon.types import DictStrAny
+   - from encommon.utils import array_ansi
+   - from encommon.utils import print_ansi
+15 + from encommon.utils import array_ansi, print_ansi
+16 |
+17 | from ..orche.config import OrcheConfig
+   -
+18 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/execution/config.py:23:11
+   |
+22 | def arguments(
+23 |     args: Optional[list[str]] = None,
+   |           ^^^^^^^^^^^^^^^^^^^
+24 | ) -> DictStrAny:
+25 |     """
+   |
+help: Convert to `X | None`
+   |
+22 | def arguments(
+   -     args: Optional[list[str]] = None,
+23 +     args: list[str] | None = None,
+24 | ) -> DictStrAny:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/execution/config.py:88:11
+   |
+86 | def execution(
+87 |     # NOCVR
+88 |     args: Optional[list[str]] = None,
+   |           ^^^^^^^^^^^^^^^^^^^
+89 | ) -> None:
+90 |     """
+   |
+help: Convert to `X | None`
+   |
+87 |     # NOCVR
+   -     args: Optional[list[str]] = None,
+88 +     args: list[str] | None = None,
+89 | ) -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/crypts.py:10:1
+   |
+10 | / from argparse import ArgumentParser
+11 | | from sys import argv as sys_argv
+12 | | from sys import stdin
+13 | | from typing import Optional
+14 | |
+15 | | from encommon.types import DictStrAny
+16 | | from encommon.types.strings import SEMPTY
+17 | | from encommon.utils import print_ansi
+18 | |
+19 | | from ..orche.config import OrcheConfig
+   | |______________________________________^
+   |
+help: Organize imports
+   |
+21 |
+   -
+22 | def arguments(
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/execution/crypts.py:24:11
+   |
+23 | def arguments(
+24 |     args: Optional[list[str]] = None,
+   |           ^^^^^^^^^^^^^^^^^^^
+25 | ) -> DictStrAny:
+26 |     """
+   |
+help: Convert to `X | None`
+   |
+23 | def arguments(
+   -     args: Optional[list[str]] = None,
+24 +     args: list[str] | None = None,
+25 | ) -> DictStrAny:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/execution/crypts.py:106:12
+    |
+104 |     dashes = '─' * 80
+105 |
+106 |     value: Optional[str] = None
+    |            ^^^^^^^^^^^^^
+    |
+help: Convert to `X | None`
+    |
+105 |
+    -     value: Optional[str] = None
+106 +     value: str | None = None
+107 |
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/execution/crypts.py:153:11
+    |
+151 | def execution(
+152 |     # NOCVR
+153 |     args: Optional[list[str]] = None,
+    |           ^^^^^^^^^^^^^^^^^^^
+154 | ) -> None:
+155 |     """
+    |
+help: Convert to `X | None`
+    |
+152 |     # NOCVR
+    -     args: Optional[list[str]] = None,
+153 +     args: list[str] | None = None,
+154 | ) -> None:
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/test/test_config.py:10:1
+   |
+10 | from ..config import arguments
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_arguments() -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/test/test_crypts.py:10:1
+   |
+10 | from ..crypts import arguments
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_arguments() -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/test/test_vault.py:10:1
+   |
+10 | from ..vault import arguments
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_arguments() -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/execution/vault.py:10:1
+   |
+10 | / from argparse import ArgumentParser
+11 | | from os import environ
+12 | | from sys import argv as sys_argv
+13 | | from sys import stdout
+14 | | from typing import Optional
+15 | |
+16 | | from encommon.types import DictStrAny
+17 | |
+18 | | from ..orche.config import OrcheConfig
+   | |______________________________________^
+   |
+help: Organize imports
+   |
+20 |
+   -
+21 | def arguments(
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/execution/vault.py:23:11
+   |
+22 | def arguments(
+23 |     args: Optional[list[str]] = None,
+   |           ^^^^^^^^^^^^^^^^^^^
+24 | ) -> DictStrAny:
+25 |     """
+   |
+help: Convert to `X | None`
+   |
+22 | def arguments(
+   -     args: Optional[list[str]] = None,
+23 +     args: list[str] | None = None,
+24 | ) -> DictStrAny:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/execution/vault.py:98:11
+    |
+ 96 | def execution(
+ 97 |     # NOCVR
+ 98 |     args: Optional[list[str]] = None,
+    |           ^^^^^^^^^^^^^^^^^^^
+ 99 | ) -> None:
+100 |     """
+    |
+help: Convert to `X | None`
+   |
+97 |     # NOCVR
+   -     args: Optional[list[str]] = None,
+98 +     args: list[str] | None = None,
+99 | ) -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/filters/orche.py:10:1
+   |
+10 | / from encommon.parse.jinja2 import DEFAULT_FILTERS
+11 | | from encommon.parse.jinja2 import FILTERS
+   | |_________________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from encommon.parse.jinja2 import DEFAULT_FILTERS
+   - from encommon.parse.jinja2 import FILTERS
+   -
+10 + from encommon.parse.jinja2 import DEFAULT_FILTERS, FILTERS
+11 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/inventory/orche.py:10:1
+   |
+10 | / from copy import deepcopy
+11 | | from os import environ
+12 | | from pathlib import Path
+13 | | from time import sleep as block_sleep
+14 | | from typing import Any
+15 | | from typing import TypeVar
+16 | | from typing import cast
+17 | |
+18 | | from ansible import context  # type: ignore
+19 | | from ansible.inventory.data import InventoryData  # type: ignore
+20 | | from ansible.parsing.dataloader import DataLoader  # type: ignore
+21 | | from ansible.plugins.inventory import BaseInventoryPlugin  # type: ignore
+22 | | from ansible.template import trust_as_template  # type: ignore
+23 | |
+24 | | from encommon.config import config_load
+25 | | from encommon.types import DictStrAny
+26 | | from encommon.types import NCTrue
+27 | | from encommon.types import sort_dict
+28 | | from encommon.types.strings import COMMAD
+29 | | from encommon.types.strings import SEMPTY
+30 | | from encommon.utils import array_ansi
+31 | | from encommon.utils import print_ansi
+32 | |
+33 | | from orchestro.orche.childs.group import OrcheGroup
+34 | | from orchestro.orche.childs.system import OrcheSystem
+35 | | from orchestro.orche.config import OrcheConfig
+36 | | from orchestro.orche.orche import Orche
+   | |_______________________________________^
+   |
+help: Organize imports
+   |
+13 | from time import sleep as block_sleep
+   - from typing import Any
+   - from typing import TypeVar
+   - from typing import cast
+14 + from typing import Any, TypeVar, cast
+15 |
+--------------------------------------------------------------------------------
+20 | from ansible.template import trust_as_template  # type: ignore
+   -
+21 | from encommon.config import config_load
+   - from encommon.types import DictStrAny
+   - from encommon.types import NCTrue
+   - from encommon.types import sort_dict
+   - from encommon.types.strings import COMMAD
+   - from encommon.types.strings import SEMPTY
+   - from encommon.utils import array_ansi
+   - from encommon.utils import print_ansi
+22 + from encommon.types import DictStrAny, NCTrue, sort_dict
+23 + from encommon.types.strings import COMMAD, SEMPTY
+24 + from encommon.utils import array_ansi, print_ansi
+25 |
+--------------------------------------------------------------------------------
+29 | from orchestro.orche.orche import Orche
+   -
+   -
+30 |
+   |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `ANN401`)
+   --> orchestro/inventory/orche.py:114:22
+    |
+112 |         entity: str,
+113 |         varname: str,
+114 |         value: Any,  # noqa: ANN401
+    |                      ^^^^^^^^^^^^^^
+115 |     ) -> None:
+116 |         """
+    |
+help: Remove unused `noqa` directive
+    |
+113 |         varname: str,
+    -         value: Any,  # noqa: ANN401
+114 +         value: Any,
+115 |     ) -> None:
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/inventory/orche.py:440:17
+    |
+439 |             if names is None:
+440 |                 return None
+    |                 ^^^^^^^^^^^
+441 |
+442 |             for name in names:  # NOCVR
+    |
+help: Remove explicit `return None`
+    |
+439 |             if names is None:
+    -                 return None
+440 +                 return
+441 |
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/inventory/orche.py:562:13
+    |
+561 |         if ensured != 'yes':
+562 |             return None
+    |             ^^^^^^^^^^^
+563 |
+564 |         answer = input(
+    |
+help: Remove explicit `return None`
+    |
+561 |         if ensured != 'yes':
+    -             return None
+562 +             return
+563 |
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/inventory/orche.py:571:13
+    |
+570 |         if confirm != 'yes':
+571 |             return None
+    |             ^^^^^^^^^^^
+572 |
+573 |         answer = input(
+    |
+help: Remove explicit `return None`
+    |
+570 |         if confirm != 'yes':
+    -             return None
+571 +             return
+572 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/lookups/orche.py:10:1
+   |
+10 | / from typing import Any
+11 | | from typing import Optional
+12 | |
+13 | | from ansible.plugins.lookup import LookupBase  # type: ignore
+14 | |
+15 | | from encommon.types import DictStrAny
+16 | | from encommon.types import LDictStrAny
+17 | |
+18 | | from orchestro.orche.config import OrcheConfig
+19 | | from orchestro.orche.orche import Orche
+   | |_______________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Any
+   - from typing import Optional
+10 + from typing import Any, Optional
+11 |
+12 | from ansible.plugins.lookup import LookupBase  # type: ignore
+13 + from encommon.types import DictStrAny, LDictStrAny
+14 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import LDictStrAny
+   -
+15 | from orchestro.orche.config import OrcheConfig
+16 | from orchestro.orche.orche import Orche
+   -
+17 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/lookups/orche.py:28:14
+   |
+26 |     """
+27 |
+28 |     __orche: Optional[Orche] = None
+   |              ^^^^^^^^^^^^^^^
+   |
+help: Convert to `X | None`
+   |
+27 |
+   -     __orche: Optional[Orche] = None
+28 +     __orche: Orche | None = None
+29 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/lookups/orche.py:34:16
+   |
+32 |         # NOCVR
+33 |         self,
+34 |         terms: Optional[LDictStrAny] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^^
+35 |         variables: Optional[DictStrAny] = None,
+36 |         **kwargs: Any,
+   |
+help: Convert to `X | None`
+   |
+33 |         self,
+   -         terms: Optional[LDictStrAny] = None,
+34 +         terms: LDictStrAny | None = None,
+35 |         variables: Optional[DictStrAny] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/lookups/orche.py:35:20
+   |
+33 |         self,
+34 |         terms: Optional[LDictStrAny] = None,
+35 |         variables: Optional[DictStrAny] = None,
+   |                    ^^^^^^^^^^^^^^^^^^^^
+36 |         **kwargs: Any,
+37 |     ) -> list[Orche]:
+   |
+help: Convert to `X | None`
+   |
+34 |         terms: Optional[LDictStrAny] = None,
+   -         variables: Optional[DictStrAny] = None,
+35 +         variables: DictStrAny | None = None,
+36 |         **kwargs: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/__init__.py:10:1
+   |
+10 | / from .config import OrcheConfig
+11 | | from .models import OrcheModels
+12 | | from .orche import Orche
+   | |________________________^
+   |
+help: Organize imports
+   |
+13 |
+   -
+   -
+14 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/addons/__init__.py:10:1
+   |
+10 | / from .jinja2 import OrcheJinja2
+11 | | from .logger import OrcheLogger
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+12 |
+   -
+   -
+13 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/addons/logger.py:10:1
+   |
+10 | / from typing import Any
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from encommon.types import DictStrAny
+14 | | from encommon.types import clsname
+   | |__________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Any
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Any
+11 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import clsname
+12 + from encommon.types import DictStrAny, clsname
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/addons/test/test_logger.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from _pytest.logging import LogCaptureFixture
+13 | |
+14 | | from encommon.types import inrepr
+15 | | from encommon.types import instr
+16 | | from encommon.types import lattrs
+   | |_________________________________^
+17 |
+18 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+12 | from _pytest.logging import LogCaptureFixture
+   -
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+13 + from encommon.types import inrepr, instr, lattrs
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/__init__.py:10:1
+   |
+10 | / from .child import OrcheChild
+11 | | from .childs import OrcheChilds
+12 | | from .group import OrcheGroup
+13 | | from .person import OrchePerson
+14 | | from .subnet import OrcheSubnet
+15 | | from .system import OrcheSystem
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+16 |
+   -
+   -
+17 | __all__ = [
+   |
+
+RUF022 [*] `__all__` is not sorted
+  --> orchestro/orche/childs/__init__.py:19:11
+   |
+19 |   __all__ = [
+   |  ___________^
+20 | |     'OrcheChild',
+21 | |     'OrcheChilds',
+22 | |     'OrcheSystem',
+23 | |     'OrchePerson',
+24 | |     'OrcheSubnet',
+25 | |     'OrcheGroup']
+   | |_________________^
+   |
+help: Apply an isort-style sorting to `__all__`
+   |
+21 |     'OrcheChilds',
+   -     'OrcheSystem',
+22 +     'OrcheGroup',
+23 |     'OrchePerson',
+24 |     'OrcheSubnet',
+   -     'OrcheGroup']
+25 +     'OrcheSystem',
+26 + ]
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/child.py:10:1
+   |
+10 | / from functools import cached_property
+11 | | from typing import Any
+12 | | from typing import Optional
+13 | | from typing import TYPE_CHECKING
+14 | |
+15 | | from encommon.types import DictStrAny
+16 | | from encommon.types import sort_dict
+17 | |
+18 | | from ...utils.child import InvalidChild
+19 | | from ...utils.param import InvalidParam
+   | |_______________________________________^
+20 |
+21 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+10 | from functools import cached_property
+   - from typing import Any
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+11 + from typing import TYPE_CHECKING, Any, Optional
+12 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import sort_dict
+13 + from encommon.types import DictStrAny, sort_dict
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/child.py:22:5
+   |
+21 |   if TYPE_CHECKING:
+22 | /     from .group import OrcheGroup
+23 | |     from ..common import OrcheKinds
+24 | |     from ..orche import Orche
+25 | |     from ..params.child import OrcheChildParams
+   | |_______________________________________________^
+   |
+help: Organize imports
+   |
+21 | if TYPE_CHECKING:
+   -     from .group import OrcheGroup
+22 |     from ..common import OrcheKinds
+23 |     from ..orche import Orche
+24 |     from ..params.child import OrcheChildParams
+25 +     from .group import OrcheGroup
+26 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/child.py:205:10
+    |
+203 |     def inherits(
+204 |         self,
+205 |     ) -> Optional[list[str]]:
+    |          ^^^^^^^^^^^^^^^^^^^
+206 |         """
+207 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+204 |         self,
+    -     ) -> Optional[list[str]]:
+205 +     ) -> list[str] | None:
+206 |         """
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/child.py:236:10
+    |
+234 |     def about(
+235 |         self,
+236 |     ) -> Optional[str]:
+    |          ^^^^^^^^^^^^^
+237 |         """
+238 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+235 |         self,
+    -     ) -> Optional[str]:
+236 +     ) -> str | None:
+237 |         """
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/child.py:249:10
+    |
+247 |     def memberof(
+248 |         self,
+249 |     ) -> Optional[list[str]]:
+    |          ^^^^^^^^^^^^^^^^^^^
+250 |         """
+251 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+248 |         self,
+    -     ) -> Optional[list[str]]:
+249 +     ) -> list[str] | None:
+250 |         """
+    |
+
+UP037 [*] Remove quotes from type annotation
+   --> orchestro/orche/childs/child.py:319:21
+    |
+317 |             .groups)
+318 |
+319 |         childs: set['OrcheGroup'] = set()
+    |                     ^^^^^^^^^^^^
+320 |
+321 |         if mmbrof is None:
+    |
+help: Remove quotes
+    |
+318 |
+    -         childs: set['OrcheGroup'] = set()
+319 +         childs: set[OrcheGroup] = set()
+320 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/childs.py:10:1
+   |
+10 | / from copy import deepcopy
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from encommon.types import DictStrAny
+14 | |
+15 | | from .group import OrcheGroup
+16 | | from .person import OrchePerson
+17 | | from .subnet import OrcheSubnet
+18 | | from .system import OrcheSystem
+19 | | from ...utils.child import InvalidChild
+   | |_______________________________________^
+20 |
+21 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+14 |
+15 + from ...utils.child import InvalidChild
+16 | from .group import OrcheGroup
+17 | from .person import OrchePerson
+18 | from .subnet import OrcheSubnet
+19 | from .system import OrcheSystem
+   - from ...utils.child import InvalidChild
+20 |
+   |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/orche/childs/childs.py:108:13
+    |
+107 |         if systems is None:
+108 |             return None
+    |             ^^^^^^^^^^^
+109 |
+110 |         model = OrcheSystem
+    |
+help: Remove explicit `return None`
+    |
+107 |         if systems is None:
+    -             return None
+108 +             return
+109 |
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/orche/childs/childs.py:141:13
+    |
+140 |         if persons is None:
+141 |             return None
+    |             ^^^^^^^^^^^
+142 |
+143 |         model = OrchePerson
+    |
+help: Remove explicit `return None`
+    |
+140 |         if persons is None:
+    -             return None
+141 +             return
+142 |
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/orche/childs/childs.py:174:13
+    |
+173 |         if subnets is None:
+174 |             return None
+    |             ^^^^^^^^^^^
+175 |
+176 |         model = OrcheSubnet
+    |
+help: Remove explicit `return None`
+    |
+173 |         if subnets is None:
+    -             return None
+174 +             return
+175 |
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/orche/childs/childs.py:207:13
+    |
+206 |         if groups is None:
+207 |             return None
+    |             ^^^^^^^^^^^
+208 |
+209 |         model = OrcheGroup
+    |
+help: Remove explicit `return None`
+    |
+206 |         if groups is None:
+    -             return None
+207 +             return
+208 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/group.py:10:1
+   |
+10 | / from typing import Literal
+11 | | from typing import Optional
+12 | | from typing import TYPE_CHECKING
+13 | |
+14 | | from encommon.types import DictStrAny
+15 | | from encommon.types import NCNone
+16 | |
+17 | | from .child import OrcheChild
+18 | | from ..models import OrcheModels
+   | |________________________________^
+19 |
+20 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Literal, Optional
+11 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import NCNone
+12 + from encommon.types import DictStrAny, NCNone
+13 |
+14 + from ..models import OrcheModels
+15 | from .child import OrcheChild
+   - from ..models import OrcheModels
+16 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/group.py:143:10
+    |
+141 |     def realm(
+142 |         self,
+143 |     ) -> Optional[str]:
+    |          ^^^^^^^^^^^^^
+144 |         """
+145 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+142 |         self,
+    -     ) -> Optional[str]:
+143 +     ) -> str | None:
+144 |         """
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/group.py:156:10
+    |
+154 |     def ansible(
+155 |         self,
+156 |     ) -> Optional[DictStrAny]:
+    |          ^^^^^^^^^^^^^^^^^^^^
+157 |         """
+158 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+155 |         self,
+    -     ) -> Optional[DictStrAny]:
+156 +     ) -> DictStrAny | None:
+157 |         """
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/person.py:10:1
+   |
+10 | / from typing import Literal
+11 | | from typing import Optional
+12 | | from typing import TYPE_CHECKING
+13 | |
+14 | | from encommon.types import DictStrAny
+15 | | from encommon.types.strings import SPACED
+16 | |
+17 | | from .child import OrcheChild
+18 | | from ..models import OrcheModels
+   | |________________________________^
+19 |
+20 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Literal, Optional
+11 |
+12 | from encommon.types import DictStrAny
+13 | from encommon.types.strings import SPACED
+14 |
+   - from .child import OrcheChild
+15 | from ..models import OrcheModels
+16 + from .child import OrcheChild
+17 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/person.py:83:10
+   |
+81 |     def realm(
+82 |         self,
+83 |     ) -> Optional[str]:
+   |          ^^^^^^^^^^^^^
+84 |         """
+85 |         Return the value for the attribute from class instance.
+   |
+help: Convert to `X | None`
+   |
+82 |         self,
+   -     ) -> Optional[str]:
+83 +     ) -> str | None:
+84 |         """
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/person.py:96:10
+   |
+94 |     def domain(
+95 |         self,
+96 |     ) -> Optional[str]:
+   |          ^^^^^^^^^^^^^
+97 |         """
+98 |         Return the value for the attribute from class instance.
+   |
+help: Convert to `X | None`
+   |
+95 |         self,
+   -     ) -> Optional[str]:
+96 +     ) -> str | None:
+97 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/subnet.py:10:1
+   |
+10 | / from typing import Literal
+11 | | from typing import Optional
+12 | | from typing import TYPE_CHECKING
+13 | |
+14 | | from encommon.parse import Network
+15 | | from encommon.parse import insubnet_ip
+16 | | from encommon.parse import isvalid_ip
+17 | | from encommon.types import DictStrAny
+18 | |
+19 | | from .child import OrcheChild
+20 | | from ..models import OrcheModels
+21 | | from ...utils.param import InvalidParam
+   | |_______________________________________^
+22 |
+23 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Literal, Optional
+11 |
+   - from encommon.parse import Network
+   - from encommon.parse import insubnet_ip
+   - from encommon.parse import isvalid_ip
+12 + from encommon.parse import Network, insubnet_ip, isvalid_ip
+13 | from encommon.types import DictStrAny
+14 |
+   - from .child import OrcheChild
+15 + from ...utils.param import InvalidParam
+16 | from ..models import OrcheModels
+   - from ...utils.param import InvalidParam
+17 + from .child import OrcheChild
+18 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/subnet.py:36:14
+   |
+34 |     """
+35 |
+36 |     macpref: Optional[str]
+   |              ^^^^^^^^^^^^^
+37 |     gateway: Optional[str]
+38 |     resolve: Optional[list[str]]
+   |
+help: Convert to `X | None`
+   |
+35 |
+   -     macpref: Optional[str]
+36 +     macpref: str | None
+37 |     gateway: Optional[str]
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/subnet.py:37:14
+   |
+36 |     macpref: Optional[str]
+37 |     gateway: Optional[str]
+   |              ^^^^^^^^^^^^^
+38 |     resolve: Optional[list[str]]
+39 |     ntpsync: Optional[list[str]]
+   |
+help: Convert to `X | None`
+   |
+36 |     macpref: Optional[str]
+   -     gateway: Optional[str]
+37 +     gateway: str | None
+38 |     resolve: Optional[list[str]]
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/subnet.py:38:14
+   |
+36 |     macpref: Optional[str]
+37 |     gateway: Optional[str]
+38 |     resolve: Optional[list[str]]
+   |              ^^^^^^^^^^^^^^^^^^^
+39 |     ntpsync: Optional[list[str]]
+   |
+help: Convert to `X | None`
+   |
+37 |     gateway: Optional[str]
+   -     resolve: Optional[list[str]]
+38 +     resolve: list[str] | None
+39 |     ntpsync: Optional[list[str]]
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/subnet.py:39:14
+   |
+37 |     gateway: Optional[str]
+38 |     resolve: Optional[list[str]]
+39 |     ntpsync: Optional[list[str]]
+   |              ^^^^^^^^^^^^^^^^^^^
+   |
+help: Convert to `X | None`
+   |
+38 |     resolve: Optional[list[str]]
+   -     ntpsync: Optional[list[str]]
+39 +     ntpsync: list[str] | None
+40 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/system.py:10:1
+   |
+10 | / from typing import Literal
+11 | | from typing import Optional
+12 | | from typing import TYPE_CHECKING
+13 | |
+14 | | from encommon.types import DictStrAny
+15 | | from encommon.types import NCNone
+16 | |
+17 | | from .child import OrcheChild
+18 | | from ..models import OrcheModels
+   | |________________________________^
+19 |
+20 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Literal, Optional
+11 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import NCNone
+12 + from encommon.types import DictStrAny, NCNone
+13 |
+14 + from ..models import OrcheModels
+15 | from .child import OrcheChild
+   - from ..models import OrcheModels
+16 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/system.py:83:10
+   |
+81 |     def realm(
+82 |         self,
+83 |     ) -> Optional[str]:
+   |          ^^^^^^^^^^^^^
+84 |         """
+85 |         Return the value for the attribute from class instance.
+   |
+help: Convert to `X | None`
+   |
+82 |         self,
+   -     ) -> Optional[str]:
+83 +     ) -> str | None:
+84 |         """
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/childs/system.py:96:10
+   |
+94 |     def domain(
+95 |         self,
+96 |     ) -> Optional[str]:
+   |          ^^^^^^^^^^^^^
+97 |         """
+98 |         Return the value for the attribute from class instance.
+   |
+help: Convert to `X | None`
+   |
+95 |         self,
+   -     ) -> Optional[str]:
+96 +     ) -> str | None:
+97 |         """
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/childs/system.py:128:10
+    |
+126 |     def ansible(
+127 |         self,
+128 |     ) -> Optional[DictStrAny]:
+    |          ^^^^^^^^^^^^^^^^^^^^
+129 |         """
+130 |         Return the value for the attribute from class instance.
+    |
+help: Convert to `X | None`
+    |
+127 |         self,
+    -     ) -> Optional[DictStrAny]:
+128 +     ) -> DictStrAny | None:
+129 |         """
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/test/test_childs.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+   | |_________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/test/test_group.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+   | |_________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/test/test_person.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+   | |_________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/test/test_subnet.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+   | |_________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/childs/test/test_system.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+   | |_________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/common.py:10:1
+   |
+10 | from typing import Literal
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | OrcheKinds = Literal[
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/config.py:10:1
+   |
+10 | / from copy import deepcopy
+11 | | from typing import Optional
+12 | | from typing import get_args
+13 | |
+14 | | from encommon.config import Config
+15 | | from encommon.config import Params
+16 | | from encommon.types import DictStrAny
+17 | | from encommon.types import dedup_list
+18 | | from encommon.types import delate
+19 | | from encommon.types import getate
+20 | | from encommon.types import merge_dicts
+21 | | from encommon.types import prune
+22 | | from encommon.utils.common import PATHABLE
+23 | |
+24 | | from .common import OrcheKinds
+25 | | from .params.orche import OrcheParams
+   | |_____________________________________^
+   |
+help: Organize imports
+   |
+10 | from copy import deepcopy
+   - from typing import Optional
+   - from typing import get_args
+11 + from typing import Optional, get_args
+12 |
+   - from encommon.config import Config
+   - from encommon.config import Params
+   - from encommon.types import DictStrAny
+   - from encommon.types import dedup_list
+   - from encommon.types import delate
+   - from encommon.types import getate
+   - from encommon.types import merge_dicts
+   - from encommon.types import prune
+13 + from encommon.config import Config, Params
+14 + from encommon.types import DictStrAny, dedup_list, delate, getate, merge_dicts, prune
+15 | from encommon.utils.common import PATHABLE
+16 |
+17 | from .common import OrcheKinds
+18 | from .params.orche import OrcheParams
+   -
+19 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/config.py:43:16
+   |
+41 |     def __init__(
+42 |         self,
+43 |         sargs: Optional[DictStrAny] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^
+44 |         files: Optional[PATHABLE] = None,
+45 |         paths: Optional[PATHABLE] = None,
+   |
+help: Convert to `X | None`
+   |
+42 |         self,
+   -         sargs: Optional[DictStrAny] = None,
+43 +         sargs: DictStrAny | None = None,
+44 |         files: Optional[PATHABLE] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/config.py:44:16
+   |
+42 |         self,
+43 |         sargs: Optional[DictStrAny] = None,
+44 |         files: Optional[PATHABLE] = None,
+   |                ^^^^^^^^^^^^^^^^^^
+45 |         paths: Optional[PATHABLE] = None,
+46 |         cargs: Optional[DictStrAny] = None,
+   |
+help: Convert to `X | None`
+   |
+43 |         sargs: Optional[DictStrAny] = None,
+   -         files: Optional[PATHABLE] = None,
+44 +         files: PATHABLE | None = None,
+45 |         paths: Optional[PATHABLE] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/config.py:45:16
+   |
+43 |         sargs: Optional[DictStrAny] = None,
+44 |         files: Optional[PATHABLE] = None,
+45 |         paths: Optional[PATHABLE] = None,
+   |                ^^^^^^^^^^^^^^^^^^
+46 |         cargs: Optional[DictStrAny] = None,
+47 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+44 |         files: Optional[PATHABLE] = None,
+   -         paths: Optional[PATHABLE] = None,
+45 +         paths: PATHABLE | None = None,
+46 |         cargs: Optional[DictStrAny] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/config.py:46:16
+   |
+44 |         files: Optional[PATHABLE] = None,
+45 |         paths: Optional[PATHABLE] = None,
+46 |         cargs: Optional[DictStrAny] = None,
+   |                ^^^^^^^^^^^^^^^^^^^^
+47 |     ) -> None:
+48 |         """
+   |
+help: Convert to `X | None`
+   |
+45 |         paths: Optional[PATHABLE] = None,
+   -         cargs: Optional[DictStrAny] = None,
+46 +         cargs: DictStrAny | None = None,
+47 |     ) -> None:
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/config.py:196:10
+    |
+194 |     def __params(
+195 |         self,
+196 |     ) -> Optional[Params]:
+    |          ^^^^^^^^^^^^^^^^
+197 |         """
+198 |         Return the Pydantic model containing the configuration.
+    |
+help: Convert to `X | None`
+    |
+195 |         self,
+    -     ) -> Optional[Params]:
+196 +     ) -> Params | None:
+197 |         """
+    |
+
+RET501 [*] Do not explicitly `return None` in function if it is the only possible return value
+   --> orchestro/orche/config.py:273:13
+    |
+272 |         if inhrts is None:
+273 |             return None
+    |             ^^^^^^^^^^^
+274 |
+275 |         for name in inhrts:
+    |
+help: Remove explicit `return None`
+    |
+272 |         if inhrts is None:
+    -             return None
+273 +             return
+274 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/models.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | | from typing import Type
+   | |_______________________^
+12 |
+13 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import TYPE_CHECKING
+   - from typing import Type
+10 + from typing import TYPE_CHECKING, Type
+11 |
+   |
+
+UP035 `typing.Type` is deprecated, use `type` instead
+  --> orchestro/orche/models.py:11:1
+   |
+10 | from typing import TYPE_CHECKING
+11 | from typing import Type
+   | ^^^^^^^^^^^^^^^^^^^^^^^
+12 |
+13 | if TYPE_CHECKING:
+   |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+  --> orchestro/orche/models.py:32:10
+   |
+30 |     def orche(
+31 |         cls,
+32 |     ) -> Type['OrcheParams']:
+   |          ^^^^
+33 |         """
+34 |         Return the class object that was imported within method.
+   |
+help: Replace with `type`
+   |
+31 |         cls,
+   -     ) -> Type['OrcheParams']:
+32 +     ) -> type['OrcheParams']:
+33 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/models.py:39:9
+   |
+37 |           """
+38 |
+39 | /         from .params import (
+40 | |             OrcheParams)
+   | |________________________^
+41 |
+42 |           return OrcheParams
+   |
+help: Organize imports
+   |
+38 |
+   -         from .params import (
+   -             OrcheParams)
+39 +         from .params import OrcheParams
+40 |
+   |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+  --> orchestro/orche/models.py:48:10
+   |
+46 |     def child(
+47 |         cls,
+48 |     ) -> Type['OrcheChildParams']:
+   |          ^^^^
+49 |         """
+50 |         Return the class object that was imported within method.
+   |
+help: Replace with `type`
+   |
+47 |         cls,
+   -     ) -> Type['OrcheChildParams']:
+48 +     ) -> type['OrcheChildParams']:
+49 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/models.py:55:9
+   |
+53 |           """
+54 |
+55 | /         from .params import (
+56 | |             OrcheChildParams)
+   | |_____________________________^
+57 |
+58 |           return OrcheChildParams
+   |
+help: Organize imports
+   |
+54 |
+   -         from .params import (
+   -             OrcheChildParams)
+55 +         from .params import OrcheChildParams
+56 |
+   |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+  --> orchestro/orche/models.py:64:10
+   |
+62 |     def system(
+63 |         cls,
+64 |     ) -> Type['OrcheSystemParams']:
+   |          ^^^^
+65 |         """
+66 |         Return the class object that was imported within method.
+   |
+help: Replace with `type`
+   |
+63 |         cls,
+   -     ) -> Type['OrcheSystemParams']:
+64 +     ) -> type['OrcheSystemParams']:
+65 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/models.py:71:9
+   |
+69 |           """
+70 |
+71 | /         from .params import (
+72 | |             OrcheSystemParams)
+   | |______________________________^
+73 |
+74 |           return OrcheSystemParams
+   |
+help: Organize imports
+   |
+70 |
+   -         from .params import (
+   -             OrcheSystemParams)
+71 +         from .params import OrcheSystemParams
+72 |
+   |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+  --> orchestro/orche/models.py:80:10
+   |
+78 |     def person(
+79 |         cls,
+80 |     ) -> Type['OrchePersonParams']:
+   |          ^^^^
+81 |         """
+82 |         Return the class object that was imported within method.
+   |
+help: Replace with `type`
+   |
+79 |         cls,
+   -     ) -> Type['OrchePersonParams']:
+80 +     ) -> type['OrchePersonParams']:
+81 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/models.py:87:9
+   |
+85 |           """
+86 |
+87 | /         from .params import (
+88 | |             OrchePersonParams)
+   | |______________________________^
+89 |
+90 |           return OrchePersonParams
+   |
+help: Organize imports
+   |
+86 |
+   -         from .params import (
+   -             OrchePersonParams)
+87 +         from .params import OrchePersonParams
+88 |
+   |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+  --> orchestro/orche/models.py:96:10
+   |
+94 |     def subnet(
+95 |         cls,
+96 |     ) -> Type['OrcheSubnetParams']:
+   |          ^^^^
+97 |         """
+98 |         Return the class object that was imported within method.
+   |
+help: Replace with `type`
+   |
+95 |         cls,
+   -     ) -> Type['OrcheSubnetParams']:
+96 +     ) -> type['OrcheSubnetParams']:
+97 |         """
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> orchestro/orche/models.py:103:9
+    |
+101 |           """
+102 |
+103 | /         from .params import (
+104 | |             OrcheSubnetParams)
+    | |______________________________^
+105 |
+106 |           return OrcheSubnetParams
+    |
+help: Organize imports
+    |
+102 |
+    -         from .params import (
+    -             OrcheSubnetParams)
+103 +         from .params import OrcheSubnetParams
+104 |
+    |
+
+UP006 [*] Use `type` instead of `Type` for type annotation
+   --> orchestro/orche/models.py:112:10
+    |
+110 |     def group(
+111 |         cls,
+112 |     ) -> Type['OrcheGroupParams']:
+    |          ^^^^
+113 |         """
+114 |         Return the class object that was imported within method.
+    |
+help: Replace with `type`
+    |
+111 |         cls,
+    -     ) -> Type['OrcheGroupParams']:
+112 +     ) -> type['OrcheGroupParams']:
+113 |         """
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> orchestro/orche/models.py:119:9
+    |
+117 |           """
+118 |
+119 | /         from .params import (
+120 | |             OrcheGroupParams)
+    | |_____________________________^
+121 |
+122 |           return OrcheGroupParams
+    |
+help: Organize imports
+    |
+118 |
+    -         from .params import (
+    -             OrcheGroupParams)
+119 +         from .params import OrcheGroupParams
+120 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/orche.py:10:1
+   |
+10 | / from copy import deepcopy
+11 | | from functools import cached_property
+12 | | from typing import Any
+13 | | from typing import Optional
+14 | | from typing import TYPE_CHECKING
+15 | |
+16 | | from encommon.types import DictStrAny
+17 | | from encommon.types import clsname
+18 | | from encommon.types import sort_dict
+19 | |
+20 | | from .addons.jinja2 import OrcheJinja2
+21 | | from .addons.logger import OrcheLogger
+22 | | from .childs.childs import OrcheChilds
+   | |______________________________________^
+23 |
+24 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 | from functools import cached_property
+   - from typing import Any
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+12 + from typing import TYPE_CHECKING, Any, Optional
+13 |
+   - from encommon.types import DictStrAny
+   - from encommon.types import clsname
+   - from encommon.types import sort_dict
+14 + from encommon.types import DictStrAny, clsname, sort_dict
+15 |
+   |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `ANN401`)
+   --> orchestro/orche/orche.py:246:22
+    |
+244 |     def j2parse(
+245 |         self,
+246 |         value: Any,  # noqa: ANN401
+    |                      ^^^^^^^^^^^^^^
+247 |         statics: Optional[DictStrAny] = None,
+248 |         literal: bool = True,
+    |
+help: Remove unused `noqa` directive
+    |
+245 |         self,
+    -         value: Any,  # noqa: ANN401
+246 +         value: Any,
+247 |         statics: Optional[DictStrAny] = None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/orche.py:247:18
+    |
+245 |         self,
+246 |         value: Any,  # noqa: ANN401
+247 |         statics: Optional[DictStrAny] = None,
+    |                  ^^^^^^^^^^^^^^^^^^^^
+248 |         literal: bool = True,
+249 |     ) -> Any:  # noqa: ANN401
+    |
+help: Convert to `X | None`
+    |
+246 |         value: Any,  # noqa: ANN401
+    -         statics: Optional[DictStrAny] = None,
+247 +         statics: DictStrAny | None = None,
+248 |         literal: bool = True,
+    |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `ANN401`)
+   --> orchestro/orche/orche.py:249:16
+    |
+247 |         statics: Optional[DictStrAny] = None,
+248 |         literal: bool = True,
+249 |     ) -> Any:  # noqa: ANN401
+    |                ^^^^^^^^^^^^^^
+250 |         """
+251 |         Return the provided input using the Jinja2 environment.
+    |
+help: Remove unused `noqa` directive
+    |
+248 |         literal: bool = True,
+    -     ) -> Any:  # noqa: ANN401
+249 +     ) -> Any:
+250 |         """
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/__init__.py:10:1
+   |
+10 | / from .child import OrcheChildParams
+11 | | from .common import OrcheParamsModel
+12 | | from .group import OrcheGroupParams
+13 | | from .orche import OrcheParams
+14 | | from .person import OrchePersonParams
+15 | | from .subnet import OrcheSubnetParams
+16 | | from .system import OrcheSystemParams
+   | |_____________________________________^
+   |
+help: Organize imports
+   |
+17 |
+   -
+   -
+18 | __all__ = [
+   |
+
+RUF022 [*] `__all__` is not sorted
+  --> orchestro/orche/params/__init__.py:20:11
+   |
+20 |   __all__ = [
+   |  ___________^
+21 | |     'OrcheParams',
+22 | |     'OrcheParamsModel',
+23 | |     'OrcheChildParams',
+24 | |     'OrcheGroupParams',
+25 | |     'OrchePersonParams',
+26 | |     'OrcheSubnetParams',
+27 | |     'OrcheSystemParams']
+   | |________________________^
+   |
+help: Apply an isort-style sorting to `__all__`
+   |
+20 | __all__ = [
+21 +     'OrcheChildParams',
+22 +     'OrcheGroupParams',
+23 |     'OrcheParams',
+24 |     'OrcheParamsModel',
+   -     'OrcheChildParams',
+   -     'OrcheGroupParams',
+25 |     'OrchePersonParams',
+26 |     'OrcheSubnetParams',
+   -     'OrcheSystemParams']
+27 +     'OrcheSystemParams',
+28 + ]
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/child.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Optional
+14 | |
+15 | | from pydantic import Field
+16 | |
+17 | | from .common import OrcheParamsModel
+   | |____________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Optional
+11 |
+12 | from pydantic import Field
+13 |
+14 | from .common import OrcheParamsModel
+   -
+15 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/child.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Optional
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/child.py:32:9
+   |
+31 |     inherits: Annotated[
+32 |         Optional[list[str]],
+   |         ^^^^^^^^^^^^^^^^^^^
+33 |         Field(None,
+34 |               description='Other configuration to inherit',
+   |
+help: Convert to `X | None`
+   |
+31 |     inherits: Annotated[
+   -         Optional[list[str]],
+32 +         list[str] | None,
+33 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/child.py:38:9
+   |
+37 |     display: Annotated[
+38 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+39 |         Field(None,
+40 |               description='Friendly name value for child',
+   |
+help: Convert to `X | None`
+   |
+37 |     display: Annotated[
+   -         Optional[str],
+38 +         str | None,
+39 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/child.py:44:9
+   |
+43 |     about: Annotated[
+44 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+45 |         Field(None,
+46 |               description='Additional optional information',
+   |
+help: Convert to `X | None`
+   |
+43 |     about: Annotated[
+   -         Optional[str],
+44 +         str | None,
+45 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/child.py:50:9
+   |
+49 |     memberof: Annotated[
+50 |         Optional[list[str]],
+   |         ^^^^^^^^^^^^^^^^^^^
+51 |         Field(None,
+52 |               description='Groups child is a member of',
+   |
+help: Convert to `X | None`
+   |
+49 |     memberof: Annotated[
+   -         Optional[list[str]],
+50 +         list[str] | None,
+51 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/child.py:78:17
+   |
+76 |         self,
+77 |         /,
+78 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+79 |         **data: Any,
+80 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+77 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+78 +         _parse: Callable[..., Any] | None = None,
+79 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/common.py:10:1
+   |
+10 | from encommon.types import BaseModel
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | class OrcheParamsModel(BaseModel, extra='forbid'):
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/group.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Literal
+14 | | from typing import Optional
+15 | |
+16 | | from pydantic import Field
+17 | |
+18 | | from .child import OrcheChildParams
+19 | | from .common import OrcheParamsModel
+   | |____________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Literal
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Literal, Optional
+11 |
+--------------------------------------------------------------------------------
+15 | from .common import OrcheParamsModel
+   -
+   -
+16 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/group.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Literal
+14 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Literal
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/group.py:51:9
+   |
+50 |     ansible: Annotated[
+51 |         Optional[OrcheGroupAnsibleParams],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+52 |         Field(None,
+53 |               description='Variables provided to Ansible')]
+   |
+help: Convert to `X | None`
+   |
+50 |     ansible: Annotated[
+   -         Optional[OrcheGroupAnsibleParams],
+51 +         OrcheGroupAnsibleParams | None,
+52 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/group.py:60:17
+   |
+58 |         self,
+59 |         /,
+60 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+61 |         **data: Any,
+62 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+59 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+60 +         _parse: Callable[..., Any] | None = None,
+61 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/orche.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Optional
+14 | |
+15 | | from encommon.config import Params
+16 | |
+17 | | from pydantic import Field
+18 | |
+19 | | from .group import OrcheGroupParams
+20 | | from .person import OrchePersonParams
+21 | | from .subnet import OrcheSubnetParams
+22 | | from .system import OrcheSystemParams
+   | |_____________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Optional
+11 |
+12 | from encommon.config import Params
+   -
+13 | from pydantic import Field
+--------------------------------------------------------------------------------
+18 | from .system import OrcheSystemParams
+   -
+19 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/orche.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Optional
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/orche.py:59:9
+   |
+58 |     systems: Annotated[
+59 |         Optional[dict[str, OrcheSystemParams]],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+60 |         Field(None,
+61 |               description='Parameters for Orche systems',
+   |
+help: Convert to `X | None`
+   |
+58 |     systems: Annotated[
+   -         Optional[dict[str, OrcheSystemParams]],
+59 +         dict[str, OrcheSystemParams] | None,
+60 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/orche.py:65:9
+   |
+64 |     persons: Annotated[
+65 |         Optional[dict[str, OrchePersonParams]],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+66 |         Field(None,
+67 |               description='Parameters for Orche persons',
+   |
+help: Convert to `X | None`
+   |
+64 |     persons: Annotated[
+   -         Optional[dict[str, OrchePersonParams]],
+65 +         dict[str, OrchePersonParams] | None,
+66 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/orche.py:71:9
+   |
+70 |     subnets: Annotated[
+71 |         Optional[dict[str, OrcheSubnetParams]],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+72 |         Field(None,
+73 |               description='Parameters for Orche subnets',
+   |
+help: Convert to `X | None`
+   |
+70 |     subnets: Annotated[
+   -         Optional[dict[str, OrcheSubnetParams]],
+71 +         dict[str, OrcheSubnetParams] | None,
+72 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/orche.py:77:9
+   |
+76 |     groups: Annotated[
+77 |         Optional[dict[str, OrcheGroupParams]],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+78 |         Field(None,
+79 |               description='Parameters for Orche groups',
+   |
+help: Convert to `X | None`
+   |
+76 |     groups: Annotated[
+   -         Optional[dict[str, OrcheGroupParams]],
+77 +         dict[str, OrcheGroupParams] | None,
+78 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> orchestro/orche/params/orche.py:105:17
+    |
+103 |         self,
+104 |         /,
+105 |         _parse: Optional[Callable[..., Any]] = None,
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+106 |         **data: Any,
+107 |     ) -> None:
+    |
+help: Convert to `X | None`
+    |
+104 |         /,
+    -         _parse: Optional[Callable[..., Any]] = None,
+105 +         _parse: Callable[..., Any] | None = None,
+106 |         **data: Any,
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/person.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Literal
+14 | | from typing import Optional
+15 | |
+16 | | from pydantic import Field
+17 | |
+18 | | from .child import OrcheChildParams
+   | |___________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Literal
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Literal, Optional
+11 |
+12 | from pydantic import Field
+13 |
+14 | from .child import OrcheChildParams
+   -
+   -
+15 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/person.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Literal
+14 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Literal
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/person.py:40:9
+   |
+39 |     domain: Annotated[
+40 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+41 |         Field(None,
+42 |               description='Domain to which child belongs',
+   |
+help: Convert to `X | None`
+   |
+39 |     domain: Annotated[
+   -         Optional[str],
+40 +         str | None,
+41 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/person.py:46:9
+   |
+45 |     first: Annotated[
+46 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+47 |         Field(None,
+48 |               description='First name for person account',
+   |
+help: Convert to `X | None`
+   |
+45 |     first: Annotated[
+   -         Optional[str],
+46 +         str | None,
+47 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/person.py:52:9
+   |
+51 |     last: Annotated[
+52 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+53 |         Field(None,
+54 |               description='Last name for person account',
+   |
+help: Convert to `X | None`
+   |
+51 |     last: Annotated[
+   -         Optional[str],
+52 +         str | None,
+53 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/person.py:62:17
+   |
+60 |         self,
+61 |         /,
+62 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+63 |         **data: Any,
+64 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+61 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+62 +         _parse: Callable[..., Any] | None = None,
+63 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/subnet.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Optional
+14 | |
+15 | | from pydantic import Field
+16 | |
+17 | | from .child import OrcheChildParams
+   | |___________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Optional
+11 |
+12 | from pydantic import Field
+13 |
+14 | from .child import OrcheChildParams
+   -
+15 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/subnet.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Optional
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/subnet.py:33:9
+   |
+32 |     macpref: Annotated[
+33 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+34 |         Field(None,
+35 |               description='Optional prefix for MAC address',
+   |
+help: Convert to `X | None`
+   |
+32 |     macpref: Annotated[
+   -         Optional[str],
+33 +         str | None,
+34 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/subnet.py:41:9
+   |
+40 |     gateway: Annotated[
+41 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+42 |         Field(None,
+43 |               description='Optional gateway for the subnet',
+   |
+help: Convert to `X | None`
+   |
+40 |     gateway: Annotated[
+   -         Optional[str],
+41 +         str | None,
+42 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/subnet.py:47:9
+   |
+46 |     resolve: Annotated[
+47 |         Optional[list[str]],
+   |         ^^^^^^^^^^^^^^^^^^^
+48 |         Field(None,
+49 |               description='Optional resolvers for subnet',
+   |
+help: Convert to `X | None`
+   |
+46 |     resolve: Annotated[
+   -         Optional[list[str]],
+47 +         list[str] | None,
+48 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/subnet.py:53:9
+   |
+52 |     ntpsync: Annotated[
+53 |         Optional[list[str]],
+   |         ^^^^^^^^^^^^^^^^^^^
+54 |         Field(None,
+55 |               description='Optional NTP server for subnet',
+   |
+help: Convert to `X | None`
+   |
+52 |     ntpsync: Annotated[
+   -         Optional[list[str]],
+53 +         list[str] | None,
+54 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/subnet.py:63:17
+   |
+61 |         self,
+62 |         /,
+63 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+64 |         **data: Any,
+65 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+62 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+63 +         _parse: Callable[..., Any] | None = None,
+64 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/params/system.py:10:1
+   |
+10 | / from typing import Annotated
+11 | | from typing import Any
+12 | | from typing import Callable
+13 | | from typing import Literal
+14 | | from typing import Optional
+15 | |
+16 | | from pydantic import Field
+17 | |
+18 | | from .child import OrcheChildParams
+19 | | from .common import OrcheParamsModel
+   | |____________________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Annotated
+   - from typing import Any
+   - from typing import Callable
+   - from typing import Literal
+   - from typing import Optional
+10 + from typing import Annotated, Any, Callable, Literal, Optional
+11 |
+--------------------------------------------------------------------------------
+15 | from .common import OrcheParamsModel
+   -
+   -
+16 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> orchestro/orche/params/system.py:12:1
+   |
+10 | from typing import Annotated
+11 | from typing import Any
+12 | from typing import Callable
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 | from typing import Literal
+14 | from typing import Optional
+   |
+help: Import from `collections.abc`
+   |
+11 | from typing import Any
+   - from typing import Callable
+12 + from collections.abc import Callable
+13 | from typing import Literal
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/system.py:47:9
+   |
+46 |     domain: Annotated[
+47 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+48 |         Field(None,
+49 |               description='Domain to which child belongs',
+   |
+help: Convert to `X | None`
+   |
+46 |     domain: Annotated[
+   -         Optional[str],
+47 +         str | None,
+48 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/system.py:53:9
+   |
+52 |     ansible: Annotated[
+53 |         Optional[OrcheSystemAnsibleParams],
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+54 |         Field(None,
+55 |               description='Variables provided to Ansible')]
+   |
+help: Convert to `X | None`
+   |
+52 |     ansible: Annotated[
+   -         Optional[OrcheSystemAnsibleParams],
+53 +         OrcheSystemAnsibleParams | None,
+54 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/orche/params/system.py:62:17
+   |
+60 |         self,
+61 |         /,
+62 |         _parse: Optional[Callable[..., Any]] = None,
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+63 |         **data: Any,
+64 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+61 |         /,
+   -         _parse: Optional[Callable[..., Any]] = None,
+62 +         _parse: Callable[..., Any] | None = None,
+63 |         **data: Any,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/test/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/test/test_config.py:10:1
+   |
+10 | / from encommon.types import DictStrAny
+11 | | from encommon.utils import load_sample
+12 | | from encommon.utils import prep_sample
+13 | | from encommon.utils.sample import ENPYRWS
+14 | |
+15 | | from . import SAMPLES
+16 | | from ..config import OrcheConfig
+   | |________________________________^
+   |
+help: Organize imports
+   |
+10 | from encommon.types import DictStrAny
+   - from encommon.utils import load_sample
+   - from encommon.utils import prep_sample
+11 + from encommon.utils import load_sample, prep_sample
+12 | from encommon.utils.sample import ENPYRWS
+13 |
+   - from . import SAMPLES
+14 | from ..config import OrcheConfig
+   -
+15 + from . import SAMPLES
+16 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/test/test_models.py:10:1
+   |
+10 | from ..models import OrcheModels
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+12 |
+   -
+13 | def test_OrcheModels_cover() -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/orche/test/test_orche.py:10:1
+   |
+10 | / from encommon.types import DictStrAny
+11 | | from encommon.types import inrepr
+12 | | from encommon.types import instr
+13 | | from encommon.types import lattrs
+14 | | from encommon.utils import load_sample
+15 | | from encommon.utils import prep_sample
+16 | | from encommon.utils.sample import ENPYRWS
+17 | |
+18 | | from . import SAMPLES
+19 | | from ..config import OrcheConfig
+20 | | from ..orche import Orche
+   | |_________________________^
+   |
+help: Organize imports
+   |
+9  |
+   - from encommon.types import DictStrAny
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+   - from encommon.utils import load_sample
+   - from encommon.utils import prep_sample
+10 + from encommon.types import DictStrAny, inrepr, instr, lattrs
+11 + from encommon.utils import load_sample, prep_sample
+12 | from encommon.utils.sample import ENPYRWS
+13 |
+   - from . import SAMPLES
+14 | from ..config import OrcheConfig
+15 | from ..orche import Orche
+   -
+16 + from . import SAMPLES
+17 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/utils/__init__.py:10:1
+   |
+10 | / from .child import InvalidChild
+11 | | from .param import InvalidParam
+   | |_______________________________^
+   |
+help: Organize imports
+   |
+12 |
+   -
+   -
+13 | __all__ = [
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/utils/child.py:10:1
+   |
+10 | / from typing import Literal
+11 | | from typing import Optional
+12 | | from typing import TYPE_CHECKING
+13 | | from typing import Union
+   | |________________________^
+14 |
+15 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+   - from typing import Union
+10 + from typing import TYPE_CHECKING, Literal, Optional, Union
+11 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/child.py:40:12
+   |
+38 |     child: str
+39 |     phase: _PHASE
+40 |     about: Optional[str] = None
+   |            ^^^^^^^^^^^^^
+   |
+help: Convert to `X | None`
+   |
+39 |     phase: _PHASE
+   -     about: Optional[str] = None
+40 +     about: str | None = None
+41 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/child.py:47:16
+   |
+45 |         child: Union[str, 'OrcheChild'],
+46 |         phase: _PHASE,
+47 |         about: Optional[str] = None,
+   |                ^^^^^^^^^^^^^
+48 |     ) -> None:
+49 |         """
+   |
+help: Convert to `X | None`
+   |
+46 |         phase: _PHASE,
+   -         about: Optional[str] = None,
+47 +         about: str | None = None,
+48 |     ) -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/utils/param.py:10:1
+   |
+10 | / from typing import Any
+11 | | from typing import Literal
+12 | | from typing import Optional
+13 | | from typing import TYPE_CHECKING
+14 | |
+15 | | from encommon.types import clsname
+   | |__________________________________^
+16 |
+17 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Any
+   - from typing import Literal
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Any, Literal, Optional
+11 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:45:12
+   |
+44 |     error: _ERROR
+45 |     about: Optional[str] = None
+   |            ^^^^^^^^^^^^^
+46 |     child: Optional['OrcheChild'] = None
+47 |     param: Optional[str] = None
+   |
+help: Convert to `X | None`
+   |
+44 |     error: _ERROR
+   -     about: Optional[str] = None
+45 +     about: str | None = None
+46 |     child: Optional['OrcheChild'] = None
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:47:12
+   |
+45 |     about: Optional[str] = None
+46 |     child: Optional['OrcheChild'] = None
+47 |     param: Optional[str] = None
+   |            ^^^^^^^^^^^^^
+48 |     value: Optional[Any] = None
+   |
+help: Convert to `X | None`
+   |
+46 |     child: Optional['OrcheChild'] = None
+   -     param: Optional[str] = None
+47 +     param: str | None = None
+48 |     value: Optional[Any] = None
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:48:12
+   |
+46 |     child: Optional['OrcheChild'] = None
+47 |     param: Optional[str] = None
+48 |     value: Optional[Any] = None
+   |            ^^^^^^^^^^^^^
+   |
+help: Convert to `X | None`
+   |
+47 |     param: Optional[str] = None
+   -     value: Optional[Any] = None
+48 +     value: Any | None = None
+49 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:54:16
+   |
+52 |         self,
+53 |         error: _ERROR,
+54 |         about: Optional[str] = None,
+   |                ^^^^^^^^^^^^^
+55 |         *,
+56 |         child: Optional['OrcheChild'] = None,
+   |
+help: Convert to `X | None`
+   |
+53 |         error: _ERROR,
+   -         about: Optional[str] = None,
+54 +         about: str | None = None,
+55 |         *,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:57:16
+   |
+55 |         *,
+56 |         child: Optional['OrcheChild'] = None,
+57 |         param: Optional[str] = None,
+   |                ^^^^^^^^^^^^^
+58 |         value: Optional[Any] = None,
+59 |     ) -> None:
+   |
+help: Convert to `X | None`
+   |
+56 |         child: Optional['OrcheChild'] = None,
+   -         param: Optional[str] = None,
+57 +         param: str | None = None,
+58 |         value: Optional[Any] = None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> orchestro/utils/param.py:58:16
+   |
+56 |         child: Optional['OrcheChild'] = None,
+57 |         param: Optional[str] = None,
+58 |         value: Optional[Any] = None,
+   |                ^^^^^^^^^^^^^
+59 |     ) -> None:
+60 |         """
+   |
+help: Convert to `X | None`
+   |
+57 |         param: Optional[str] = None,
+   -         value: Optional[Any] = None,
+58 +         value: Any | None = None,
+59 |     ) -> None:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/utils/test/test_child.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+15 | |
+16 | | from ..child import InvalidChild
+   | |________________________________^
+17 |
+18 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestro/utils/test/test_param.py:10:1
+   |
+10 | / from typing import TYPE_CHECKING
+11 | |
+12 | | from encommon.types import inrepr
+13 | | from encommon.types import instr
+14 | | from encommon.types import lattrs
+15 | |
+16 | | from ..param import InvalidParam
+   | |________________________________^
+17 |
+18 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+11 |
+   - from encommon.types import inrepr
+   - from encommon.types import instr
+   - from encommon.types import lattrs
+12 + from encommon.types import inrepr, instr, lattrs
+13 |
+   |
+
