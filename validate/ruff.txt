@@ -6,7 +6,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from pathlib import Path
 11 | | from sys import flags
    | |_____________________^
-   |
 help: Organize imports
    |
 12 |
@@ -28,7 +27,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | | from .. import EXAMPLES
 18 | | from ..inventory.orche import InventoryModule
    | |_____________________________________________^
-   |
 help: Organize imports
    |
 13 | from ansible.parsing.dataloader import DataLoader  # type: ignore
@@ -56,7 +54,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from .orche.config import OrcheConfig
 20 | | from .orche.orche import Orche
    | |______________________________^
-   |
 help: Organize imports
    |
 13 | from encommon.utils import save_text
@@ -85,7 +82,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | |
 18 | | from ..orche.config import OrcheConfig
    | |______________________________________^
-   |
 help: Organize imports
    |
 14 | from encommon.types import DictStrAny
@@ -147,7 +143,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | |
 19 | | from ..orche.config import OrcheConfig
    | |______________________________________^
-   |
 help: Organize imports
    |
 21 |
@@ -179,7 +174,6 @@ UP045 [*] Use `X | None` for type annotations
 105 |
 106 |     value: Optional[str] = None
     |            ^^^^^^^^^^^^^
-    |
 help: Convert to `X | None`
     |
 105 |
@@ -211,7 +205,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..config import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -224,7 +217,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..crypts import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -237,7 +229,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..vault import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -258,7 +249,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | |
 18 | | from ..orche.config import OrcheConfig
    | |______________________________________^
-   |
 help: Organize imports
    |
 20 |
@@ -307,7 +297,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from encommon.parse.jinja2 import DEFAULT_FILTERS
 11 | | from encommon.parse.jinja2 import FILTERS
    | |_________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -349,7 +338,6 @@ I001 [*] Import block is un-sorted or un-formatted
 35 | | from orchestro.orche.config import OrcheConfig
 36 | | from orchestro.orche.orche import Orche
    | |_______________________________________^
-   |
 help: Organize imports
    |
 13 | from time import sleep as block_sleep
@@ -463,7 +451,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from orchestro.orche.config import OrcheConfig
 19 | | from orchestro.orche.orche import Orche
    | |_______________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -490,7 +477,6 @@ UP045 [*] Use `X | None` for type annotations
 27 |
 28 |     __orche: Optional[Orche] = None
    |              ^^^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 27 |
@@ -542,7 +528,6 @@ I001 [*] Import block is un-sorted or un-formatted
 11 | | from .models import OrcheModels
 12 | | from .orche import Orche
    | |________________________^
-   |
 help: Organize imports
    |
 13 |
@@ -557,7 +542,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .jinja2 import OrcheJinja2
 11 | | from .logger import OrcheLogger
    | |_______________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -626,7 +610,6 @@ I001 [*] Import block is un-sorted or un-formatted
 14 | | from .subnet import OrcheSubnet
 15 | | from .system import OrcheSystem
    | |_______________________________^
-   |
 help: Organize imports
    |
 16 |
@@ -647,7 +630,6 @@ RUF022 [*] `__all__` is not sorted
 24 | |     'OrcheSubnet',
 25 | |     'OrcheGroup']
    | |_________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 21 |     'OrcheChilds',
@@ -700,7 +682,6 @@ I001 [*] Import block is un-sorted or un-formatted
 24 | |     from ..orche import Orche
 25 | |     from ..params.child import OrcheChildParams
    | |_______________________________________________^
-   |
 help: Organize imports
    |
 21 | if TYPE_CHECKING:
@@ -1120,7 +1101,6 @@ UP045 [*] Use `X | None` for type annotations
 38 |     resolve: Optional[list[str]]
 39 |     ntpsync: Optional[list[str]]
    |              ^^^^^^^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 38 |     resolve: Optional[list[str]]
@@ -1332,7 +1312,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from typing import Literal
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -1361,7 +1340,6 @@ I001 [*] Import block is un-sorted or un-formatted
 24 | | from .common import OrcheKinds
 25 | | from .params.orche import OrcheParams
    | |_____________________________________^
-   |
 help: Organize imports
    |
 10 | from copy import deepcopy
@@ -1850,7 +1828,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from .subnet import OrcheSubnetParams
 16 | | from .system import OrcheSystemParams
    | |_____________________________________^
-   |
 help: Organize imports
    |
 17 |
@@ -1872,7 +1849,6 @@ RUF022 [*] `__all__` is not sorted
 26 | |     'OrcheSubnetParams',
 27 | |     'OrcheSystemParams']
    | |________________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 20 | __all__ = [
@@ -1901,7 +1877,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from .common import OrcheParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2026,7 +2001,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from encommon.types import BaseModel
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -2048,7 +2022,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from .child import OrcheChildParams
 19 | | from .common import OrcheParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2136,7 +2109,6 @@ I001 [*] Import block is un-sorted or un-formatted
 21 | | from .subnet import OrcheSubnetParams
 22 | | from .system import OrcheSystemParams
    | |_____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2271,7 +2243,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | |
 18 | | from .child import OrcheChildParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2389,7 +2360,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from .child import OrcheChildParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2523,7 +2493,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from .child import OrcheChildParams
 19 | | from .common import OrcheParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2616,7 +2585,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -2636,7 +2604,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from . import SAMPLES
 16 | | from ..config import OrcheConfig
    | |________________________________^
-   |
 help: Organize imports
    |
 10 | from encommon.types import DictStrAny
@@ -2657,7 +2624,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..models import OrcheModels
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -2680,7 +2646,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ..config import OrcheConfig
 20 | | from ..orche import Orche
    | |_________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2708,7 +2673,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .child import InvalidChild
 11 | | from .param import InvalidParam
    | |_______________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -2746,7 +2710,6 @@ UP045 [*] Use `X | None` for type annotations
 39 |     phase: _PHASE
 40 |     about: Optional[str] = None
    |            ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 39 |     phase: _PHASE
@@ -2838,7 +2801,6 @@ UP045 [*] Use `X | None` for type annotations
 47 |     param: Optional[str] = None
 48 |     value: Optional[Any] = None
    |            ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 47 |     param: Optional[str] = None
