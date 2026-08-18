@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.conftest</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -321,15 +321,15 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">config_factory</span><span class="p">(</span>
     <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheConfig</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param tmp_path: pytest object for temporal filesystem.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">content</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="sa">f</span><span class="s2">"""</span>
 
 <span class="s2">        enconfig:</span>
 <span class="s2">          paths:</span>
@@ -342,19 +342,19 @@
 <span class="s2">        database: &gt;-</span>
 <span class="s2">          sqlite:///</span><span class="si">{</span><span class="n">tmp_path</span><span class="si">}</span><span class="s2">/db</span>
 
-<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">        """</span><span class="p">)</span>
 
     <span class="n">config_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">tmp_path</span> <span class="o">/</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">)</span>
+        <span class="n">tmp_path</span> <span class="o">/</span> <span class="s1">'config.yml'</span><span class="p">)</span>
 
     <span class="n">save_text</span><span class="p">(</span>
         <span class="n">config_path</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 
     <span class="n">sargs</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="n">config_path</span><span class="p">,</span>
-        <span class="s1">&#39;dryrun&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="s1">&#39;console&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+        <span class="s1">'config'</span><span class="p">:</span> <span class="n">config_path</span><span class="p">,</span>
+        <span class="s1">'dryrun'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">'console'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'debug'</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 
     <span class="k">return</span> <span class="n">OrcheConfig</span><span class="p">(</span><span class="n">sargs</span><span class="p">)</span></div>
 
@@ -367,12 +367,12 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span>
     <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheConfig</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param tmp_path: pytest object for temporal filesystem.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">return</span> <span class="n">config_factory</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">)</span></div>
 
@@ -385,16 +385,16 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">replaces</span><span class="p">(</span>
     <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return the complete mapping of what replaced in sample.</span>
 
 <span class="sd">    :param tmp_path: pytest object for temporal filesystem.</span>
 <span class="sd">    :returns: Complete mapping of what replaced in sample.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">&#39;PROJECT&#39;</span><span class="p">:</span> <span class="n">PROJECT</span><span class="p">,</span>
-        <span class="s1">&#39;TMPPATH&#39;</span><span class="p">:</span> <span class="n">tmp_path</span><span class="p">}</span></div>
+        <span class="s1">'PROJECT'</span><span class="p">:</span> <span class="n">PROJECT</span><span class="p">,</span>
+        <span class="s1">'TMPPATH'</span><span class="p">:</span> <span class="n">tmp_path</span><span class="p">}</span></div>
 
 
 
@@ -404,12 +404,12 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">orche_factory</span><span class="p">(</span>
     <span class="n">config</span><span class="p">:</span> <span class="n">OrcheConfig</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param config: Primary class instance for configuration.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">return</span> <span class="n">Orche</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></div>
 
@@ -422,12 +422,12 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">orche</span><span class="p">(</span>
     <span class="n">config</span><span class="p">:</span> <span class="n">OrcheConfig</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param config: Primary class instance for configuration.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">return</span> <span class="n">orche_factory</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></div>
 

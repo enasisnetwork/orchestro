@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.orche.params.person</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -315,40 +315,40 @@
 
 
 <span class="n">OrchePersonRealms</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
-    <span class="s1">&#39;domain&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;local&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;psuedo&#39;</span><span class="p">]</span>
+    <span class="s1">'domain'</span><span class="p">,</span>
+    <span class="s1">'local'</span><span class="p">,</span>
+    <span class="s1">'psuedo'</span><span class="p">]</span>
 
 
 
 <div class="viewcode-block" id="OrchePersonParams">
 <a class="viewcode-back" href="../../../../orchestro.orche.params.html#orchestro.orche.params.OrchePersonParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">OrchePersonParams</span><span class="p">(</span><span class="n">OrcheChildParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">OrchePersonParams</span><span class="p">(</span><span class="n">OrcheChildParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Orche configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">realm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">OrchePersonRealms</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;psuedo&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Logical realm for the object&#39;</span><span class="p">)]</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'psuedo'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Logical realm for the object'</span><span class="p">)]</span>
 
     <span class="n">domain</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Domain to which child belongs&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Domain to which child belongs'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">first</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;First name for person account&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'First name for person account'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">last</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Last name for person account&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Last name for person account'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
 
@@ -359,18 +359,18 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s1">&#39;realm&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;domain&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;first&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;last&#39;</span><span class="p">]</span>
+                <span class="s1">'realm'</span><span class="p">,</span>
+                <span class="s1">'domain'</span><span class="p">,</span>
+                <span class="s1">'first'</span><span class="p">,</span>
+                <span class="s1">'last'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.orche.childs.childs</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -331,13 +331,13 @@
 <div class="viewcode-block" id="OrcheChilds">
 <a class="viewcode-back" href="../../../../orchestro.orche.childs.html#orchestro.orche.childs.OrcheChilds">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">OrcheChilds</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain the object instances for related Orche children.</span>
 
 <span class="sd">    :param orche: Primary class instance for Orchestrations.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span>
+    <span class="n">__orche</span><span class="p">:</span> <span class="s1">'Orche'</span>
 
     <span class="n">__systems</span><span class="p">:</span> <span class="n">OrcheSystems</span>
 
@@ -349,15 +349,15 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">orche</span><span class="p">:</span> <span class="s1">&#39;Orche&#39;</span><span class="p">,</span>
+        <span class="n">orche</span><span class="p">:</span> <span class="s1">'Orche'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'initial'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__orche</span> <span class="o">=</span> <span class="n">orche</span>
 
@@ -372,7 +372,7 @@
 
         <span class="n">orche</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'created'</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="OrcheChilds.build_objects">
@@ -380,9 +380,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">build_objects</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__build_systems</span><span class="p">()</span>
 
@@ -396,9 +396,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_systems</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__orche</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">params</span>
@@ -429,9 +429,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_persons</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__orche</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">params</span>
@@ -462,9 +462,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_subnets</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__orche</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">params</span>
@@ -495,9 +495,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_groups</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__orche</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">params</span>
@@ -530,9 +530,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="n">systems</span> <span class="o">=</span> <span class="p">(</span>
@@ -563,8 +563,8 @@
                 <span class="k">continue</span>
 
             <span class="k">raise</span> <span class="n">InvalidChild</span><span class="p">(</span>
-                <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;initial&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;duplicate name&#39;</span><span class="p">)</span>
+                <span class="n">name</span><span class="p">,</span> <span class="s1">'initial'</span><span class="p">,</span>
+                <span class="s1">'duplicate name'</span><span class="p">)</span>
 
 
         <span class="n">snames</span> <span class="o">=</span> <span class="p">[</span>
@@ -579,8 +579,8 @@
                 <span class="k">continue</span>
 
             <span class="k">raise</span> <span class="n">InvalidChild</span><span class="p">(</span>
-                <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;initial&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;duplicate name&#39;</span><span class="p">)</span>
+                <span class="n">name</span><span class="p">,</span> <span class="s1">'initial'</span><span class="p">,</span>
+                <span class="s1">'duplicate name'</span><span class="p">)</span>
 
 
         <span class="n">persons</span> <span class="o">=</span> <span class="p">(</span>
@@ -604,11 +604,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">systems</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheSystems</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">systems</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__systems</span>
 
@@ -619,11 +619,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">persons</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrchePersons</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">persons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span>
 
@@ -634,11 +634,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">subnets</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheSubnets</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">subnets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__subnets</span>
 
@@ -649,11 +649,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">groups</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheGroups</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__groups</span>
 
@@ -664,11 +664,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the facts about the attributes from the instance.</span>
 
 <span class="sd">        :returns: Facts about the attributes from the instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">systems</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">systems</span>
         <span class="n">persons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">persons</span>
@@ -677,19 +677,19 @@
 
         <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
 
-            <span class="s1">&#39;systems&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'systems'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">systems</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
 
-            <span class="s1">&#39;persons&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'persons'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">persons</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
 
-            <span class="s1">&#39;subnets&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'subnets'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">subnets</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
 
-            <span class="s1">&#39;groups&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'groups'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">()}}</span>
 

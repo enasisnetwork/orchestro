@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.orche.config</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -324,7 +324,7 @@
 <div class="viewcode-block" id="OrcheConfig">
 <a class="viewcode-back" href="../../../orchestro.orche.html#orchestro.orche.OrcheConfig">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">OrcheConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain the configurations from the arguments and files.</span>
 
 <span class="sd">    :param sargs: Additional arguments on the command line.</span>
@@ -332,7 +332,7 @@
 <span class="sd">    :param paths: Complete or relative path to config paths.</span>
 <span class="sd">    :param cargs: Configuration arguments in dictionary form,</span>
 <span class="sd">        which will override contents from the config files.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -342,40 +342,40 @@
         <span class="n">paths</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PATHABLE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">cargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">sargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sargs</span> <span class="ow">or</span> <span class="p">{})</span>
         <span class="n">cargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cargs</span> <span class="ow">or</span> <span class="p">{})</span>
 
 
         <span class="n">_console</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">))</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'console'</span><span class="p">))</span>
 
         <span class="n">_debug</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">))</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'debug'</span><span class="p">))</span>
 
-        <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;enlogger/stdo_level&#39;</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="s1">'enlogger/stdo_level'</span>
 
         <span class="k">if</span> <span class="n">_console</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;info&#39;</span>
-            <span class="n">cargs</span><span class="p">[</span><span class="s1">&#39;console&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'info'</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="s1">'console'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="k">if</span> <span class="n">_debug</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
-            <span class="n">cargs</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'debug'</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="s1">'debug'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
 
-        <span class="k">if</span> <span class="s1">&#39;config&#39;</span> <span class="ow">in</span> <span class="n">sargs</span><span class="p">:</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="n">sargs</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">'config'</span> <span class="ow">in</span> <span class="n">sargs</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="n">sargs</span><span class="p">[</span><span class="s1">'config'</span><span class="p">]</span>
 
 
         <span class="n">_dryrun</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dryrun&#39;</span><span class="p">))</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'dryrun'</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">_dryrun</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">cargs</span><span class="p">[</span><span class="s1">&#39;dryrun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_dryrun</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="s1">'dryrun'</span><span class="p">]</span> <span class="o">=</span> <span class="n">_dryrun</span>
 
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
@@ -392,7 +392,7 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrcheParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        .. warning::</span>
@@ -401,7 +401,7 @@
 <span class="sd">           changes meant this breaks or breaks something else.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
 
@@ -416,18 +416,18 @@
         <span class="n">basic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">basic</span>
 
         <span class="n">enconfig</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;enconfig&#39;</span><span class="p">))</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'enconfig'</span><span class="p">))</span>
 
         <span class="n">enlogger</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;enlogger&#39;</span><span class="p">))</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'enlogger'</span><span class="p">))</span>
 
         <span class="n">encrypts</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;encrypts&#39;</span><span class="p">))</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'encrypts'</span><span class="p">))</span>
 
         <span class="n">basic</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;enconfig&#39;</span><span class="p">:</span> <span class="n">enconfig</span><span class="p">,</span>
-            <span class="s1">&#39;enlogger&#39;</span><span class="p">:</span> <span class="n">enlogger</span><span class="p">,</span>
-            <span class="s1">&#39;encrypts&#39;</span><span class="p">:</span> <span class="n">encrypts</span><span class="p">}</span>
+            <span class="s1">'enconfig'</span><span class="p">:</span> <span class="n">enconfig</span><span class="p">,</span>
+            <span class="s1">'enlogger'</span><span class="p">:</span> <span class="n">enlogger</span><span class="p">,</span>
+            <span class="s1">'encrypts'</span><span class="p">:</span> <span class="n">encrypts</span><span class="p">}</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="o">**</span><span class="n">basic</span><span class="p">))</span>
@@ -446,18 +446,18 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">merge_params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update the Pydantic model containing the configuration.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Inheritance routine has inspired other projects.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">merge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge</span>
         <span class="n">jinja2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">jinja2</span>
 
         <span class="n">jinja2</span><span class="o">.</span><span class="n">set_static</span><span class="p">(</span>
-            <span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">merge</span><span class="p">)</span>
+            <span class="s1">'source'</span><span class="p">,</span> <span class="n">merge</span><span class="p">)</span>
 
         <span class="n">parse</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">parse</span>
 
@@ -468,7 +468,7 @@
             <span class="n">params</span><span class="p">,</span> <span class="n">OrcheParams</span><span class="p">)</span>
 
         <span class="p">(</span><span class="n">jinja2</span>
-         <span class="o">.</span><span class="n">set_static</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">))</span>
+         <span class="o">.</span><span class="n">set_static</span><span class="p">(</span><span class="s1">'source'</span><span class="p">))</span>
 
 
         <span class="n">dumped</span> <span class="o">=</span> <span class="n">prune</span><span class="p">(</span>
@@ -494,11 +494,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Params</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Config__params</span>
 
@@ -508,9 +508,9 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">value</span><span class="p">:</span> <span class="n">Params</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update the value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_Config__params</span> <span class="o">=</span> <span class="n">value</span></div>
 
@@ -522,14 +522,14 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">inheritance</span><span class="p">(</span>
     <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform the inheritance after resolving the inheritance.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       Inheritance routine has inspired other projects.</span>
 
 <span class="sd">    :param dumped: Source contents which will be processed.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_complete</span><span class="p">(</span>
@@ -539,7 +539,7 @@
         <span class="n">names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">inhrts</span> <span class="o">=</span> <span class="n">getate</span><span class="p">(</span>
-            <span class="n">source</span><span class="p">,</span> <span class="s1">&#39;inherits&#39;</span><span class="p">)</span>
+            <span class="n">source</span><span class="p">,</span> <span class="s1">'inherits'</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">inhrts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">names</span>
@@ -562,7 +562,7 @@
 
         <span class="n">final</span> <span class="o">=</span> <span class="n">_complete</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 
-        <span class="n">source</span><span class="p">[</span><span class="s1">&#39;inherits&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">source</span><span class="p">[</span><span class="s1">'inherits'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">final</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">)</span>
 
 
@@ -570,7 +570,7 @@
         <span class="n">source</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-        <span class="n">inhrts</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="s1">&#39;inherits&#39;</span><span class="p">]</span>
+        <span class="n">inhrts</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="s1">'inherits'</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">inhrts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -581,8 +581,8 @@
 
             <span class="n">inhrt</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">_inhrt</span><span class="p">)</span>
 
-            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;inherits&#39;</span><span class="p">)</span>
-            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">&#39;enable&#39;</span><span class="p">)</span>
+            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">'inherits'</span><span class="p">)</span>
+            <span class="n">delate</span><span class="p">(</span><span class="n">inhrt</span><span class="p">,</span> <span class="s1">'enable'</span><span class="p">)</span>
 
             <span class="n">merge_dicts</span><span class="p">(</span>
                 <span class="n">dict1</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
@@ -590,14 +590,14 @@
                 <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="n">dedup_list</span><span class="p">(</span>
-            <span class="n">source</span><span class="p">[</span><span class="s1">&#39;inherits&#39;</span><span class="p">])</span>
+            <span class="n">source</span><span class="p">[</span><span class="s1">'inherits'</span><span class="p">])</span>
 
 
     <span class="n">kinds</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">OrcheKinds</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">kinds</span><span class="p">:</span>
 
-        <span class="n">key</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s1">s&#39;</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s1">s'</span>
 
         <span class="n">_dumped</span> <span class="o">=</span> <span class="n">dumped</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 

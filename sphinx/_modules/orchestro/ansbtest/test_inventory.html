@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.ansbtest.test_inventory</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -319,13 +319,13 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">test_InventoryModule</span><span class="p">(</span>
     <span class="n">replaces</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Perform various tests associated with relevant routines.</span>
 
 <span class="sd">    :param replaces: Mapping of what to replace in samples.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">environ</span><span class="p">[</span><span class="s1">&#39;orche_paths&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">environ</span><span class="p">[</span><span class="s1">'orche_paths'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
         <span class="nb">str</span><span class="p">(</span><span class="n">EXAMPLES</span><span class="p">))</span>
 
     <span class="n">orche</span> <span class="o">=</span> <span class="n">InventoryModule</span><span class="p">()</span>
@@ -340,37 +340,37 @@
     <span class="n">groups</span> <span class="o">=</span> <span class="n">ansinv</span><span class="o">.</span><span class="n">groups</span>
 
     <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
-        <span class="s1">&#39;aegaeon&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engwf1x1t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engwf1x2t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engwf2x1t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;engwf2x2t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ensrv1t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ensrv2t&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;meropis&#39;</span><span class="p">]</span>
+        <span class="s1">'aegaeon'</span><span class="p">,</span>
+        <span class="s1">'engwf1x1t'</span><span class="p">,</span>
+        <span class="s1">'engwf1x2t'</span><span class="p">,</span>
+        <span class="s1">'engwf2x1t'</span><span class="p">,</span>
+        <span class="s1">'engwf2x2t'</span><span class="p">,</span>
+        <span class="s1">'ensrv1t'</span><span class="p">,</span>
+        <span class="s1">'ensrv2t'</span><span class="p">,</span>
+        <span class="s1">'localhost'</span><span class="p">,</span>
+        <span class="s1">'meropis'</span><span class="p">]</span>
 
     <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
-        <span class="s1">&#39;all&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;enasisnetwork_enhomie&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;enasisnetwork_enrobie&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;enasisnetwork_sslca&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;saturn&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;systems&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;systems_almalinux&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;systems_fedora&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;systems_openbsd&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;systems_windows&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ungrouped&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;uranus&#39;</span><span class="p">]</span>
+        <span class="s1">'all'</span><span class="p">,</span>
+        <span class="s1">'enasisnetwork_enhomie'</span><span class="p">,</span>
+        <span class="s1">'enasisnetwork_enrobie'</span><span class="p">,</span>
+        <span class="s1">'enasisnetwork_sslca'</span><span class="p">,</span>
+        <span class="s1">'orche'</span><span class="p">,</span>
+        <span class="s1">'saturn'</span><span class="p">,</span>
+        <span class="s1">'systems'</span><span class="p">,</span>
+        <span class="s1">'systems_almalinux'</span><span class="p">,</span>
+        <span class="s1">'systems_fedora'</span><span class="p">,</span>
+        <span class="s1">'systems_openbsd'</span><span class="p">,</span>
+        <span class="s1">'systems_windows'</span><span class="p">,</span>
+        <span class="s1">'ungrouped'</span><span class="p">,</span>
+        <span class="s1">'uranus'</span><span class="p">]</span>
 
 
     <span class="n">dumped</span> <span class="o">=</span> <span class="n">orche</span><span class="o">.</span><span class="n">dumped</span>
 
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">13</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">'groups'</span><span class="p">])</span> <span class="o">==</span> <span class="mi">13</span>
 
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">9</span></div>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dumped</span><span class="p">[</span><span class="s1">'hosts'</span><span class="p">])</span> <span class="o">==</span> <span class="mi">9</span></div>
 
 </pre></div>
 

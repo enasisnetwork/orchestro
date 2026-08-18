@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for orchestro.inventory.orche</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Orchestrations.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -339,9 +339,9 @@
 <div class="viewcode-block" id="InventoryModule">
 <a class="viewcode-back" href="../../../orchestro.inventory.html#orchestro.inventory.orche.InventoryModule">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InventoryModule</span><span class="p">(</span><span class="n">BaseInventoryPlugin</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and update Ansible inventory from Orche objects.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
 
 <div class="viewcode-block" id="InventoryModule.verify_file">
@@ -351,12 +351,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
 
 <span class="sd">        :param path: Complete or relative path to the YAML file.</span>
 <span class="sd">        :returns: Boolean indicating the parameters are valid.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="kc">True</span></div>
 
@@ -369,12 +369,12 @@
         <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operations related to the Ansible inventory.</span>
 
 <span class="sd">        :param args: Positional arguments passed for downstream.</span>
 <span class="sd">        :param kwargs: Keyword arguments passed for downstream.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
@@ -387,12 +387,12 @@
         <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operations related to the Ansible inventory.</span>
 
 <span class="sd">        :param args: Positional arguments passed for downstream.</span>
 <span class="sd">        :param kwargs: Keyword arguments passed for downstream.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
@@ -405,12 +405,12 @@
         <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operations related to the Ansible inventory.</span>
 
 <span class="sd">        :param args: Positional arguments passed for downstream.</span>
 <span class="sd">        :param kwargs: Keyword arguments passed for downstream.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">add_host</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
@@ -424,15 +424,15 @@
         <span class="n">varname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>  <span class="c1"># noqa: ANN401</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operations related to the Ansible inventory.</span>
 
 <span class="sd">        :param entity: What entity to use for variable context.</span>
 <span class="sd">        :param varname: Name of variable which will be created.</span>
 <span class="sd">        :param value: Value to popualte in the created variable.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">Trusted</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;Trusted&#39;</span><span class="p">)</span>
+        <span class="n">Trusted</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">'Trusted'</span><span class="p">)</span>
 
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_trusted_value</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
@@ -478,14 +478,14 @@
         <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process and update Ansible inventory from Orche objects.</span>
 
 <span class="sd">        :param inventory: Reference to Ansible inventory object.</span>
 <span class="sd">        :param loader: Reference for the Ansible loader object.</span>
 <span class="sd">        :param path: Value which represents source of inventory.</span>
 <span class="sd">        :param cache: Indicates taht internal cache is enabled.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
             <span class="n">inventory</span><span class="p">,</span>
@@ -506,15 +506,15 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">build_orche</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orche</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">files</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_files&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_files'</span><span class="p">)</span>
 
         <span class="n">paths</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_paths&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_paths'</span><span class="p">)</span>
 
         <span class="n">verbose</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">display</span>
@@ -524,8 +524,8 @@
         <span class="n">debug</span> <span class="o">=</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span>
 
         <span class="n">sargs</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;console&#39;</span><span class="p">:</span> <span class="n">console</span><span class="p">,</span>
-            <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="n">debug</span><span class="p">}</span>
+            <span class="s1">'console'</span><span class="p">:</span> <span class="n">console</span><span class="p">,</span>
+            <span class="s1">'debug'</span><span class="p">:</span> <span class="n">debug</span><span class="p">}</span>
 
         <span class="n">config</span> <span class="o">=</span> <span class="n">OrcheConfig</span><span class="p">(</span>
             <span class="n">sargs</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">paths</span><span class="p">)</span>
@@ -541,9 +541,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">parse_orche</span><span class="p">(</span>  <span class="c1"># noqa: CFQ001</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process and update Ansible inventory from Orche objects.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">orche</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_orche</span><span class="p">()</span>
 
@@ -552,40 +552,40 @@
 
 
         <span class="bp">self</span><span class="o">.</span><span class="n">add_host</span><span class="p">(</span>
-            <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+            <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span>
+            <span class="n">group</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="s1">&#39;orche&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="s1">'orche'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="n">orche</span><span class="o">.</span><span class="n">dumped</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_sargs&#39;</span><span class="p">,</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">'orche_sargs'</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">sargs</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_files&#39;</span><span class="p">,</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">'orche_files'</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="p">[</span>
                 <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
                 <span class="n">config</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">paths</span><span class="p">])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_paths&#39;</span><span class="p">,</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">'orche_paths'</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="p">[</span>
                 <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
                 <span class="n">config</span><span class="o">.</span><span class="n">paths</span><span class="o">.</span><span class="n">paths</span><span class="p">])</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
-            <span class="n">entity</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">,</span>
-            <span class="n">varname</span><span class="o">=</span><span class="s1">&#39;orche_cargs&#39;</span><span class="p">,</span>
+            <span class="n">entity</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">,</span>
+            <span class="n">varname</span><span class="o">=</span><span class="s1">'orche_cargs'</span><span class="p">,</span>
             <span class="n">value</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">cargs</span><span class="p">)</span>
 
 
@@ -609,7 +609,7 @@
 
             <span class="n">realm</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">realm</span>
 
-            <span class="k">if</span> <span class="n">realm</span> <span class="o">!=</span> <span class="s1">&#39;ansible&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">realm</span> <span class="o">!=</span> <span class="s1">'ansible'</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">NCTrue</span>
 
             <span class="k">return</span> <span class="kc">False</span>
@@ -666,7 +666,7 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">add_host</span><span class="p">(</span>
                 <span class="n">host</span><span class="o">=</span><span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="n">group</span><span class="o">=</span><span class="s1">&#39;orche&#39;</span><span class="p">)</span>
+                <span class="n">group</span><span class="o">=</span><span class="s1">'orche'</span><span class="p">)</span>
 
 
             <span class="n">ansbsys</span> <span class="o">=</span> <span class="p">(</span>
@@ -675,17 +675,17 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s1">&#39;orche_system&#39;</span><span class="p">,</span>
+                <span class="s1">'orche_system'</span><span class="p">,</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">ansibout</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s1">&#39;kvparsed&#39;</span><span class="p">,</span>
+                <span class="s1">'kvparsed'</span><span class="p">,</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">kvparsed</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s1">&#39;kvopaque&#39;</span><span class="p">,</span>
+                <span class="s1">'kvopaque'</span><span class="p">,</span>
                 <span class="n">system</span><span class="o">.</span><span class="n">kvopaque</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">ansbsys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -720,21 +720,21 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">parse_paths</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process and update Ansible inventory from Orche objects.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">gvars</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-            <span class="o">/</span> <span class="s1">&#39;group_vars&#39;</span><span class="p">)</span>
+            <span class="o">/</span> <span class="s1">'group_vars'</span><span class="p">)</span>
 
         <span class="n">hvars</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-            <span class="o">/</span> <span class="s1">&#39;host_vars&#39;</span><span class="p">)</span>
+            <span class="o">/</span> <span class="s1">'host_vars'</span><span class="p">)</span>
 
         <span class="n">files</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="nb">list</span><span class="p">(</span><span class="n">gvars</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">))</span>
-            <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">hvars</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)))</span>
+            <span class="nb">list</span><span class="p">(</span><span class="n">gvars</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*'</span><span class="p">))</span>
+            <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">hvars</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*'</span><span class="p">)))</span>
 
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_add_group</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -747,7 +747,7 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">add_host</span><span class="p">(</span>
                 <span class="n">host</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">stem</span><span class="p">,</span>
-                <span class="n">group</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+                <span class="n">group</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
 
             <span class="n">content</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">config_load</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
@@ -757,7 +757,7 @@
                 <span class="o">.</span><span class="n">groups</span><span class="p">)</span>
 
             <span class="n">names</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-                <span class="s1">&#39;orchestro_groups&#39;</span><span class="p">)</span>
+                <span class="s1">'orchestro_groups'</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">None</span>
@@ -775,21 +775,21 @@
 
             <span class="n">name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span>
 
-            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'.'</span><span class="p">):</span>
                 <span class="k">continue</span>  <span class="c1"># NOCVR</span>
 
             <span class="n">parent</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span>
 
 
             <span class="n">kind</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="s1">&#39;host&#39;</span>
-                <span class="k">if</span> <span class="n">parent</span> <span class="o">==</span> <span class="s1">&#39;host_vars&#39;</span>
-                <span class="k">else</span> <span class="s1">&#39;group&#39;</span><span class="p">)</span>
+                <span class="s1">'host'</span>
+                <span class="k">if</span> <span class="n">parent</span> <span class="o">==</span> <span class="s1">'host_vars'</span>
+                <span class="k">else</span> <span class="s1">'group'</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;group&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">'group'</span><span class="p">:</span>
                 <span class="n">_add_group</span><span class="p">()</span>  <span class="c1"># NOCVR</span>
 
-            <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;host&#39;</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">'host'</span><span class="p">:</span>
                 <span class="n">_add_host</span><span class="p">()</span></div>
 
 
@@ -800,72 +800,72 @@
         <span class="c1"># NOCVR</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Show command line arguments that were passed to Ansible.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">limit</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;limit&#39;</span><span class="p">)</span>
-        <span class="n">stage</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;stage&#39;</span><span class="p">)</span>
+        <span class="n">limit</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'limit'</span><span class="p">)</span>
+        <span class="n">stage</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'stage'</span><span class="p">)</span>
 
 
         <span class="n">_files</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_files&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_files'</span><span class="p">)</span>
 
         <span class="n">files</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">_files</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">_files</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_files</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
 
         <span class="n">_paths</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_paths&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_paths'</span><span class="p">)</span>
 
         <span class="n">paths</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">_paths</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">_paths</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_paths</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
 
 
         <span class="n">args</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;ansible_args&#39;</span><span class="p">)</span>
+            <span class="s1">'ansible_args'</span><span class="p">)</span>
 
         <span class="n">tags</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">context</span><span class="o">.</span><span class="n">CLIARGS</span>
-            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
+            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'tags'</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
 
         <span class="n">more</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
             <span class="n">context</span><span class="o">.</span><span class="n">CLIARGS</span>
-            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
+            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'args'</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])</span>
 
         <span class="k">if</span> <span class="n">COMMAD</span> <span class="ow">in</span> <span class="n">more</span><span class="p">:</span>
             <span class="n">more</span> <span class="o">=</span> <span class="p">[</span><span class="n">SEMPTY</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">more</span><span class="p">)]</span>
 
 
         <span class="n">module_name</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;ansible_module_name&#39;</span><span class="p">)</span>
+            <span class="s1">'ansible_module_name'</span><span class="p">)</span>
 
         <span class="n">module_args</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;ansible_module_args&#39;</span><span class="p">)</span>
+            <span class="s1">'ansible_module_args'</span><span class="p">)</span>
 
 
         <span class="n">dumped</span> <span class="o">=</span> <span class="n">array_ansi</span><span class="p">({</span>
-            <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
-            <span class="s1">&#39;stage&#39;</span><span class="p">:</span> <span class="n">stage</span><span class="p">,</span>
-            <span class="s1">&#39;module_name&#39;</span><span class="p">:</span> <span class="n">module_name</span><span class="p">,</span>
-            <span class="s1">&#39;module_args&#39;</span><span class="p">:</span> <span class="n">module_args</span><span class="p">,</span>
-            <span class="s1">&#39;ansible_args&#39;</span><span class="p">:</span> <span class="n">args</span><span class="p">,</span>
-            <span class="s1">&#39;_ansible_tags&#39;</span><span class="p">:</span> <span class="n">tags</span><span class="p">,</span>
-            <span class="s1">&#39;_ansible_args&#39;</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
-            <span class="s1">&#39;orche_files&#39;</span><span class="p">:</span> <span class="n">files</span><span class="p">,</span>
-            <span class="s1">&#39;orche_paths&#39;</span><span class="p">:</span> <span class="n">paths</span><span class="p">})</span>
+            <span class="s1">'limit'</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+            <span class="s1">'stage'</span><span class="p">:</span> <span class="n">stage</span><span class="p">,</span>
+            <span class="s1">'module_name'</span><span class="p">:</span> <span class="n">module_name</span><span class="p">,</span>
+            <span class="s1">'module_args'</span><span class="p">:</span> <span class="n">module_args</span><span class="p">,</span>
+            <span class="s1">'ansible_args'</span><span class="p">:</span> <span class="n">args</span><span class="p">,</span>
+            <span class="s1">'_ansible_tags'</span><span class="p">:</span> <span class="n">tags</span><span class="p">,</span>
+            <span class="s1">'_ansible_args'</span><span class="p">:</span> <span class="n">more</span><span class="p">,</span>
+            <span class="s1">'orche_files'</span><span class="p">:</span> <span class="n">files</span><span class="p">,</span>
+            <span class="s1">'orche_paths'</span><span class="p">:</span> <span class="n">paths</span><span class="p">})</span>
 
-        <span class="n">dashes</span> <span class="o">=</span> <span class="s1">&#39;─&#39;</span> <span class="o">*</span> <span class="mi">60</span>
-
-        <span class="n">print_ansi</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;&lt;c33&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;&lt;c33&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span><span class="p">)</span>
+        <span class="n">dashes</span> <span class="o">=</span> <span class="s1">'─'</span> <span class="o">*</span> <span class="mi">60</span>
 
         <span class="n">print_ansi</span><span class="p">(</span>
-            <span class="s1">&#39;Sleeping for &#39;</span>
-            <span class="s1">&#39;&lt;c33&gt;2&lt;c0&gt; seconds&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'&lt;c33&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'&lt;c33&gt;</span><span class="si">{</span><span class="n">dashes</span><span class="si">}</span><span class="s1">&lt;c0&gt;'</span><span class="p">)</span>
+
+        <span class="n">print_ansi</span><span class="p">(</span>
+            <span class="s1">'Sleeping for '</span>
+            <span class="s1">'&lt;c33&gt;2&lt;c0&gt; seconds'</span><span class="p">)</span>
 
         <span class="n">block_sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></div>
 
@@ -877,33 +877,33 @@
         <span class="c1"># NOCVR</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Require confirmation from the user in order to proceed.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">ensured</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_ensured&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_ensured'</span><span class="p">)</span>
 
         <span class="n">confirm</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="s1">&#39;orche_confirm&#39;</span><span class="p">)</span>
+            <span class="s1">'orche_confirm'</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">ensured</span> <span class="o">!=</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ensured</span> <span class="o">!=</span> <span class="s1">'yes'</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
 
         <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
-            <span class="s1">&#39;Are you sure? [y/N] &#39;</span><span class="p">)</span>
+            <span class="s1">'Are you sure? [y/N] '</span><span class="p">)</span>
 
-        <span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">(</span>
-            <span class="s1">&#39;User did not confirm&#39;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">'y'</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s1">'User did not confirm'</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">confirm</span> <span class="o">!=</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">confirm</span> <span class="o">!=</span> <span class="s1">'yes'</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
 
         <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
-            <span class="s1">&#39;Confirm sure? [y/N] &#39;</span><span class="p">)</span>
+            <span class="s1">'Confirm sure? [y/N] '</span><span class="p">)</span>
 
-        <span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">(</span>
-            <span class="s1">&#39;User did not confirm&#39;</span><span class="p">)</span></div>
+        <span class="k">assert</span> <span class="n">answer</span> <span class="o">==</span> <span class="s1">'y'</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s1">'User did not confirm'</span><span class="p">)</span></div>
 
 
 
@@ -911,22 +911,22 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the facts about the attributes from the instance.</span>
 
 <span class="sd">        :returns: Facts about the attributes from the instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;hosts&#39;</span><span class="p">:</span> <span class="p">{},</span>
-            <span class="s1">&#39;groups&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+            <span class="s1">'hosts'</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">'groups'</span><span class="p">:</span> <span class="p">{}}</span>
 
 
         <span class="n">hosts</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span>
             <span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
-        <span class="n">_hosts</span> <span class="o">=</span> <span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">]</span>
+        <span class="n">_hosts</span> <span class="o">=</span> <span class="n">dumped</span><span class="p">[</span><span class="s1">'hosts'</span><span class="p">]</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
 
@@ -938,7 +938,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span>
             <span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
-        <span class="n">_groups</span> <span class="o">=</span> <span class="n">dumped</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">]</span>
+        <span class="n">_groups</span> <span class="o">=</span> <span class="n">dumped</span><span class="p">[</span><span class="s1">'groups'</span><span class="p">]</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
 
